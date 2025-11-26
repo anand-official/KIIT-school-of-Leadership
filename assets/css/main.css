@@ -254,6 +254,14 @@ p {
     width: 100%;
 }
 
+.navbar-link.active {
+    color: var(--color-kiit-green);
+}
+
+.navbar-link.active::after {
+    width: 100%;
+}
+
 .navbar-cta {
     background: var(--color-black);
     color: var(--color-white);

@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.navbar-link');
     
     // Navbar scroll behavior
-    let lastScroll = 0;
     window.addEventListener('scroll', function() {
         const currentScroll = window.pageYOffset;
         
@@ -24,8 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             navbar.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
         }
-        
-        lastScroll = currentScroll;
     });
     
     // Mobile menu toggle
@@ -103,9 +100,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const href = link.getAttribute('href');
             if (href === `#${current}`) {
                 link.classList.add('active');
-                link.style.color = '#1F3D1F';
-            } else {
-                link.style.color = '#000000';
             }
         });
     });
