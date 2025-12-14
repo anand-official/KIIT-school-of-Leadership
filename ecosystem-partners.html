@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecosystem Partners | KIIT School of Leadership</title>
+    <meta name="description" content="Ecosystem partners across government, corporates, startups, stakeholders, and investors powering KIIT School of Leadership." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/design-system.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .hero.page-hero {
+            padding: 64px 0 42px 0;
+            background: radial-gradient(120% 120% at 12% 10%, rgba(6, 78, 59, 0.08) 0%, rgba(6, 78, 59, 0) 48%),
+                        radial-gradient(90% 120% at 82% 0%, rgba(14, 165, 233, 0.08) 0%, rgba(14, 165, 233, 0) 50%),
+                        linear-gradient(180deg, #f6f7f9 0%, #ffffff 100%);
+            border-bottom: 1px solid #e7eaee;
+            min-height: auto;
+            display: block;
+            margin-top: 0;
+        }
+        .partner-hero-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 36px;
+            align-items: start;
+        }
+        .hero.page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.3rem, 3.2vw, 3rem);
+            margin: 8px 0 12px 0;
+            color: #0f172a;
+        }
+        .hero.page-hero p {
+            max-width: 900px;
+            font-size: 1.05rem;
+            color: var(--color-text-muted);
+        }
+        .breadcrumb {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(6, 78, 59, 0.08);
+            color: #0b2f25;
+            font-weight: 700;
+            border: 1px solid rgba(6, 78, 59, 0.16);
+            box-shadow: 0 10px 22px rgba(0,0,0,0.05);
+        }
+        .hero-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .hero-chip {
+            background: #eef3ef;
+            color: #0b2f25;
+            border: 1px solid rgba(6, 78, 59, 0.14);
+            border-radius: 999px;
+            padding: 8px 14px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .hero-summary-card {
+            background: linear-gradient(165deg, #ffffff 0%, #f5f7f8 100%);
+            border: 1px solid rgba(0,0,0,0.04);
+            box-shadow: 0 18px 54px rgba(0,0,0,0.06);
+            border-radius: 18px;
+            padding: 22px 24px;
+            display: grid;
+            gap: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-summary-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(6,78,59,0.08), transparent 38%),
+                        radial-gradient(circle at 80% 0%, rgba(14,165,233,0.1), transparent 34%);
+            pointer-events: none;
+        }
+        .stat-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        .stat-pill {
+            background: #f1f6f3;
+            border: 1px solid rgba(6, 78, 59, 0.12);
+            border-radius: 14px;
+            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .stat-pill strong { font-size: 1.4rem; color: #0b2f25; }
+        .stat-pill span { color: var(--color-text-muted); font-weight: 600; font-size: 0.95rem; }
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px 14px;
+            position: relative;
+            z-index: 1;
+        }
+        .meta-item {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            color: #0f172a;
+            font-weight: 600;
+        }
+        .meta-item span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #064e3b;
+            display: inline-block;
+        }
+        .partners-shell {
+            padding: 24px 0 80px 0;
+        }
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+        }
+        .toolbar-text {
+            color: var(--color-text-muted);
+            font-weight: 700;
+            letter-spacing: 0.01em;
+        }
+        .partner-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        .tab-pill {
+            padding: 10px 16px;
+            border-radius: 999px;
+            border: 1px solid rgba(0,0,0,0.07);
+            background: linear-gradient(180deg, #ffffff 0%, #f6f7f9 100%);
+            color: #10212c;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            box-shadow: 0 10px 22px rgba(0,0,0,0.04);
+        }
+        .tab-pill.active {
+            background: #e3f0ea;
+            color: #0b2f25;
+            border-color: rgba(6,78,59,0.22);
+            box-shadow: 0 14px 30px rgba(6,78,59,0.12);
+        }
+        .partner-shelf {
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.04);
+            border-radius: 20px;
+            padding: 18px;
+            box-shadow: 0 18px 46px rgba(0,0,0,0.06);
+        }
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        .partner-card {
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.04);
+            border-radius: 16px;
+            padding: 18px;
+            min-height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 10px 26px rgba(0,0,0,0.05);
+            font-weight: 700;
+            color: #0f172a;
+            transition: transform 0.16s ease, box-shadow 0.16s ease;
+        }
+        .partner-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 34px rgba(0,0,0,0.07);
+        }
+        .partner-card small {
+            display: block;
+            color: var(--color-text-muted);
+            font-weight: 500;
+            margin-top: 4px;
+        }
+        .logo-card {
+            background: #f8fbf9;
+        }
+        .logo-card img {
+            max-width: 140px;
+            max-height: 64px;
+            object-fit: contain;
+            filter: saturate(1.02);
+        }
+        .tab-panel { display: none; }
+        .tab-panel.active { display: grid; }
+        .rail {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.04);
+            background: linear-gradient(120deg, #f5f7f8, #eef3ef);
+            box-shadow: 0 14px 38px rgba(0,0,0,0.06);
+            margin-bottom: 18px;
+        }
+        .rail::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, #f5f7f8 0%, transparent 18%, transparent 82%, #f5f7f8 100%);
+            pointer-events: none;
+        }
+        .rail-track {
+            display: flex;
+            gap: 28px;
+            padding: 14px 20px;
+            animation: rail-scroll 40s linear infinite;
+        }
+        .rail-item {
+            min-width: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 14px;
+        }
+        .rail-item img { max-height: 50px; max-width: 140px; object-fit: contain; filter: saturate(1.02); }
+        @keyframes rail-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .tag-note {
+            color: var(--color-text-muted);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        @media (max-width: 992px) {
+            .partner-hero-grid { grid-template-columns: 1fr; }
+            .hero-summary-card { order: -1; }
+            .meta-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .partner-tabs { gap: 6px; }
+            .tab-pill { padding: 8px 12px; font-size: 0.9rem; }
+            .partner-card { min-height: 120px; }
+            .toolbar { gap: 10px; }
+            .rail-track { animation-duration: 26s; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <a href="https://kiit.ac.in"><i class="fa-solid fa-arrow-left"></i> Go to KIIT Home Page</a>
+            <div class="top-bar-socials">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header">
+        <div class="container">
+            <div class="header-logo-group">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/ef/KIIT_logo.svg/1200px-KIIT_logo.svg.png" alt="KIIT Logo" class="kiit-gear-logo">
+                <div class="header-text-group">
+                    <div class="header-uni-name">Kalinga Institute of Industrial Technology</div>
+                    <div class="header-uni-sub">Deemed to be University U/S 3 of the UGC Act, 1956</div>
+                    <div class="header-school-name">School of Leadership</div>
+                </div>
+            </div>
+            
+            <div class="founder-profile">
+                <img src="https://achyutasamanta.com/wp-content/uploads/2023/01/achyuta-samanta-profile.jpg" alt="Prof. Achyuta Samanta" class="founder-img" onerror="this.src='https://ui-avatars.com/api/?name=Achyuta+Samanta'">
+                <div class="founder-info">
+                    <h4>Prof. Achyuta Samanta</h4>
+                    <p>Founder – KIIT & KISS</p>
+                    <a href="https://achyutasamanta.com" target="_blank">achyutasamanta.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="bottom-nav">
+        <div class="container">
+            <a href="index.html" class="nav-item">Home</a>
+            <div class="nav-item-dropdown">
+                <a href="about.html" class="nav-item">About Us <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                <div class="nav-dropdown">
+                    <a href="about.html" class="dropdown-item">About the School</a>
+                    <a href="about.html#leadership" class="dropdown-item">Message from Founder</a>
+                    <a href="about-vice-chancellor.html" class="dropdown-item">Vice - Chancellor's Message</a>
+                    <a href="about-pinaki-nandan.html" class="dropdown-item">Dean's Message</a>
+                </div>
+            </div>
+            <a href="ecosystem-partners.html" class="nav-item active">The Leadership Network</a>
+            <div class="nav-item-dropdown">
+                <span class="nav-item">People <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></span>
+                <div class="nav-dropdown">
+                    <a href="people-board-of-studies.html" class="dropdown-item">Board of Studies</a>
+                    <a href="people-regular-faculty.html" class="dropdown-item">Regular Faculty</a>
+                    <a href="people-visiting-faculty.html" class="dropdown-item">Visiting Faculty</a>
+                    <a href="people-professors-of-practice.html" class="dropdown-item">Professors of Practice</a>
+                </div>
+            </div>
+            <a href="pace.html" class="nav-item">PACE</a>
+            <a href="mba-iev.html" class="nav-item">MBA IEV</a>
+            <a href="#sri" class="nav-item">SRI</a>
+            <a href="case-research-centre.html" class="nav-item">Case Research Centre</a>
+            <a href="#" class="nav-item">KITES</a>
+            <a href="#" class="nav-item">Admissions <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+        </div>
+    </nav>
+
+    <section class="hero page-hero">
+        <div class="container partner-hero-grid">
+            <div>
+                <span class="hero-badge"><i class="fa-solid fa-network-wired"></i> Leadership Network</span>
+                <div class="breadcrumb">Home · Ecosystem Partners</div>
+                <h1>The Leadership Network</h1>
+                <p>Government, corporate, startup, stakeholder, and investor allies who co-create ventures, open markets, and accelerate innovation for KIIT School of Leadership.</p>
+                <div class="hero-chips">
+                    <span class="hero-chip"><i class="fa-solid fa-bolt"></i> Fast-lane pilots</span>
+                    <span class="hero-chip"><i class="fa-solid fa-handshake-angle"></i> Co-invest & mentor</span>
+                    <span class="hero-chip"><i class="fa-solid fa-flask"></i> Research to impact</span>
+                    <span class="hero-chip"><i class="fa-solid fa-earth-asia"></i> Global reach</span>
+                </div>
+            </div>
+            <div class="hero-summary-card">
+                <div class="stat-stack">
+                    <div class="stat-pill"><strong>40+</strong><span>Strategic partners</span></div>
+                    <div class="stat-pill"><strong>5</strong><span>Priority tracks</span></div>
+                    <div class="stat-pill"><strong>15</strong><span>Live pilots</span></div>
+                </div>
+                <div class="meta-grid">
+                    <div class="meta-item"><span></span><div>Energy, health, mobility, digital</div></div>
+                    <div class="meta-item"><span></span><div>Venture-building + research translation</div></div>
+                    <div class="meta-item"><span></span><div>Co-branded programs & fellowships</div></div>
+                    <div class="meta-item"><span></span><div>Market access and talent pathways</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners-shell">
+        <div class="container">
+            <div class="tag-note">Featured collaborators</div>
+            <div class="rail" aria-hidden="true">
+                <div class="rail-track">
+                    <div class="rail-item"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/HDFC_Bank_Logo.svg/1200px-HDFC_Bank_Logo.svg.png" alt="HDFC Bank"></div>
+                    <div class="rail-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1280px-Amazon_logo.svg.png" alt="Amazon"></div>
+                    <div class="rail-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Boeing_full_logo.svg/1280px-Boeing_full_logo.svg.png" alt="Boeing"></div>
+                    <div class="rail-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Cytiva_logo.svg/1280px-Cytiva_logo.svg.png" alt="Cytiva"></div>
+                    <div class="rail-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Bayer_logo.svg/1200px-Bayer_logo.svg.png" alt="Bayer"></div>
+                    <div class="rail-item"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/National_Aluminium_Company_Logo.svg/1200px-National_Aluminium_Company_Logo.svg.png" alt="NALCO"></div>
+                    <div class="rail-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Bharat_Petroleum_logo.svg/1920px-Bharat_Petroleum_logo.svg.png" alt="Bharat Petroleum"></div>
+                    <div class="rail-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Kotak_Mahindra_Bank_logo.svg/1280px-Kotak_Mahindra_Bank_logo.svg.png" alt="Kotak Mahindra Bank"></div>
+                    <div class="rail-item"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/33/JSW_Group_logo.svg/1280px-JSW_Group_logo.svg.png" alt="JSW"></div>
+                    <div class="rail-item"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Vedanta_Limited_logo.svg/1280px-Vedanta_Limited_logo.svg.png" alt="Vedanta"></div>
+                    <div class="rail-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Ashok_Leyland_logo.svg/1280px-Ashok_Leyland_logo.svg.png" alt="Ashok Leyland"></div>
+                    <div class="rail-item"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0d/IndianOil_Logo.svg/1920px-IndianOil_Logo.svg.png" alt="IndianOil"></div>
+                    <div class="rail-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Startup_India_logo.svg/1200px-Startup_India_logo.svg.png" alt="Startup India"></div>
+                    <div class="rail-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/MeitY_logo.svg/512px-MeitY_logo.svg.png" alt="MeitY"></div>
+                    <div class="rail-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/SIDBI_logo.svg/512px-SIDBI_logo.svg.png" alt="SIDBI"></div>
+                    <div class="rail-item"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1e/LVPEI_logo.svg/1200px-LVPEI_logo.svg.png" alt="LVPEI"></div>
+                </div>
+            </div>
+
+            <div class="toolbar">
+                <div class="toolbar-text">Browse by focus area</div>
+                <div class="hero-chips" style="margin-top:0;">
+                    <span class="hero-chip"><i class="fa-solid fa-industry"></i> DeepTech</span>
+                    <span class="hero-chip"><i class="fa-solid fa-heart-pulse"></i> Health</span>
+                    <span class="hero-chip"><i class="fa-solid fa-leaf"></i> Sustainability</span>
+                    <span class="hero-chip"><i class="fa-solid fa-building-columns"></i> Policy & PSU</span>
+                </div>
+            </div>
+            <div class="partner-tabs" id="partner-tabs">
+                <button class="tab-pill active" data-tab="tab-gov">Government</button>
+                <button class="tab-pill" data-tab="tab-corp">Corporates</button>
+                <button class="tab-pill" data-tab="tab-startups">Startups</button>
+                <button class="tab-pill" data-tab="tab-stake">Stakeholders</button>
+                <button class="tab-pill" data-tab="tab-invest">Investors</button>
+            </div>
+
+            <div class="partner-shelf">
+            <div id="tab-gov" class="tab-panel active partner-grid">
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0d/IndianOil_Logo.svg/1920px-IndianOil_Logo.svg.png" alt="IndianOil"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/50/Bharat_Petroleum_logo.svg/1920px-Bharat_Petroleum_logo.svg.png" alt="Bharat Petroleum"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Cytiva_logo.svg/1280px-Cytiva_logo.svg.png" alt="Cytiva"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Ashok_Leyland_logo.svg/1280px-Ashok_Leyland_logo.svg.png" alt="Ashok Leyland"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Invest_India_logo.svg/1200px-Invest_India_logo.svg.png" alt="Invest India"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Startup_India_logo.svg/1200px-Startup_India_logo.svg.png" alt="Startup India"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/India_Health_Fund_logo.svg/1280px-India_Health_Fund_logo.svg.png" alt="India Health Fund"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/National_Aluminium_Company_Logo.svg/1200px-National_Aluminium_Company_Logo.svg.png" alt="NALCO"></div>
+            </div>
+
+            <div id="tab-corp" class="tab-panel partner-grid">
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/HDFC_Bank_Logo.svg/1200px-HDFC_Bank_Logo.svg.png" alt="HDFC Bank"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1280px-Amazon_logo.svg.png" alt="Amazon"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Boeing_full_logo.svg/1280px-Boeing_full_logo.svg.png" alt="Boeing"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Bayer_logo.svg/1200px-Bayer_logo.svg.png" alt="Bayer"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Kotak_Mahindra_Bank_logo.svg/1280px-Kotak_Mahindra_Bank_logo.svg.png" alt="Kotak Mahindra Bank"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/33/JSW_Group_logo.svg/1280px-JSW_Group_logo.svg.png" alt="JSW"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Vedanta_Limited_logo.svg/1280px-Vedanta_Limited_logo.svg.png" alt="Vedanta"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Ministry_of_Food_Processing_Industries.svg/640px-Ministry_of_Food_Processing_Industries.svg.png" alt="MOFPI"></div>
+            </div>
+
+            <div id="tab-startups" class="tab-panel partner-grid">
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/BioNEST_logo.svg/512px-BioNEST_logo.svg.png" alt="BioNEST"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Invest_India_Startup_Logo.svg/512px-Invest_India_Startup_Logo.svg.png" alt="Invest India Startup"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Dozee_logo.svg/512px-Dozee_logo.svg.png" alt="Dozee"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Agnikul_Cosmos_logo.svg/512px-Agnikul_Cosmos_logo.svg.png" alt="Agnikul Labs"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Sea6_Energy_logo.png/512px-Sea6_Energy_logo.png" alt="Sea6 Energy"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0e/MedTel_logo.png/512px-MedTel_logo.png" alt="MedTel"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Lokus_Design_logo.svg/512px-Lokus_Design_logo.svg.png" alt="Lokus Design"></div>
+                <div class="partner-card">Startup partners</div>
+            </div>
+
+            <div id="tab-stake" class="tab-panel partner-grid">
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Startup_Odisha_logo.svg/512px-Startup_Odisha_logo.svg.png" alt="Startup Odisha"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/World_Skills_International_logo.svg/640px-World_Skills_International_logo.svg.png" alt="World Skill"></div>
+                <div class="partner-card">Ecosystem Advisory Council</div>
+                <div class="partner-card">Industry Bodies & Chambers</div>
+                <div class="partner-card">Research Collaborators</div>
+                <div class="partner-card">KIIT-TBI</div>
+            </div>
+
+            <div id="tab-invest" class="tab-panel partner-grid">
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/MeitY_logo.svg/512px-MeitY_logo.svg.png" alt="MeitY Startup Hub"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Startup_India_logo.svg/1200px-Startup_India_logo.svg.png" alt="Startup India"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/SIDBI_logo.svg/512px-SIDBI_logo.svg.png" alt="SIDBI"></div>
+                <div class="partner-card logo-card"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1e/LVPEI_logo.svg/1200px-LVPEI_logo.svg.png" alt="LV Prasad Eye Institute"></div>
+                <div class="partner-card">Angel Networks</div>
+                <div class="partner-card">Venture Partners</div>
+                <div class="partner-card">Impact Funds</div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div>© 2025 KIIT School of Leadership</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const tabs = document.querySelectorAll('.tab-pill');
+            const panels = document.querySelectorAll('.tab-panel');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const target = tab.getAttribute('data-tab');
+                    tabs.forEach(t => t.classList.remove('active'));
+                    panels.forEach(p => p.classList.remove('active'));
+                    tab.classList.add('active');
+                    const panel = document.getElementById(target);
+                    if (panel) panel.classList.add('active');
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

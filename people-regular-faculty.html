@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Faculty | KIIT School of Leadership</title>
+    <meta name="description" content="Regular faculty of KIIT School of Leadership.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/design-system.css">
+    <style>
+        body { background: radial-gradient(circle at 20% 20%, rgba(6,78,59,0.06), transparent 32%), radial-gradient(circle at 80% 0%, rgba(14,165,233,0.08), transparent 30%), #f7f8fa; }
+        .page-hero { position: relative; padding: 76px 0 52px 0; background: linear-gradient(135deg, #0f3d32, #0a5b4a); color: #e8f4ef; overflow: hidden; border: none; box-shadow: 0 28px 80px rgba(0,0,0,0.16); }
+        .page-hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(255,255,255,0.14), transparent 35%), radial-gradient(circle at 85% 10%, rgba(255,255,255,0.12), transparent 30%); pointer-events: none; }
+        .hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr); gap: 28px; align-items: center; z-index: 1; }
+        .hero-copy h1 { margin: 10px 0 12px 0; color: #ffffff; }
+        .hero-copy p { color: rgba(232,244,239,0.92); max-width: 760px; }
+        .breadcrumb { color: rgba(232,244,239,0.8); font-weight: 600; letter-spacing: 0.02em; }
+        .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18); color: #e8f4ef; font-weight: 700; }
+        .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+        .hero-pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; background: rgba(255,255,255,0.12); color: #e8f4ef; font-weight: 700; border: 1px solid rgba(255,255,255,0.18); }
+        .hero-aside { display: grid; gap: 12px; }
+        .stat-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); border-radius: 16px; padding: 16px 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.16); display: grid; gap: 6px; }
+        .stat-value { font-size: 2rem; font-weight: 800; color: #ffffff; }
+        .stat-label { color: rgba(232,244,239,0.9); font-weight: 700; }
+        .people-shell { padding: 48px 0 96px 0; }
+        .people-section { background: linear-gradient(180deg, rgba(255,255,255,0.88), #ffffff); border: 1px solid rgba(6,78,59,0.08); border-radius: 18px; padding: 22px 22px 26px 22px; box-shadow: 0 28px 72px rgba(0,0,0,0.06); margin-bottom: 22px; }
+        .section-heading { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 12px; }
+        .section-title { margin: 0; color: #0f172a; font-weight: 800; }
+        .section-copy { margin: 6px 0 0 0; max-width: 560px; color: #475569; }
+        .people-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+        .person-card { background: linear-gradient(160deg, rgba(6,78,59,0.06), rgba(255,255,255,0.98)); border: 1px solid rgba(6,78,59,0.08); border-radius: 16px; padding: 18px; box-shadow: 0 18px 48px rgba(0,0,0,0.08); display: grid; gap: 10px; transition: transform 0.18s ease, box-shadow 0.18s ease; }
+        .person-card:hover { transform: translateY(-6px); box-shadow: 0 24px 64px rgba(0,0,0,0.12); }
+        .person-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05); background: #f1f3f5; }
+        .person-name { font-weight: 800; color: #0f172a; }
+        .person-role { color: #0b2f25; font-weight: 700; }
+        .tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; background: #eef3ef; border-radius: 999px; font-size: 0.9rem; font-weight: 600; color: #0b2f25; border: 1px solid rgba(6,78,59,0.12); }
+        .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
+        @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 640px) { .person-card img { height: 180px; } }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <a href="https://kiit.ac.in"><i class="fa-solid fa-arrow-left"></i> Go to KIIT Home Page</a>
+            <div class="top-bar-socials">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-header">
+        <div class="container">
+            <div class="header-logo-group">
+                <a href="index.html"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/ef/KIIT_logo.svg/1200px-KIIT_logo.svg.png" alt="KIIT Logo" class="kiit-gear-logo"></a>
+                <div class="header-text-group">
+                    <div class="header-uni-name">Kalinga Institute of Industrial Technology</div>
+                    <div class="header-uni-sub">Deemed to be University U/S 3 of the UGC Act, 1956</div>
+                    <div class="header-school-name">School of Leadership</div>
+                </div>
+            </div>
+            <div class="founder-profile">
+                <img src="https://achyutasamanta.com/wp-content/uploads/2023/01/achyuta-samanta-profile.jpg" alt="Prof. Achyuta Samanta" class="founder-img" onerror="this.src='https://ui-avatars.com/api/?name=Achyuta+Samanta'">
+                <div class="founder-info">
+                    <h4>Prof. Achyuta Samanta</h4>
+                    <p>Founder – KIIT & KISS</p>
+                    <a href="https://achyutasamanta.com" target="_blank">achyutasamanta.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <div class="container">
+            <a href="index.html" class="nav-item">Home</a>
+            <div class="nav-item-dropdown">
+                <span class="nav-item">About Us <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></span>
+                <div class="nav-dropdown">
+                    <a href="about.html" class="dropdown-item">About the School</a>
+                    <a href="about.html#leadership" class="dropdown-item">Message from Founder</a>
+                    <a href="about-vice-chancellor.html" class="dropdown-item">Vice - Chancellor's Message</a>
+                    <a href="about.html#leadership" class="dropdown-item">Message from CEO (KIIT - TBI)</a>
+                    <a href="about-pinaki-nandan.html" class="dropdown-item">Dean's Message</a>
+                </div>
+            </div>
+            <a href="ecosystem-partners.html" class="nav-item">The Leadership Network</a>
+            <div class="nav-item-dropdown">
+                <span class="nav-item active">People <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></span>
+                <div class="nav-dropdown">
+                    <a href="people-board-of-studies.html" class="dropdown-item">Board of Studies</a>
+                    <a href="people-regular-faculty.html" class="dropdown-item active">Regular Faculty</a>
+                    <a href="people-visiting-faculty.html" class="dropdown-item">Visiting Faculty</a>
+                    <a href="people-professors-of-practice.html" class="dropdown-item">Professors of Practice</a>
+                </div>
+            </div>
+            <a href="pace.html" class="nav-item">PACE</a>
+            <a href="mba-iev.html" class="nav-item">MBA IEV</a>
+            <a href="index.html#sri" class="nav-item">SRI</a>
+            <a href="case-research-centre.html" class="nav-item">Case Research Centre</a>
+            <a href="#" class="nav-item">KITES</a>
+            <a href="#" class="nav-item">Admissions <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container hero-grid">
+            <div class="hero-copy">
+                <div class="eyebrow"><i class="fa-solid fa-chalkboard-user"></i> People</div>
+                <div class="breadcrumb">Home · People · Regular Faculty</div>
+                <h1>Regular Faculty</h1>
+                <p>Full-time faculty anchoring teaching, research, and mentorship across leadership, management, innovation, and policy.</p>
+                <div class="hero-badges">
+                    <span class="hero-pill"><i class="fa-solid fa-graduation-cap"></i> Teaching excellence</span>
+                    <span class="hero-pill"><i class="fa-solid fa-users"></i> Studio mentorship</span>
+                    <span class="hero-pill"><i class="fa-solid fa-flask"></i> Research-driven</span>
+                </div>
+            </div>
+            <div class="hero-aside">
+                <div class="stat-card">
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Full-time faculty</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">1:1</div>
+                    <div class="stat-label">Mentor attention</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">Labs</div>
+                    <div class="stat-label">Innovation & leadership labs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="people-shell">
+        <div class="container">
+            <div class="people-section">
+                <div class="section-heading">
+                    <h3 class="section-title">Faculty Roster</h3>
+                    <p class="section-copy">Educators who integrate leadership theory with practice, design experiential learning, and support student ventures.</p>
+                </div>
+                <div class="people-grid">
+                <div class="person-card">
+                    <img src="https://ui-avatars.com/api/?name=Kumar+Mohanty&background=0D9B6E&color=fff" alt="Prof. Kumar Mohanty">
+                    <div class="person-name">Prof. Kumar Mohanty</div>
+                    <div class="person-role">Faculty</div>
+                </div>
+                <div class="person-card">
+                    <img src="https://ui-avatars.com/api/?name=Pinaki+Nandan+Pattnaik&background=0D9B6E&color=fff" alt="Dr. Pinaki Nandan Pattnaik">
+                    <div class="person-name">Dr. Pinaki Nandan Pattnaik</div>
+                    <div class="person-role">Faculty</div>
+                </div>
+                <div class="person-card">
+                    <img src="https://ui-avatars.com/api/?name=Saswat+Kishore+Mishra&background=0D9B6E&color=fff" alt="Dr. Saswat Kishore Mishra">
+                    <div class="person-name">Dr. Saswat Kishore Mishra</div>
+                    <div class="person-role">Faculty</div>
+                </div>
+                <div class="person-card">
+                    <img src="https://ui-avatars.com/api/?name=Suvasis+Ghosh&background=0D9B6E&color=fff" alt="Prof. Suvasis Ghosh">
+                    <div class="person-name">Prof. Suvasis Ghosh</div>
+                    <div class="person-role">Faculty</div>
+                </div>
+                <div class="person-card">
+                    <img src="https://ui-avatars.com/api/?name=Bignya+Patnaik&background=0D9B6E&color=fff" alt="Dr. Bignya Patnaik">
+                    <div class="person-name">Dr. Bignya Patnaik</div>
+                    <div class="person-role">Faculty</div>
+                </div>
+                <div class="person-card">
+                    <img src="https://ui-avatars.com/api/?name=Sanjaya+Kumar+Lenka&background=0D9B6E&color=fff" alt="Dr. Sanjaya Kumar Lenka">
+                    <div class="person-name">Dr. Sanjaya Kumar Lenka</div>
+                    <div class="person-role">Faculty</div>
+                </div>
+                <div class="person-card">
+                    <img src="https://ui-avatars.com/api/?name=Ananya+Das&background=0D9B6E&color=fff" alt="Dr. Ananya Das">
+                    <div class="person-name">Dr. Ananya Das</div>
+                    <div class="person-role">Faculty</div>
+                </div>
+                <div class="person-card">
+                    <img src="https://ui-avatars.com/api/?name=Queen+Sarkar&background=0D9B6E&color=fff" alt="Dr. Queen Sarkar">
+                    <div class="person-name">Dr. Queen Sarkar</div>
+                    <div class="person-role">Faculty</div>
+                </div>
+                <div class="person-card">
+                    <img src="https://ui-avatars.com/api/?name=Sweta+Leena+Hota&background=0D9B6E&color=fff" alt="Dr. Sweta Leena Hota">
+                    <div class="person-name">Dr. Sweta Leena Hota</div>
+                    <div class="person-role">Faculty</div>
+                </div>
+                <div class="person-card">
+                    <img src="https://ui-avatars.com/api/?name=Sikta+Singh&background=0D9B6E&color=fff" alt="Sikta Singh">
+                    <div class="person-name">Sikta Singh</div>
+                    <div class="person-role">Faculty</div>
+                </div>
+                <div class="person-card">
+                    <img src="https://ui-avatars.com/api/?name=Sameer+Shekhar&background=0D9B6E&color=fff" alt="Sameer Shekhar">
+                    <div class="person-name">Sameer Shekhar</div>
+                    <div class="person-role">Faculty</div>
+                </div>
+                <div class="person-card">
+                    <img src="https://ui-avatars.com/api/?name=Namrata+Misra&background=0D9B6E&color=fff" alt="Namrata Misra">
+                    <div class="person-name">Namrata Misra</div>
+                    <div class="person-role">Faculty</div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div>© 2025 KIIT School of Leadership</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

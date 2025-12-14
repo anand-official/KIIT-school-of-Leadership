@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visiting Faculty | KIIT School of Leadership</title>
+    <meta name="description" content="Visiting faculty at KIIT School of Leadership.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/design-system.css">
+    <style>
+        body { background: #f7f8fa; }
+        .page-hero { padding: 68px 0 44px 0; background: linear-gradient(135deg, rgba(6,78,59,0.12), rgba(14,165,233,0.08)), #ffffff; border-bottom: 1px solid #e6e9ed; }
+        .page-hero h1 { margin: 8px 0 10px 0; }
+        .breadcrumb { color: var(--color-text-muted); font-weight: 600; letter-spacing: 0.01em; }
+        .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: rgba(6,78,59,0.08); border: 1px solid rgba(6,78,59,0.16); color: #0b2f25; font-weight: 700; }
+        .people-shell { padding: 40px 0 80px 0; }
+        .people-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+        .person-card { background: #ffffff; border: 1px solid rgba(0,0,0,0.04); border-radius: 14px; padding: 18px; box-shadow: 0 12px 32px rgba(0,0,0,0.06); display: grid; gap: 10px; }
+        .person-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; border: 1px solid rgba(0,0,0,0.05); }
+        .person-name { font-weight: 800; color: #0f172a; }
+        .person-role { color: var(--color-text-muted); font-weight: 600; }
+        .tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; background: #eef3ef; border-radius: 999px; font-size: 0.9rem; font-weight: 600; color: #0b2f25; border: 1px solid rgba(6,78,59,0.12); }
+        .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
+        @media (max-width: 640px) { .person-card img { height: 180px; } }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <a href="https://kiit.ac.in"><i class="fa-solid fa-arrow-left"></i> Go to KIIT Home Page</a>
+            <div class="top-bar-socials">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-header">
+        <div class="container">
+            <div class="header-logo-group">
+                <a href="index.html"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/ef/KIIT_logo.svg/1200px-KIIT_logo.svg.png" alt="KIIT Logo" class="kiit-gear-logo"></a>
+                <div class="header-text-group">
+                    <div class="header-uni-name">Kalinga Institute of Industrial Technology</div>
+                    <div class="header-uni-sub">Deemed to be University U/S 3 of the UGC Act, 1956</div>
+                    <div class="header-school-name">School of Leadership</div>
+                </div>
+            </div>
+            <div class="founder-profile">
+                <img src="https://achyutasamanta.com/wp-content/uploads/2023/01/achyuta-samanta-profile.jpg" alt="Prof. Achyuta Samanta" class="founder-img" onerror="this.src='https://ui-avatars.com/api/?name=Achyuta+Samanta'">
+                <div class="founder-info">
+                    <h4>Prof. Achyuta Samanta</h4>
+                    <p>Founder – KIIT & KISS</p>
+                    <a href="https://achyutasamanta.com" target="_blank">achyutasamanta.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <div class="container">
+            <a href="index.html" class="nav-item">Home</a>
+            <div class="nav-item-dropdown">
+                <span class="nav-item">About Us <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></span>
+                <div class="nav-dropdown">
+                    <a href="about.html" class="dropdown-item">About the School</a>
+                    <a href="about.html#leadership" class="dropdown-item">Message from Founder</a>
+                    <a href="about-vice-chancellor.html" class="dropdown-item">Vice - Chancellor's Message</a>
+                    <a href="about.html#leadership" class="dropdown-item">Message from CEO (KIIT - TBI)</a>
+                    <a href="about-pinaki-nandan.html" class="dropdown-item">Dean's Message</a>
+                </div>
+            </div>
+            <a href="ecosystem-partners.html" class="nav-item">The Leadership Network</a>
+            <div class="nav-item-dropdown">
+                <span class="nav-item active">People <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></span>
+                <div class="nav-dropdown">
+                    <a href="people-board-of-studies.html" class="dropdown-item">Board of Studies</a>
+                    <a href="people-regular-faculty.html" class="dropdown-item">Regular Faculty</a>
+                    <a href="people-visiting-faculty.html" class="dropdown-item active">Visiting Faculty</a>
+                    <a href="people-professors-of-practice.html" class="dropdown-item">Professors of Practice</a>
+                </div>
+            </div>
+            <a href="pace.html" class="nav-item">PACE</a>
+            <a href="mba-iev.html" class="nav-item">MBA IEV</a>
+            <a href="index.html#sri" class="nav-item">SRI</a>
+            <a href="case-research-centre.html" class="nav-item">Case Research Centre</a>
+            <a href="#" class="nav-item">KITES</a>
+            <a href="#" class="nav-item">Admissions <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="eyebrow"><i class="fa-solid fa-briefcase"></i> People</div>
+            <div class="breadcrumb">Home · People · Visiting Faculty</div>
+            <h1>Visiting Faculty</h1>
+            <p style="max-width: 760px; color: var(--color-text-muted);">Leaders from industry, policy, and academia who co-teach studios, mentor projects, and bring frontline experience to the classroom.</p>
+        </div>
+    </section>
+
+    <section class="people-shell">
+        <div class="container">
+            <div class="people-grid">
+                <div class="person-card">
+                    <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=800&q=80" alt="Anand Rao">
+                    <div class="person-name">Anand Rao</div>
+                    <div class="person-role">Partner, Strategy</div>
+                    <div class="pill-row"><span class="tag">Strategy</span><span class="tag">Transformation</span></div>
+                </div>
+                <div class="person-card">
+                    <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=800&q=80" alt="Anita Verma">
+                    <div class="person-name">Anita Verma</div>
+                    <div class="person-role">Chief Marketing Officer</div>
+                    <div class="pill-row"><span class="tag">Brand</span><span class="tag">Growth</span></div>
+                </div>
+                <div class="person-card">
+                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80" alt="Rahul Iyer">
+                    <div class="person-name">Rahul Iyer</div>
+                    <div class="person-role">Founder & CEO</div>
+                    <div class="pill-row"><span class="tag">Startups</span><span class="tag">Product</span></div>
+                </div>
+                <div class="person-card">
+                    <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80" alt="Maria Das">
+                    <div class="person-name">Maria Das</div>
+                    <div class="person-role">Policy Advisor</div>
+                    <div class="pill-row"><span class="tag">Policy</span><span class="tag">Impact</span></div>
+                </div>
+                <div class="person-card">
+                    <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80" alt="Sanjay Kulkarni">
+                    <div class="person-name">Sanjay Kulkarni</div>
+                    <div class="person-role">Venture Partner</div>
+                    <div class="pill-row"><span class="tag">Investing</span><span class="tag">Scaling</span></div>
+                </div>
+                <div class="person-card">
+                    <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=800&q=80" alt="Chitra Rao">
+                    <div class="person-name">Chitra Rao</div>
+                    <div class="person-role">Head, CX</div>
+                    <div class="pill-row"><span class="tag">Customer</span><span class="tag">Service Design</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div>© 2025 KIIT School of Leadership</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PACE | KIIT School of Leadership</title>
+    <meta name="description" content="Professional and Continuing Education (PACE) leadership certifications at KIIT School of Leadership.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/design-system.css">
+    <style>
+        body { background: radial-gradient(circle at 15% 20%, rgba(6,78,59,0.08), transparent 32%), radial-gradient(circle at 85% 0%, rgba(14,165,233,0.08), transparent 30%), #f6f8fb; }
+        .page-hero { position: relative; padding: 82px 0 56px 0; background: linear-gradient(135deg, #0f3d32, #0a5b4a); color: #e8f4ef; overflow: hidden; box-shadow: 0 28px 80px rgba(0,0,0,0.16); }
+        .page-hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 24% 18%, rgba(255,255,255,0.14), transparent 35%), radial-gradient(circle at 78% 12%, rgba(255,255,255,0.12), transparent 32%); pointer-events: none; }
+        .hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr); gap: 32px; align-items: center; z-index: 1; }
+        .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.24); color: #e8f4ef; font-weight: 800; letter-spacing: 0.01em; }
+        .breadcrumb { color: rgba(232,244,239,0.85); font-weight: 600; letter-spacing: 0.02em; }
+        .hero-copy h1 { margin: 12px 0 14px 0; color: #ffffff; }
+        .hero-copy p { color: rgba(232,244,239,0.92); max-width: 760px; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #e5fbf1, #c8f5e1); color: #0f3d32; font-weight: 800; border-radius: 12px; padding: 12px 16px; border: 1px solid rgba(255,255,255,0.35); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 14px 30px rgba(0,0,0,0.18); }
+        .btn-ghost { display: inline-flex; align-items: center; gap: 10px; color: #e8f4ef; padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.28); font-weight: 800; backdrop-filter: blur(6px); }
+        .stat-stack { display: grid; gap: 12px; }
+        .stat-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 16px; padding: 16px 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.16); display: grid; gap: 6px; }
+        .stat-value { font-size: 2rem; font-weight: 800; color: #ffffff; }
+        .stat-label { color: rgba(232,244,239,0.9); font-weight: 700; }
+
+        .meta-rail { margin-top: 14px; display: inline-flex; flex-wrap: wrap; gap: 8px; }
+        .rail-pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,0.14); color: #e8f4ef; border: 1px solid rgba(255,255,255,0.2); font-weight: 700; }
+
+        .section-shell { padding: 56px 0; }
+        .section-header { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 18px; }
+        .section-title { margin: 0; color: #0f172a; font-weight: 800; }
+        .section-copy { margin: 6px 0 0 0; max-width: 720px; color: #475569; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+        .card { position: relative; background: linear-gradient(160deg, rgba(6,78,59,0.08), rgba(255,255,255,0.98)); border: 1px solid rgba(6,78,59,0.08); border-radius: 16px; padding: 18px; box-shadow: 0 18px 48px rgba(0,0,0,0.08); display: grid; gap: 10px; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; overflow: hidden; }
+        .card::after { content: ""; position: absolute; inset: -60% -30%; background: radial-gradient(circle, rgba(255,255,255,0.22), transparent 45%); transform: rotate(8deg); opacity: 0; transition: opacity 0.3s ease; }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 24px 64px rgba(0,0,0,0.12); border-color: rgba(6,78,59,0.16); }
+        .card:hover::after { opacity: 1; }
+        .card h4 { margin: 0; color: #0f172a; font-weight: 800; }
+        .card p { margin: 0; color: #475569; }
+        .card-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+        .icon-chip { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: rgba(6,78,59,0.12); color: #0f3d32; font-size: 1.1rem; border: 1px solid rgba(6,78,59,0.14); }
+        .pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: #eef3ef; color: #0b2f25; font-weight: 700; border: 1px solid rgba(6,78,59,0.12); }
+        .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
+        .list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+        .list li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; align-items: start; color: #475569; }
+        .list i { color: #0f3d32; }
+        .duo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+        .accent-block { background: linear-gradient(135deg, rgba(6,78,59,0.08), rgba(14,165,233,0.08)); border: 1px solid rgba(6,78,59,0.1); border-radius: 16px; padding: 18px; box-shadow: 0 18px 48px rgba(0,0,0,0.08); }
+        .cta-banner { margin: 0; background: linear-gradient(135deg, #0a5b4a, #0f3d32); color: #e8f4ef; border-radius: 18px; padding: 24px; display: grid; gap: 10px; box-shadow: 0 26px 70px rgba(0,0,0,0.14); }
+        .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+        @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <a href="https://kiit.ac.in"><i class="fa-solid fa-arrow-left"></i> Go to KIIT Home Page</a>
+            <div class="top-bar-socials">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-header">
+        <div class="container">
+            <div class="header-logo-group">
+                <a href="index.html"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/ef/KIIT_logo.svg/1200px-KIIT_logo.svg.png" alt="KIIT Logo" class="kiit-gear-logo"></a>
+                <div class="header-text-group">
+                    <div class="header-uni-name">Kalinga Institute of Industrial Technology</div>
+                    <div class="header-uni-sub">Deemed to be University U/S 3 of the UGC Act, 1956</div>
+                    <div class="header-school-name">School of Leadership</div>
+                </div>
+            </div>
+            <div class="founder-profile">
+                <img src="https://achyutasamanta.com/wp-content/uploads/2023/01/achyuta-samanta-profile.jpg" alt="Prof. Achyuta Samanta" class="founder-img" onerror="this.src='https://ui-avatars.com/api/?name=Achyuta+Samanta'">
+                <div class="founder-info">
+                    <h4>Prof. Achyuta Samanta</h4>
+                    <p>Founder – KIIT & KISS</p>
+                    <a href="https://achyutasamanta.com" target="_blank">achyutasamanta.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <div class="container">
+            <a href="index.html" class="nav-item">Home</a>
+            <div class="nav-item-dropdown">
+                <span class="nav-item">About Us <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></span>
+                <div class="nav-dropdown">
+                    <a href="about.html" class="dropdown-item">About the School</a>
+                    <a href="about.html#leadership" class="dropdown-item">Message from Founder</a>
+                    <a href="about-vice-chancellor.html" class="dropdown-item">Vice - Chancellor's Message</a>
+                    <a href="about.html#leadership" class="dropdown-item">Message from CEO (KIIT - TBI)</a>
+                    <a href="about-pinaki-nandan.html" class="dropdown-item">Dean's Message</a>
+                </div>
+            </div>
+            <a href="ecosystem-partners.html" class="nav-item">The Leadership Network</a>
+            <div class="nav-item-dropdown">
+                <span class="nav-item">People <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></span>
+                <div class="nav-dropdown">
+                    <a href="people-board-of-studies.html" class="dropdown-item">Board of Studies</a>
+                    <a href="people-regular-faculty.html" class="dropdown-item">Regular Faculty</a>
+                    <a href="people-visiting-faculty.html" class="dropdown-item">Visiting Faculty</a>
+                    <a href="people-professors-of-practice.html" class="dropdown-item">Professors of Practice</a>
+                </div>
+            </div>
+            <a href="pace.html" class="nav-item active">PACE</a>
+            <a href="mba-iev.html" class="nav-item">MBA IEV</a>
+            <a href="index.html#sri" class="nav-item">SRI</a>
+            <a href="case-research-centre.html" class="nav-item">Case Research Centre</a>
+            <a href="#" class="nav-item">KITES</a>
+            <a href="#" class="nav-item">Admissions <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container hero-grid">
+            <div class="hero-copy">
+                <div class="eyebrow"><i class="fa-solid fa-certificate"></i> PACE Certifications</div>
+                <div class="breadcrumb">Home · PACE</div>
+                <h1>Professional & Continuing Education</h1>
+                <p>Leadership certifications that blend academic rigor, practitioner insight, and immersive experiences so you can lead with clarity, creativity, and conviction.</p>
+                <div class="meta-rail">
+                    <span class="rail-pill"><i class="fa-solid fa-bolt"></i> Intensive 3/5/7-day sprints</span>
+                    <span class="rail-pill"><i class="fa-solid fa-people-arrows"></i> Cohort & coaching</span>
+                    <span class="rail-pill"><i class="fa-solid fa-flask"></i> Experiential labs</span>
+                </div>
+                <div class="hero-actions">
+                    <a class="btn-primary" href="#certifications">Explore Certifications <i class="fa-solid fa-arrow-right"></i></a>
+                    <a class="btn-ghost" href="#outcomes">See Outcomes <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="stat-stack">
+                <div class="stat-card">
+                    <div class="stat-value">7</div>
+                    <div class="stat-label">Leadership pathways</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3/5/7</div>
+                    <div class="stat-label">Day immersive programs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">1:1</div>
+                    <div class="stat-label">Mentoring & coaching</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-shell" id="certifications">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Certification Programs</h2>
+                    <p class="section-copy">Programs crafted for emerging talent, experienced professionals, and career shifters—each grounded in applied leadership, ethics, and creativity.</p>
+                </div>
+                <div class="pill-row">
+                    <span class="pill"><i class="fa-solid fa-clock"></i> Short, intensive</span>
+                    <span class="pill"><i class="fa-solid fa-flask"></i> Experiential</span>
+                    <span class="pill"><i class="fa-solid fa-handshake-angle"></i> Practitioner-led</span>
+                </div>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-compass"></i></span><span class="pill"><i class="fa-solid fa-clock"></i> 3-7 days</span></div>
+                    <h4>Thinking Like a Leader</h4>
+                    <p>Sharpen strategic thinking, anticipate challenges, and make informed decisions with confidence.</p>
+                </div>
+                <div class="card">
+                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-seedling"></i></span><span class="pill"><i class="fa-solid fa-location-dot"></i> Community-first</span></div>
+                    <h4>Grassroot Leadership</h4>
+                    <p>Lead from the ground up with authenticity and resilience to drive change in communities.</p>
+                </div>
+                <div class="card">
+                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-lightbulb"></i></span><span class="pill"><i class="fa-solid fa-flask"></i> Creative labs</span></div>
+                    <h4>Creative Leadership</h4>
+                    <p>Unlock creativity with adaptive thinking and innovative problem-solving to inspire teams.</p>
+                </div>
+                <div class="card">
+                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-scale-balanced"></i></span><span class="pill"><i class="fa-solid fa-shield-halved"></i> Ethics core</span></div>
+                    <h4>Ethical Leadership</h4>
+                    <p>Lead with integrity, navigate moral dilemmas, and inspire trust through transparent practice.</p>
+                </div>
+                <div class="card">
+                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-star"></i></span><span class="pill"><i class="fa-solid fa-user-graduate"></i> Under 30</span></div>
+                    <h4>Young Leaders Program</h4>
+                    <p>Build core leadership skills early—communication, team management, and visionary thinking.</p>
+                </div>
+                <div class="card">
+                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-landmark"></i></span><span class="pill"><i class="fa-solid fa-handshake-angle"></i> Policy & civic</span></div>
+                    <h4>Public Leadership</h4>
+                    <p>Lead in public service with insight into policy, civic engagement, and social impact.</p>
+                </div>
+                <div class="card">
+                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-coins"></i></span><span class="pill"><i class="fa-solid fa-chart-line"></i> Governance</span></div>
+                    <h4>Financial Leadership</h4>
+                    <p>Guide organizations fiscally with planning, budgeting, analysis, risk management, and governance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-shell" id="offerings">
+        <div class="container duo-grid">
+            <div class="accent-block">
+                <h2 class="section-title" style="margin-bottom:8px;">We offer</h2>
+                <p class="section-copy">Exclusive short-term onsite and outbound training programs (3/5/7 days) designed to refine leadership, teamwork, and decision-making skills.</p>
+                <div class="pill-row" style="margin-top:10px;">
+                    <span class="pill"><i class="fa-solid fa-users"></i> Cohort-based</span>
+                    <span class="pill"><i class="fa-solid fa-route"></i> Onsite & outbound</span>
+                    <span class="pill"><i class="fa-solid fa-laptop-code"></i> Hybrid-ready</span>
+                </div>
+            </div>
+            <div class="accent-block">
+                <h2 class="section-title" style="margin-bottom:8px;">Program Outcomes</h2>
+                <ul class="list" id="outcomes">
+                    <li><i class="fa-solid fa-bolt"></i><span>Intensive & practical: focused modules that build core leadership skills fast.</span></li>
+                    <li><i class="fa-solid fa-briefcase"></i><span>Real-world learning: cases, simulations, and hands-on projects led by practitioners.</span></li>
+                    <li><i class="fa-solid fa-user-tie"></i><span>Personalized coaching: one-on-one mentoring to refine leadership styles.</span></li>
+                    <li><i class="fa-solid fa-people-group"></i><span>Collaborative network: peers, entrepreneurs, and professionals across sectors.</span></li>
+                    <li><i class="fa-solid fa-rocket"></i><span>Immediate impact: tools to lead teams, drive change, and decide confidently.</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-shell" id="pillars">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">What powers PACE</h2>
+                    <p class="section-copy">World-class faculty, innovative curriculum, personalized development, industry partnerships, and experiential learning.</p>
+                </div>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>Expert Faculty</h4>
+                    <p>Guided by leaders with deep industry and academic experience. (Faculty photos to follow)</p>
+                </div>
+                <div class="card">
+                    <h4>Innovative Curriculum</h4>
+                    <p>Studio-style sessions, simulations, and critiques to translate insight into action.</p>
+                </div>
+                <div class="card">
+                    <h4>Personalized Development</h4>
+                    <p>Individual pathways with feedback loops, reflection, and tailored assignments.</p>
+                </div>
+                <div class="card">
+                    <h4>Industry Partnerships</h4>
+                    <p>Live cases, guest critics, and co-created modules with partner organizations.</p>
+                </div>
+                <div class="card">
+                    <h4>Experiential Learning</h4>
+                    <p>Outbound immersions, role plays, and real-world projects for tangible outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-shell" id="why">
+        <div class="container">
+            <div class="cta-banner">
+                <h2 style="margin:0; color:#ffffff;">Why choose us?</h2>
+                <p style="margin:0; color: rgba(232,244,239,0.92);">We are a community dedicated to nurturing the leaders of tomorrow—blending rigor, practice, and purpose.</p>
+                <div class="cta-actions">
+                    <a class="btn-primary" href="#certifications">View Programs <i class="fa-solid fa-arrow-right"></i></a>
+                    <a class="btn-ghost" href="mailto:pace@kiit.ac.in">Talk to us <i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div>© 2025 KIIT School of Leadership</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
