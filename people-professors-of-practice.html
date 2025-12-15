@@ -39,8 +39,11 @@
         .person-name { font-weight: 800; color: #0f172a; }
         .person-role { color: #0b2f25; font-weight: 700; }
         .person-company { color: #0b2f25; font-weight: 700; }
-        .profile-link { font-weight: 700; color: #064e3b; display: inline-flex; align-items: center; gap: 6px; }
-        .profile-link i { font-size: 0.9rem; }
+        .profile-link { font-weight: 800; color: #0b3c64; display: inline-flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 999px; background: linear-gradient(135deg, #e8f4ff, #d7ecff); border: 1px solid rgba(12,59,99,0.2); box-shadow: 0 12px 30px rgba(0,0,0,0.12); text-decoration: none; position: relative; overflow: hidden; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+        .profile-link::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(255,255,255,0.35), rgba(255,255,255,0)); opacity: 0; transition: opacity 0.2s ease; }
+        .profile-link i { font-size: 0.9rem; background: #0b3c64; color: #e9f4ff; border-radius: 50%; width: 26px; height: 26px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 10px 22px rgba(0,0,0,0.14); }
+        .profile-link:hover { transform: translateY(-2px); box-shadow: 0 18px 38px rgba(0,0,0,0.16); }
+        .profile-link:hover::after { opacity: 1; }
         .tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; background: #eef3ef; border-radius: 999px; font-size: 0.9rem; font-weight: 600; color: #0b2f25; border: 1px solid rgba(6,78,59,0.12); }
         .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
         .detail-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.55); backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; padding: 18px; z-index: 999; }
@@ -53,7 +56,11 @@
         .detail-role { font-weight: 700; color: #0b2f25; margin: 6px 0; }
         .detail-company { color: #0f3d32; font-weight: 700; }
         .detail-body { margin-top: 14px; color: #475569; line-height: 1.5; }
-        .detail-link { margin-top: 12px; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: #0a5b4a; }
+        .detail-link { margin-top: 12px; display: inline-flex; align-items: center; gap: 10px; font-weight: 800; color: #0b3c64; padding: 11px 15px; border-radius: 999px; background: linear-gradient(135deg, #e8f4ff, #d7ecff); border: 1px solid rgba(12,59,99,0.22); box-shadow: 0 16px 34px rgba(0,0,0,0.14); text-decoration: none; position: relative; overflow: hidden; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+        .detail-link::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(255,255,255,0.38), rgba(255,255,255,0)); opacity: 0; transition: opacity 0.2s ease; }
+        .detail-link i { background: #0b3c64; color: #e9f4ff; border-radius: 50%; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 12px 24px rgba(0,0,0,0.16); }
+        .detail-link:hover { transform: translateY(-2px); box-shadow: 0 20px 40px rgba(0,0,0,0.18); }
+        .detail-link:hover::after { opacity: 1; }
         @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
         @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
         @media (max-width: 640px) { .person-card img { height: 180px; } }
@@ -121,7 +128,7 @@
             <a href="index.html#sri" class="nav-item">SRI</a>
             <a href="case-research-centre.html" class="nav-item">Case Research Centre</a>
             <a href="#" class="nav-item">KITES</a>
-            <a href="#" class="nav-item">Admissions <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+            <a href="mba-iev-admissions.html" class="nav-item">Admissions</a>
         </div>
     </nav>
 
@@ -163,189 +170,189 @@
                     <p class="section-copy">Hands-on experts guiding students through venture building, growth experiments, and leadership in action.</p>
                 </div>
                 <div class="people-grid">
-                <div class="person-card" data-name="Jay Krishnan" data-company="Beyond Next Ventures India" data-role="Partner" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Jay+Krishnan&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Jay Krishnan" data-company="Beyond Next Ventures India" data-role="Partner" data-link="https://www.linkedin.com/in/jaykrishnan/" data-avatar="https://ui-avatars.com/api/?name=Jay+Krishnan&background=0D9B6E&color=fff" data-bio="Partner at Beyond Next Ventures India, investing across tech with deep portfolio mentoring, fund management, and market analysis. Advises founders on capital strategy, product-market fit, and scale-up discipline.">
                     <img src="https://ui-avatars.com/api/?name=Jay+Krishnan&background=0D9B6E&color=fff" alt="Jay Krishnan">
                     <div class="person-name">Jay Krishnan</div>
                     <div class="person-company">Beyond Next Ventures India</div>
                     <div class="person-role">Partner</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Bibhu Bahalia" data-company="ASSAVA" data-role="Co-Founder" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Bibhu+Bahalia&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Bibhu Bahalia" data-company="ASSAVA" data-role="Co-Founder" data-link="https://www.linkedin.com/in/bibhu-bahalia-a9807ba0/" data-avatar="https://ui-avatars.com/api/?name=Bibhu+Bahalia&background=0D9B6E&color=fff" data-bio="Co-Founder and Director of Marketing & Business Development at ASSAVA. 9+ years in specialty coffee, building a sustainable value chain in Odisha through market expansion, brand building, and operational partnerships.">
                     <img src="https://ui-avatars.com/api/?name=Bibhu+Bahalia&background=0D9B6E&color=fff" alt="Bibhu Bahalia">
                     <div class="person-name">Bibhu Bahalia</div>
                     <div class="person-company">ASSAVA</div>
                     <div class="person-role">Co-Founder</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Bodhisattwa Sanghapriya" data-company="IG Drones" data-role="Founder & CEO" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Bodhisattwa+Sanghapriya&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Bodhisattwa Sanghapriya" data-company="IG Drones" data-role="Founder & CEO" data-link="https://in.linkedin.com/in/sbodhisattwa" data-avatar="https://ui-avatars.com/api/?name=Bodhisattwa+Sanghapriya&background=0D9B6E&color=fff" data-bio="Founder & CEO, IG Drones; Forbes 30U30. Builds AI-driven drone analytics across defense, infrastructure, and smart cities with 250+ projects, 75% retention, and operations in 25+ states.">
                     <img src="https://ui-avatars.com/api/?name=Bodhisattwa+Sanghapriya&background=0D9B6E&color=fff" alt="Bodhisattwa Sanghapriya">
                     <div class="person-name">Bodhisattwa Sanghapriya</div>
                     <div class="person-company">IG Drones</div>
                     <div class="person-role">Founder & CEO</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Partha Das" data-company="Tata Consulting Engineers Ltd." data-role="Cost Engineer" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Partha+Das&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Partha Das" data-company="Tata Consulting Engineers Ltd." data-role="Cost Engineer" data-link="https://www.linkedin.com/in/partha-das-baa1454/" data-avatar="https://ui-avatars.com/api/?name=Partha+Das&background=0D9B6E&color=fff" data-bio="Cost Engineer at Tata Consulting Engineers Ltd.; drives cost optimization on large infrastructure and industrial projects, balancing efficiency, quality, and safety in complex builds.">
                     <img src="https://ui-avatars.com/api/?name=Partha+Das&background=0D9B6E&color=fff" alt="Partha Das">
                     <div class="person-name">Partha Das</div>
                     <div class="person-company">Tata Consulting Engineers Ltd.</div>
                     <div class="person-role">Cost Engineer</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Lt Col Monish Ahuja" data-company="Confederation of Biomass Energy Industry of India" data-role="Chairman" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Monish+Ahuja&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Lt Col Monish Ahuja" data-company="Confederation of Biomass Energy Industry of India" data-role="Chairman" data-link="https://in.linkedin.com/in/lt-col-monish-ahuja-75317423" data-avatar="https://ui-avatars.com/api/?name=Monish+Ahuja&background=0D9B6E&color=fff" data-bio="Chairman, Confederation of Biomass Energy Industry of India; ex-Army. Builds biomass/biofuel value chains, leads policy advocacy, and serves on Ministry of Agriculture committee for paddy straw supply chains.">
                     <img src="https://ui-avatars.com/api/?name=Monish+Ahuja&background=0D9B6E&color=fff" alt="Lt Col Monish Ahuja">
                     <div class="person-name">Lt Col Monish Ahuja</div>
                     <div class="person-company">Confederation of Biomass Energy Industry of India</div>
                     <div class="person-role">Chairman</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Samidha Mahapatra" data-company="Ericsson" data-role="Industry Analyst Relations" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Samidha+Mahapatra&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Samidha Mahapatra" data-company="Ericsson" data-role="Industry Analyst Relations" data-link="https://in.linkedin.com/in/samidhamahapatra" data-avatar="https://ui-avatars.com/api/?name=Samidha+Mahapatra&background=0D9B6E&color=fff" data-bio="20+ years across Microsoft, Oracle, HP, Dell-EMC; now at Ericsson steering industry analyst relations and technology marketing. Crafts narratives and GTM strategy for telecom and IT.">
                     <img src="https://ui-avatars.com/api/?name=Samidha+Mahapatra&background=0D9B6E&color=fff" alt="Samidha Mahapatra">
                     <div class="person-name">Samidha Mahapatra</div>
                     <div class="person-company">Ericsson</div>
                     <div class="person-role">Industry Analyst Relations</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Srinivas Kollipara" data-company="Biome" data-role="Managing Partner" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Srinivas+Kollipara&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Srinivas Kollipara" data-company="Biome" data-role="Managing Partner" data-link="https://www.linkedin.com/in/skollipara/" data-avatar="https://ui-avatars.com/api/?name=Srinivas+Kollipara&background=0D9B6E&color=fff" data-bio="Managing Partner, Biome. Builds scalable sustainable-development solutions and partnerships across government, corporate, and NGO sectors, blending business growth with conservation.">
                     <img src="https://ui-avatars.com/api/?name=Srinivas+Kollipara&background=0D9B6E&color=fff" alt="Srinivas Kollipara">
                     <div class="person-name">Srinivas Kollipara</div>
                     <div class="person-company">Biome</div>
                     <div class="person-role">Managing Partner</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="CA Praveen Munukutla" data-company="Bossjobs.in" data-role="Co-founder" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Praveen+Munukutla&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="CA Praveen Munukutla" data-company="Bossjobs.in" data-role="Co-founder" data-link="https://www.linkedin.com/in/ca-praveen-munukutla-b3254b1b/" data-avatar="https://ui-avatars.com/api/?name=Praveen+Munukutla&background=0D9B6E&color=fff" data-bio="Chartered Accountant and Co-founder, Bossjobs.in. Combines financial stewardship, compliance, and platform thinking to build next-gen recruitment and career services in India.">
                     <img src="https://ui-avatars.com/api/?name=Praveen+Munukutla&background=0D9B6E&color=fff" alt="CA Praveen Munukutla">
                     <div class="person-name">CA Praveen Munukutla</div>
                     <div class="person-company">Bossjobs.in</div>
                     <div class="person-role">Co-founder</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Pramod Chandrasekhar" data-company="Brane Enterprises Pvt Ltd" data-role="Corporate Leadership Coach" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Pramod+Chandrasekhar&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Pramod Chandrasekhar" data-company="Brane Enterprises Pvt Ltd" data-role="Corporate Leadership Coach" data-link="https://www.linkedin.com/in/pramodchandrasekhar" data-avatar="https://ui-avatars.com/api/?name=Pramod+Chandrasekhar&background=0D9B6E&color=fff" data-bio="Corporate leadership coach; 20+ years in HR and L&D at HSBC and TCS. Leads content and knowledge enterprise at Brane, focusing on org development, capability building, and leadership coaching.">
                     <img src="https://ui-avatars.com/api/?name=Pramod+Chandrasekhar&background=0D9B6E&color=fff" alt="Pramod Chandrasekhar">
                     <div class="person-name">Pramod Chandrasekhar</div>
                     <div class="person-company">Brane Enterprises Pvt Ltd</div>
                     <div class="person-role">Corporate Leadership Coach</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Praveen Pantula" data-company="MediaMint" data-role="Vice President, Human Resources" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Praveen+Pantula&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Praveen Pantula" data-company="MediaMint" data-role="Vice President, Human Resources" data-link="https://in.linkedin.com/in/praveenpantula" data-avatar="https://ui-avatars.com/api/?name=Praveen+Pantula&background=0D9B6E&color=fff" data-bio="VP HR, MediaMint; ex-Brane, Wells Fargo, Bank of America. Builds HR strategy, talent pipelines, and org design to support fast-scaling digital businesses.">
                     <img src="https://ui-avatars.com/api/?name=Praveen+Pantula&background=0D9B6E&color=fff" alt="Praveen Pantula">
                     <div class="person-name">Praveen Pantula</div>
                     <div class="person-company">MediaMint</div>
                     <div class="person-role">Vice President, Human Resources</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Babu Vittal" data-company="RTP Global" data-role="HR & People practice" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Babu+Vittal&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Babu Vittal" data-company="RTP Global" data-role="HR & People practice" data-link="https://in.linkedin.com/in/babuvittal" data-avatar="https://ui-avatars.com/api/?name=Babu+Vittal&background=0D9B6E&color=fff" data-bio="People & HR practice leader at RTP Global; ex-Vedantu, Flipkart, Shopclues. Guides startups on scaling teams, culture, and leadership with design-thinking led people strategy.">
                     <img src="https://ui-avatars.com/api/?name=Babu+Vittal&background=0D9B6E&color=fff" alt="Babu Vittal">
                     <div class="person-name">Babu Vittal</div>
                     <div class="person-company">RTP Global</div>
                     <div class="person-role">HR & People practice</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Tanmaya Das" data-company="RateGain" data-role="Chief Financial Officer" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Tanmaya+Das&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Tanmaya Das" data-company="RateGain" data-role="Chief Financial Officer" data-link="https://in.linkedin.com/in/tanmaya-das-4a355218" data-avatar="https://ui-avatars.com/api/?name=Tanmaya+Das&background=0D9B6E&color=fff" data-bio="CFO, RateGain; steered IPO, multiple acquisitions, and global expansion in travel-tech. 10+ years in FP&A, treasury, and capital strategy for scaling SaaS.">
                     <img src="https://ui-avatars.com/api/?name=Tanmaya+Das&background=0D9B6E&color=fff" alt="Tanmaya Das">
                     <div class="person-name">Tanmaya Das</div>
                     <div class="person-company">RateGain</div>
                     <div class="person-role">Chief Financial Officer</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Tejaswy Rama" data-company="KPMG India" data-role="Director – Clients & Markets" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Tejaswy+Rama&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Tejaswy Rama" data-company="KPMG India" data-role="Director – Clients & Markets" data-link="https://in.linkedin.com/in/tejaswyrama" data-avatar="https://ui-avatars.com/api/?name=Tejaswy+Rama&background=0D9B6E&color=fff" data-bio="Director, Clients & Markets at KPMG India; ex-EY and PwC. Leads GCC strategy, key account growth, and market development for business services in India.">
                     <img src="https://ui-avatars.com/api/?name=Tejaswy+Rama&background=0D9B6E&color=fff" alt="Tejaswy Rama">
                     <div class="person-name">Tejaswy Rama</div>
                     <div class="person-company">KPMG India</div>
                     <div class="person-role">Director – Clients & Markets</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Indranil Das" data-company="Leaderion" data-role="Founder" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Indranil+Das&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Indranil Das" data-company="Leaderion" data-role="Founder" data-link="https://in.linkedin.com/in/indranil-das-leaderion" data-avatar="https://ui-avatars.com/api/?name=Indranil+Das&background=0D9B6E&color=fff" data-bio="Founder, Leaderion; ICF PCC and ORSC coach with 30 years in consulting/IT/telecom at PwC, IBM, Ericsson. Coaches executives on leadership development, mindset shifts, and large-scale org transformation.">
                     <img src="https://ui-avatars.com/api/?name=Indranil+Das&background=0D9B6E&color=fff" alt="Indranil Das">
                     <div class="person-name">Indranil Das</div>
                     <div class="person-company">Leaderion</div>
                     <div class="person-role">Founder</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Aditya Prakash Rao" data-company="PLR Chambers" data-role="Partner" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Aditya+Prakash+Rao&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Aditya Prakash Rao" data-company="PLR Chambers" data-role="Partner" data-link="https://in.linkedin.com/in/adityaprakashrao" data-avatar="https://ui-avatars.com/api/?name=Aditya+Prakash+Rao&background=0D9B6E&color=fff" data-bio="Partner, PLR Chambers; specializes in public procurement law, policy, and regulatory advisory. Works on legislative drafting, government consultation, and dispute resolution for complex procurements.">
                     <img src="https://ui-avatars.com/api/?name=Aditya+Prakash+Rao&background=0D9B6E&color=fff" alt="Aditya Prakash Rao">
                     <div class="person-name">Aditya Prakash Rao</div>
                     <div class="person-company">PLR Chambers</div>
                     <div class="person-role">Partner</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Rajashree Sahoo" data-company="ACHIVIA" data-role="Education & Career Consultant" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Rajashree+Sahoo&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Rajashree Sahoo" data-company="ACHIVIA" data-role="Education & Career Consultant" data-link="https://in.linkedin.com/in/rajashree-sahoo-21488514" data-avatar="https://ui-avatars.com/api/?name=Rajashree+Sahoo&background=0D9B6E&color=fff" data-bio="Founder & Director, ACHIVIA; education and career consultant guiding global study programs, cultural immersion, and career development for students and professionals.">
                     <img src="https://ui-avatars.com/api/?name=Rajashree+Sahoo&background=0D9B6E&color=fff" alt="Rajashree Sahoo">
                     <div class="person-name">Rajashree Sahoo</div>
                     <div class="person-company">ACHIVIA</div>
                     <div class="person-role">Education & Career Consultant</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Ajay Jain" data-company="Silverneedle Ventures" data-role="Founder & Managing Partner" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Ajay+Jain&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Ajay Jain" data-company="Silverneedle Ventures" data-role="Founder & Managing Partner" data-link="https://in.linkedin.com/in/ajayjainprofile" data-avatar="https://ui-avatars.com/api/?name=Ajay+Jain&background=0D9B6E&color=fff" data-bio="Founder & Managing Partner, Silverneedle Ventures; 40+ deep-tech and early-stage investments. Former Xseed Partners co-founder and T-Hub innovation leader mentoring category-defining tech startups.">
                     <img src="https://ui-avatars.com/api/?name=Ajay+Jain&background=0D9B6E&color=fff" alt="Ajay Jain">
                     <div class="person-name">Ajay Jain</div>
                     <div class="person-company">Silverneedle Ventures</div>
                     <div class="person-role">Founder & Managing Partner</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Gautam Kumar" data-company="FarEye" data-role="Co-Founder" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Gautam+Kumar&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Gautam Kumar" data-company="FarEye" data-role="Co-Founder" data-link="https://in.linkedin.com/in/gautamkr" data-avatar="https://ui-avatars.com/api/?name=Gautam+Kumar&background=0D9B6E&color=fff" data-bio="COO & Co-founder, FarEye; MIT TR35 winner. Scaled last-mile logistics platform to 800+ enterprises, delivering AI-driven optimization for millions of daily transactions.">
                     <img src="https://ui-avatars.com/api/?name=Gautam+Kumar&background=0D9B6E&color=fff" alt="Gautam Kumar">
                     <div class="person-name">Gautam Kumar</div>
                     <div class="person-company">FarEye</div>
                     <div class="person-role">Co-Founder</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Salil Panda" data-company="HighRadius" data-role="Senior Director" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Salil+Panda&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Salil Panda" data-company="HighRadius" data-role="Senior Director" data-link="https://in.linkedin.com/in/salil-panda-39b59516a" data-avatar="https://ui-avatars.com/api/?name=Salil+Panda&background=0D9B6E&color=fff" data-bio="Senior Director, HighRadius; ex-Indian Air Force. Brings operational rigor to autonomous finance platforms, leading order-to-cash and treasury transformations for global enterprises.">
                     <img src="https://ui-avatars.com/api/?name=Salil+Panda&background=0D9B6E&color=fff" alt="Salil Panda">
                     <div class="person-name">Salil Panda</div>
                     <div class="person-company">HighRadius</div>
                     <div class="person-role">Senior Director</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Nivedita Satpathy" data-company="Meri Sakhi The Counselling Desk" data-role="Founder" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Nivedita+Satpathy&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Nivedita Satpathy" data-company="Meri Sakhi The Counselling Desk" data-role="Founder" data-link="https://in.linkedin.com/in/nivedita-satpathy-999272184" data-avatar="https://ui-avatars.com/api/?name=Nivedita+Satpathy&background=0D9B6E&color=fff" data-bio="Founder, Meri Sakhi The Counselling Desk; motivational speaker and life skills coach delivering accessible counseling, mental wellness programs, and social impact initiatives.">
                     <img src="https://ui-avatars.com/api/?name=Nivedita+Satpathy&background=0D9B6E&color=fff" alt="Nivedita Satpathy">
                     <div class="person-name">Nivedita Satpathy</div>
                     <div class="person-company">Meri Sakhi The Counselling Desk</div>
                     <div class="person-role">Founder</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Hruday Kumar" data-company="Techpeek" data-role="Co-founder" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Hruday+Kumar&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Hruday Kumar" data-company="Techpeek" data-role="Co-founder" data-link="https://in.linkedin.com/in/thehruday" data-avatar="https://ui-avatars.com/api/?name=Hruday+Kumar&background=0D9B6E&color=fff" data-bio="Co-founder, Techpeek; IIM Kozhikode alum building legal technology solutions that modernize practice workflows and client service for the legal sector.">
                     <img src="https://ui-avatars.com/api/?name=Hruday+Kumar&background=0D9B6E&color=fff" alt="Hruday Kumar">
                     <div class="person-name">Hruday Kumar</div>
                     <div class="person-company">Techpeek</div>
                     <div class="person-role">Co-founder</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Piyush Patnaik" data-company="D and P Advisory" data-role="Partner" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Piyush+Patnaik&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Piyush Patnaik" data-company="D and P Advisory" data-role="Partner" data-link="https://in.linkedin.com/in/piyush-patnaik-3809863" data-avatar="https://ui-avatars.com/api/?name=Piyush+Patnaik&background=0D9B6E&color=fff" data-bio="Partner, D and P Advisory; registered valuer with 14+ years in venture valuations, M&A, and corporate finance across Duff & Phelps, Grant Thornton, and TCS.">
                     <img src="https://ui-avatars.com/api/?name=Piyush+Patnaik&background=0D9B6E&color=fff" alt="Piyush Patnaik">
                     <div class="person-name">Piyush Patnaik</div>
                     <div class="person-company">D and P Advisory</div>
                     <div class="person-role">Partner</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Rakesh Prasad" data-company="Indigo" data-role="AVP-HR" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Rakesh+Prasad&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Rakesh Prasad" data-company="Indigo" data-role="AVP-HR" data-link="https://in.linkedin.com/in/rakesh-prasad-52166299" data-avatar="https://ui-avatars.com/api/?name=Rakesh+Prasad&background=0D9B6E&color=fff" data-bio="AVP-HR & Head DEI, IndiGo; leads large-scale people operations, learning, and inclusion programs across aviation crews and corporate teams.">
                     <img src="https://ui-avatars.com/api/?name=Rakesh+Prasad&background=0D9B6E&color=fff" alt="Rakesh Prasad">
                     <div class="person-name">Rakesh Prasad</div>
                     <div class="person-company">Indigo</div>
                     <div class="person-role">AVP-HR</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Nibedita Panda" data-company="EWBC" data-role="Head of Segments" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Nibedita+Panda&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Nibedita Panda" data-company="EWBC" data-role="Head of Segments" data-link="https://in.linkedin.com/in/nibedita-panda-32261120" data-avatar="https://ui-avatars.com/api/?name=Nibedita+Panda&background=0D9B6E&color=fff" data-bio="Head of Segments, EWBC; agri-business and sustainable livelihoods leader building value chains and poverty alleviation programs across Odisha for rural development.">
                     <img src="https://ui-avatars.com/api/?name=Nibedita+Panda&background=0D9B6E&color=fff" alt="Nibedita Panda">
                     <div class="person-name">Nibedita Panda</div>
                     <div class="person-company">EWBC</div>
                     <div class="person-role">Head of Segments</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Manu Panda (Manbhanjan Panda)" data-company="MAYA" data-role="Group COO" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Manbhanjan+Panda&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Manu Panda (Manbhanjan Panda)" data-company="MAYA" data-role="Group COO" data-link="https://sg.linkedin.com/in/manu-panda-105b75" data-avatar="https://ui-avatars.com/api/?name=Manbhanjan+Panda&background=0D9B6E&color=fff" data-bio="Founding COO, Maya Bank; builds digital banking operations, credit, and risk. Ex-Standard Chartered CRO with fintech experience scaling to 1M+ customers in Southeast Asia.">
                     <img src="https://ui-avatars.com/api/?name=Manbhanjan+Panda&background=0D9B6E&color=fff" alt="Manu Panda">
                     <div class="person-name">Manu Panda (Manbhanjan Panda)</div>
                     <div class="person-company">MAYA</div>
                     <div class="person-role">Group COO</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Gopal Sharma" data-company="NASSCOM" data-role="CFO" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Gopal+Sharma&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Gopal Sharma" data-company="NASSCOM" data-role="CFO" data-link="https://in.linkedin.com/in/gopal-sharma-39a22762" data-avatar="https://ui-avatars.com/api/?name=Gopal+Sharma&background=0D9B6E&color=fff" data-bio="CFO, NASSCOM; ex-PayPal India controller and Siemens finance leader. Oversees FP&A, compliance, treasury, and controls for India’s 3000-member tech industry body.">
                     <img src="https://ui-avatars.com/api/?name=Gopal+Sharma&background=0D9B6E&color=fff" alt="Gopal Sharma">
                     <div class="person-name">Gopal Sharma</div>
                     <div class="person-company">NASSCOM</div>
                     <div class="person-role">CFO</div>
                     <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="person-card" data-name="Subir Mahapatra" data-company="FBSL" data-role="Senior VP" data-link="#" data-avatar="https://ui-avatars.com/api/?name=Subir+Mahapatra&background=0D9B6E&color=fff">
+                <div class="person-card" data-name="Subir Mahapatra" data-company="FBSL" data-role="Senior VP" data-link="https://in.linkedin.com/in/subirmahapatra" data-avatar="https://ui-avatars.com/api/?name=Subir+Mahapatra&background=0D9B6E&color=fff" data-bio="Senior VP, FBSL; drives business development and digital transformation across cloud and enterprise solutions, guiding clients through technology adoption and growth.">
                     <img src="https://ui-avatars.com/api/?name=Subir+Mahapatra&background=0D9B6E&color=fff" alt="Subir Mahapatra">
                     <div class="person-name">Subir Mahapatra</div>
                     <div class="person-company">FBSL</div>
@@ -399,7 +406,7 @@
             avatarEl.src = card.dataset.avatar || card.querySelector('img')?.src || '';
             avatarEl.alt = card.dataset.name ? card.dataset.name + ' photo' : 'Profile photo';
             linkEl.href = card.dataset.link && card.dataset.link !== '#' ? card.dataset.link : '#';
-            bodyEl.textContent = 'Practitioner guiding students through immersive studios, critiques, and venture reviews.';
+            bodyEl.textContent = card.dataset.bio || 'Practitioner guiding students through immersive studios, critiques, and venture reviews.';
             overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
