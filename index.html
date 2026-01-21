@@ -16,6 +16,8 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/design-system.css">
+    <!-- Header/Footer Loader -->
+    <script src="assets/js/load-header-footer.js"></script>
     <style>
         /* Leadership carousel styles (shared with About) */
         .leader-carousel { position: relative; }
@@ -30,6 +32,9 @@
         .leader-dots { display: flex; gap: 8px; justify-content: center; margin-top: 16px; }
         .leader-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--color-border); cursor: pointer; transition: background 0.2s ease; }
         .leader-dot.active { background: var(--color-primary); }
+        .value-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-bottom: 80px; }
+        .value-card { background: #ffffff; border-radius: 16px; padding: 28px 24px; box-shadow: 0 18px 40px rgba(17, 24, 39, 0.08); border: 1px solid #eef1f4; }
+        .value-card h3 { margin-bottom: 12px; }
         @media (max-width: 768px) {
             .leader-slide { flex-direction: column; text-align: center; padding: 24px; }
             .leader-nav { position: static; justify-content: center; transform: none; margin-top: 16px; }
@@ -40,75 +45,6 @@
 <body>
     <!-- Scroll Progress Bar -->
     <div id="scroll-progress"></div>
-
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <a href="https://kiit.ac.in"><i class="fa-solid fa-arrow-left"></i> Go to KIIT Home Page</a>
-            <div class="top-bar-socials">
-                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Header -->
-    <div class="main-header">
-        <div class="container">
-            <div class="header-logo-group">
-                <!-- Using a placeholder for the gear logo if not available, or the KSLD logo -->
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/ef/KIIT_logo.svg/1200px-KIIT_logo.svg.png" alt="KIIT Logo" class="kiit-gear-logo">
-                <div class="header-text-group">
-                    <div class="header-uni-name">Kalinga Institute of Industrial Technology (KIIT) DU</div>
-                    <div class="header-uni-sub">Deemed to be University U/S 3 of the UGC Act, 1956</div>
-                    <div class="header-school-name">School of Leadership</div>
-                </div>
-            </div>
-            
-            <div class="founder-profile">
-                <img src="https://achyutasamanta.com/wp-content/uploads/2023/01/achyuta-samanta-profile.jpg" alt="Prof. Achyuta Samanta" class="founder-img" onerror="this.src='https://ui-avatars.com/api/?name=Achyuta+Samanta'">
-                <div class="founder-info">
-                    <h4>Prof. Achyuta Samanta</h4>
-                    <p>Founder – KIIT & KISS</p>
-                    <a href="https://achyutasamanta.com" target="_blank">achyutasamanta.com</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Navigation Bar -->
-    <nav class="bottom-nav">
-        <div class="container">
-            <a href="#" class="nav-item active">Home</a>
-            <div class="nav-item-dropdown">
-                <span class="nav-item">About Us <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></span>
-                <div class="nav-dropdown">
-                    <a href="about.html" class="dropdown-item">About the School</a>
-                    <a href="about.html#leadership" class="dropdown-item">Message from Founder</a>
-                    <a href="about-vice-chancellor.html" class="dropdown-item">Vice - Chancellor's Message</a>
-                    <a href="about.html#leadership" class="dropdown-item">Message from CEO (KIIT - TBI)</a>
-                    <a href="about-pinaki-nandan.html" class="dropdown-item">Dean's Message</a>
-                </div>
-            </div>
-            <a href="ecosystem-partners.html" class="nav-item">The Leadership Network</a>
-            <div class="nav-item-dropdown">
-                <span class="nav-item">People <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></span>
-                <div class="nav-dropdown">
-                    <a href="people-board-of-studies.html" class="dropdown-item">Board of Governors</a>
-                    <a href="people-regular-faculty.html" class="dropdown-item">Regular Faculty</a>
-                    <a href="people-professors-of-practice.html" class="dropdown-item">Professors of Practice</a>
-                </div>
-            </div>
-            <a href="pace.html" class="nav-item">PACE</a>
-            <a href="mba-iev.html" class="nav-item">MBA IEV</a>
-            <a href="sri.html" class="nav-item">SRI</a>
-            <a href="case-research-centre.html" class="nav-item">Case Research Centre</a>
-            <a href="kites.html" class="nav-item">KITES</a>
-            <a href="mba-iev-admissions.html" class="nav-item">Admissions</a>
-        </div>
-    </nav>
 
     <!-- Hero Section -->
     <section class="hero bg-light home-hero">
@@ -145,8 +81,8 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <span class="hero-eyebrow" style="color: #d97706; font-weight: 800; margin-bottom: 20px; display: block;">Admissions Open · KIIT School of Leadership</span>
-                    <h1 style="margin-bottom: 24px;">Build the future. <br><span class="text-primary">Lead, launch, and scale.</span></h1>
+                    <span class="hero-eyebrow" style="color: #d97706; font-weight: 800; margin-bottom: 20px; display: block;">ADMISSIONS OPEN · MBA IEV</span>
+                    <h1 style="margin-bottom: 24px;">Build the venture:<br><span class="text-primary">Lead, Launch, Scale.</span></h1>
                     <p class="lead" style="margin-bottom: 36px;">
                         KIIT's practice-first School of Leadership blends management, venture building, and social impact. Ship real products, work with operators, and step into a network that backs bold builders.
                     </p>
@@ -158,10 +94,7 @@
                         <a href="mailto:kiit@kiit.ac.in?subject=Send%20MBA%20IEV%20Brochure&body=Hi%20team,%20please%20share%20the%20MBA%20IEV%20brochure.%20Name:%20%0APhone:%20" class="text-link" style="font-weight: 600;">Request brochure <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         <a href="tel:+916742725113" class="text-link" style="font-weight: 600;">Talk to admissions <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
-                    <div class="scarcity-stack" style="margin-bottom: 24px;">
-                        <span style="font-size: 0.9rem;">Rolling reviews with weekly studio checks—claim a seat before the cohort locks.</span>
-                    </div>
-
+                    
                     <div style="display: flex; flex-wrap: wrap; gap: 12px;">
                         <div class="stat-chip"><i class="fa-solid fa-check-circle" style="color: var(--color-primary);"></i> AICTE-approved</div>
                         <div class="stat-chip"><i class="fa-solid fa-rocket" style="color: var(--color-primary);"></i> Venture as Thesis</div>
@@ -192,25 +125,24 @@
                 <!-- Header -->
                 <div style="text-align: center; margin-bottom: 60px;">
                     <h2>What is KSLD?</h2>
-                    <p style="font-size: 1.125rem; color: var(--color-text-muted); margin-top: 16px;">A practice-first school that bridges management education and venture building</p>
                 </div>
                 
                 <!-- Three Value Props -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-bottom: 80px;">
-                    <div>
+                <div class="value-grid">
+                    <div class="value-card">
                         <div style="font-size: 2rem; margin-bottom: 16px;"><i class="fa-solid fa-graduation-cap" style="color: var(--color-primary);"></i></div>
                         <h3 style="margin-bottom: 12px;">For Future Leaders</h3>
                         <p>Develop the qualities, skills, and knowledge to drive positive change. Master business complexities while making decisions that benefit society and the environment.</p>
                     </div>
-                    <div>
+                    <div class="value-card">
                         <div style="font-size: 2rem; margin-bottom: 16px;"><i class="fa-solid fa-rocket" style="color: var(--color-primary);"></i></div>
                         <h3 style="margin-bottom: 12px;">For Builders & Founders</h3>
                         <p>Ship real products, work directly with operators, and gain access to KIIT-TBI's ecosystem of 423+ startups, ₹13B+ in funding, and 300+ industry mentors.</p>
                     </div>
-                    <div>
+                    <div class="value-card">
                         <div style="font-size: 2rem; margin-bottom: 16px;"><i class="fa-solid fa-globe" style="color: var(--color-primary);"></i></div>
                         <h3 style="margin-bottom: 12px;">For Social Impact</h3>
-                        <p>Cultivate leaders with visionary foresight. Contribute to India's "Viksit Bharat" vision through technical expertise, initiative, and commitment to ethical, sustainable change.</p>
+                        <p>Cultivates leaders with visionary foresight. Contributes to India's future through technical expertise, initiative, and commitment to ethical, sustainable change.</p>
                     </div>
                 </div>
 
@@ -218,16 +150,14 @@
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
                     <div>
                         <h3 style="margin-bottom: 24px; font-size: 1.75rem;">KIIT School of Leadership (KSLd)</h3>
-                        <div style="font-size: 1rem; line-height: 1.8; color: var(--color-text);">
-                            <p style="margin-bottom: 18px;">The KIIT School of Leadership (KSLd) aims to nurture future leaders by developing key qualities, skills, and knowledge to drive positive change. As India strives for "Viksit Bharat," KSLd cultivates leaders with technical expertise, initiative, and visionary foresight to foster change across sectors.</p>
-                            
-                            <p style="margin-bottom: 18px;">Leveraging KIIT's unique strength in multidisciplinary education, KSLd integrates insights from diverse fields, including business, technology, social sciences, and humanities. At KSLd, we aim to develop leaders who demonstrate commitment, expertise, and passion for their work.</p>
-                            
-                            <p>We believe ordinary individuals can bring about extraordinary societal change through inspired social leadership. KSLd equips learners to navigate business complexities while making decisions that benefit society and the environment. Our comprehensive approach instills a sense of responsibility to act ethically and sustainably, contributing to a more just and prosperous global community.</p>
+                        <div style="font-size: 1rem; line-height: 1.8; color: var(--color-text); text-align: justify;">
+                            <p style="margin-bottom: 18px;">The KIIT School of Leadership (KSLd) aims to nurture future leaders by developing key qualities, skills, and knowledge to drive positive change. With Viksit Bharat in mind, KIIT School of Leadership (KSLd) aims to nurture future leaders by developing key qualities, skills, and knowledge to drive positive change with technical expertise, initiatives, and visionary foresight across sectors. By leveraging KIIT's unique strength in multidisciplinary education, KSLd integrates insights from diverse fields, including business, technology, social sciences, and humanities. We aim to develop leaders who demonstrate commitment, expertise, and passion for their work.</p>
+
+                            <p>At KSLd, we also believe ordinary individuals can bring about extraordinary societal change through inspired social leadership. We equips learners to navigate business complexities while making decisions that benefit society and the environment. Our comprehensive approach instills a sense of responsibility to act ethically and sustainably, contributing to a more just and prosperous global community.</p>
                         </div>
                     </div>
                     <div>
-                        <img src="https://images.unsplash.com/photo-1535016120754-88f00569bed1?auto=format&fit=crop&w=600&q=80" alt="KIIT Campus" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: block;">
+                        <img src="assets/photos/campus/kiit-campus.png.jpeg" alt="KIIT Campus" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: block;">
                     </div>
                 </div>
             </div>

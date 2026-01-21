@@ -28,8 +28,8 @@
     --font-heading: 'Playfair Display', serif; 
     
     /* --- Spacing & Layout --- */
-    --container-width: 1280px; 
-    --gutter: 32px;
+    --container-width: min(1440px, calc(100vw - 48px));
+    --gutter: clamp(16px, 3vw, 32px);
     --radius-card: 16px; /* Soft, elegant corners */
     --radius-btn: 50px;  /* Pill shaped buttons */
     
