@@ -1,0 +1,68 @@
+/* Button styling fix */
+.btn-outline {
+    background-color: transparent !important;
+    color: var(--color-text-main) !important;
+    border: 2px solid var(--color-border) !important;
+    transform: none !important;
+}
+
+.btn-outline:hover {
+    transform: translateY(-2px) !important;
+    border-color: var(--color-primary) !important;
+    background-color: var(--color-primary) !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(6, 78, 59, 0.25) !important;
+}
+
+/* Fix for all buttons - prevent expansion on click/focus */
+.btn,
+.btn-primary,
+.btn-outline,
+.btn-white,
+.btn-secondary,
+.btn-ghost,
+.btn-white-outline {
+    box-sizing: border-box !important;
+}
+
+.btn:focus,
+.btn:active,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-outline:focus,
+.btn-outline:active,
+.btn-white:focus,
+.btn-white:active,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-ghost:focus,
+.btn-ghost:active,
+.btn-white-outline:focus,
+.btn-white-outline:active {
+    outline: none !important;
+}
+
+.btn:focus-visible,
+.btn-primary:focus-visible,
+.btn-outline:focus-visible,
+.btn-white:focus-visible,
+.btn-secondary:focus-visible,
+.btn-ghost:focus-visible,
+.btn-white-outline:focus-visible {
+    outline: 2px solid var(--color-primary, #064e3b) !important;
+    outline-offset: 2px !important;
+}
+
+/* Ensure inline-styled buttons don't expand */
+a[style*="background"]:focus,
+a[style*="background"]:active,
+button[style*="background"]:focus,
+button[style*="background"]:active {
+    outline: none !important;
+}
+
+a[style*="background"]:focus-visible,
+button[style*="background"]:focus-visible {
+    outline: 2px solid #064e3b !important;
+    outline-offset: 2px !important;
+}

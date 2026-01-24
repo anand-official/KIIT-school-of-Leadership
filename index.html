@@ -17,32 +17,801 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/design-system.css">
     <!-- Header/Footer Loader -->
-    <script src="assets/js/load-header-footer.js"></script>
+    <script src="assets/js/load-header-footer.js?v=2"></script>
     <style>
-        /* Leadership carousel styles (shared with About) */
-        .leader-carousel { position: relative; }
-        .leader-slide { display: none; gap: 32px; padding: 28px; border-radius: 14px; background: linear-gradient(135deg, #f8fafc, #eef2ff); box-shadow: 0 15px 40px rgba(0,0,0,0.08); align-items: center; }
-        .leader-slide.active { display: flex; }
-        .leader-photo { width: 160px; height: 160px; border-radius: 12px; object-fit: cover; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
-        .leader-meta h3 { margin: 0 0 6px; }
-        .leader-meta .role { color: var(--color-text-muted); margin-bottom: 12px; font-size: 0.95rem; }
-        .leader-nav { position: absolute; top: 50%; right: 12px; display: flex; gap: 10px; transform: translateY(-50%); }
-        .leader-btn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--color-border); background: white; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.08); transition: transform 0.15s ease, box-shadow 0.15s ease; }
-        .leader-btn:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,0,0,0.12); }
-        .leader-dots { display: flex; gap: 8px; justify-content: center; margin-top: 16px; }
-        .leader-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--color-border); cursor: pointer; transition: background 0.2s ease; }
-        .leader-dot.active { background: var(--color-primary); }
+        /* Leadership carousel styles - Enhanced & Elegant */
+        .leader-carousel { 
+            position: relative; 
+            overflow: visible;
+            border-radius: 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #f7fafc 40%, #eef2ff 100%);
+            box-shadow: 0 24px 70px rgba(0,0,0,0.12);
+            padding: 56px 64px 64px;
+        }
+        
+        .leader-slide { 
+            display: none; 
+            gap: 56px; 
+            align-items: center;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+            grid-template-columns: minmax(200px, 240px) 1fr;
+        }
+        
+        .leader-slide.active { 
+            display: grid;
+            opacity: 1;
+            transform: translateX(0);
+            animation: slideIn 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .leader-photo { 
+            width: 200px; 
+            height: 200px; 
+            border-radius: 20px; 
+            object-fit: cover; 
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+            border: 4px solid #ffffff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .leader-slide:hover .leader-photo {
+            transform: scale(1.03);
+            box-shadow: 0 16px 50px rgba(0,0,0,0.2);
+        }
+        
+        .leader-meta {
+            flex: 1;
+            max-width: 100%;
+        }
+        
+        .leader-meta h3 { 
+            margin: 0 0 8px; 
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+        
+        .leader-meta .role { 
+            color: var(--color-primary);
+            margin-bottom: 16px; 
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .leader-meta p {
+            text-align: justify;
+            color: var(--color-text-muted);
+        }
+        
+        .leader-nav { 
+            position: absolute;
+            top: 50%;
+            left: -16px;
+            right: -16px;
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        
+        .leader-btn { 
+            width: 42px; 
+            height: 42px; 
+            border-radius: 50%; 
+            border: none;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: white;
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center; 
+            cursor: pointer; 
+            box-shadow: 0 12px 26px rgba(15, 23, 42, 0.24);
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            font-size: 1rem;
+            pointer-events: auto;
+            transform: translateX(0);
+        }
+        
+        .leader-btn:hover { 
+            transform: translateY(-1px) scale(1.05);
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.3);
+            background: linear-gradient(135deg, #1e3a8a 0%, var(--color-primary) 100%);
+        }
+        
+        .leader-btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+        
+        .leader-dots { 
+            display: flex; 
+            gap: 10px; 
+            justify-content: center; 
+            margin-top: 36px;
+        }
+        
+        .leader-dot { 
+            width: 12px; 
+            height: 12px; 
+            border-radius: 50%; 
+            background: #d1d5db;
+            cursor: pointer; 
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .leader-dot:hover {
+            background: #9ca3af;
+            transform: scale(1.2);
+        }
+        
+        .leader-dot.active { 
+            background: var(--color-primary);
+            transform: scale(1.3);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+        }
+        
         .value-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-bottom: 80px; }
         .value-card { background: #ffffff; border-radius: 16px; padding: 28px 24px; box-shadow: 0 18px 40px rgba(17, 24, 39, 0.08); border: 1px solid #eef1f4; }
         .value-card h3 { margin-bottom: 12px; }
+        
         @media (max-width: 768px) {
-            .leader-slide { flex-direction: column; text-align: center; padding: 24px; }
-            .leader-nav { position: static; justify-content: center; transform: none; margin-top: 16px; }
-            .leader-photo { width: 140px; height: 140px; }
+            .leader-slide { 
+                display: flex;
+                flex-direction: column; 
+                text-align: center; 
+                gap: 24px;
+            }
+            .leader-carousel {
+                padding: 24px;
+            }
+            .leader-nav { 
+                position: static;
+                justify-content: space-between;
+                margin-top: 12px;
+                transform: none;
+                pointer-events: auto;
+            }
+            .leader-photo { 
+                width: 140px; 
+                height: 140px; 
+            }
+            .leader-meta h3 {
+                font-size: 1.25rem;
+            }
+            .leader-meta p {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+            .leader-dots {
+                gap: 8px;
+                margin-top: 20px;
+            }
+            .leader-dot {
+                width: 10px;
+                height: 10px;
+            }
+        }
+        
+        /* ============================================
+           MOBILE RESPONSIVE OPTIMIZATIONS
+           ============================================ */
+        
+        @media (max-width: 480px) {
+            /* About KSLD Grid Mobile */
+            .about-ksld-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 32px !important;
+            }
+            
+            .about-ksld-grid h3 {
+                font-size: 1.4rem !important;
+                text-align: center;
+            }
+            
+            .about-ksld-grid div[style*="text-align: justify"] {
+                text-align: left !important;
+            }
+            
+            /* Value Grid Mobile */
+            .value-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 16px !important;
+            }
+            
+            /* Hero Section Mobile */
+            .hero-content h1 {
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+            }
+            .hero-content .lead {
+                font-size: 1rem !important;
+                line-height: 1.6 !important;
+            }
+            .hero-eyebrow {
+                font-size: 0.75rem !important;
+                padding: 6px 12px !important;
+            }
+            .stat-chip {
+                font-size: 0.8rem;
+                padding: 8px 12px;
+            }
+            
+            /* Buttons Mobile */
+            .btn {
+                padding: 12px 20px !important;
+                font-size: 0.9rem !important;
+            }
+            .hero-content .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            /* Feature Cards Mobile */
+            .feature-grid {
+                gap: 16px !important;
+            }
+            .feature-card, .feature-grid > div {
+                padding: 24px 20px !important;
+            }
+            .feature-icon, .feature-grid > div > div:first-child {
+                font-size: 2rem !important;
+                height: 50px !important;
+            }
+            .feature-card h3, .feature-grid > div h3 {
+                font-size: 1.1rem !important;
+            }
+            
+            /* Program Cards Mobile */
+            .programs-grid .card {
+                padding: 24px 20px;
+            }
+            .card-stats {
+                padding: 10px 12px !important;
+            }
+            .card-stats > div {
+                font-size: 0.75rem !important;
+            }
+            .card-stats strong {
+                font-size: 1rem !important;
+            }
+            
+            /* Stories Cards Mobile */
+            .stories-grid {
+                gap: 16px !important;
+            }
+            .story-card {
+                padding: 20px !important;
+            }
+            .story-img {
+                width: 80px !important;
+                height: 80px !important;
+            }
+            
+            /* Partners Grid Mobile */
+            .partner-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 12px !important;
+            }
+            .partner-card {
+                padding: 16px !important;
+                height: 80px !important;
+            }
+            .partner-card img {
+                max-height: 35px !important;
+            }
+            
+            /* Campus Stats Mobile */
+            .campus-stats-grid {
+                gap: 16px !important;
+            }
+            .campus-stat-card {
+                padding: 20px !important;
+            }
+            .stat-number {
+                font-size: 2rem !important;
+            }
+            
+            /* Leadership Carousel Mobile */
+            .leader-carousel {
+                padding: 20px !important;
+            }
+            .leader-photo {
+                width: 120px !important;
+                height: 120px !important;
+            }
+            .leader-meta h3 {
+                font-size: 1.1rem !important;
+            }
+            .leader-meta .role {
+                font-size: 0.85rem !important;
+            }
+            .leader-meta p {
+                font-size: 0.85rem !important;
+            }
+            .leader-btn {
+                width: 36px !important;
+                height: 36px !important;
+                font-size: 0.85rem !important;
+            }
+            
+            /* Section Titles Mobile */
+            section h2 {
+                font-size: 1.5rem !important;
+                margin-bottom: 12px !important;
+            }
+            section p {
+                font-size: 0.95rem !important;
+            }
+            
+            /* Table Mobile */
+            .pathways-matrix {
+                overflow-x: auto;
+            }
+            .pathways-matrix table {
+                min-width: 600px;
+                font-size: 0.8rem;
+            }
+            
+            /* Floating Button Mobile */
+            #floating-apply-btn {
+                bottom: 70px !important;
+                right: 16px !important;
+            }
+            
+            /* Scroll to Top Mobile */
+            #scroll-to-top {
+                bottom: 130px !important;
+                right: 16px !important;
+                width: 44px !important;
+                height: 44px !important;
+            }
+            
+            /* Value Cards Mobile */
+            .value-grid {
+                gap: 16px !important;
+            }
+            .value-card {
+                padding: 20px !important;
+            }
+            
+            /* Faculty Grid Mobile */
+            .faculty-grid {
+                gap: 12px !important;
+            }
+            .mini-person-card {
+                padding: 12px !important;
+            }
+            .mini-person-img {
+                width: 50px !important;
+                height: 50px !important;
+            }
+            
+            /* Disable heavy animations on mobile for performance */
+            .animate-on-scroll {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .parallax-bg {
+                background-attachment: scroll !important;
+            }
+            .particle {
+                display: none !important;
+            }
+        }
+        
+        /* Small tablets */
+        @media (max-width: 768px) and (min-width: 481px) {
+            .partner-grid {
+                grid-template-columns: repeat(4, 1fr) !important;
+            }
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        
+        /* Spinner and pulse animations defined in design-system.css */
+        
+        /* Fee table Apply link enhancement */
+        .pathways-matrix .text-link {
+            background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+            color: white !important;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .pathways-matrix .text-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.4);
+        }
+        
+        /* ============================================
+           PREMIUM ANIMATIONS & EFFECTS
+           Note: Core keyframes defined in design-system.css
+           ============================================ */
+        
+        /* Shine Effect Animation (page-specific) */
+        @keyframes shineEffect {
+            0% { left: -100%; }
+            100% { left: 200%; }
+        }
+        
+        /* Glow Pulse Animation (page-specific) */
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(22, 163, 74, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(22, 163, 74, 0.6); }
+        }
+        
+        /* Text Gradient Animation (page-specific) */
+        @keyframes textGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Ripple Animation */
+        @keyframes ripple {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        
+        /* Stagger Animation Classes */
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        .animate-fadeInLeft {
+            animation: fadeInLeft 0.8s ease forwards;
+        }
+        .animate-fadeInRight {
+            animation: fadeInRight 0.8s ease forwards;
+        }
+        .animate-scaleIn {
+            animation: scaleIn 0.6s ease forwards;
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        .animate-bounce {
+            animation: bounce 2s ease infinite;
+        }
+        .animate-wiggle {
+            animation: wiggle 0.5s ease;
+        }
+        
+        /* Stagger delays */
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+        .stagger-6 { animation-delay: 0.6s; }
+        
+        /* Initially hidden for animation */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Card Hover Shine Effect */
+        .card-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .card-shine::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: none;
+        }
+        .card-shine:hover::before {
+            animation: shineEffect 0.8s ease forwards;
+        }
+        
+        /* Gradient Text Effect */
+        .gradient-text {
+            background: linear-gradient(135deg, #1F3D1F 0%, #16a34a 50%, #065F46 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textGradient 4s ease infinite;
+        }
+        
+        /* Glowing Border Effect */
+        .glow-border {
+            position: relative;
+        }
+        .glow-border::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: inherit;
+            background: linear-gradient(135deg, #16a34a, #065F46, #16a34a);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .glow-border:hover::after {
+            opacity: 1;
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+        
+        /* Partner Logo Infinite Scroll */
+        @keyframes scrollLogos {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .logo-scroll-container {
+            overflow: hidden;
+            position: relative;
+        }
+        .logo-scroll-track {
+            display: flex;
+            animation: scrollLogos 30s linear infinite;
+            width: max-content;
+        }
+        .logo-scroll-container:hover .logo-scroll-track {
+            animation-play-state: paused;
+        }
+        
+        /* Story Card Tilt Effect */
+        .story-card {
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1) !important;
+        }
+        .story-card:hover {
+            transform: translateY(-8px) rotateX(2deg) !important;
+        }
+        
+        /* Number Counter Animation */
+        .stat-number {
+            position: relative;
+        }
+        .stat-number::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #16a34a, #065F46);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        .campus-stat-card:hover .stat-number::after {
+            width: 50%;
+        }
+        
+        /* Feature Card Icon Animation */
+        .feature-grid > div:hover i {
+            animation: bounce 0.6s ease;
+        }
+        
+        /* Leadership Carousel Auto-Progress Bar */
+        .leader-carousel {
+            position: relative;
+        }
+        .leader-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #2563eb, #16a34a);
+            border-radius: 0 0 24px 24px;
+            width: 0;
+            transition: width 0.1s linear;
+        }
+        .leader-progress.animating {
+            animation: progressBar 6s linear forwards;
+        }
+        @keyframes progressBar {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        /* Smooth Section Transitions */
+        section {
+            position: relative;
+        }
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            pointer-events: none;
+        }
+        
+        /* Button Hover Effects */
+        .btn {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+            z-index: -1;
+        }
+        .btn:hover::before {
+            width: 300%;
+            height: 300%;
+        }
+        
+        /* Text Link Arrow Animation */
+        .text-link i {
+            transition: transform 0.3s ease;
+        }
+        .text-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Chip Tag Pulse */
+        .chip {
+            position: relative;
+        }
+        .chip::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            opacity: 0;
+            background: inherit;
+            filter: blur(8px);
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+        .card:hover .chip::before {
+            opacity: 0.5;
+        }
+        
+        /* Image Zoom on Hover */
+        .story-img, .leader-photo {
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
+        }
+        .story-card:hover .story-img {
+            transform: scale(1.05);
+        }
+        
+        /* Parallax Background Effect */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        /* Typing Cursor Effect - uses blink from design-system.css */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        
+        /* Smooth underline animation */
+        .hover-underline {
+            position: relative;
+        }
+        .hover-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+        .hover-underline:hover::after {
+            width: 100%;
+        }
+        
+        /* Morphing Background */
+        @keyframes morphBg {
+            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+        }
+        .morph-shape {
+            animation: morphBg 8s ease-in-out infinite;
+        }
+        
+        /* Card Stack Effect */
+        .card-stack {
+            position: relative;
+        }
+        .card-stack::before,
+        .card-stack::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: inherit;
+            border-radius: inherit;
+            z-index: -1;
+            transition: transform 0.3s ease;
+        }
+        .card-stack::before {
+            transform: rotate(-2deg) translateY(4px);
+            opacity: 0.3;
+        }
+        .card-stack::after {
+            transform: rotate(2deg) translateY(8px);
+            opacity: 0.15;
+        }
+        .card-stack:hover::before {
+            transform: rotate(-4deg) translateY(8px);
+        }
+        .card-stack:hover::after {
+            transform: rotate(4deg) translateY(12px);
         }
     </style>
 </head>
 <body>
+    <!-- Page Loader -->
+    <div id="page-loader" style="position: fixed; inset: 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); z-index: 99999; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.5s ease, visibility 0.5s ease;">
+        <div style="position: relative; width: 80px; height: 80px;">
+            <div style="position: absolute; inset: 0; border: 4px solid #e2e8f0; border-radius: 50%;"></div>
+            <div style="position: absolute; inset: 0; border: 4px solid transparent; border-top-color: #16a34a; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+            <div style="position: absolute; inset: 8px; border: 4px solid transparent; border-top-color: #065F46; border-radius: 50%; animation: spin 0.8s linear infinite reverse;"></div>
+        </div>
+        <div style="margin-top: 24px; font-weight: 600; color: #374151; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase;">Loading</div>
+        <div style="margin-top: 8px; display: flex; gap: 4px;">
+            <span style="width: 8px; height: 8px; background: #16a34a; border-radius: 50%; animation: loadingDot 1.4s ease-in-out infinite;"></span>
+            <span style="width: 8px; height: 8px; background: #16a34a; border-radius: 50%; animation: loadingDot 1.4s ease-in-out 0.2s infinite;"></span>
+            <span style="width: 8px; height: 8px; background: #16a34a; border-radius: 50%; animation: loadingDot 1.4s ease-in-out 0.4s infinite;"></span>
+        </div>
+    </div>
+    <style>
+        @keyframes loadingDot {
+            0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+        body.loaded #page-loader {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    </style>
+    
     <!-- Scroll Progress Bar -->
     <div id="scroll-progress"></div>
 
@@ -55,43 +824,43 @@
                 
                 <div class="mini-slide active">
                     <div class="slide-overlay"></div>
-                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1920&q=80" alt="Leadership in action">
-                    <div class="slide-text">
-                        <h2 class="slide-quote">"To lead is to <em>serve</em>"</h2>
-                    </div>
+                    <img src="assets/images/banner_Homepage/banner_1_scroller.jpeg" alt="KIIT School of Leadership banner: students collaborating" width="1526" height="764">
                 </div>
                 
                 <div class="mini-slide">
                     <div class="slide-overlay"></div>
-                    <img src="https://images.unsplash.com/photo-1529333166433-44ae4dc4c749?auto=format&fit=crop&w=1920&q=80" alt="Building tomorrow's leaders">
-                    <div class="slide-text">
-                        <h2 class="slide-quote">"Build the future. <em>Lead with impact.</em>"</h2>
-                    </div>
+                    <img src="assets/images/banner_Homepage/banner_2_scroller.webp" alt="KIIT School of Leadership banner: campus and community" width="1893" height="736">
                 </div>
                 
                 <div class="mini-slide">
                     <div class="slide-overlay"></div>
-                    <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1920&q=80" alt="Innovation through collaboration">
-                    <div class="slide-text">
-                        <h2 class="slide-quote">"Where <em>innovation</em> meets purpose"</h2>
-                    </div>
+                    <img src="assets/images/banner_Homepage/banner_3_scroller.png" alt="KIIT School of Leadership banner: innovation and teamwork" width="1901" height="729">
                 </div>
+                
+                <!-- Progress dots -->
+                <div class="slider-progress-container">
+                    <span class="slider-progress-dot active" data-slide="0"></span>
+                    <span class="slider-progress-dot" data-slide="1"></span>
+                    <span class="slider-progress-dot" data-slide="2"></span>
+                </div>
+                <!-- Progress bar -->
+                <div class="slider-progress-bar animating"></div>
             </div>
         </div>
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <span class="hero-eyebrow" style="color: #d97706; font-weight: 800; margin-bottom: 20px; display: block;">ADMISSIONS OPEN · MBA IEV</span>
-                    <h1 style="margin-bottom: 24px;">Build the venture:<br><span class="text-primary">Lead, Launch, Scale.</span></h1>
-                    <p class="lead" style="margin-bottom: 36px;">
+                    <span class="hero-eyebrow" style="background: linear-gradient(135deg, #16a34a, #15803d); color: white; font-weight: 800; margin-bottom: 20px; display: inline-block; padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; letter-spacing: 1px; box-shadow: 0 4px 14px rgba(22, 163, 74, 0.3);"><i class="fa-solid fa-circle" style="font-size: 0.5rem; margin-right: 8px; animation: pulse 2s infinite;"></i>ADMISSIONS OPEN · MBA IEV</span>
+                    <h1 style="margin-bottom: 24px; color: #1a1a2e; text-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 3.5rem; line-height: 1.1;">Build the venture:<br><span style="background: linear-gradient(135deg, #16a34a, #0d9488); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Lead, Launch, Scale.</span></h1>
+                    <p class="lead" style="margin-bottom: 36px; color: #374151; font-size: 1.15rem; line-height: 1.8;">
                         KIIT's practice-first School of Leadership blends management, venture building, and social impact. Ship real products, work with operators, and step into a network that backs bold builders.
                     </p>
-                    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px;">
-                        <a href="mba-iev.html#apply" class="btn btn-primary">Apply for MBA–IEV</a>
-                        <a href="mba-iev.html#journey" class="btn btn-outline"><i class="fa-solid fa-download"></i> View curriculum</a>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px;">
+                        <a href="https://letsaog.me/sld-apply/" class="btn btn-primary" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); padding: 16px 32px; font-size: 1.1rem; font-weight: 700; border-radius: 12px; box-shadow: 0 8px 25px rgba(22, 163, 74, 0.4); display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 35px rgba(22, 163, 74, 0.5)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(22, 163, 74, 0.4)';"><i class="fa-solid fa-rocket"></i> Apply Now – Start Your Journey</a>
+                        <a href="mba-iev.html#journey" class="btn btn-outline" style="padding: 16px 28px; font-size: 1rem; border-width: 2px;"><i class="fa-solid fa-book-open"></i> View Curriculum</a>
                     </div>
                     <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
-                        <a href="mailto:kiit@kiit.ac.in?subject=Send%20MBA%20IEV%20Brochure&body=Hi%20team,%20please%20share%20the%20MBA%20IEV%20brochure.%20Name:%20%0APhone:%20" class="text-link" style="font-weight: 600;">Request brochure <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="assets/MBA%20IEV%202026%20Brochure.pdf" download class="text-link" style="font-weight: 600;">Download brochure <i class="fa-solid fa-download"></i></a>
                         <a href="tel:+916742725113" class="text-link" style="font-weight: 600;">Talk to admissions <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                     
@@ -147,7 +916,7 @@
                 </div>
 
                 <!-- About KSLD with Image -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                <div class="about-ksld-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
                     <div>
                         <h3 style="margin-bottom: 24px; font-size: 1.75rem;">KIIT School of Leadership (KSLd)</h3>
                         <div style="font-size: 1rem; line-height: 1.8; color: var(--color-text); text-align: justify;">
@@ -157,7 +926,7 @@
                         </div>
                     </div>
                     <div>
-                        <img src="assets/photos/campus/kiit-campus.png.jpeg" alt="KIIT Campus" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: block;">
+                        <img src="assets/images/campus/kiit-campus.png.jpeg" alt="KIIT Campus" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: block;">
                     </div>
                 </div>
             </div>
@@ -174,7 +943,7 @@
 
             <div class="leader-carousel">
                 <div class="leader-slide active">
-                    <img class="leader-photo" src="https://achyutasamanta.com/wp-content/uploads/2023/01/achyuta-samanta-profile.jpg" alt="Prof. Achyuta Samanta" onerror="this.src='https://ui-avatars.com/api/?name=Achyuta+Samanta'">
+                    <img class="leader-photo" src="assets/images/people/Dr._Achyuta_Samanta.jpg" alt="Prof. Achyuta Samanta" onerror="this.src='https://ui-avatars.com/api/?name=Achyuta+Samanta&background=2563eb&color=fff&size=200'">
                     <div class="leader-meta">
                         <h3>Prof. Achyuta Samanta</h3>
                         <div class="role">Founder & Mentor, KIIT</div>
@@ -183,16 +952,16 @@
                 </div>
 
                 <div class="leader-slide">
-                    <img class="leader-photo" src="https://ui-avatars.com/api/?name=Saranjit+Singh" alt="Prof. (Dr.) Saranjit Singh">
+                    <img class="leader-photo" src="assets/images/people/dr. saranjit_singh.jpeg" alt="Prof. (Dr.) Saranjit Singh" onerror="this.src='https://ui-avatars.com/api/?name=Saranjit+Singh&background=2563eb&color=fff&size=200'">
                     <div class="leader-meta">
                         <h3>Prof. (Dr.) Saranjit Singh</h3>
                         <div class="role">Vice Chancellor</div>
-                        <p style="font-size: 1rem; line-height: 1.8;">It is my pleasure to extend a warm invitation to all aspiring visionaries and changemakers. Join our community of leaders shaping the future of business. Our program equips you with the knowledge, skills, and mindset to launch successful ventures, drive innovation, and create sustainable impact. Develop essential skills like agility, resilience, and adaptability, along with critical thinking, creativity, and collaboration. Gain hands-on experience with world-class faculty, industry experts, and global innovators. Join us on this transformative journey and discover your potential to become a successful entrepreneur, innovator, and changemaker.</p>
+                        <p style="font-size: 1rem; line-height: 1.8; color: var(--color-text-muted);">It is my pleasure to extend a warm invitation to all aspiring visionaries and changemakers. Join our community of leaders shaping the future of business. Our program equips you with the knowledge, skills, and mindset to launch successful ventures, drive innovation, and create sustainable impact. Develop essential skills like agility, resilience, and adaptability, along with critical thinking, creativity, and collaboration. Gain hands-on experience with world-class faculty, industry experts, and global innovators. Join us on this transformative journey and discover your potential to become a successful entrepreneur, innovator, and changemaker.</p>
                     </div>
                 </div>
 
                 <div class="leader-slide">
-                    <img class="leader-photo" src="https://ui-avatars.com/api/?name=Raju+K+D" alt="Prof. (Dr.) Raju K.D.">
+                    <img class="leader-photo" src="assets/images/people/kd_raju.jpeg" alt="Prof. (Dr.) Raju K.D." onerror="this.src='https://ui-avatars.com/api/?name=Raju+KD&background=2563eb&color=fff&size=200'">
                     <div class="leader-meta">
                         <h3>Prof. (Dr.) Raju K.D.</h3>
                         <div class="role">Pro-Vice Chancellor</div>
@@ -201,7 +970,7 @@
                 </div>
 
                 <div class="leader-slide">
-                    <img class="leader-photo" src="https://ui-avatars.com/api/?name=Mrutyunjay+Suar" alt="Dr. (Prof) Mrutyunjay Suar">
+                    <img class="leader-photo" src="assets/images/people/prof-mrutyunjay-suar.png" alt="Dr. (Prof) Mrutyunjay Suar" onerror="this.src='https://ui-avatars.com/api/?name=Mrutyunjay+Suar&background=2563eb&color=fff&size=200'">
                     <div class="leader-meta">
                         <h3>Dr. (Prof) Mrutyunjay Suar</h3>
                         <div class="role">CEO, KIIT TBI</div>
@@ -210,11 +979,11 @@
                 </div>
 
                 <div class="leader-slide">
-                    <img class="leader-photo" src="https://ui-avatars.com/api/?name=Pinaki+Nandan+Pattnaik" alt="Dr. Pinaki Nandan Pattnaik">
+                    <img class="leader-photo" src="assets/images/people/dr-pinaki-nandan-pattnaik.png" alt="Dr. Pinaki Nandan Pattnaik" onerror="this.src='https://ui-avatars.com/api/?name=Pinaki+Nandan+Pattnaik&background=2563eb&color=fff&size=200'">
                     <div class="leader-meta">
                         <h3>Dr. Pinaki Nandan Pattnaik</h3>
                         <div class="role">Dean, School of Leadership</div>
-                        <p style="font-size: 1rem; line-height: 1.8;">At KIIT, we are committed to developing business leaders, innovators and changemakers who can lead with purpose and drive social and economic impact. The MBA-lEV program is not just about understanding business principles but about cultivating a mindset that thrives on innovation, resilience, and entrepreneurial thinking. It is meticulously designed to equip innovators and future entrepreneurs with knowledge, skills, and strategies to navigate the complexities of building and scaling successful ventures. From ideation to execution, with mentorship from industry leaders, practical learning opportunities, and cutting-edge research resources, learners will be empowered to transform their entrepreneurial vision into reality.</p>
+                        <p style="font-size: 1rem; line-height: 1.8; color: var(--color-text-muted);">At KIIT, we are committed to developing business leaders, innovators and changemakers who can lead with purpose and drive social and economic impact. The MBA-lEV program is not just about understanding business principles but about cultivating a mindset that thrives on innovation, resilience, and entrepreneurial thinking. It is meticulously designed to equip innovators and future entrepreneurs with knowledge, skills, and strategies to navigate the complexities of building and scaling successful ventures. From ideation to execution, with mentorship from industry leaders, practical learning opportunities, and cutting-edge research resources, learners will be empowered to transform their entrepreneurial vision into reality.</p>
                     </div>
                 </div>
 
@@ -222,6 +991,8 @@
                     <button class="leader-btn" aria-label="Previous leader" data-dir="prev"><i class="fa-solid fa-chevron-left"></i></button>
                     <button class="leader-btn" aria-label="Next leader" data-dir="next"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
+                <!-- Progress bar for auto-advance -->
+                <div class="leader-progress"></div>
             </div>
             <div class="leader-dots" aria-label="Carousel dots"></div>
         </div>
@@ -230,166 +1001,47 @@
     <!-- Why MBA IEV -->
     <section id="why-mba-iev" class="section bg-white">
         <div class="container">
-            <div style="text-align: center; max-width: 800px; margin: 0 auto 60px;">
-                <h2>Why MBA–IEV at KSLD?</h2>
-                <p style="font-size: 1.125rem; color: var(--color-text-muted);">A program designed for the next generation of founders and intrapreneurs. We bring management education and venture building under one roof.</p>
+            <div style="text-align: center; max-width: 900px; margin: 0 auto 60px;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Why MBA–IEV at KSLd?</h2>
+                <p style="font-size: 1.125rem; color: var(--color-text-muted); line-height: 1.6;">A program designed for the next generation of founders and intrapreneurs. We bring management education and venture building under one roof.</p>
             </div>
             
-            <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+            <div class="feature-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; max-width: 1200px; margin: 0 auto;">
                 <!-- Card 1 -->
-                <div class="card">
-                    <div class="feature-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
-                    <h3>Mentored by Founders</h3>
-                    <p>Studios, masterclasses, and 1:1 clinics led by founders, CXOs, policymakers, and operators.</p>
+                <div class="feature-card" style="background: #ffffff; border-radius: 16px; padding: 32px 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); border: 1px solid #f0f4f8; transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); text-align: center; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-12px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(15, 118, 110, 0.2)'; this.querySelector('.feature-icon').style.transform='scale(1.1) rotate(5deg)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.08)'; this.querySelector('.feature-icon').style.transform='scale(1) rotate(0)';">
+                    <div class="feature-icon" style="font-size: 3rem; color: #0f766e; margin-bottom: 20px; display: flex; justify-content: center; align-items: center; height: 60px; transition: all 0.4s ease;"><i class="fa-solid fa-chalkboard-user"></i></div>
+                    <h3 style="margin: 0 0 12px 0; font-size: 1.3rem; font-weight: 700; color: var(--color-text);">Mentored by Founders</h3>
+                    <p style="color: var(--color-text-muted); line-height: 1.7; margin: 0; font-size: 0.95rem;">Studios, masterclasses, and 1:1 clinics led by founders, CXOs, policymakers, and operators.</p>
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #0f766e, #10b981); transform: scaleX(0); transition: transform 0.4s ease; transform-origin: left;"></div>
                 </div>
                 <!-- Card 2 -->
-                <div class="card">
-                    <div class="feature-icon"><i class="fa-solid fa-rocket"></i></div>
-                    <h3>Incubation Support</h3>
-                    <p>Powered by KIIT-TBI: labs, grants, legal/IP clinics, and investor rooms to launch faster.</p>
+                <div class="feature-card" style="background: #ffffff; border-radius: 16px; padding: 32px 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); border: 1px solid #f0f4f8; transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); text-align: center; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-12px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(15, 118, 110, 0.2)'; this.querySelector('.feature-icon').style.transform='scale(1.1) rotate(-5deg)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.08)'; this.querySelector('.feature-icon').style.transform='scale(1) rotate(0)';">
+                    <div class="feature-icon" style="font-size: 3rem; color: #0f766e; margin-bottom: 20px; display: flex; justify-content: center; align-items: center; height: 60px; transition: all 0.4s ease;"><i class="fa-solid fa-rocket"></i></div>
+                    <h3 style="margin: 0 0 12px 0; font-size: 1.3rem; font-weight: 700; color: var(--color-text);">Incubation Support</h3>
+                    <p style="color: var(--color-text-muted); line-height: 1.7; margin: 0; font-size: 0.95rem;">Powered by KIIT-TBI: labs, grants, legal/IP clinics, and investor rooms to launch faster.</p>
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #0f766e, #10b981); transform: scaleX(0); transition: transform 0.4s ease; transform-origin: left;"></div>
                 </div>
                 <!-- Card 3 -->
-                <div class="card">
-                    <div class="feature-icon"><i class="fa-solid fa-sack-dollar"></i></div>
-                    <h3>Funding Opportunities</h3>
-                    <p>Demo Days, seed grants, angels, and venture partners that back student-led startups.</p>
+                <div class="feature-card" style="background: #ffffff; border-radius: 16px; padding: 32px 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); border: 1px solid #f0f4f8; transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); text-align: center; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-12px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(15, 118, 110, 0.2)'; this.querySelector('.feature-icon').style.transform='scale(1.1) rotate(5deg)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.08)'; this.querySelector('.feature-icon').style.transform='scale(1) rotate(0)';">
+                    <div class="feature-icon" style="font-size: 3rem; color: #0f766e; margin-bottom: 20px; display: flex; justify-content: center; align-items: center; height: 60px; transition: all 0.4s ease;"><i class="fa-solid fa-sack-dollar"></i></div>
+                    <h3 style="margin: 0 0 12px 0; font-size: 1.3rem; font-weight: 700; color: var(--color-text);">Funding Opportunities</h3>
+                    <p style="color: var(--color-text-muted); line-height: 1.7; margin: 0; font-size: 0.95rem;">Demo Days, seed grants, angels, and venture partners that back student-led startups.</p>
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #0f766e, #10b981); transform: scaleX(0); transition: transform 0.4s ease; transform-origin: left;"></div>
                 </div>
                 <!-- Card 4 -->
-                <div class="card">
-                    <div class="feature-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <h3>Action-Based Learning</h3>
-                    <p>Work on live problems, simulations, and your own venture—progress is your grade.</p>
+                <div class="feature-card" style="background: #ffffff; border-radius: 16px; padding: 32px 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); border: 1px solid #f0f4f8; transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); text-align: center; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-12px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(15, 118, 110, 0.2)'; this.querySelector('.feature-icon').style.transform='scale(1.1) rotate(-5deg)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.08)'; this.querySelector('.feature-icon').style.transform='scale(1) rotate(0)';">
+                    <div class="feature-icon" style="font-size: 3rem; color: #0f766e; margin-bottom: 20px; display: flex; justify-content: center; align-items: center; height: 60px; transition: all 0.4s ease;"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3 style="margin: 0 0 12px 0; font-size: 1.3rem; font-weight: 700; color: var(--color-text);">Action-Based Learning</h3>
+                    <p style="color: var(--color-text-muted); line-height: 1.7; margin: 0; font-size: 0.95rem;">Work on live problems, simulations, and your own venture - progress is your grade.</p>
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #0f766e, #10b981); transform: scaleX(0); transition: transform 0.4s ease; transform-origin: left;"></div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Company Connections Section -->
-    <section class="section bg-light">
-        <div class="container">
-            <div style="margin-bottom: 40px; text-align: center;">
-                <h2>Company Connections</h2>
-                <p style="font-size: 1.05rem; color: var(--color-text-muted);">Explore the ten latest connections from our network.</p>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
-                <a href="#" class="card" style="padding: 14px; font-weight: 700; text-decoration: none; color: inherit;">Connection 1</a>
-                <a href="#" class="card" style="padding: 14px; font-weight: 700; text-decoration: none; color: inherit;">Connection 2</a>
-                <a href="#" class="card" style="padding: 14px; font-weight: 700; text-decoration: none; color: inherit;">Connection 3</a>
-                <a href="#" class="card" style="padding: 14px; font-weight: 700; text-decoration: none; color: inherit;">Connection 4</a>
-                <a href="#" class="card" style="padding: 14px; font-weight: 700; text-decoration: none; color: inherit;">Connection 5</a>
-                <a href="#" class="card" style="padding: 14px; font-weight: 700; text-decoration: none; color: inherit;">Connection 6</a>
-                <a href="#" class="card" style="padding: 14px; font-weight: 700; text-decoration: none; color: inherit;">Connection 7</a>
-                <a href="#" class="card" style="padding: 14px; font-weight: 700; text-decoration: none; color: inherit;">Connection 8</a>
-                <a href="#" class="card" style="padding: 14px; font-weight: 700; text-decoration: none; color: inherit;">Connection 9</a>
-                <a href="#" class="card" style="padding: 14px; font-weight: 700; text-decoration: none; color: inherit;">Connection 10</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- News & Updates Section -->
-    <section class="section bg-light">
-        <div class="container">
-            <div style="margin-bottom: 60px;">
-                <h2>Latest News & Updates</h2>
-                <p style="font-size: 1.125rem; color: var(--color-text-muted); margin-top: 12px;">Stay updated with the latest developments at KIIT School of Leadership</p>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
-                <!-- News Card 1 -->
-                <div class="card" style="display: flex; flex-direction: column;">
-                    <div style="height: 200px; background: linear-gradient(135deg, #1F3D1F 0%, #064E3B 100%); border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
-                        <i class="fa-solid fa-newspaper" style="font-size: 3rem; color: white; opacity: 0.3;"></i>
-                    </div>
-                    <span style="font-size: 0.85rem; color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">December 14, 2024</span>
-                    <h3 style="margin: 12px 0 12px 0; font-size: 1.25rem;">MBA IEV Cohort 2024 Launch</h3>
-                    <p style="flex-grow: 1;">Introducing the newest cohort of founders and intrapreneurs selected from across India to build the future with KIIT-TBI support.</p>
-                    <a href="#" style="color: var(--color-primary); font-weight: 600; text-decoration: none; margin-top: 12px;">Read more <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-
-                <!-- News Card 2 -->
-                <div class="card" style="display: flex; flex-direction: column;">
-                    <div style="height: 200px; background: linear-gradient(135deg, #064E3B 0%, #1F3D1F 100%); border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
-                        <i class="fa-solid fa-star" style="font-size: 3rem; color: white; opacity: 0.3;"></i>
-                    </div>
-                    <span style="font-size: 0.85rem; color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">December 10, 2024</span>
-                    <h3 style="margin: 12px 0 12px 0; font-size: 1.25rem;">Demo Day 2024 - Record Funding</h3>
-                    <p style="flex-grow: 1;">Our students presented ventures to top investors, raising ₹50 Cr+ in seed funding. A testament to the power of practice-first learning.</p>
-                    <a href="#" style="color: var(--color-primary); font-weight: 600; text-decoration: none; margin-top: 12px;">Read more <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-
-                <!-- News Card 3 -->
-                <div class="card" style="display: flex; flex-direction: column;">
-                    <div style="height: 200px; background: linear-gradient(135deg, #1F3D1F 0%, #064E3B 100%); border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
-                        <i class="fa-solid fa-handshake" style="font-size: 3rem; color: white; opacity: 0.3;"></i>
-                    </div>
-                    <span style="font-size: 0.85rem; color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">December 5, 2024</span>
-                    <h3 style="margin: 12px 0 12px 0; font-size: 1.25rem;">New Industry Partnerships Announced</h3>
-                    <p style="flex-grow: 1;">KSLD partners with 10+ leading companies to provide mentorship, internships, and post-graduation opportunities for our graduates.</p>
-                    <a href="#" style="color: var(--color-primary); font-weight: 600; text-decoration: none; margin-top: 12px;">Read more <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Updates Section -->
-    <section class="section bg-white">
-        <div class="container">
-            <div style="margin-bottom: 60px;">
-                <h2>Follow Our Journey</h2>
-                <p style="font-size: 1.125rem; color: var(--color-text-muted); margin-top: 12px;">Connect with KSLD on social media for daily updates and leadership insights</p>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
-                <!-- Twitter/X Box -->
-                <div class="card" style="padding: 20px; display: flex; flex-direction: column; gap: 12px;">
-                    <div style="display: flex; align-items: center; gap: 12px;">
-                        <i class="fa-brands fa-x-twitter" style="font-size: 1.5rem; color: var(--color-primary);"></i>
-                        <h3 style="margin: 0;">Twitter / X</h3>
-                    </div>
-                    <p style="font-size: 0.95rem; color: var(--color-text-muted);">@handle_to_be_added</p>
-                    <div style="height: 160px; background: var(--color-bg-muted); border: 1px dashed var(--color-border); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--color-text-muted);">
-                        Live feed embed placeholder
-                    </div>
-                </div>
-
-                <!-- Instagram Box -->
-                <div class="card" style="padding: 20px; display: flex; flex-direction: column; gap: 12px;">
-                    <div style="display: flex; align-items: center; gap: 12px;">
-                        <i class="fa-brands fa-instagram" style="font-size: 1.5rem; color: #C13584;"></i>
-                        <h3 style="margin: 0;">Instagram</h3>
-                    </div>
-                    <p style="font-size: 0.95rem; color: var(--color-text-muted);">@handle_to_be_added</p>
-                    <div style="height: 160px; background: var(--color-bg-muted); border: 1px dashed var(--color-border); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--color-text-muted);">
-                        Grid embed placeholder
-                    </div>
-                </div>
-
-                <!-- LinkedIn Box -->
-                <div class="card" style="padding: 20px; display: flex; flex-direction: column; gap: 12px;">
-                    <div style="display: flex; align-items: center; gap: 12px;">
-                        <i class="fa-brands fa-linkedin" style="font-size: 1.5rem; color: #0077b5;"></i>
-                        <h3 style="margin: 0;">LinkedIn</h3>
-                    </div>
-                    <p style="font-size: 0.95rem; color: var(--color-text-muted);">Page handle to be added</p>
-                    <div style="height: 160px; background: var(--color-bg-muted); border: 1px dashed var(--color-border); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--color-text-muted);">
-                        Posts embed placeholder
-                    </div>
-                </div>
-
-                <!-- YouTube Box -->
-                <div class="card" style="padding: 20px; display: flex; flex-direction: column; gap: 12px;">
-                    <div style="display: flex; align-items: center; gap: 12px;">
-                        <i class="fa-brands fa-youtube" style="font-size: 1.5rem; color: #FF0000;"></i>
-                        <h3 style="margin: 0;">YouTube</h3>
-                    </div>
-                    <p style="font-size: 0.95rem; color: var(--color-text-muted);">Channel/playlist to be added</p>
-                    <div style="height: 160px; background: var(--color-bg-muted); border: 1px dashed var(--color-border); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--color-text-muted);">
-                        Video embed placeholder
-                    </div>
-                </div>
-            </div>
-
-            <div style="margin-top: 8px; font-size: 0.85rem; color: var(--color-text-muted);">Handles and embeds will be linked later.</div>
+            
+            <style>
+                .feature-card:hover > div:last-child {
+                    transform: scaleX(1) !important;
+                }
+            </style>
         </div>
     </section>
 
@@ -398,12 +1050,15 @@
         <div class="container">
             <div style="margin-bottom: 40px;">
                 <h2>Programs & pathways</h2>
-                <p style="font-size: 1.125rem; color: var(--color-text-muted);">Pick your path—as a founder, intrapreneur, executive, or change-maker.</p>
+                <p style="font-size: 1.125rem; color: var(--color-text-muted);">Pick your path - as a founder, intrapreneur, executive, or change-maker.</p>
             </div>
             
             <div class="programs-grid">
                 <!-- Program 1 -->
-                <div class="card">
+                <div class="card" style="position: relative; overflow: hidden; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.15)'; this.querySelector('.card-stats').style.opacity='1'; this.querySelector('.card-stats').style.transform='translateY(0)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=''; this.querySelector('.card-stats').style.opacity='0'; this.querySelector('.card-stats').style.transform='translateY(10px)';">
+                    <div style="position: absolute; top: 20px; right: 20px; width: 50px; height: 50px; background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-building-columns" style="font-size: 1.5rem; color: #1E40AF;"></i>
+                    </div>
                     <div style="margin-bottom: 16px;">
                         <span class="chip" style="background: #DBEAFE; color: #1E40AF;">Flagship program</span>
                     </div>
@@ -414,6 +1069,14 @@
                         <li>Venture studio & incubation support</li>
                         <li>Co-taught by industry mentors</li>
                     </ul>
+                    <!-- Hover Stats -->
+                    <div class="card-stats" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: white; padding: 12px 16px; border-radius: 8px; margin: 16px 0; opacity: 0; transform: translateY(10px); transition: all 0.3s ease;">
+                        <div style="display: flex; justify-content: space-around; text-align: center; font-size: 0.85rem;">
+                            <div><strong style="display: block; font-size: 1.2rem;">40+</strong>Mentors</div>
+                            <div><strong style="display: block; font-size: 1.2rem;">₹13B+</strong>Funding Access</div>
+                            <div><strong style="display: block; font-size: 1.2rem;">423+</strong>Startups</div>
+                        </div>
+                    </div>
                     <div class="program-meta">
                         <span>Duration: 2 years · Full-time</span>
                         <a href="mba-iev.html" class="text-link">View MBA–IEV program <i class="fa-solid fa-arrow-right"></i></a>
@@ -421,7 +1084,10 @@
                 </div>
                 
                 <!-- Program 2 -->
-                <div class="card">
+                <div class="card" style="position: relative; overflow: hidden; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.15)'; this.querySelector('.card-stats').style.opacity='1'; this.querySelector('.card-stats').style.transform='translateY(0)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=''; this.querySelector('.card-stats').style.opacity='0'; this.querySelector('.card-stats').style.transform='translateY(10px)';">
+                    <div style="position: absolute; top: 20px; right: 20px; width: 50px; height: 50px; background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-user-tie" style="font-size: 1.5rem; color: #9D174D;"></i>
+                    </div>
                     <div style="margin-bottom: 16px;">
                         <span class="chip" style="background: #FCE7F3; color: #9D174D;">Working professionals</span>
                     </div>
@@ -432,14 +1098,25 @@
                         <li>For early to senior professionals</li>
                         <li>Blended workshops & coaching</li>
                     </ul>
+                    <!-- Hover Stats -->
+                    <div class="card-stats" style="background: linear-gradient(135deg, #9D174D 0%, #831843 100%); color: white; padding: 12px 16px; border-radius: 8px; margin: 16px 0; opacity: 0; transform: translateY(10px); transition: all 0.3s ease;">
+                        <div style="display: flex; justify-content: space-around; text-align: center; font-size: 0.85rem;">
+                            <div><strong style="display: block; font-size: 1.2rem;">3-5</strong>Days</div>
+                            <div><strong style="display: block; font-size: 1.2rem;">100+</strong>Professionals</div>
+                            <div><strong style="display: block; font-size: 1.2rem;">15+</strong>Companies</div>
+                        </div>
+                    </div>
                     <div class="program-meta">
                         <span>3–5 day programs · Blended</span>
-                        <a href="#" class="text-link">Explore certification programs <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="pace.html" class="text-link">Explore certification programs <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
                 
                 <!-- Program 3 -->
-                <div class="card">
+                <div class="card" style="position: relative; overflow: hidden; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.15)'; this.querySelector('.card-stats').style.opacity='1'; this.querySelector('.card-stats').style.transform='translateY(0)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=''; this.querySelector('.card-stats').style.opacity='0'; this.querySelector('.card-stats').style.transform='translateY(10px)';">
+                    <div style="position: absolute; top: 20px; right: 20px; width: 50px; height: 50px; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-hand-holding-heart" style="font-size: 1.5rem; color: #92400E;"></i>
+                    </div>
                     <div style="margin-bottom: 16px;">
                         <span class="chip" style="background: #FEF3C7; color: #92400E;">Social impact</span>
                     </div>
@@ -450,9 +1127,17 @@
                         <li>Civic engagement initiatives</li>
                         <li>Govt & social sector partners</li>
                     </ul>
+                    <!-- Hover Stats -->
+                    <div class="card-stats" style="background: linear-gradient(135deg, #92400E 0%, #78350f 100%); color: white; padding: 12px 16px; border-radius: 8px; margin: 16px 0; opacity: 0; transform: translateY(10px); transition: all 0.3s ease;">
+                        <div style="display: flex; justify-content: space-around; text-align: center; font-size: 0.85rem;">
+                            <div><strong style="display: block; font-size: 1.2rem;">50+</strong>Projects</div>
+                            <div><strong style="display: block; font-size: 1.2rem;">20+</strong>NGO Partners</div>
+                            <div><strong style="display: block; font-size: 1.2rem;">5K+</strong>Lives Impacted</div>
+                        </div>
+                    </div>
                     <div class="program-meta">
                         <span>Labs · Projects · Fellowships</span>
-                        <a href="#" class="text-link">Discover social impact <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="sri.html" class="text-link">Discover social impact <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -476,7 +1161,7 @@
                             <td>2 years</td>
                             <td>Full-time · Studio-first</td>
                             <td>Fundable startup or leadership role with venture discipline</td>
-                            <td><a href="mba-iev.html#apply" class="text-link">Apply</a></td>
+                            <td><a href="https://letsaog.me/sld-apply/" class="text-link">Apply</a></td>
                         </tr>
                         <tr>
                             <td><span class="tag">PACE</span></td>
@@ -506,71 +1191,143 @@
             <div class="grid-12">
                 <div style="grid-column: span 5;">
                     <h2>Learn from leaders, not just lecturers.</h2>
-                    <p style="margin-bottom: 24px; color: var(--color-text-muted);">At the School of Leadership, you learn from people who do the work every day—founders, CXOs, policymakers, development professionals, and researchers.</p>
+                    <p style="margin-bottom: 24px; color: var(--color-text-muted);">At the School of Leadership, you learn from people who do the work every day - founders, CXOs, policymakers, development professionals, and researchers.</p>
                     <ul style="margin-bottom: 32px; list-style: none;">
                         <li style="margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--color-primary); margin-right: 8px;"></i> 20+ full-time core faculty</li>
                         <li style="margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--color-primary); margin-right: 8px;"></i> 40+ Professors of Practice</li>
                         <li style="margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--color-primary); margin-right: 8px;"></i> Small cohorts & personalised mentoring</li>
                     </ul>
-                    <a href="#faculty" class="btn btn-outline">Meet our faculty & mentors</a>
+                    <a href="people-regular-faculty.html" class="btn btn-outline" style="width: auto;">Meet our faculty & mentors</a>
                 </div>
                 <div style="grid-column: span 7;">
                     <div class="faculty-grid">
-                        <!-- Mentor 1 -->
+                        <!-- Mentor 1: Pinaki Nandan Pattnaik - Faculty -->
                         <div class="mini-person-card">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Prof. A. Sharma" class="mini-person-img">
+                            <img src="assets/images/people/dr-pinaki-nandan-pattnaik.png" alt="Dr. Pinaki Nandan Pattnaik" class="mini-person-img" onerror="this.src='https://ui-avatars.com/api/?name=Pinaki+Nandan+Pattnaik&background=2563eb&color=fff&size=80'">
                             <div>
-                                <h4 style="margin-bottom: 4px;">Prof. A. Sharma</h4>
-                                <div style="font-size: 0.875rem; color: var(--color-text-muted);">Innovation & Strategy · Professor of Practice</div>
-                                <a href="#" style="font-size: 0.75rem; color: var(--color-primary); margin-top: 4px; display: inline-block;">View profile →</a>
+                                <h4 style="margin-bottom: 4px;">Dr. Pinaki Nandan Pattnaik</h4>
+                                <div style="font-size: 0.875rem; color: var(--color-text-muted);">Leadership & Vision · Dean & Core Faculty</div>
+                                <a href="about-pinaki-nandan.html" style="font-size: 0.75rem; color: var(--color-primary); margin-top: 4px; display: inline-block;">View profile →</a>
                             </div>
                         </div>
-                        <!-- Mentor 2 -->
+                        <!-- Mentor 2: Sweta Leena Hota - Faculty -->
                         <div class="mini-person-card">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ms. R. Mehta" class="mini-person-img">
+                            <img src="assets/images/people/dr-sweta-leena-hota.png" alt="Dr. Sweta Leena Hota" class="mini-person-img" onerror="this.src='https://ui-avatars.com/api/?name=Sweta+Leena+Hota&background=2563eb&color=fff&size=80'">
                             <div>
-                                <h4 style="margin-bottom: 4px;">Ms. R. Mehta</h4>
-                                <div style="font-size: 0.875rem; color: var(--color-text-muted);">Founder & CEO, Early-stage venture mentor</div>
-                                <a href="#" style="font-size: 0.75rem; color: var(--color-primary); margin-top: 4px; display: inline-block;">View profile →</a>
+                                <h4 style="margin-bottom: 4px;">Dr. Sweta Leena Hota</h4>
+                                <div style="font-size: 0.875rem; color: var(--color-text-muted);">Co-ordinator · Core Faculty</div>
+                                <a href="people-regular-faculty.html" style="font-size: 0.75rem; color: var(--color-primary); margin-top: 4px; display: inline-block;">View profile →</a>
                             </div>
                         </div>
-                        <!-- Mentor 3 -->
+                        <!-- Mentor 3: Bodhisattwa Sanghapriya - Professor of Practice -->
                         <div class="mini-person-card">
-                            <img src="https://randomuser.me/api/portraits/men/86.jpg" alt="Dr. S. Iqbal" class="mini-person-img">
+                            <img src="assets/images/people/Bodhisattwa-Sanghapriya.png" alt="Bodhisattwa Sanghapriya" class="mini-person-img" onerror="this.src='https://ui-avatars.com/api/?name=Bodhisattwa+Sanghapriya&background=2563eb&color=fff&size=80'">
                             <div>
-                                <h4 style="margin-bottom: 4px;">Dr. S. Iqbal</h4>
-                                <div style="font-size: 0.875rem; color: var(--color-text-muted);">Leadership & Organizational Behaviour · Core Faculty</div>
-                                <a href="#" style="font-size: 0.75rem; color: var(--color-primary); margin-top: 4px; display: inline-block;">View profile →</a>
+                                <h4 style="margin-bottom: 4px;">Bodhisattwa Sanghapriya</h4>
+                                <div style="font-size: 0.875rem; color: var(--color-text-muted);">Founder & CEO, IG Drones · Professor of Practice</div>
+                                <a href="people-professors-of-practice.html" style="font-size: 0.75rem; color: var(--color-primary); margin-top: 4px; display: inline-block;">View profile →</a>
+                            </div>
+                        </div>
+                        <!-- Mentor 4: Samidha Mahapatra - Professor of Practice -->
+                        <div class="mini-person-card">
+                            <img src="assets/images/people/Samidha-Mahapatra.png" alt="Samidha Mahapatra" class="mini-person-img" onerror="this.src='https://ui-avatars.com/api/?name=Samidha+Mahapatra&background=2563eb&color=fff&size=80'">
+                            <div>
+                                <h4 style="margin-bottom: 4px;">Samidha Mahapatra</h4>
+                                <div style="font-size: 0.875rem; color: var(--color-text-muted);">Industry Strategy, Ericsson · Professor of Practice</div>
+                                <a href="people-professors-of-practice.html" style="font-size: 0.75rem; color: var(--color-primary); margin-top: 4px; display: inline-block;">View profile →</a>
                             </div>
                         </div>
                     </div>
-                    <div style="margin-top: 12px;"><a href="#network" class="text-link">See the full leadership network <i class="fa-solid fa-arrow-right"></i></a></div>
+                    <div style="margin-top: 12px;"><a href="people-professors-of-practice.html" class="text-link">See the full leadership network <i class="fa-solid fa-arrow-right"></i></a></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Social Impact (SRI) -->
-    <section class="section bg-white" id="sri">
+    <section class="section bg-white" id="sri" style="padding: 100px 0;">
         <div class="container">
-            <div class="grid-12" style="align-items: center;">
-                <div style="grid-column: span 6;">
-                    <span class="eyebrow">Social Impact</span>
-                    <h2>Centre for Social Research & Innovation (SRI)</h2>
-                    <p class="lead" style="margin-bottom: 24px;">Where leadership meets responsibility.</p>
-                    <p style="margin-bottom: 24px; color: var(--color-text-muted);">At KSLD, we believe true leadership must serve society. The SRI Centre is our hub for action-research, community projects, and policy advocacy. Students work directly with rural communities, NGOs, and government bodies to solve real-world challenges.</p>
-                    <ul style="margin-bottom: 32px; list-style: none;">
-                        <li style="margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--color-primary); margin-right: 8px;"></i> <strong>Action Research:</strong> Field-based studies on livelihood, education, and health.</li>
-                        <li style="margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--color-primary); margin-right: 8px;"></i> <strong>Community Immersion:</strong> Every student spends time living and working in a rural setting.</li>
-                        <li style="margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--color-primary); margin-right: 8px;"></i> <strong>Policy Advocacy:</strong> Translating grassroots insights into policy recommendations.</li>
-                    </ul>
-                    <a href="sri.html" class="btn btn-outline">Explore SRI Initiatives</a>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1200px; margin: 0 auto;">
+                <!-- Content Column -->
+                <div>
+                    <div style="display: inline-block; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 8px 20px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
+                        SOCIAL IMPACT
+                    </div>
+                    <h2 style="font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 24px; color: #0f172a;">
+                        Centre for Social Research<br>& Innovation (SRI)
+                    </h2>
+                    <p style="font-size: 1.125rem; font-weight: 500; color: #475569; margin-bottom: 32px; line-height: 1.7;">
+                        Where leadership meets responsibility.
+                    </p>
+                    <p style="font-size: 1rem; color: #64748b; margin-bottom: 32px; line-height: 1.8; text-align: justify;">
+                        At KSLD, we believe true leadership must serve society. The SRI Centre is our hub for action-research, community projects, and policy advocacy. Students work directly with rural communities, NGOs, and government bodies to solve real-world challenges.
+                    </p>
+                    
+                    <!-- Feature List -->
+                    <div style="margin-bottom: 36px;">
+                        <div style="display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px;">
+                            <div style="flex-shrink: 0; width: 32px; height: 32px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);">
+                                <i class="fa-solid fa-microscope" style="color: white; font-size: 0.9rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0 0 6px 0; font-size: 1.05rem; font-weight: 700; color: #1e293b;">Action Research</h4>
+                                <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.6;">Field-based studies on livelihood, education, and health.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px;">
+                            <div style="flex-shrink: 0; width: 32px; height: 32px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);">
+                                <i class="fa-solid fa-people-group" style="color: white; font-size: 0.9rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0 0 6px 0; font-size: 1.05rem; font-weight: 700; color: #1e293b;">Community Immersion</h4>
+                                <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.6;">Every student spends time living and working in a rural setting.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: flex-start; gap: 16px;">
+                            <div style="flex-shrink: 0; width: 32px; height: 32px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);">
+                                <i class="fa-solid fa-scale-balanced" style="color: white; font-size: 0.9rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0 0 6px 0; font-size: 1.05rem; font-weight: 700; color: #1e293b;">Policy Advocacy</h4>
+                                <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.6;">Translating grassroots insights into policy recommendations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Button -->
+                    <a href="sri.html" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.95rem; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3); width: fit-content; max-width: fit-content;">
+                        Explore SRI Initiatives
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
-                <div style="grid-column: span 6;">
-                    <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Social Impact" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                
+                <!-- Image Column -->
+                <div>
+                    <div style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.15); transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 32px 70px rgba(0,0,0,0.2)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 24px 60px rgba(0,0,0,0.15)'">
+                        <img src="assets/images/sri_homepage.png" alt="Centre for Social Research & Innovation - Community engagement" style="width: 100%; height: auto; display: block;">
+                        <!-- Optional gradient overlay for depth -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.05) 100%); pointer-events: none;"></div>
+                    </div>
                 </div>
             </div>
         </div>
+        
+        <!-- Responsive Design for Mobile -->
+        <style>
+            @media (max-width: 968px) {
+                #sri > .container > div {
+                    grid-template-columns: 1fr !important;
+                    gap: 40px !important;
+                }
+                #sri h2 {
+                    font-size: 2rem !important;
+                }
+            }
+        </style>
     </section>
 
     <!-- Ecosystem Partners -->
@@ -581,130 +1338,382 @@
                 <p style="max-width: 700px; margin: 0 auto 24px; color: var(--color-text-muted);">We collaborate with government bodies, corporates, startups, investors and civil society organisations so that your learning stays connected to the real world.</p>
                 <p style="font-size: 0.875rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Some of the organisations our students, faculty and projects engage with:</p>
             </div>
-            <div class="partner-grid">
-                <!-- Placeholders for logos -->
-                <div class="partner-card"><i class="fa-brands fa-google fa-2x"></i></div>
-                <div class="partner-card"><i class="fa-brands fa-microsoft fa-2x"></i></div>
-                <div class="partner-card"><i class="fa-brands fa-aws fa-2x"></i></div>
-                <div class="partner-card"><i class="fa-brands fa-ibm fa-2x"></i></div>
-                <div class="partner-card"><i class="fa-brands fa-intel fa-2x"></i></div>
-                <div class="partner-card"><i class="fa-brands fa-slack fa-2x"></i></div>
+            <div class="partner-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto;">
+                <!-- Row 1: Major Corporates -->
+                <div class="partner-card" style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+                    <img src="assets/images/logos/tata.png" alt="Tata" style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)';" onmouseout="this.style.filter='grayscale(100%)';">
+                </div>
+                <div class="partner-card" style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+                    <img src="assets/images/logos/amazon.png" alt="Amazon" style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)';" onmouseout="this.style.filter='grayscale(100%)';">
+                </div>
+                <div class="partner-card" style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+                    <img src="assets/images/logos/boeing.png" alt="Boeing" style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)';" onmouseout="this.style.filter='grayscale(100%)';">
+                </div>
+                <div class="partner-card" style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+                    <img src="assets/images/logos/jsw.png" alt="JSW" style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)';" onmouseout="this.style.filter='grayscale(100%)';">
+                </div>
+                <div class="partner-card" style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+                    <img src="assets/images/logos/indigo.png" alt="IndiGo" style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)';" onmouseout="this.style.filter='grayscale(100%)';">
+                </div>
+                <div class="partner-card" style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+                    <img src="assets/images/logos/hal.png" alt="HAL" style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)';" onmouseout="this.style.filter='grayscale(100%)';">
+                </div>
+                <!-- Row 2: Banks & Finance -->
+                <div class="partner-card" style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+                    <img src="assets/images/logos/hdfcbank.png" alt="HDFC Bank" style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)';" onmouseout="this.style.filter='grayscale(100%)';">
+                </div>
+                <div class="partner-card" style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+                    <img src="assets/images/logos/kotak.png" alt="Kotak" style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)';" onmouseout="this.style.filter='grayscale(100%)';">
+                </div>
+                <div class="partner-card" style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+                    <img src="assets/images/logos/indianoil.png" alt="Indian Oil" style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)';" onmouseout="this.style.filter='grayscale(100%)';">
+                </div>
+                <div class="partner-card" style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+                    <img src="assets/images/logos/nalco.png" alt="NALCO" style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)';" onmouseout="this.style.filter='grayscale(100%)';">
+                </div>
+                <div class="partner-card" style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+                    <img src="assets/images/logos/nasscom.png" alt="NASSCOM" style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)';" onmouseout="this.style.filter='grayscale(100%)';">
+                </div>
+                <div class="partner-card" style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+                    <img src="assets/images/logos/ficci.png" alt="FICCI" style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)';" onmouseout="this.style.filter='grayscale(100%)';">
+                </div>
+                <!-- Row 3: VCs & Investors -->
+                <div class="partner-card" style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+                    <img src="assets/images/logos/blume_funds.png" alt="Blume Ventures" style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)';" onmouseout="this.style.filter='grayscale(100%)';">
+                </div>
+                <div class="partner-card" style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+                    <img src="assets/images/logos/ankur_capital.png" alt="Ankur Capital" style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)';" onmouseout="this.style.filter='grayscale(100%)';">
+                </div>
+                <div class="partner-card" style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+                    <img src="assets/images/logos/mumbai_angels.png" alt="Mumbai Angels" style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)';" onmouseout="this.style.filter='grayscale(100%)';">
+                </div>
+                <div class="partner-card" style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+                    <img src="assets/images/logos/lead_angels.png" alt="Lead Angels" style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)';" onmouseout="this.style.filter='grayscale(100%)';">
+                </div>
+                <div class="partner-card" style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+                    <img src="assets/images/logos/wadhwani.png" alt="Wadhwani Foundation" style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)';" onmouseout="this.style.filter='grayscale(100%)';">
+                </div>
+                <div class="partner-card" style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+                    <img src="assets/images/logos/highradius.png" alt="HighRadius" style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)';" onmouseout="this.style.filter='grayscale(100%)';">
+                </div>
             </div>
             <div style="text-align: center; margin-top: 32px;">
-                <a href="#" class="text-link">See all ecosystem partners <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="ecosystem-partners.html" class="text-link">See all ecosystem partners <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
     <!-- Campus Strip -->
     <section id="campus" class="campus-strip">
+        <!-- Decorative Elements -->
+        <div class="campus-decorative-circle campus-circle-1"></div>
+        <div class="campus-decorative-circle campus-circle-2"></div>
+        <div class="campus-decorative-circle campus-circle-3"></div>
+        
+        <!-- Floating Particles -->
+        <div class="campus-particles">
+            <div class="particle" style="--x: 10%; --y: 20%; --delay: 0s; --duration: 15s;"></div>
+            <div class="particle" style="--x: 85%; --y: 15%; --delay: 2s; --duration: 18s;"></div>
+            <div class="particle" style="--x: 25%; --y: 70%; --delay: 4s; --duration: 20s;"></div>
+            <div class="particle" style="--x: 70%; --y: 60%; --delay: 1s; --duration: 16s;"></div>
+            <div class="particle" style="--x: 50%; --y: 40%; --delay: 3s; --duration: 22s;"></div>
+            <div class="particle" style="--x: 90%; --y: 80%; --delay: 5s; --duration: 17s;"></div>
+        </div>
+        
+        <style>
+            .campus-particles {
+                position: absolute;
+                inset: 0;
+                overflow: hidden;
+                pointer-events: none;
+            }
+            .particle {
+                position: absolute;
+                left: var(--x);
+                top: var(--y);
+                width: 6px;
+                height: 6px;
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                animation: floatParticle var(--duration) ease-in-out infinite;
+                animation-delay: var(--delay);
+            }
+            @keyframes floatParticle {
+                0%, 100% {
+                    transform: translate(0, 0) scale(1);
+                    opacity: 0.3;
+                }
+                25% {
+                    transform: translate(20px, -30px) scale(1.2);
+                    opacity: 0.6;
+                }
+                50% {
+                    transform: translate(-10px, -50px) scale(0.8);
+                    opacity: 0.4;
+                }
+                75% {
+                    transform: translate(15px, -20px) scale(1.1);
+                    opacity: 0.5;
+                }
+            }
+        </style>
+        
         <div class="container">
-            <h2>A vibrant campus in Bhubaneswar.</h2>
-            <p style="max-width: 700px; margin: 20px auto; color: rgba(255,255,255,0.9);">
+            <!-- Badge -->
+            <div style="display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.15); backdrop-filter: blur(12px); padding: 10px 20px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.25); margin-bottom: 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+                <i class="fa-solid fa-building-columns" style="color: #fbbf24; font-size: 1.1rem;"></i>
+                <span style="font-weight: 600; font-size: 0.9rem; letter-spacing: 0.5px;">KIIT DEEMED TO BE UNIVERSITY</span>
+            </div>
+            
+            <h2 style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 24px; color: #ffffff; text-shadow: 0 4px 24px rgba(0,0,0,0.5); letter-spacing: -1px;">A vibrant campus in Bhubaneswar.</h2>
+            <p style="max-width: 800px; margin: 0 auto 48px; color: rgba(255,255,255,0.95); font-size: 1.15rem; line-height: 1.8; text-shadow: 0 2px 8px rgba(0,0,0,0.2);">
                 The School of Leadership is part of KIIT Deemed to be University—one of India’s leading multidisciplinary campuses. You learn in a diverse, residential environment with modern infrastructure, student-led clubs, and opportunities to collaborate across disciplines.
             </p>
-            <div class="campus-stats">
-                <div class="campus-stat-chip">25,000+ students across KIIT DU</div>
-                <div class="campus-stat-chip">20+ schools and centres</div>
-                <div class="campus-stat-chip">Modern classrooms & labs</div>
+            <!-- Premium Stats Grid -->
+            <div class="campus-stats-grid">
+                <div class="campus-stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                    <div class="stat-number">40,000+</div>
+                    <div class="stat-label">Students across KIIT DU</div>
+                </div>
+                
+                <div class="campus-stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Schools and Centres</div>
+                </div>
+                
+                <div class="campus-stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+                    <div class="stat-number">Modern</div>
+                    <div class="stat-label">Classrooms & Labs</div>
+                </div>
             </div>
-            <div style="margin-top: 40px;">
-                <a href="#" class="btn btn-white-outline">See campus life at KIIT</a>
+            <div style="margin-top: 56px;">
+                <a href="https://kiit.ac.in/tour/" target="_blank" rel="noopener noreferrer" class="btn btn-white-outline" style="padding: 16px 40px; font-size: 1.05rem; box-shadow: 0 8px 24px rgba(0,0,0,0.2); backdrop-filter: blur(10px);">See campus life at KIIT <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
             </div>
         </div>
     </section>
 
     <!-- Stories -->
-    <section class="section bg-light section-band">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 48px;">
-                <h2>Stories from our learners.</h2>
-                <p style="color: var(--color-text-muted);">Every journey is different. Here’s how learners from the School of Leadership are using what they learned to shape their careers, ventures and communities.</p>
+    <section class="section bg-light section-band" style="position: relative; overflow: hidden; background: linear-gradient(to bottom, #f9fafb 0%, #ffffff 50%, #f9fafb 100%);">
+        <div class="container" style="position: relative; z-index: 1;">
+            <!-- Decorative elements -->
+            <div style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(251, 191, 36, 0.08) 0%, transparent 70%); pointer-events: none;"></div>
+            <div style="position: absolute; bottom: -80px; left: -80px; width: 250px; height: 250px; border-radius: 50%; background: radial-gradient(circle, rgba(6, 78, 59, 0.06) 0%, transparent 70%); pointer-events: none;"></div>
+            <div style="margin-bottom: 12px;">
+                <span style="display: inline-block; background: linear-gradient(135deg, #065F46 0%, #10b981 100%); color: white; padding: 10px 24px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Learner Stories</span>
+            </div>
+            <div style="text-align: center; margin-bottom: 56px;">
+                <h2 style="margin-bottom: 16px;">Stories from our learners.</h2>
+                <p style="color: var(--color-text-muted); max-width: 700px; margin: 0 auto; font-size: 1.05rem; line-height: 1.7;">Every journey is different. Here’s how learners from the School of Leadership are using what they learned to shape their careers, ventures and communities.</p>
             </div>
             <div class="stories-grid">
                 <!-- Story 1 -->
-                <div class="card story-card">
-                    <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Ananya" class="story-img">
-                    <p style="font-style: italic;">“The MBA–IEV program gave me the space to experiment, fail, and try again with guidance. By the time I graduated, my idea had become a working venture with real users and mentors I could lean on.”</p>
-                    <h4 style="margin-bottom: 4px;">Ananya</h4>
-                    <div style="font-size: 0.875rem; color: var(--color-text-muted);">MBA–IEV, Batch 2024 · Founder</div>
-                    <div style="margin-top: 16px;"><span class="chip" style="font-size: 0.75rem;">Alumni · Founder</span></div>
+                <div class="card story-card" style="background: linear-gradient(145deg, #e8f5e9 0%, #f1f8f2 100%); border: 1px solid #c8e6c9; transition: all 0.3s ease;" onmouseover="this.style.boxShadow='0 0 30px rgba(72, 187, 120, 0.5)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.boxShadow=''; this.style.transform='';">
+                    <img src="assets/images/students/Sangita.png" alt="Sangita" class="story-img">
+                    <p style="font-style: italic; color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7;">"Every journey is different. Here's how learners from the School of Leadership are using what they learned to shape their careers, ventures and communities."</p>
+                    <h4 style="margin-bottom: 4px; margin-top: 20px;">Sangita</h4>
+                    <div style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 12px;">MBA–IEV, Batch 2025</div>
+                    <div style="margin-top: 16px;"><span class="chip" style="font-size: 0.75rem; background: #D1FAE5; color: #065F46; font-weight: 600;">FUTURE FOUNDER</span></div>
                 </div>
+                
                 <!-- Story 2 -->
-                <div class="card story-card">
-                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Rohan" class="story-img">
-                    <p style="font-style: italic;">“Working with professors of practice shifted how I think about problems. We weren’t just solving case studies—we were working on live challenges from startups and organisations.”</p>
-                    <h4 style="margin-bottom: 4px;">Rohan</h4>
-                    <div style="font-size: 0.875rem; color: var(--color-text-muted);">MBA–IEV, Batch 2023 · Product Manager</div>
-                    <div style="margin-top: 16px;"><span class="chip" style="font-size: 0.75rem;">Alumni · Product Manager</span></div>
+                <div class="card story-card" style="background: linear-gradient(145deg, #e8f5e9 0%, #f1f8f2 100%); border: 1px solid #c8e6c9; transition: all 0.3s ease;" onmouseover="this.style.boxShadow='0 0 30px rgba(72, 187, 120, 0.5)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.boxShadow=''; this.style.transform='';">
+                    <img src="assets/images/students/Soumya.png" alt="Soumya" class="story-img">
+                    <p style="font-style: italic; color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7;">"Working with professors of practice shifted how I think about problems. We weren't just solving case studies—we were working on live challenges from startups and organisations."</p>
+                    <h4 style="margin-bottom: 4px; margin-top: 20px;">Soumya</h4>
+                    <div style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 12px;">MBA–IEV, Batch 2025</div>
+                    <div style="margin-top: 16px;"><span class="chip" style="font-size: 0.75rem; background: #D1FAE5; color: #065F46; font-weight: 600;">EMERGING ENTREPRENEUR</span></div>
                 </div>
+                
                 <!-- Story 3 -->
-                <div class="card story-card">
-                    <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="Meera" class="story-img">
-                    <p style="font-style: italic;">“Through SRI I spent months in the field, listening to communities and co-creating solutions with local partners. It changed what leadership means to me.”</p>
-                    <h4 style="margin-bottom: 4px;">Meera</h4>
-                    <div style="font-size: 0.875rem; color: var(--color-text-muted);">SRI Fellow</div>
-                    <div style="margin-top: 16px;"><span class="chip" style="font-size: 0.75rem;">Fellow · Social Impact</span></div>
+                <div class="card story-card" style="background: linear-gradient(145deg, #e8f5e9 0%, #f1f8f2 100%); border: 1px solid #c8e6c9; transition: all 0.3s ease;" onmouseover="this.style.boxShadow='0 0 30px rgba(72, 187, 120, 0.5)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.boxShadow=''; this.style.transform='';">
+                    <img src="assets/images/students/Pratidwandi.png" alt="Pratidwandi" class="story-img">
+                    <p style="font-style: italic; color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7;">"Through SRI I spent months in the field, listening to communities and co-creating solutions with local partners. It changed what leadership means to me."</p>
+                    <h4 style="margin-bottom: 4px; margin-top: 20px;">Pratidwandi</h4>
+                    <div style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 12px;">MBA–IEV, Batch 2025</div>
+                    <div style="margin-top: 16px;"><span class="chip" style="font-size: 0.75rem; background: #D1FAE5; color: #065F46; font-weight: 600;">VENTURE CREATOR</span></div>
                 </div>
-            </div>
-            <div style="text-align: center; margin-top: 32px;">
-                <a href="#" class="text-link">View more stories <i class="fa-solid fa-arrow-right"></i></a>
+                
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- News -->
-    <section class="section bg-white">
+    <!-- Social Updates Section - Follow Our Journey -->
+    <section class="section" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%); padding: 100px 0; position: relative; overflow: hidden;">
+        <!-- Decorative Background Elements -->
+        <div style="position: absolute; top: -50px; right: -50px; width: 300px; height: 300px; background: rgba(255,255,255,0.4); border-radius: 50%; filter: blur(60px);"></div>
+        <div style="position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; background: rgba(255,255,255,0.4); border-radius: 50%; filter: blur(80px);"></div>
+        
+        <div class="container" style="position: relative; z-index: 1;">
+            <div style="text-align: center; margin-bottom: 70px;">
+                <h2 style="color: #1b5e20; font-size: 3rem; font-weight: 800; margin-bottom: 20px; text-shadow: 0 2px 8px rgba(0,0,0,0.08); letter-spacing: -1.5px; line-height: 1.2;">Follow Our Journey</h2>
+                <p style="font-size: 1.125rem; color: #2e7d32; max-width: 650px; margin: 0 auto; line-height: 1.8; font-weight: 400; opacity: 0.95;">Stay connected with KSLD for inspiring stories, leadership insights, and daily updates from our vibrant community</p>
+            </div>
+
+            <!-- Social Feed Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; max-width: 1200px; margin: 0 auto;">
+                
+                <!-- Instagram Feed Card -->
+                <div style="background: #ffffff; border-radius: 20px; padding: 0; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 25px 70px rgba(0,0,0,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.3)';">
+                    <!-- Header -->
+                    <div style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); padding: 24px; display: flex; align-items: center; justify-content: space-between;">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 50px; height: 50px; background: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                                <i class="fa-brands fa-instagram" style="font-size: 1.75rem; color: #E4405F;"></i>
+                            </div>
+                            <div>
+                                <h3 style="margin: 0; color: #ffffff; font-size: 1.4rem; font-weight: 700; letter-spacing: -0.5px;">Instagram</h3>
+                                <a href="https://www.instagram.com/ksldkiit" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.95); font-size: 0.9rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.3px;">
+                                    @ksldkiit <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="https://www.instagram.com/ksldkiit" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); color: white; border: 1px solid rgba(255,255,255,0.3); padding: 8px 16px; font-size: 0.9rem; font-weight: 600; border-radius: 8px; text-decoration: none; cursor: pointer;">Follow</a>
+                    </div>
+                    <!-- Feed -->
+                    <div style="height: 450px; overflow: hidden; position: relative;">
+                        <!-- Loader State -->
+                        <div id="instagram-loader" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #fafafa; z-index: 1;">
+                            <div style="width: 50px; height: 50px; border: 4px solid #f3f3f3; border-top: 4px solid #E4405F; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                            <p style="margin-top: 16px; color: #666; font-size: 0.9rem;">Loading Instagram feed...</p>
+                        </div>
+                        <!-- Fallback -->
+                        <div id="instagram-fallback" style="display: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%); padding: 40px; text-align: center;">
+                            <i class="fa-brands fa-instagram" style="font-size: 4rem; color: #E4405F; margin-bottom: 20px;"></i>
+                            <h4 style="color: #1f2937; margin-bottom: 12px;">Instagram Feed Unavailable</h4>
+                            <p style="color: #6b7280; margin-bottom: 20px; line-height: 1.6;">Visit our Instagram page directly to see the latest posts and stories.</p>
+                            <a href="https://www.instagram.com/ksldkiit" target="_blank" rel="noopener" style="background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Visit @ksldkiit</a>
+                        </div>
+                        <iframe src="https://www.instagram.com/ksldkiit/embed" width="100%" height="100%" frameborder="0" scrolling="yes" allowtransparency="true" onload="document.getElementById('instagram-loader').style.display='none';" onerror="document.getElementById('instagram-loader').style.display='none'; document.getElementById('instagram-fallback').style.display='flex';"></iframe>
+                    </div>
+                </div>
+
+                <!-- LinkedIn Feed Card -->
+                <div style="background: #ffffff; border-radius: 20px; padding: 0; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 25px 70px rgba(0,0,0,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.3)';">
+                    <!-- Header -->
+                    <div style="background: linear-gradient(135deg, #0077b5 0%, #00a0dc 100%); padding: 24px; display: flex; align-items: center; justify-content: space-between;">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 50px; height: 50px; background: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                                <i class="fa-brands fa-linkedin-in" style="font-size: 1.75rem; color: #0077b5;"></i>
+                            </div>
+                            <div>
+                                <h3 style="margin: 0; color: #ffffff; font-size: 1.4rem; font-weight: 700; letter-spacing: -0.5px;">LinkedIn</h3>
+                                <a href="https://www.linkedin.com/company/ksldkiit/posts/?feedView=all" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.95); font-size: 0.9rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.3px;">
+                                    company/ksldkiit <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="https://www.linkedin.com/company/ksldkiit/posts/?feedView=all" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); color: white; border: 1px solid rgba(255,255,255,0.3); padding: 8px 16px; font-size: 0.9rem; font-weight: 600; border-radius: 8px; text-decoration: none; cursor: pointer;">Follow</a>
+                    </div>
+                    <!-- Feed -->
+                    <div style="height: 450px; overflow: hidden; padding: 20px; position: relative;">
+                        <!-- Loader State -->
+                        <div id="linkedin-loader" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f8fafc; z-index: 1;">
+                            <div style="width: 50px; height: 50px; border: 4px solid #f3f3f3; border-top: 4px solid #0077b5; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                            <p style="margin-top: 16px; color: #666; font-size: 0.9rem;">Loading LinkedIn feed...</p>
+                        </div>
+                        <!-- Fallback -->
+                        <div id="linkedin-fallback" style="display: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); padding: 40px; text-align: center;">
+                            <i class="fa-brands fa-linkedin-in" style="font-size: 4rem; color: #0077b5; margin-bottom: 20px;"></i>
+                            <h4 style="color: #1f2937; margin-bottom: 12px;">LinkedIn Feed Unavailable</h4>
+                            <p style="color: #6b7280; margin-bottom: 20px; line-height: 1.6;">Visit our LinkedIn page to see company updates and connect with us.</p>
+                            <a href="https://www.linkedin.com/company/ksldkiit/posts/?feedView=all" target="_blank" rel="noopener" style="background: linear-gradient(135deg, #0077b5, #00a0dc); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Visit LinkedIn Page</a>
+                        </div>
+                        <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+                        <script type="IN/CompanyProfile" data-id="ksldkiit" data-format="inline" data-related="false"></script>
+                        <script>setTimeout(function() { document.getElementById('linkedin-loader').style.display='none'; }, 3000);</script>
+                    </div>
+                </div>
+
+                <!-- YouTube Feed Card -->
+                <div style="background: #ffffff; border-radius: 20px; padding: 0; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 25px 70px rgba(0,0,0,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.3)';">
+                    <!-- Header -->
+                    <div style="background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%); padding: 24px; display: flex; align-items: center; justify-content: space-between;">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 50px; height: 50px; background: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                                <i class="fa-brands fa-youtube" style="font-size: 1.75rem; color: #FF0000;"></i>
+                            </div>
+                            <div>
+                                <h3 style="margin: 0; color: #ffffff; font-size: 1.4rem; font-weight: 700; letter-spacing: -0.5px;">YouTube</h3>
+                                <p style="margin: 0; color: rgba(255,255,255,0.9); font-size: 0.95rem; font-weight: 500;">Coming Soon</p>
+                            </div>
+                        </div>
+                        <button disabled style="display: inline-flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.2); padding: 8px 16px; font-size: 0.9rem; font-weight: 600; cursor: not-allowed; border-radius: 8px;">Subscribe</button>
+                    </div>
+                    <!-- Placeholder -->
+                    <div style="height: 450px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);">
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; box-shadow: 0 10px 30px rgba(255,0,0,0.2);">
+                            <i class="fa-brands fa-youtube" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <h4 style="font-size: 1.25rem; font-weight: 700; color: #2d3748; margin-bottom: 12px; text-align: center;">Video Content Coming Soon</h4>
+                        <p style="color: #718096; text-align: center; line-height: 1.7; margin-bottom: 24px; font-weight: 400;">We're working on creating amazing video content for you. Stay tuned!</p>
+                        <div style="display: flex; gap: 8px; align-items: center; color: #a0aec0; font-size: 0.9rem; font-weight: 500;">
+                            <i class="fa-solid fa-clock"></i>
+                            <span>Updates coming in 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Updates Section -->
+    <section class="section bg-light">
         <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; flex-wrap: wrap; gap: 16px;">
-                <div>
-                    <h2>News & events</h2>
-                    <p style="color: var(--color-text-muted);">Workshops, demo days, guest lectures, and more from the School of Leadership calendar.</p>
-                </div>
+            <div style="margin-bottom: 40px;">
+                <h2 style="margin-bottom: 8px;">Latest News & Updates</h2>
+                <p style="font-size: 1.125rem; color: var(--color-text-muted); margin-top: 12px;">Stay updated with the latest developments at KIIT School of Leadership</p>
             </div>
-            <div class="news-grid">
-                <!-- News 1 -->
-                <div class="card news-card">
-                    <div class="news-content">
-                        <span class="chip" style="background: #E0E7FF; color: #3730A3; margin-bottom: 12px;">Event</span>
-                        <div style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 8px;">12 October 2025</div>
-                        <h4>Demo Day: Student ventures pitch to an industry jury</h4>
-                        <p style="font-size: 0.9rem; margin-bottom: 16px;">MBA–IEV students presented their ventures to a panel of investors, founders and mentors.</p>
-                        <a href="#" class="text-link" style="font-size: 0.875rem;">Read more →</a>
-                    </div>
+        </div>
+
+        <!-- Full-width News Embed (outside container) -->
+        <div style="margin-bottom: 0; padding: 0 20px;">
+            <div id="news-embed" style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.12); background: #ffffff; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); max-width: 100%; margin: 0 auto;" 
+                 onmouseover="this.style.boxShadow='0 30px 80px rgba(0,0,0,0.18)'; this.style.transform='translateY(-4px)'" 
+                 onmouseout="this.style.boxShadow='0 20px 60px rgba(0,0,0,0.12)'; this.style.transform='translateY(0)'">
+                <!-- Gradient Accent Top Bar -->
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #10b981 0%, #059669 50%, #047857 100%); z-index: 10;"></div>
+                <!-- Embedded News -->
+                <iframe src="https://news.kiit.ac.in/" style="width: 100%; height: 700px; border: none; display: block; background: #f9fafb; margin-top: 0; min-height: 700px;" scrolling="auto" loading="lazy" title="KIIT News"></iframe>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Premium CTA Section -->
+            <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.04) 100%); border: 2px solid rgba(16, 185, 129, 0.15); border-radius: 16px; padding: 40px 32px; text-align: center; transition: all 0.3s ease; margin-top: 40px;" 
+                 onmouseover="this.style.borderColor='rgba(16, 185, 129, 0.4)'; this.style.backgroundColor='rgba(16, 185, 129, 0.12)'" 
+                 onmouseout="this.style.borderColor='rgba(16, 185, 129, 0.15)'; this.style.backgroundColor='rgba(16, 185, 129, 0.08)'">
+                <div style="margin-bottom: 20px;">
+                    <h4 style="margin: 0 0 12px 0; font-size: 1.25rem; color: #1f2937; font-weight: 700; letter-spacing: -0.5px;">Want to explore all stories?</h4>
+                    <p style="margin: 0; color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6;">Discover comprehensive news, announcements, and achievements from KIIT across all initiatives</p>
                 </div>
-                <!-- News 2 -->
-                <div class="card news-card">
-                    <div class="news-content">
-                        <span class="chip" style="background: #FEF3C7; color: #92400E; margin-bottom: 12px;">Workshop</span>
-                        <div style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 8px;">28 September 2025</div>
-                        <h4>Leadership lab on “Leading in uncertainty”</h4>
-                        <p style="font-size: 0.9rem; margin-bottom: 16px;">A hands-on session with a senior industry leader on decision-making and resilience.</p>
-                        <a href="#" class="text-link" style="font-size: 0.875rem;">Read more →</a>
-                    </div>
-                </div>
-                <!-- News 3 -->
-                <div class="card news-card">
-                    <div class="news-content">
-                        <span class="chip" style="background: #DCFCE7; color: #166534; margin-bottom: 12px;">Announcement</span>
-                        <div style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 8px;">5 September 2025</div>
-                        <h4>SRI launches new project on rural livelihoods</h4>
-                        <p style="font-size: 0.9rem; margin-bottom: 16px;">The Centre for Social Research & Innovation has partnered with field organisations.</p>
-                        <a href="#" class="text-link" style="font-size: 0.875rem;">Read more →</a>
-                    </div>
-                </div>
+                <a href="https://news.kiit.ac.in/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.95rem; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3); width: fit-content;">
+                    Visit KIIT News Portal
+                    <i class="fa-solid fa-arrow-right" style="font-size: 0.85rem;"></i>
+                </a>
             </div>
         </div>
     </section>
 
+
+    <!-- Final CTA -->
     <!-- Final CTA -->
     <section class="section bg-primary text-white" style="text-align: center;">
         <div class="container">
             <h2 class="text-white" style="margin-bottom: 16px;">Ready to launch your venture?</h2>
             <p class="text-white" style="font-size: 1.125rem; max-width: 600px; margin: 0 auto 32px; opacity: 0.9;">Join the MBA–IEV program and turn your idea into a successful startup with the backing of KIIT's ecosystem.</p>
             <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                <a href="mba-iev.html#apply" class="btn btn-white">Apply for MBA–IEV</a>
-                <a href="mailto:kiit@kiit.ac.in?subject=Send%20MBA%20IEV%20Brochure&body=Hi%20team,%20please%20share%20the%20MBA%20IEV%20brochure.%20Name:%20%0APhone:%20" class="btn btn-white-outline">Request Brochure</a>
+                <a href="https://letsaog.me/sld-apply/" class="btn btn-white">Apply for MBA–IEV</a>
+                <a href="assets/MBA%20IEV%202026%20Brochure.pdf" download class="btn btn-white-outline">Download Brochure</a>
             </div>
             <div style="margin-top: 12px;"><a href="tel:+916742725113" class="text-link" style="color: white;">Talk to admissions <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
         </div>
@@ -712,9 +1721,9 @@
 
     <div class="sticky-cta-bar">
         <div class="cta-row">
-            <a href="mba-iev.html#apply" class="btn btn-primary" style="padding: 10px 8px;">Apply</a>
+            <a href="https://letsaog.me/sld-apply/" class="btn btn-primary" style="padding: 10px 8px;">Apply</a>
             <a href="tel:+916742725113" class="btn btn-outline" style="padding: 10px 8px; background: rgba(255,255,255,0.1); color: white; border-color: rgba(255,255,255,0.3);">Call</a>
-            <a href="mailto:kiit@kiit.ac.in?subject=Send%20MBA%20IEV%20Brochure&body=Hi%20team,%20please%20share%20the%20MBA%20IEV%20brochure.%20Name:%20%0APhone:%20" class="btn btn-outline" style="padding: 10px 8px; background: rgba(255,255,255,0.1); color: white; border-color: rgba(255,255,255,0.3);">Brochure</a>
+            <a href="assets/MBA%20IEV%202026%20Brochure.pdf" download class="btn btn-outline" style="padding: 10px 8px; background: rgba(255,255,255,0.1); color: white; border-color: rgba(255,255,255,0.3);">Brochure</a>
         </div>
     </div>
 
@@ -784,7 +1793,7 @@
                         <p>Email : kiit@kiit.ac.in</p>
                     </div>
                     <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-                        <a href="mba-iev.html#apply" class="btn-footer-apply">MBA – IEV Apply Now</a>
+                        <a href="https://letsaog.me/sld-apply/" class="btn-footer-apply">MBA – IEV Apply Now</a>
                         <a href="tel:+916742725113" class="btn-footer-call">Schedule a call</a>
                     </div>
                 </div>
@@ -794,7 +1803,7 @@
         <!-- Copyright Bar -->
         <div class="footer-copyright-bar">
             <div class="container">
-                <div class="copyright-text">© Copyright 2025 - All Rights Reserved</div>
+                <div class="copyright-text">© Copyright 2026 - All Rights Reserved</div>
                 <div class="footer-socials">
                     <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -815,7 +1824,7 @@
 
             let current = 0;
             let timer = null;
-            const INTERVAL = 6500;
+            const INTERVAL = 5000; // Auto-scroll every 5 seconds
 
             function renderDots() {
                 dotsContainer.innerHTML = '';
@@ -830,7 +1839,13 @@
             }
 
             function show(index) {
-                slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+                slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
                 const dots = dotsContainer.querySelectorAll('.leader-dot');
                 dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
             }
@@ -859,22 +1874,114 @@
                 start();
             }
 
+            // Navigation button listeners
             prevBtn.addEventListener('click', () => goTo(current - 1, true));
             nextBtn.addEventListener('click', () => goTo(current + 1, true));
 
+            // Pause on hover, resume on leave
             carousel.addEventListener('mouseenter', stop);
             carousel.addEventListener('mouseleave', start);
 
+            // Keyboard navigation
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current - 1, true); }
                 if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1, true); }
             });
 
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+            
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    goTo(current + 1, true); // Swipe left
+                }
+                if (touchEndX > touchStartX + swipeThreshold) {
+                    goTo(current - 1, true); // Swipe right
+                }
+            }
+
+            // Initialize
             renderDots();
             show(current);
             start();
         })();
     </script>
+    
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" aria-label="Scroll to top" style="
+        position: fixed;
+        bottom: 100px;
+        right: 24px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #16a34a 0%, #065F46 100%);
+        color: white;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        box-shadow: 0 8px 24px rgba(22, 163, 74, 0.4);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+        z-index: 999;
+    ">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    
+    <style>
+        #scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        #scroll-to-top:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 32px rgba(22, 163, 74, 0.5);
+        }
+        #scroll-to-top:active {
+            transform: translateY(0) scale(0.95);
+        }
+    </style>
+    
+    <script>
+        // Scroll to Top functionality
+        (function() {
+            const scrollBtn = document.getElementById('scroll-to-top');
+            if (!scrollBtn) return;
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    scrollBtn.classList.add('visible');
+                } else {
+                    scrollBtn.classList.remove('visible');
+                }
+            });
+            
+            scrollBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        })();
+    </script>
+    
     <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Load header
-    fetch('includes/header.html')
+    // Load header (with cache busting)
+    fetch('includes/header.html?v=' + Date.now())
         .then(response => response.text())
         .then(html => {
             const headerContainer = document.createElement('div');
@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(err => console.error('Error loading header:', err));
     
-    // Load footer
-    fetch('includes/footer.html')
+    // Load footer (with cache busting)
+    fetch('includes/footer.html?v=' + Date.now())
         .then(response => response.text())
         .then(html => {
             const footerContainer = document.createElement('div');

@@ -348,12 +348,12 @@ new_content = """<!DOCTYPE html>
                 The School of Leadership is part of KIIT Deemed to be University—one of India’s leading multidisciplinary campuses. You learn in a diverse, residential environment with modern infrastructure, student-led clubs, and opportunities to collaborate across disciplines.
             </p>
             <div class="campus-stats">
-                <div class="campus-stat-chip">25,000+ students across KIIT DU</div>
-                <div class="campus-stat-chip">20+ schools and centres</div>
+                <div class="campus-stat-chip">40,000+ students across KIIT DU</div>
+                <div class="campus-stat-chip">30+ schools and centres</div>
                 <div class="campus-stat-chip">Modern classrooms & labs</div>
             </div>
             <div style="margin-top: 40px;">
-                <a href="#" class="btn btn-white-outline">See campus life at KIIT</a>
+                <a href="https://kiit.ac.in/tour/" target="_blank" rel="noopener noreferrer" class="btn btn-white-outline">See campus life at KIIT</a>
             </div>
         </div>
     </section>

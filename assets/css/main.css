@@ -305,11 +305,22 @@ p {
     font-weight: 600;
     font-size: 1rem;
     border-radius: var(--radius);
-    transition: var(--transition);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
     cursor: pointer;
     border: 2px solid transparent;
     text-align: center;
     justify-content: center;
+    outline: none !important;
+    width: fit-content;
+    max-width: fit-content;
+    box-sizing: border-box;
+}
+
+/* Prevent button expansion on any interaction */
+.btn:focus,
+.btn:active,
+.btn:focus-visible {
+    outline: none !important;
 }
 
 .btn-primary {
@@ -1236,11 +1247,25 @@ p {
     border-width: 0;
 }
 
-/* Focus styles */
+/* Focus styles - DISABLED to prevent button expansion */
 a:focus,
-button:focus {
-    outline: 2px solid var(--color-kiit-green);
-    outline-offset: 2px;
+button:focus,
+a:active,
+button:active {
+    outline: none !important;
+}
+
+/* Force all buttons to not expand */
+[class*="btn"] {
+    width: fit-content !important;
+    max-width: fit-content !important;
+    outline: none !important;
+}
+
+[class*="btn"]:focus,
+[class*="btn"]:active,
+[class*="btn"]:focus-visible {
+    outline: none !important;
 }
 
 /* Reduced motion */

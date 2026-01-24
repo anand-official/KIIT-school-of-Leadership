@@ -17,27 +17,96 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/design-system.css">
     <style>
-        /* Leadership carousel minimal styles */
-        .leader-carousel { position: relative; }
-        .leader-slide { display: none; gap: 32px; padding: 28px; border-radius: 14px; background: linear-gradient(135deg, #f8fafc, #eef2ff); box-shadow: 0 15px 40px rgba(0,0,0,0.08); align-items: center; }
-        .leader-slide.active { display: flex; }
-        .leader-photo { width: 160px; height: 160px; border-radius: 12px; object-fit: cover; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
-        .leader-meta h3 { margin: 0 0 6px; }
-        .leader-meta .role { color: var(--color-text-muted); margin-bottom: 12px; font-size: 0.95rem; }
-        .leader-nav { position: absolute; top: 50%; right: 12px; display: flex; gap: 10px; transform: translateY(-50%); }
-        .leader-btn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--color-border); background: white; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.08); transition: transform 0.15s ease, box-shadow 0.15s ease; }
-        .leader-btn:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,0,0,0.12); }
-        .leader-dots { display: flex; gap: 8px; justify-content: center; margin-top: 16px; }
-        .leader-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--color-border); cursor: pointer; transition: background 0.2s ease; }
-        .leader-dot.active { background: var(--color-primary); }
+        /* Leadership carousel - premium styling */
+        .leader-carousel {
+            position: relative;
+            overflow: visible;
+            border-radius: 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #f7fafc 40%, #eef2ff 100%);
+            box-shadow: 0 24px 70px rgba(0,0,0,0.12);
+            padding: 56px 64px 64px;
+        }
+        .leader-slide {
+            display: none;
+            gap: 56px;
+            align-items: center;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+            grid-template-columns: minmax(200px, 240px) 1fr;
+        }
+        .leader-slide.active {
+            display: grid;
+            opacity: 1;
+            transform: translateX(0);
+            animation: slideIn 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .leader-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+            border: 4px solid #ffffff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex-shrink: 0;
+        }
+        .leader-slide:hover .leader-photo {
+            transform: scale(1.03);
+            box-shadow: 0 16px 50px rgba(0,0,0,0.2);
+        }
+        .leader-meta { flex: 1; max-width: 100%; }
+        .leader-meta h3 { margin: 0 0 8px; font-size: 1.75rem; font-weight: 700; color: var(--color-text); }
+        .leader-meta .role { color: var(--color-primary); margin-bottom: 16px; font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .leader-meta p { text-align: justify; color: var(--color-text-muted); }
+        .leader-nav {
+            position: absolute;
+            top: 50%;
+            left: -16px;
+            right: -16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        .leader-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 12px 26px rgba(15, 23, 42, 0.24);
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            font-size: 1rem;
+            pointer-events: auto;
+        }
+        .leader-btn:hover { transform: translateY(-1px) scale(1.05); box-shadow: 0 14px 30px rgba(15, 23, 42, 0.3); background: linear-gradient(135deg, #1e3a8a 0%, var(--color-primary) 100%); }
+        .leader-btn:active { transform: translateY(0) scale(0.98); }
+        .leader-dots { display: flex; gap: 10px; justify-content: center; margin-top: 36px; }
+        .leader-dot { width: 12px; height: 12px; border-radius: 50%; background: #d1d5db; cursor: pointer; transition: all 0.3s ease; position: relative; }
+        .leader-dot:hover { background: #9ca3af; transform: scale(1.2); }
+        .leader-dot.active { background: var(--color-primary); transform: scale(1.3); box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2); }
         @media (max-width: 768px) {
-            .leader-slide { flex-direction: column; text-align: center; padding: 24px; }
-            .leader-nav { position: static; justify-content: center; transform: none; margin-top: 16px; }
-            .leader-photo { width: 140px; height: 140px; }
+            .leader-slide { display: flex; flex-direction: column; text-align: center; gap: 24px; }
+            .leader-carousel { padding: 24px; }
+            .leader-nav { position: static; justify-content: space-between; margin-top: 12px; transform: none; }
+            .leader-photo { width: 160px; height: 160px; }
+            .leader-meta h3 { font-size: 1.5rem; }
         }
     </style>
     <!-- Header/Footer Loader -->
-    <script src="assets/js/load-header-footer.js"></script>
+    <script src="assets/js/load-header-footer.js?v=2"></script>
 </head>
 <body>
     <!-- Scroll Progress Bar -->
@@ -142,7 +211,7 @@
 
             <div class="leader-carousel">
                 <div class="leader-slide active">
-                    <img class="leader-photo" src="assets/photos/Dr._Achyuta_Samanta.jpg" alt="Prof. Achyuta Samanta">
+                    <img class="leader-photo" src="assets/images/people/Dr._Achyuta_Samanta.jpg" alt="Prof. Achyuta Samanta">
                     <div class="leader-meta">
                         <h3>Prof. Achyuta Samanta</h3>
                         <div class="role">Founder & Mentor, KIIT</div>
@@ -151,7 +220,7 @@
                 </div>
 
                 <div class="leader-slide">
-                    <img class="leader-photo" src="https://ui-avatars.com/api/?name=Saranjit+Singh" alt="Prof. (Dr.) Saranjit Singh">
+                    <img class="leader-photo" src="assets/images/people/dr. saranjit_singh.jpeg" alt="Prof. (Dr.) Saranjit Singh" onerror="this.src='https://ui-avatars.com/api/?name=Saranjit+Singh&background=2563eb&color=fff&size=200'">
                     <div class="leader-meta">
                         <h3>Prof. (Dr.) Saranjit Singh</h3>
                         <div class="role">Vice Chancellor</div>
