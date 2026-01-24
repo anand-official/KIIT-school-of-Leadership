@@ -22,9 +22,9 @@
         body { background: #f7f9fb; color: var(--color-text); }
         .sri-hero {
             position: relative;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.65), rgba(6, 78, 59, 0.7)), url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(6, 78, 59, 0.92), rgba(15, 23, 42, 0.88)), url('assets/images/sri_homepage.png') center/cover no-repeat;
             color: white;
-            padding: 120px 0;
+            padding: 100px 0 80px;
         }
         .sri-hero .grid-12 {
             align-items: center;
@@ -69,11 +69,64 @@
         .pill-item i { color: var(--color-primary); }
         .split-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .sri-card {
-            background: white;
-            border: 1px solid var(--color-border);
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            background: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%);
+            border: 1px solid rgba(226,232,240,0.8);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04), 
+                        0 1px 3px rgba(0,0,0,0.02);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .sri-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, 
+                        rgba(16,185,129,0.4) 0%, 
+                        rgba(6,78,59,0.3) 15%,
+                        rgba(12,74,110,0.25) 30%,
+                        rgba(6,78,59,0.15) 45%,
+                        transparent 60%); 
+            opacity: 0; 
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) translateY(0); }
+            50% { transform: scale(1.1) translateY(-10%); }
+        }
+        .sri-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #064e3b 0%, #10b981 25%, #0c4a6e 50%, #10b981 75%, #064e3b 100%);
+            background-size: 300% 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease, background-position 1.2s ease;
+        }
+        .sri-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 20px 48px rgba(6,78,59,0.2), 
+                        0 12px 24px rgba(12,74,110,0.15),
+                        0 0 30px rgba(16,185,129,0.25),
+                        0 0 60px rgba(6,78,59,0.12),
+                        inset 0 1px 0 rgba(255,255,255,1);
+            border-color: rgba(16,185,129,0.4);
+            background: linear-gradient(145deg, #ffffff 0%, #ecfdf5 50%, #d1fae5 100%);
+        }
+        .sri-card:hover::before {
+            opacity: 1;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        .sri-card:hover::after {
+            opacity: 1;
+            background-position: -300% 0;
         }
         .sri-card h3 { margin-bottom: 12px; }
             .sri-card h3 { margin-bottom: 12px; color: #0f172a; }
@@ -89,29 +142,111 @@
             .team-card h4 { margin-bottom: 6px; color: #0f172a; }
             .team-card .role { color: var(--color-text-muted); font-weight: 600; }
         .roadmap {
-            background: linear-gradient(135deg, #0f172a, #0b3b2d);
-            color: white;
-            border-radius: 16px;
-            padding: 28px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 18px;
-        }
-        .roadmap-step {
-            padding: 16px;
-            border-radius: 12px;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.12);
-        }
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
-        .project-card {
             background: white;
             border: 1px solid var(--color-border);
-            border-radius: 12px;
-            padding: 18px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
         }
-        .project-card h4 { margin-bottom: 10px; }
+        .roadmap-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+        .roadmap-step {
+            padding: 24px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #064e3b, #0f172a);
+            color: white;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            position: relative;
+        }
+        .roadmap-step::after {
+            content: '→';
+            position: absolute;
+            right: -32px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #064e3b;
+            font-weight: bold;
+        }
+        .roadmap-step:last-child::after {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .roadmap-step::after {
+                content: '↓';
+                right: auto;
+                top: auto;
+                bottom: -32px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .project-card {
+            background: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%);
+            border: 1px solid rgba(226,232,240,0.8);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04), 
+                        0 1px 3px rgba(0,0,0,0.02);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .project-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, 
+                        rgba(16,185,129,0.4) 0%, 
+                        rgba(6,78,59,0.3) 15%,
+                        rgba(12,74,110,0.25) 30%,
+                        rgba(6,78,59,0.15) 45%,
+                        transparent 60%); 
+            opacity: 0; 
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+            animation: pulse-project 2s ease-in-out infinite;
+        }
+        @keyframes pulse-project {
+            0%, 100% { transform: scale(1) translateY(0); }
+            50% { transform: scale(1.1) translateY(-10%); }
+        }
+        .project-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #064e3b 0%, #10b981 25%, #0c4a6e 50%, #10b981 75%, #064e3b 100%);
+            background-size: 300% 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease, background-position 1.2s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 24px 64px rgba(6,78,59,0.25), 
+                        0 16px 32px rgba(12,74,110,0.18),
+                        0 0 40px rgba(16,185,129,0.3),
+                        0 0 80px rgba(6,78,59,0.15),
+                        0 0 0 1px rgba(16,185,129,0.4),
+                        inset 0 1px 0 rgba(255,255,255,1);
+            border-color: rgba(16,185,129,0.5);
+        }
+        .project-card:hover::before {
+            opacity: 1;
+            animation: pulse-project 1.5s ease-in-out infinite;
+        }
+        .project-card:hover::after {
+            opacity: 1;
+            background-position: -300% 0;
+        }
+        .project-card h4 { margin-bottom: 12px; color: #0f172a; font-size: 1.125rem; line-height: 1.4; }
             .roadmap-step h4 { margin-bottom: 8px; color: #f8fafc; }
         .meta { color: var(--color-text-muted); font-weight: 600; margin-bottom: 8px; }
         .sdg-tag {
@@ -146,13 +281,13 @@
     <section class="sri-hero">
         <div class="container">
             <div class="grid-12">
-                <div style="grid-column: span 7;">
+                <div style="grid-column: span 8;">
                     <div class="sri-badge"><i class="fa-solid fa-leaf"></i> Under the aegis of KIIT Technology Business Incubator</div>
-                    <h1 style="margin-bottom: 16px;">Centre for Social Research & Innovation (SRI)</h1>
-                    <p class="lead" style="max-width: 720px; margin-bottom: 22px; opacity: 0.92;">Harnessing social innovation and sustainable entrepreneurship to solve rural challenges and foster inclusive growth.</p>
-                    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px;">
-                        <a href="#thematic" class="btn btn-primary">Explore thematic areas</a>
-                        <a href="#projects" class="btn btn-outline" style="color:#fff; border-color: rgba(255,255,255,0.9);">See ongoing projects</a>
+                    <h1 style="margin-bottom: 20px; font-size: 3rem; line-height: 1.1;">Centre for Social Research & Innovation (SRI)</h1>
+                    <p class="lead" style="max-width: 720px; margin-bottom: 24px; font-size: 1.125rem; line-height: 1.6;">Harnessing social innovation and sustainable entrepreneurship to solve rural challenges and foster inclusive growth.</p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;">
+                        <a href="#thematic" class="btn btn-primary" style="background: #064e3b; color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600;">Explore thematic areas</a>
+                        <a href="#projects" class="btn btn-outline" style="color:#fff; border: 2px solid rgba(255,255,255,0.9); padding: 10px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; background: transparent;">See ongoing projects</a>
                     </div>
                     <div class="hero-chip-row">
                         <div class="hero-chip">Economic viability + Environmental stewardship</div>
@@ -167,9 +302,9 @@
     <!-- Context -->
     <section class="section bg-white" id="context">
         <div class="container">
-            <div class="section-header" style="margin-bottom: 28px;">
-                <h2>Why SRI</h2>
-                <p class="section-description">The world is at a critical juncture where economic viability and environmental sustainability must be pursued together. Rural India faces intersecting socio-economic-ecological challenges that demand social innovations and sustainable entrepreneurship.</p>
+            <div class="section-header" style="margin-bottom: 32px; text-align: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 12px;">Why SRI</h2>
+                <p class="section-description" style="max-width: 800px; margin: 0 auto; font-size: 1.125rem;">The world is at a critical juncture where economic viability and environmental sustainability must be pursued together. Rural India faces intersecting socio-economic-ecological challenges that demand social innovations and sustainable entrepreneurship.</p>
             </div>
             <div class="sri-card" style="max-width: 1080px; margin: 0 auto;">
                 <p style="font-size: 1.05rem; color: var(--color-text); margin-bottom: 14px;">Persistent rural challenges include poverty and inequality, unemployment and underemployment, agricultural distress, youth outmigration, infrastructural gaps, climate change and biodiversity loss, inadequate sanitation and waste management, and social conflict. SRI exists to co-create solutions that unlock prosperity while protecting the planet.</p>
@@ -214,6 +349,10 @@
     <!-- Vision and Mission -->
     <section class="section bg-white" id="vision">
         <div class="container">
+            <div class="section-header" style="margin-bottom: 32px; text-align: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 12px;">Empowering communities for a better tomorrow</h2>
+                <p class="section-description" style="max-width: 800px; margin: 0 auto; font-size: 1.125rem;">Our vision and mission guide everything we do.</p>
+            </div>
             <div class="split-cards">
                 <div class="sri-card">
                     <p class="hero-eyebrow" style="color: #065f46; font-weight: 700; margin-bottom: 10px;">Our Vision</p>
@@ -234,15 +373,14 @@
 
     <!-- SDGs and Team -->
     <section class="section bg-light">
-        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; align-items: center;">
-            <div>
-                <p class="hero-eyebrow" style="color: #065f46; font-weight: 700; margin-bottom: 10px;">Aligned to the SDGs</p>
-                <h3>Social innovation for sustainable development</h3>
-                <p style="color: var(--color-text-muted);">SRI programs align with the UN Sustainable Development Goals, ensuring that every initiative advances inclusive growth, ecological balance, and equitable opportunities.</p>
-                <div class="sdg-tag" style="margin-top: 10px;"><i class="fa-solid fa-earth-asia"></i> SDG aligned</div>
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 32px; text-align: center;">
+                <p class="hero-eyebrow" style="color: #065f46; font-weight: 700; margin-bottom: 12px; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Aligned to the SDGs</p>
+                <h2 style="margin-bottom: 12px; font-size: 2.5rem;">Social innovation for sustainable development</h2>
+                <p class="section-description" style="max-width: 800px; margin: 0 auto; font-size: 1.125rem;">SRI programs align with the UN Sustainable Development Goals, ensuring that every initiative advances inclusive growth, ecological balance, and equitable opportunities.</p>
             </div>
-            <div>
-                <img class="sdg-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Sustainable_Development_Goals.svg/512px-Sustainable_Development_Goals.svg.png" alt="UN Sustainable Development Goals Wheel">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <img class="sdg-image" src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/E_2018_SDG_Poster_without_UN_emblem.png" alt="UN Sustainable Development Goals" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
             </div>
         </div>
     </section>
@@ -250,16 +388,16 @@
     <!-- Leadership -->
     <section class="section bg-white" id="team">
         <div class="container">
-            <div class="section-header" style="margin-bottom: 26px;">
-                <h2>Leadership</h2>
-                <p class="section-description">A note from the SRI lead on why this work matters.</p>
+            <div class="section-header" style="margin-bottom: 32px; text-align: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 12px;">Leadership</h2>
+                <p class="section-description" style="max-width: 800px; margin: 0 auto; font-size: 1.125rem;">A note from the SRI lead on why this work matters.</p>
             </div>
-            <div class="sri-card" style="max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center;">
-                <img src="https://ui-avatars.com/api/?name=Debasish+Mohapatra&background=0D9B6E&color=fff&size=200" alt="Dr. Debasish Mohapatra" style="width: 140px; height: 140px; border-radius: 14px; object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.12);">
+            <div class="sri-card" style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center; padding: 32px;">
+                <img src="https://ui-avatars.com/api/?name=Debasish+Mohapatra&background=064e3b&color=fff&size=200" alt="Dr. Debasish Mohapatra" style="width: 160px; height: 160px; border-radius: 16px; object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
                 <div>
-                    <p class="hero-eyebrow" style="color: #065f46; font-weight: 700; margin-bottom: 10px;">Message from Dr. Debasish Mohapatra</p>
-                    <h3 style="margin-bottom: 10px;">Professor and Coordinator, PhD in Rural Management</h3>
-                    <p style="color: var(--color-text-muted);">SRI is a bridge between rigorous research and the lived realities of rural communities. We listen first, co-create solutions with local partners, and scale what works so livelihoods grow alongside ecological stewardship. If you want to build for impact, you will find both guidance and ground truth here.</p>
+                    <p class="hero-eyebrow" style="color: #065f46; font-weight: 700; margin-bottom: 12px; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Message from Dr. Debasish Mohapatra</p>
+                    <h3 style="margin-bottom: 12px; font-size: 1.5rem;">Professor and Coordinator, PhD in Rural Management</h3>
+                    <p style="color: var(--color-text-muted); line-height: 1.7;">SRI is a bridge between rigorous research and the lived realities of rural communities. We listen first, co-create solutions with local partners, and scale what works so livelihoods grow alongside ecological stewardship. If you want to build for impact, you will find both guidance and ground truth here.</p>
                 </div>
             </div>
         </div>
@@ -268,22 +406,24 @@
     <!-- Road Map -->
     <section class="section bg-light" id="roadmap">
         <div class="container">
-            <div class="section-header" style="margin-bottom: 20px;">
-                <h2>Road Map to Viksit Bharat</h2>
-                <p class="section-description">Program pillars that connect rural innovation, entrepreneurship, and sustainable development.</p>
+            <div class="section-header" style="margin-bottom: 32px; text-align: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 12px;">Road Map to Viksit Bharat</h2>
+                <p class="section-description" style="max-width: 800px; margin: 0 auto; font-size: 1.125rem;">Program pillars that connect rural innovation, entrepreneurship, and sustainable development.</p>
             </div>
             <div class="roadmap">
-                <div class="roadmap-step">
-                    <h4>Discover</h4>
-                    <p style="color: rgba(255,255,255,0.82);">Surface local innovations, traditional knowledge, and community priorities.</p>
-                </div>
-                <div class="roadmap-step">
-                    <h4>Design</h4>
-                    <p style="color: rgba(255,255,255,0.82);">Co-create solutions with accessible technology and market-ready models.</p>
-                </div>
-                <div class="roadmap-step">
-                    <h4>Deploy</h4>
-                    <p style="color: rgba(255,255,255,0.82);">Pilot, mentor, and scale livelihood initiatives with partners across regions.</p>
+                <div class="roadmap-flow">
+                    <div class="roadmap-step">
+                        <h4 style="margin-bottom: 12px; font-size: 1.5rem;">Discover</h4>
+                        <p style="color: rgba(255,255,255,0.9); margin: 0; line-height: 1.6;">Surface local innovations, traditional knowledge, and community priorities.</p>
+                    </div>
+                    <div class="roadmap-step">
+                        <h4 style="margin-bottom: 12px; font-size: 1.5rem;">Design</h4>
+                        <p style="color: rgba(255,255,255,0.9); margin: 0; line-height: 1.6;">Co-create solutions with accessible technology and market-ready models.</p>
+                    </div>
+                    <div class="roadmap-step">
+                        <h4 style="margin-bottom: 12px; font-size: 1.5rem;">Deploy</h4>
+                        <p style="color: rgba(255,255,255,0.9); margin: 0; line-height: 1.6;">Pilot, mentor, and scale livelihood initiatives with partners across regions.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -292,56 +432,92 @@
     <!-- Projects -->
     <section class="section bg-white" id="projects">
         <div class="container">
-            <div class="section-header" style="margin-bottom: 26px;">
-                <h2>Ongoing Projects</h2>
-                <p class="section-description">Applied research and community programs advancing social inclusion and sustainability.</p>
+            <div class="section-header" style="margin-bottom: 32px; text-align: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 12px;">Ongoing Projects</h2>
+                <p class="section-description" style="max-width: 800px; margin: 0 auto; font-size: 1.125rem;">Applied research and community programs advancing social inclusion and sustainability.</p>
             </div>
             <div class="project-grid">
-                <div class="project-card">
-                    <h4>Mapping Global Best Practices in Pendency Reduction to Indian Judicial System and Tracing the Way Forward: An In-depth Empirical Engagement with Select Courts of India</h4>
-                    <div class="meta">Funding agency: To be announced</div>
-                    <div class="sdg-tag" style="margin-bottom: 10px;"><i class="fa-solid fa-bullseye"></i> SDG 10, SDG 16</div>
-                    <p style="color: var(--color-text-muted);">Project description to be added.</p>
+                <div class="project-card" style="background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-color: #bbf7d0;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; box-shadow: 0 8px 16px rgba(16, 185, 129, 0.3);">
+                        <i class="fa-solid fa-scale-balanced" style="font-size: 2rem; color: white;"></i>
+                    </div>
+                    <h4>Mapping Global Best Practices in Pendency Reduction</h4>
+                    <div class="meta" style="font-size: 0.875rem; margin-bottom: 12px;">Judicial System Reform</div>
+                    <p style="color: var(--color-text-muted); margin-bottom: 12px; line-height: 1.6; font-size: 0.95rem;">An in-depth empirical engagement with select courts of India, tracing pathways forward for pendency reduction.</p>
+                    <div class="sdg-tag" style="background: #dbeafe; color: #1e40af;"><i class="fa-solid fa-bullseye"></i> SDG 10, SDG 16</div>
                 </div>
-                <div class="project-card">
-                    <h4>Mining, Vertical Integration, and Corporate Initiatives: Implications for Ecological Stability and Social Inclusion in Odisha, India</h4>
-                    <div class="meta">Funding agency: To be announced</div>
-                    <div class="sdg-tag" style="margin-bottom: 10px;"><i class="fa-solid fa-bullseye"></i> SDG 10, SDG 15</div>
-                    <p style="color: var(--color-text-muted);">Project description to be added.</p>
+                <div class="project-card" style="background: linear-gradient(135deg, #fef3c7, #fde68a); border-color: #fbbf24;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; box-shadow: 0 8px 16px rgba(245, 158, 11, 0.3);">
+                        <i class="fa-solid fa-industry" style="font-size: 2rem; color: white;"></i>
+                    </div>
+                    <h4>Mining, Vertical Integration, and Corporate Initiatives</h4>
+                    <div class="meta" style="font-size: 0.875rem; margin-bottom: 12px;">Ecological & Social Impact Study</div>
+                    <p style="color: var(--color-text-muted); margin-bottom: 12px; line-height: 1.6; font-size: 0.95rem;">Implications for ecological stability and social inclusion in Odisha, India through comprehensive research.</p>
+                    <div class="sdg-tag" style="background: #dbeafe; color: #1e40af;"><i class="fa-solid fa-bullseye"></i> SDG 10, SDG 15</div>
                 </div>
-                <div class="project-card">
-                    <h4>Role of MGNREGA Assets in Building Household Resilience to Climate Shocks</h4>
-                    <div class="meta">Funding agency: To be announced</div>
-                    <div class="sdg-tag" style="margin-bottom: 10px;"><i class="fa-solid fa-bullseye"></i> SDG 1, SDG 13</div>
-                    <p style="color: var(--color-text-muted);">Project description to be added.</p>
+                <div class="project-card" style="background: linear-gradient(135deg, #fce7f3, #fbcfe8); border-color: #f9a8d4;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #ec4899, #db2777); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; box-shadow: 0 8px 16px rgba(236, 72, 153, 0.3);">
+                        <i class="fa-solid fa-cloud-sun-rain" style="font-size: 2rem; color: white;"></i>
+                    </div>
+                    <h4>Role of MGNREGA Assets in Building Household Resilience</h4>
+                    <div class="meta" style="font-size: 0.875rem; margin-bottom: 12px;">Climate Adaptation Research</div>
+                    <p style="color: var(--color-text-muted); margin-bottom: 12px; line-height: 1.6; font-size: 0.95rem;">Examining how MGNREGA assets strengthen rural household resilience to climate shocks and environmental stress.</p>
+                    <div class="sdg-tag" style="background: #dbeafe; color: #1e40af;"><i class="fa-solid fa-bullseye"></i> SDG 1, SDG 13</div>
                 </div>
-                <div class="project-card community-card">
+                <div class="project-card community-card" style="background: linear-gradient(135deg, #ddd6fe, #c4b5fd); border-color: #a78bfa;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; box-shadow: 0 8px 16px rgba(139, 92, 246, 0.3);">
+                        <i class="fa-solid fa-heart" style="font-size: 2rem; color: white;"></i>
+                    </div>
                     <h4>Saukhyam: Pathways to menstrual and environmental health</h4>
-                    <div class="meta">Community project</div>
-                    <p style="margin-bottom: 8px;">Exploring the role of awareness and a sense of community among girl students at KIIT DU.</p>
-                    <div class="sdg-tag"><i class="fa-solid fa-bullseye"></i> SDG 3, SDG 5, SDG 12</div>
+                    <div class="meta" style="font-size: 0.875rem; margin-bottom: 12px;">Community Wellness Initiative</div>
+                    <p style="margin-bottom: 12px; color: var(--color-text-muted); line-height: 1.6; font-size: 0.95rem;">Exploring the role of awareness and a sense of community among girl students at KIIT DU for menstrual and environmental health.</p>
+                    <div class="sdg-tag" style="background: #dbeafe; color: #1e40af;"><i class="fa-solid fa-bullseye"></i> SDG 3, SDG 5, SDG 12</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="section bg-light" id="partners">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 32px; text-align: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 12px;">Our Partners</h2>
+                <p class="section-description" style="max-width: 800px; margin: 0 auto; font-size: 1.125rem;">Collaborating with leading organizations to drive social innovation and sustainable development.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto;">
+                <div style="background: white; border: 1px solid var(--color-border); border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; min-height: 120px; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+                    <img src="assets/images/logos/kiit_tec.png" alt="KIIT TBI" style="max-width: 100%; height: auto; max-height: 80px;">
+                </div>
+                <div style="background: white; border: 1px solid var(--color-border); border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; min-height: 120px; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+                    <img src="assets/images/logos/nasscom.png" alt="NASSCOM" style="max-width: 100%; height: auto; max-height: 80px;">
+                </div>
+                <div style="background: white; border: 1px solid var(--color-border); border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; min-height: 120px; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+                    <img src="assets/images/logos/wadhwani.png" alt="Wadhwani Foundation" style="max-width: 100%; height: auto; max-height: 80px;">
+                </div>
+                <div style="background: white; border: 1px solid var(--color-border); border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; min-height: 120px; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+                    <img src="assets/images/logos/the_rotary_foundation.png" alt="The Rotary Foundation" style="max-width: 100%; height: auto; max-height: 80px;">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <section class="section bg-light" id="connect">
+    <section class="section bg-white" id="connect">
         <div class="container">
-            <div class="sri-card" style="max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; align-items: center;">
-                <div>
-                    <p class="hero-eyebrow" style="color: #065f46; font-weight: 700; margin-bottom: 8px;">Read more</p>
-                    <h3 style="margin-bottom: 10px;">Partner with the Centre for Social Research & Innovation</h3>
-                    <p style="color: var(--color-text-muted);">Collaborate on field research, community pilots, and entrepreneurial initiatives that strengthen rural livelihoods.</p>
-                </div>
-                <div>
-                    <p class="hero-eyebrow" style="color: #065f46; font-weight: 700; margin-bottom: 8px;">Leadership</p>
-                    <h3 style="margin: 0 0 6px 0;">Dr. Satyabrata Das</h3>
-                    <p style="margin: 0 0 8px 0; color: var(--color-text-muted);">Centre Lead, SRI</p>
-                    <p style="margin: 0; color: var(--color-text-muted);">Contact: ksld@kiit.ac.in</p>
-                </div>
-                <div>
-                    <a class="btn btn-primary" href="mailto:ksld@kiit.ac.in?subject=Partner%20with%20SRI">Email the SRI team</a>
+            <div class="sri-card" style="max-width: 1080px; margin: 0 auto; background: linear-gradient(135deg, #064e3b, #0f172a); color: white; padding: 40px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; align-items: center;">
+                    <div>
+                        <p class="hero-eyebrow" style="color: #fde68a; font-weight: 700; margin-bottom: 12px; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Get Involved</p>
+                        <h3 style="margin-bottom: 16px; font-size: 2rem; color: white;">Partner with the Centre for Social Research & Innovation</h3>
+                        <p style="color: rgba(255,255,255,0.9); line-height: 1.6;">Collaborate on field research, community pilots, and entrepreneurial initiatives that strengthen rural livelihoods.</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 24px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2);">
+                        <p class="hero-eyebrow" style="color: #fde68a; font-weight: 700; margin-bottom: 12px; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Leadership</p>
+                        <h3 style="margin: 0 0 8px 0; font-size: 1.5rem; color: white;">Dr. Satyabrata Das</h3>
+                        <p style="margin: 0 0 12px 0; color: rgba(255,255,255,0.85);">Centre Lead, SRI</p>
+                        <p style="margin: 0 0 16px 0; color: rgba(255,255,255,0.85);">Contact: ksld@kiit.ac.in</p>
+                        <a class="btn" href="mailto:ksld@kiit.ac.in?subject=Partner%20with%20SRI" style="background: white; color: #064e3b; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block;">Email the SRI team</a>
+                    </div>
                 </div>
             </div>
         </div>

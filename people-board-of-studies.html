@@ -12,37 +12,369 @@
     <link rel="stylesheet" href="assets/css/design-system.css">    <!-- Header/Footer Loader -->
     <script src="assets/js/load-header-footer.js?v=2"></script>
     <style>
-        body { background: radial-gradient(circle at 20% 20%, rgba(6,78,59,0.06), transparent 32%), radial-gradient(circle at 80% 0%, rgba(14,165,233,0.08), transparent 30%), #f7f8fa; }
-        .page-hero { position: relative; padding: 76px 0 52px 0; background: linear-gradient(135deg, #0f3d32, #0a5b4a); color: #e8f4ef; overflow: hidden; border: none; box-shadow: 0 28px 80px rgba(0,0,0,0.16); }
-        .page-hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.14), transparent 35%), radial-gradient(circle at 80% 10%, rgba(255,255,255,0.12), transparent 30%); pointer-events: none; }
-        .hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr); gap: 28px; align-items: center; z-index: 1; }
-        .hero-copy h1 { margin: 10px 0 12px 0; color: #ffffff; }
-        .hero-copy p { color: rgba(232,244,239,0.92); max-width: 760px; }
-        .breadcrumb { color: rgba(232,244,239,0.8); font-weight: 600; letter-spacing: 0.02em; }
-        .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18); color: #e8f4ef; font-weight: 700; }
-        .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-        .hero-pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; background: rgba(255,255,255,0.12); color: #e8f4ef; font-weight: 700; border: 1px solid rgba(255,255,255,0.18); }
-        .hero-aside { display: grid; gap: 12px; }
-        .stat-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); border-radius: 16px; padding: 16px 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.16); display: grid; gap: 6px; }
-        .stat-value { font-size: 2rem; font-weight: 800; color: #ffffff; }
-        .stat-label { color: rgba(232,244,239,0.9); font-weight: 700; }
-        .people-shell { padding: 48px 0 96px 0; }
-        .people-section { background: linear-gradient(180deg, rgba(255,255,255,0.88), #ffffff); border: 1px solid rgba(6,78,59,0.08); border-radius: 18px; padding: 22px 22px 26px 22px; box-shadow: 0 28px 72px rgba(0,0,0,0.06); margin-bottom: 22px; }
-        .section-heading { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 12px; }
-        .section-title { margin: 0; color: #0f172a; font-weight: 800; }
-        .section-copy { margin: 6px 0 0 0; max-width: 560px; color: #475569; }
-        .people-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
-        .person-card { background: linear-gradient(160deg, rgba(6,78,59,0.06), rgba(255,255,255,0.98)); border: 1px solid rgba(6,78,59,0.08); border-radius: 16px; padding: 18px; box-shadow: 0 18px 48px rgba(0,0,0,0.08); display: grid; gap: 10px; transition: transform 0.18s ease, box-shadow 0.18s ease; }
-        .person-card:hover { transform: translateY(-6px); box-shadow: 0 24px 64px rgba(0,0,0,0.12); }
-        .person-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05); background: #f1f3f5; }
-        .person-name { font-weight: 800; color: #0f172a; }
-        .person-role { color: #0b2f25; font-weight: 700; }
-        .profile-link { font-weight: 700; color: #064e3b; display: inline-flex; align-items: center; gap: 6px; }
-        .profile-link i { font-size: 0.9rem; }
+        body { 
+            background: radial-gradient(circle at 20% 20%, rgba(6,78,59,0.035), transparent 32%), 
+                        radial-gradient(circle at 80% 0%, rgba(14,165,233,0.04), transparent 30%), 
+                        linear-gradient(180deg, #fafbfc 0%, #f8fafb 100%); 
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 400px;
+            background: linear-gradient(180deg, rgba(6,78,59,0.02) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .page-hero { 
+            position: relative; 
+            padding: 96px 0 72px 0; 
+            background: linear-gradient(135deg, #064e3b 0%, #0c4a6e 100%); 
+            color: #f0fdfa; 
+            overflow: hidden; 
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.1); 
+        }
+        .page-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.03"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        .page-hero::after { 
+            content: ""; 
+            position: absolute; 
+            inset: 0; 
+            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.12), transparent 35%), 
+                        radial-gradient(circle at 80% 10%, rgba(255,255,255,0.09), transparent 30%),
+                        linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.03) 100%); 
+            pointer-events: none; 
+        }
+        .hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr); gap: 32px; align-items: center; z-index: 1; }
+        .hero-copy h1 { margin: 14px 0 16px 0; color: #ffffff; font-size: 2.75rem; line-height: 1.15; letter-spacing: -0.02em; }
+        .hero-copy p { color: rgba(240,253,250,0.95); max-width: 780px; font-size: 1.125rem; line-height: 1.75; }
+        .breadcrumb { color: rgba(240,253,250,0.9); font-weight: 600; letter-spacing: 0.02em; font-size: 0.9375rem; }
+        .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.28); color: #ffffff; font-weight: 700; font-size: 0.875rem; letter-spacing: 0.02em; }
+        .hero-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+        .hero-pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: rgba(255,255,255,0.16); color: #ffffff; font-weight: 700; border: 1px solid rgba(255,255,255,0.25); font-size: 0.875rem; }
+        .hero-aside { display: grid; gap: 14px; }
+        .stat-card { 
+            background: linear-gradient(145deg, rgba(255,255,255,0.15), rgba(255,255,255,0.08)); 
+            border: 1px solid rgba(255,255,255,0.25); 
+            border-radius: 18px; 
+            padding: 24px; 
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12), 
+                        inset 0 1px 0 rgba(255,255,255,0.2); 
+            display: grid; 
+            gap: 10px; 
+            backdrop-filter: blur(12px); 
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-card::before {
+            content: "";
+            position: absolute;
+            inset: -50%;
+            background: radial-gradient(circle at 50% 50%, 
+                        rgba(16,185,129,0.5) 0%,
+                        rgba(255,255,255,0.3) 30%, 
+                        transparent 60%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .stat-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, 
+                        transparent 0%,
+                        rgba(255,255,255,0.4) 50%,
+                        transparent 100%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.2), 
+                        0 0 40px rgba(16,185,129,0.4),
+                        0 0 80px rgba(16,185,129,0.2),
+                        inset 0 1px 0 rgba(255,255,255,0.5),
+                        inset 0 0 30px rgba(16,185,129,0.15);
+            border-color: rgba(16,185,129,0.6);
+            background: linear-gradient(145deg, rgba(255,255,255,0.25), rgba(16,185,129,0.15));
+        }
+        .stat-card:hover::before {
+            opacity: 1;
+            animation: glow-pulse 1.5s ease-in-out infinite;
+        }
+        .stat-card:hover::after {
+            transform: translateX(100%);
+        }
+        @keyframes glow-pulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+        .stat-value { font-size: 2.25rem; font-weight: 800; color: #ffffff; }
+        .stat-label { color: rgba(240,253,250,0.95); font-weight: 700; font-size: 0.95rem; }
+        .people-shell { padding: 72px 0 96px 0; position: relative; z-index: 1; }
+        .people-section { 
+            background: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%); 
+            border: 1px solid rgba(6,78,59,0.06); 
+            border-radius: 24px; 
+            padding: 40px; 
+            box-shadow: 0 8px 32px rgba(0,0,0,0.04), 
+                        0 1px 2px rgba(0,0,0,0.02),
+                        inset 0 1px 0 rgba(255,255,255,0.8); 
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+        .people-section:hover {
+            box-shadow: 0 12px 40px rgba(0,0,0,0.06), 
+                        0 2px 4px rgba(0,0,0,0.03),
+                        inset 0 1px 0 rgba(255,255,255,0.9);
+        }
+        .section-heading { 
+            display: flex; 
+            justify-content: space-between; 
+            gap: 24px; 
+            flex-wrap: wrap; 
+            align-items: flex-start; 
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 2px solid rgba(6,78,59,0.06);
+            position: relative;
+        }
+        .section-heading::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, #064e3b 0%, #0c4a6e 100%);
+        }
+        .section-title { 
+            margin: 0; 
+            color: #0f172a; 
+            font-weight: 800; 
+            font-size: 2.125rem; 
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+        .section-copy { 
+            margin: 10px 0 0 0; 
+            max-width: 700px; 
+            color: #64748b; 
+            font-size: 1.0625rem; 
+            line-height: 1.75; 
+        }
+        .people-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 28px; 
+        }
+        .person-card { 
+            background: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%); 
+            border: 1px solid rgba(226,232,240,0.8); 
+            border-radius: 20px; 
+            padding: 0; 
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04), 
+                        0 1px 3px rgba(0,0,0,0.02); 
+            display: grid; 
+            gap: 0; 
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
+            overflow: hidden; 
+            position: relative;
+        }
+        .person-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #064e3b 0%, #10b981 25%, #0c4a6e 50%, #10b981 75%, #064e3b 100%);
+            background-size: 300% 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease, background-position 1.2s ease;
+        }
+        .person-card::after { 
+            content: ""; 
+            position: absolute; 
+            inset: -150%; 
+            background: radial-gradient(circle at 50% 50%, 
+                        rgba(16,185,129,0.4) 0%, 
+                        rgba(6,78,59,0.3) 15%,
+                        rgba(12,74,110,0.25) 30%,
+                        rgba(6,78,59,0.15) 45%,
+                        transparent 60%); 
+            opacity: 0; 
+            transition: opacity 0.6s ease, transform 0.6s ease; 
+            pointer-events: none;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+        }
+        .person-card:hover { 
+            transform: translateY(-12px) scale(1.02); 
+            box-shadow: 0 24px 64px rgba(6,78,59,0.25), 
+                        0 16px 32px rgba(12,74,110,0.18),
+                        0 0 40px rgba(16,185,129,0.3),
+                        0 0 80px rgba(6,78,59,0.15),
+                        0 0 0 1px rgba(16,185,129,0.4),
+                        inset 0 1px 0 rgba(255,255,255,1),
+                        inset 0 -1px 30px rgba(16,185,129,0.1); 
+            border-color: rgba(16,185,129,0.5); 
+            background: linear-gradient(145deg, #ffffff 0%, #ecfdf5 50%, #d1fae5 100%);
+        }
+        .person-card:hover::before { 
+            opacity: 1; 
+            background-position: -300% 0;
+        }
+        .person-card:hover::after { 
+            opacity: 1; 
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        .person-card-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            background: linear-gradient(145deg, #f1f5f9 0%, #e2e8f0 100%);
+            transition: all 0.5s ease;
+        }
+        .person-card-image-wrapper::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, 
+                        rgba(16,185,129,0.15) 0%, 
+                        rgba(6,78,59,0.2) 50%,
+                        rgba(6,78,59,0.3) 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+        }
+        .person-card-image-wrapper::after {
+            content: "";
+            position: absolute;
+            inset: -50%;
+            background: conic-gradient(from 0deg at 50% 50%, 
+                        transparent 0deg,
+                        rgba(16,185,129,0.4) 90deg,
+                        transparent 180deg,
+                        rgba(12,74,110,0.4) 270deg,
+                        transparent 360deg);
+            opacity: 0;
+            transition: opacity 0.6s ease, transform 0.8s ease;
+            z-index: 2;
+            animation: rotate 3s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .person-card:hover .person-card-image-wrapper {
+            background: linear-gradient(145deg, #d1fae5 0%, #a7f3d0 100%);
+        }
+        .person-card:hover .person-card-image-wrapper::before {
+            opacity: 1;
+        }
+        .person-card:hover .person-card-image-wrapper::after {
+            opacity: 0.6;
+        }
+        .person-card img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            object-position: center top;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); 
+            filter: grayscale(0.1) brightness(0.98) contrast(1.05);
+        }
+        .person-card:hover img {
+            transform: scale(1.12);
+            filter: grayscale(0) brightness(1.08) contrast(1.08);
+        }
+        .person-card-content {
+            padding: 24px;
+            display: grid;
+            gap: 12px;
+        }
+        .person-name { 
+            font-weight: 800; 
+            color: #0f172a; 
+            font-size: 1.15rem; 
+            line-height: 1.35; 
+            letter-spacing: -0.01em;
+            margin: 0;
+        }
+        .person-role { 
+            color: #64748b; 
+            font-weight: 600; 
+            font-size: 0.9375rem; 
+            line-height: 1.5; 
+            margin: 0;
+        }
+        .profile-link { 
+            font-weight: 700; 
+            color: #064e3b; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 6px; 
+            font-size: 0.9rem; 
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+            text-decoration: none;
+            padding: 8px 12px;
+            margin: 4px -12px -8px -12px;
+            border-radius: 8px;
+            position: relative;
+        }
+        .profile-link::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(16,185,129,0.15) 0%, rgba(12,74,110,0.12) 100%);
+            border-radius: 8px;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+        .profile-link:hover::before {
+            opacity: 1;
+            box-shadow: 0 0 20px rgba(16,185,129,0.4), inset 0 0 10px rgba(16,185,129,0.2);
+        }
+        .profile-link:hover { 
+            color: #10b981; 
+            transform: translateX(4px);
+            box-shadow: 0 4px 16px rgba(16,185,129,0.3), 0 0 30px rgba(16,185,129,0.2);
+        }
+        .profile-link i { 
+            font-size: 0.8125rem; 
+            transition: transform 0.25s ease;
+        }
+        .profile-link:hover i {
+            transform: translate(2px, -2px);
+        }
         .tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; background: #eef3ef; border-radius: 999px; font-size: 0.9rem; font-weight: 600; color: #0b2f25; border: 1px solid rgba(6,78,59,0.12); }
         .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
-        @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
-        @media (max-width: 640px) { .person-card img { height: 180px; } }
+        @media (max-width: 900px) { 
+            .hero-grid { grid-template-columns: 1fr; } 
+            .page-hero { padding: 64px 0 48px 0; }
+            .hero-copy h1 { font-size: 2.25rem; }
+            .people-shell { padding: 48px 0 72px 0; }
+            .section-title { font-size: 1.75rem; }
+        }
+        @media (max-width: 640px) { 
+            .person-card img { height: 200px; }
+            .people-section { padding: 24px; }
+            .section-heading { margin-bottom: 24px; }
+        }
     </style>
 </head>
 <body>
@@ -120,11 +452,11 @@
             </div>
             <div class="hero-aside">
                 <div class="stat-card">
-                    <div class="stat-value">8</div>
-                    <div class="stat-label">Core board members</div>
+                    <div class="stat-value">7</div>
+                    <div class="stat-label">KIIT Academicians</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">3</div>
+                    <div class="stat-value">4</div>
                     <div class="stat-label">External academicians</div>
                 </div>
                 <div class="stat-card">
@@ -139,57 +471,79 @@
         <div class="container">
             <div class="people-section">
                 <div class="section-heading">
-                    <h3 class="section-title">Core Board</h3>
+                    <h3 class="section-title">Academicians ( KIIT )</h3>
                     <p class="section-copy">Academic stewardship for the School of Leadership—setting standards, reviewing outcomes, and mentoring faculty.</p>
                 </div>
                 <div class="people-grid">
                 <div class="person-card">
-                    <img src="assets/images/people/dr-pinaki-nandan-pattnaik.png" alt="Dr. Pinaki Nandan Pattnaik">
-                    <div class="person-name">Dr. Pinaki Nandan Pattnaik</div>
-                    <div class="person-role">Dean, KIIT School of Leadership</div>
-                    <a class="profile-link" href="#">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <div class="person-card-image-wrapper">
+                        <img src="assets/images/people/dr-pinaki-nandan-pattnaik.png" alt="Dr. Pinaki Nandan Pattnaik">
+                    </div>
+                    <div class="person-card-content">
+                        <div class="person-name">Dr. Pinaki Nandan Pattnaik</div>
+                        <div class="person-role">Dean, KIIT School of Leadership</div>
+                        <a class="profile-link" href="#">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
                 <div class="person-card">
-                    <img src="assets/images/people/prof-mrutyunjay-suar.png" alt="Prof. Mrutyunjay Suar">
-                    <div class="person-name">Prof. Mrutyunjay Suar</div>
-                    <div class="person-role">Director General (R & D)</div>
-                    <a class="profile-link" href="#">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <div class="person-card-image-wrapper">
+                        <img src="assets/images/people/prof-mrutyunjay-suar.png" alt="Prof. Mrutyunjay Suar">
+                    </div>
+                    <div class="person-card-content">
+                        <div class="person-name">Prof. Mrutyunjay Suar</div>
+                        <div class="person-role">Director General (R & D)</div>
+                        <a class="profile-link" href="#">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
                 <div class="person-card">
-                    <img src="assets/images/people/prof-suva-kanta-mohanty.png" alt="Prof. (Dr.) Suva Kanta Mohanty">
-                    <div class="person-name">Prof. (Dr.) Suva Kanta Mohanty</div>
-                    <div class="person-role">Board of Governors</div>
-                    <a class="profile-link" href="#">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <div class="person-card-image-wrapper">
+                        <img src="assets/images/people/dr-sweta-leena-hota.png" alt="Dr. Sweta Leena Hota">
+                    </div>
+                    <div class="person-card-content">
+                        <div class="person-name">Dr. Sweta Leena Hota</div>
+                        <div class="person-role">Co-ordinator MBA IEV</div>
+                        <a class="profile-link" href="#">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
                 <div class="person-card">
-                    <img src="assets/images/people/Dr_LKumar_mohanty.png" alt="Kumar Mohanty">
-                    <div class="person-name">Kumar Mohanty</div>
-                    <div class="person-role">Board of Governors</div>
-                    <a class="profile-link" href="#">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <div class="person-card-image-wrapper">
+                        <img src="assets/images/people/Dr_LKumar_mohanty.png" alt="Prof. (Dr.) Kumar Mohanty">
+                    </div>
+                    <div class="person-card-content">
+                        <div class="person-name">Prof. (Dr.) Kumar Mohanty</div>
+                        <div class="person-role">DIRECTOR KSOM</div>
+                        <a class="profile-link" href="#">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
                 <div class="person-card">
-                    <img src="assets/images/people/dr-saswat-kishore-mishra.png" alt="Dr. Saswat Kishore Mishra">
-                    <div class="person-name">Dr. Saswat Kishore Mishra</div>
-                    <div class="person-role">Board of Governors</div>
-                    <a class="profile-link" href="#">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <div class="person-card-image-wrapper">
+                        <img src="assets/images/people/dr-saswat-kishore-mishra.png" alt="Dr. Saswat Kishore Mishra">
+                    </div>
+                    <div class="person-card-content">
+                        <div class="person-name">Dr. Saswat Kishore Mishra</div>
+                        <div class="person-role">ASSOCIATE DEAN KSEC</div>
+                        <a class="profile-link" href="#">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
                 <div class="person-card">
-                    <img src="assets/images/people/dr-namrata-misra.png" alt="Namrata Misra">
-                    <div class="person-name">Namrata Misra</div>
-                    <div class="person-role">Board of Governors</div>
-                    <a class="profile-link" href="#">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <div class="person-card-image-wrapper">
+                        <img src="assets/images/people/dr-namrata-misra.png" alt="Dr. Namrata Misra">
+                    </div>
+                    <div class="person-card-content">
+                        <div class="person-name">Dr. Namrata Misra</div>
+                        <div class="person-role">CEO RCKIC</div>
+                        <a class="profile-link" href="#">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
                 <div class="person-card">
-                    <img src="assets/images/people/prof-suvasis-ghosh.png" alt="Prof. Suvasis Ghosh">
-                    <div class="person-name">Prof. Suvasis Ghosh</div>
-                    <div class="person-role">Board of Governors</div>
-                    <a class="profile-link" href="#">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-                <div class="person-card">
-                    <img src="assets/images/people/dr-sweta-leena-hota.png" alt="Dr. Sweta Leena Hota">
-                    <div class="person-name">Dr. Sweta Leena Hota</div>
-                    <div class="person-role">Board of Governors</div>
-                    <a class="profile-link" href="#">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <div class="person-card-image-wrapper">
+                        <img src="assets/images/people/prof-suvasis-ghosh.png" alt="Prof. Suvasis Ghosh">
+                    </div>
+                    <div class="person-card-content">
+                        <div class="person-name">Prof. Suvasis Ghosh</div>
+                        <div class="person-role">Placement Head at KSOM</div>
+                        <a class="profile-link" href="#">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
             </div>
             </div>
@@ -201,19 +555,44 @@
                 </div>
                 <div class="people-grid">
                 <div class="person-card">
-                    <img src="assets/images/people/prof-faizan-mustafa.png" alt="Prof. (Dr.) Faizan Mustafa">
-                    <div class="person-name">Prof. (Dr.) Faizan Mustafa</div>
-                    <div class="person-role">Vice–Chancellor, Chanakya National Law University</div>
+                    <div class="person-card-image-wrapper">
+                        <img src="assets/images/people/faizan_mustafa.png" alt="Prof. (Dr.) Faizan Mustafa">
+                    </div>
+                    <div class="person-card-content">
+                        <div class="person-name">Prof. (Dr.) Faizan Mustafa</div>
+                        <div class="person-role">Vice–Chancellor, Chanakya National Law University</div>
+                        <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
                 <div class="person-card">
-                    <img src="assets/images/people/prof-pratik-modi.png" alt="Prof. (Dr.) Pratik Modi">
-                    <div class="person-name">Prof. (Dr.) Pratik Modi</div>
-                    <div class="person-role">Dean, School of Management, BML Munjal University</div>
+                    <div class="person-card-image-wrapper">
+                        <img src="assets/images/people/prof-pratik-modi.png" alt="Prof. (Dr.) Pratik Modi">
+                    </div>
+                    <div class="person-card-content">
+                        <div class="person-name">Prof. (Dr.) Pratik Modi</div>
+                        <div class="person-role">Dean, School of Management, BML Munjal University</div>
+                        <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
                 <div class="person-card">
-                    <img src="assets/images/people/prof-nirmalya-bagchi.png" alt="Prof. (Dr.) Nirmalya Bagchi">
-                    <div class="person-name">Prof. (Dr.) Nirmalya Bagchi</div>
-                    <div class="person-role">Director, Centre for Management Studies, ASCI</div>
+                    <div class="person-card-image-wrapper">
+                        <img src="assets/images/people/prof-nirmalya-bagchi.png" alt="Prof. (Dr.) Nirmalya Bagchi">
+                    </div>
+                    <div class="person-card-content">
+                        <div class="person-name">Prof. (Dr.) Nirmalya Bagchi</div>
+                        <div class="person-role">Director, Centre for Management Studies, ASCI</div>
+                        <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="person-card">
+                    <div class="person-card-image-wrapper">
+                        <img src="assets/images/people/prof-suva-kanta-mohanty.png" alt="Prof. (Dr.) Suva Kanta Mohanty">
+                    </div>
+                    <div class="person-card-content">
+                        <div class="person-name">Prof. (Dr.) Suva Kanta Mohanty</div>
+                        <div class="person-role">DIRECTOR VAMNICOM</div>
+                        <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
             </div>
             </div>
@@ -221,33 +600,56 @@
             <div class="people-section">
                 <div class="section-heading">
                     <h3 class="section-title">Industry Experts (External)</h3>
-                    <p class="section-copy">Operators who bridge curriculum with market realities, innovation, and executive practice.</p>
+                    <p class="section-copy">who bridge curriculum with market realities, innovation, and executive practice.</p>
                 </div>
                 <div class="people-grid">
                 <div class="person-card">
-                    <img src="assets/images/people/mr-jay-krishnan.png" alt="Mr. Jay Krishnan">
-                    <div class="person-name">Mr. Jay Krishnan</div>
-                    <div class="person-role">Partner, Beyond Next Ventures; Founder & CEO – T-Hub</div>
+                    <div class="person-card-image-wrapper">
+                        <img src="assets/images/people/mr-jay-krishnan.png" alt="Mr. Jay Krishnan">
+                    </div>
+                    <div class="person-card-content">
+                        <div class="person-name">Mr. Jay Krishnan</div>
+                        <div class="person-role">Partner, Beyond Next Ventures; Founder & CEO – T-Hub</div>
+                        <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
                 <div class="person-card">
-                    <img src="assets/images/people/mr-indranil-das.png" alt="Mr. Indranil Das">
-                    <div class="person-name">Mr. Indranil Das</div>
-                    <div class="person-role">Founder, Leaderion; Former VP – Ericsson</div>
+                    <div class="person-card-image-wrapper">
+                        <img src="assets/images/people/mr-indranil-das.png" alt="Mr. Indranil Das">
+                    </div>
+                    <div class="person-card-content">
+                        <div class="person-name">Mr. Indranil Das</div>
+                        <div class="person-role">Founder, Leaderion; Former VP – Ericsson</div>
+                        <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
                 <div class="person-card">
-                    <img src="assets/images/people/Pramod.png" alt="Mr. Pramod Chandrasekhar">
-                    <div class="person-name">Mr. Pramod Chandrasekhar</div>
-                    <div class="person-role">Head, KE – Brane; VP – HSBC</div>
+                    <div class="person-card-image-wrapper">
+                        <img src="assets/images/people/Pramod.png" alt="Mr. Pramod Chandrasekhar">
+                    </div>
+                    <div class="person-card-content">
+                        <div class="person-name">Mr. Pramod Chandrasekhar</div>
+                        <div class="person-role">Head, KE – Brane; VP – HSBC</div>
+                        <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
                 <div class="person-card">
-                    <img src="assets/images/people/mr-gautam-kumar.png" alt="Mr. Gautam Kumar">
-                    <div class="person-name">Mr. Gautam Kumar</div>
-                    <div class="person-role">Founder, Fareye</div>
+                    <div class="person-card-image-wrapper">
+                        <img src="assets/images/people/mr-gautam-kumar.png" alt="Mr. Gautam Kumar">
+                    </div>
+                    <div class="person-card-content">
+                        <div class="person-name">Mr. Gautam Kumar</div>
+                        <div class="person-role">Founder, Fareye</div>
+                        <a class="profile-link" href="#">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
             </div>
             </div>
         </div>
     </section>
 
+    <div id="footer-placeholder"></div>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -12,49 +12,178 @@
     <link rel="stylesheet" href="assets/css/design-system.css">    <!-- Header/Footer Loader -->
     <script src="assets/js/load-header-footer.js?v=2"></script>
     <style>
-        body { background: radial-gradient(circle at 15% 20%, rgba(6,78,59,0.08), transparent 32%), radial-gradient(circle at 85% 0%, rgba(14,165,233,0.08), transparent 30%), #f6f8fb; }
-        .page-hero { position: relative; padding: 82px 0 56px 0; background: linear-gradient(135deg, #0f3d32, #0a5b4a); color: #e8f4ef; overflow: hidden; box-shadow: 0 28px 80px rgba(0,0,0,0.16); }
-        .page-hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 24% 18%, rgba(255,255,255,0.14), transparent 35%), radial-gradient(circle at 78% 12%, rgba(255,255,255,0.12), transparent 32%); pointer-events: none; }
+        body { background: radial-gradient(circle at 15% 20%, rgba(6,78,59,0.03), transparent 32%), radial-gradient(circle at 85% 0%, rgba(14,165,233,0.04), transparent 30%), #f8fafb; }
+        .page-hero { position: relative; padding: 100px 0 72px 0; background: linear-gradient(135deg, #064e3b 0%, #0c4a6e 100%); color: #f0fdfa; overflow: hidden; box-shadow: 0 24px 64px rgba(0,0,0,0.12); }
+        .page-hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 24% 18%, rgba(255,255,255,0.1), transparent 38%), radial-gradient(circle at 78% 12%, rgba(255,255,255,0.08), transparent 35%); pointer-events: none; }
         .hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr); gap: 32px; align-items: center; z-index: 1; }
-        .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.24); color: #e8f4ef; font-weight: 800; letter-spacing: 0.01em; }
-        .breadcrumb { color: rgba(232,244,239,0.85); font-weight: 600; letter-spacing: 0.02em; }
-        .hero-copy h1 { margin: 12px 0 14px 0; color: #ffffff; }
-        .hero-copy p { color: rgba(232,244,239,0.92); max-width: 760px; }
-        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
-        .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #e5fbf1, #c8f5e1); color: #0f3d32; font-weight: 800; border-radius: 12px; padding: 12px 16px; border: 1px solid rgba(255,255,255,0.35); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
-        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 14px 30px rgba(0,0,0,0.18); }
-        .btn-ghost { display: inline-flex; align-items: center; gap: 10px; color: #e8f4ef; padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.28); font-weight: 800; backdrop-filter: blur(6px); }
-        .stat-stack { display: grid; gap: 12px; }
-        .stat-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 16px; padding: 16px 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.16); display: grid; gap: 6px; }
-        .stat-value { font-size: 2rem; font-weight: 800; color: #ffffff; }
-        .stat-label { color: rgba(232,244,239,0.9); font-weight: 700; }
+        .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.28); color: #ffffff; font-weight: 700; letter-spacing: 0.02em; font-size: 0.875rem; }
+        .breadcrumb { color: rgba(240,253,250,0.9); font-weight: 600; letter-spacing: 0.02em; }
+        .hero-copy h1 { margin: 16px 0 18px 0; color: #ffffff; font-size: 2.75rem; line-height: 1.15; }
+        .hero-copy p { color: rgba(240,253,250,0.95); max-width: 780px; font-size: 1.125rem; line-height: 1.7; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #ffffff, #f0fdfa); color: #064e3b; font-weight: 700; border-radius: 10px; padding: 14px 24px; border: 1px solid rgba(255,255,255,0.4); box-shadow: 0 8px 20px rgba(0,0,0,0.15); transition: all 0.3s ease; text-decoration: none; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,0.2); background: linear-gradient(135deg, #ffffff, #ecfdf5); }
+        .btn-ghost { display: inline-flex; align-items: center; gap: 10px; color: #ffffff; padding: 14px 24px; border-radius: 10px; border: 2px solid rgba(255,255,255,0.35); font-weight: 700; backdrop-filter: blur(8px); transition: all 0.3s ease; text-decoration: none; }
+        .btn-ghost:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.5); }
+        .stat-stack { display: grid; gap: 14px; }
+        .stat-card { 
+            background: linear-gradient(145deg, rgba(255,255,255,0.15), rgba(255,255,255,0.08)); 
+            border: 1px solid rgba(255,255,255,0.25); 
+            border-radius: 18px; 
+            padding: 24px; 
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12), 
+                        inset 0 1px 0 rgba(255,255,255,0.2); 
+            display: grid; 
+            gap: 10px; 
+            backdrop-filter: blur(12px); 
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-card::before {
+            content: "";
+            position: absolute;
+            inset: -50%;
+            background: radial-gradient(circle at 50% 50%, 
+                        rgba(16,185,129,0.5) 0%,
+                        rgba(255,255,255,0.3) 30%, 
+                        transparent 60%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .stat-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, 
+                        transparent 0%,
+                        rgba(255,255,255,0.4) 50%,
+                        transparent 100%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.2), 
+                        0 0 40px rgba(16,185,129,0.4),
+                        0 0 80px rgba(16,185,129,0.2),
+                        inset 0 1px 0 rgba(255,255,255,0.5),
+                        inset 0 0 30px rgba(16,185,129,0.15);
+            border-color: rgba(16,185,129,0.6);
+            background: linear-gradient(145deg, rgba(255,255,255,0.25), rgba(16,185,129,0.15));
+        }
+        .stat-card:hover::before {
+            opacity: 1;
+            animation: glow-pulse 1.5s ease-in-out infinite;
+        }
+        .stat-card:hover::after {
+            transform: translateX(100%);
+        }
+        @keyframes glow-pulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+        .stat-value { font-size: 2.25rem; font-weight: 800; color: #ffffff; }
+        .stat-label { color: rgba(240,253,250,0.95); font-weight: 700; font-size: 0.95rem; }
 
-        .meta-rail { margin-top: 14px; display: inline-flex; flex-wrap: wrap; gap: 8px; }
-        .rail-pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,0.14); color: #e8f4ef; border: 1px solid rgba(255,255,255,0.2); font-weight: 700; }
+        .meta-rail { margin-top: 18px; display: inline-flex; flex-wrap: wrap; gap: 10px; }
+        .rail-pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,0.16); color: #ffffff; border: 1px solid rgba(255,255,255,0.25); font-weight: 600; font-size: 0.875rem; }
 
-        .section-shell { padding: 56px 0; }
-        .section-header { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 18px; }
-        .section-title { margin: 0; color: #0f172a; font-weight: 800; }
-        .section-copy { margin: 6px 0 0 0; max-width: 720px; color: #475569; }
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
-        .card { position: relative; background: linear-gradient(160deg, rgba(6,78,59,0.08), rgba(255,255,255,0.98)); border: 1px solid rgba(6,78,59,0.08); border-radius: 16px; padding: 18px; box-shadow: 0 18px 48px rgba(0,0,0,0.08); display: grid; gap: 10px; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; overflow: hidden; }
-        .card::after { content: ""; position: absolute; inset: -60% -30%; background: radial-gradient(circle, rgba(255,255,255,0.22), transparent 45%); transform: rotate(8deg); opacity: 0; transition: opacity 0.3s ease; }
-        .card:hover { transform: translateY(-6px); box-shadow: 0 24px 64px rgba(0,0,0,0.12); border-color: rgba(6,78,59,0.16); }
-        .card:hover::after { opacity: 1; }
-        .card h4 { margin: 0; color: #0f172a; font-weight: 800; }
-        .card p { margin: 0; color: #475569; }
-        .card-meta { display: flex; flex-wrap: wrap; gap: 8px; }
-        .icon-chip { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: rgba(6,78,59,0.12); color: #0f3d32; font-size: 1.1rem; border: 1px solid rgba(6,78,59,0.14); }
-        .pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: #eef3ef; color: #0b2f25; font-weight: 700; border: 1px solid rgba(6,78,59,0.12); }
-        .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
-        .list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
-        .list li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; align-items: start; color: #475569; }
-        .list i { color: #0f3d32; }
-        .duo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
-        .accent-block { background: linear-gradient(135deg, rgba(6,78,59,0.08), rgba(14,165,233,0.08)); border: 1px solid rgba(6,78,59,0.1); border-radius: 16px; padding: 18px; box-shadow: 0 18px 48px rgba(0,0,0,0.08); }
-        .cta-banner { margin: 0; background: linear-gradient(135deg, #0a5b4a, #0f3d32); color: #e8f4ef; border-radius: 18px; padding: 24px; display: grid; gap: 10px; box-shadow: 0 26px 70px rgba(0,0,0,0.14); }
-        .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-        @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+        .section-shell { padding: 80px 0; }
+        .section-header { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 40px; }
+        .section-title { margin: 0; color: #0f172a; font-weight: 800; font-size: 2.5rem; letter-spacing: -0.02em; }
+        .section-copy { margin: 12px 0 0 0; max-width: 800px; color: #64748b; font-size: 1.125rem; line-height: 1.75; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .card { 
+            position: relative; 
+            background: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%); 
+            border: 1px solid rgba(226,232,240,0.8); 
+            border-radius: 20px; 
+            padding: 28px; 
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04), 
+                        0 1px 3px rgba(0,0,0,0.02); 
+            display: grid; 
+            gap: 14px; 
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
+            overflow: hidden;
+        }
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 0%, 
+                        rgba(16,185,129,0.4) 0%, 
+                        rgba(6,78,59,0.3) 15%,
+                        rgba(12,74,110,0.25) 30%,
+                        rgba(6,78,59,0.15) 45%,
+                        transparent 60%); 
+            opacity: 0; 
+            transition: opacity 0.6s ease; 
+            pointer-events: none;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) translateY(0); }
+            50% { transform: scale(1.1) translateY(-10%); }
+        }
+        .card::after { 
+            content: ""; 
+            position: absolute; 
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #064e3b 0%, #10b981 25%, #0c4a6e 50%, #10b981 75%, #064e3b 100%);
+            background-size: 300% 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease, background-position 1.2s ease;
+        }
+        .card:hover { 
+            transform: translateY(-12px) scale(1.02); 
+            box-shadow: 0 24px 64px rgba(6,78,59,0.25), 
+                        0 16px 32px rgba(12,74,110,0.18),
+                        0 0 40px rgba(16,185,129,0.3),
+                        0 0 80px rgba(6,78,59,0.15),
+                        0 0 0 1px rgba(16,185,129,0.4),
+                        inset 0 1px 0 rgba(255,255,255,1); 
+            border-color: rgba(16,185,129,0.5); 
+            background: linear-gradient(145deg, #ffffff 0%, #ecfdf5 50%, #d1fae5 100%);
+        }
+        .card:hover::before { 
+            opacity: 1; 
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        .card:hover::after { 
+            opacity: 1; 
+            background-position: -300% 0;
+        }
+        .card h4 { margin: 0; color: #0f172a; font-weight: 700; font-size: 1.15rem; line-height: 1.4; letter-spacing: -0.01em; }
+        .card p { margin: 0; color: #64748b; line-height: 1.65; font-size: 0.9375rem; }
+        .card-meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+        .icon-chip { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: linear-gradient(135deg, #ecfdf5, #d1fae5); color: #065f46; font-size: 1.25rem; border: 1px solid #a7f3d0; box-shadow: 0 2px 8px rgba(6,95,70,0.12); }
+        .pill { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: #ecfdf5; color: #065f46; font-weight: 600; border: 1px solid #a7f3d0; font-size: 0.875rem; box-shadow: 0 1px 4px rgba(6,95,70,0.08); }
+        .pill-row { display: flex; flex-wrap: wrap; gap: 10px; }
+        .list { display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; }
+        .list li { display: grid; grid-template-columns: 28px 1fr; gap: 14px; align-items: start; color: #475569; line-height: 1.7; font-size: 1rem; }
+        .list i { color: #064e3b; font-size: 1.25rem; margin-top: 2px; }
+        .duo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .accent-block { background: linear-gradient(135deg, #f0fdf4, #ecfdf5); border: 1px solid #d1fae5; border-radius: 18px; padding: 40px; box-shadow: 0 4px 20px rgba(6,78,59,0.06); }
+        .cta-banner { margin: 0; background: linear-gradient(135deg, #064e3b, #0c4a6e); color: #f0fdfa; border-radius: 20px; padding: 48px 32px; display: grid; gap: 16px; box-shadow: 0 16px 48px rgba(0,0,0,0.12); text-align: center; }
+        .cta-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+        @media (max-width: 900px) { 
+            .hero-grid { grid-template-columns: 1fr; } 
+            .section-shell { padding: 56px 0; }
+            .section-title { font-size: 2rem; }
+            .page-hero { padding: 72px 0 56px 0; }
+            .card-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            div[style*="grid-template-columns: repeat(3, 1fr)"] { grid-template-columns: 1fr !important; }
+            div[style*="grid-template-columns: repeat(2, 1fr)"] { grid-template-columns: 1fr !important; max-width: 100% !important; }
+        }
     </style>
 </head>
 <body>
@@ -136,8 +265,8 @@
             </div>
             <div class="stat-stack">
                 <div class="stat-card">
-                    <div class="stat-value">7</div>
-                    <div class="stat-label">Leadership pathways</div>
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Certification programs</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">3/5/7</div>
@@ -166,128 +295,111 @@
             </div>
             <div class="card-grid">
                 <div class="card">
-                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-compass"></i></span><span class="pill"><i class="fa-solid fa-clock"></i> 3-7 days</span></div>
-                    <h4>Thinking Like a Leader</h4>
-                    <p>Sharpen strategic thinking, anticipate challenges, and make informed decisions with confidence.</p>
+                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-users"></i></span></div>
+                    <h4>Inclusive Leadership</h4>
+                    <p>Build future-ready teams by leading with empathy, equity, and a culture where diverse perspectives drive performance and innovation.</p>
                 </div>
                 <div class="card">
-                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-seedling"></i></span><span class="pill"><i class="fa-solid fa-location-dot"></i> Community-first</span></div>
-                    <h4>Grassroot Leadership</h4>
-                    <p>Lead from the ground up with authenticity and resilience to drive change in communities.</p>
+                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-compass"></i></span></div>
+                    <h4>Immersive Leadership</h4>
+                    <p>Immersive Leadership Experience that goes beyond theory through real-world challenges that sharpen decision-making, adaptability, and impact.</p>
                 </div>
                 <div class="card">
-                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-lightbulb"></i></span><span class="pill"><i class="fa-solid fa-flask"></i> Creative labs</span></div>
-                    <h4>Creative Leadership</h4>
-                    <p>Unlock creativity with adaptive thinking and innovative problem-solving to inspire teams.</p>
+                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-rocket"></i></span></div>
+                    <h4>The Leadership Accelerator</h4>
+                    <p>Accelerate your leadership journey with intensive, outcome-driven learning designed to prepare high-potential leaders for scale.</p>
                 </div>
                 <div class="card">
-                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-scale-balanced"></i></span><span class="pill"><i class="fa-solid fa-shield-halved"></i> Ethics core</span></div>
-                    <h4>Ethical Leadership</h4>
-                    <p>Lead with integrity, navigate moral dilemmas, and inspire trust through transparent practice.</p>
+                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-scale-balanced"></i></span></div>
+                    <h4>LEAP: Legal Entrepreneurship</h4>
+                    <p>Transform legal expertise into scalable ventures by exploring innovation, compliance, and business strategy in the legal ecosystem.</p>
                 </div>
                 <div class="card">
-                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-star"></i></span><span class="pill"><i class="fa-solid fa-user-graduate"></i> Under 30</span></div>
-                    <h4>Young Leaders Program</h4>
-                    <p>Build core leadership skills early—communication, team management, and visionary thinking.</p>
+                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-seedling"></i></span></div>
+                    <h4>Rural Entrepreneurship</h4>
+                    <p>Create sustainable impact by building ventures that unlock opportunity, innovation, and growth in India's rural economy.</p>
                 </div>
                 <div class="card">
-                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-landmark"></i></span><span class="pill"><i class="fa-solid fa-handshake-angle"></i> Policy & civic</span></div>
-                    <h4>Public Leadership</h4>
-                    <p>Lead in public service with insight into policy, civic engagement, and social impact.</p>
+                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-shield-halved"></i></span></div>
+                    <h4>POSH (Prevention of Sexual Harassment)</h4>
+                    <p>Strengthen workplace culture through awareness, accountability, and leadership that champions safety, dignity, and compliance.</p>
                 </div>
                 <div class="card">
-                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-coins"></i></span><span class="pill"><i class="fa-solid fa-chart-line"></i> Governance</span></div>
-                    <h4>Financial Leadership</h4>
-                    <p>Guide organizations fiscally with planning, budgeting, analysis, risk management, and governance.</p>
+                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-wheat-awn"></i></span></div>
+                    <h4>Mandi (Market & Agribusiness Leadership)</h4>
+                    <p>Gain strategic insight into agricultural markets, value chains, and pricing systems to lead resilient agribusiness ecosystems.</p>
                 </div>
                 <div class="card">
-                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-leaf"></i></span><span class="pill"><i class="fa-solid fa-scale-balanced"></i> ESG</span></div>
-                    <h4>ESG Leadership</h4>
-                    <p>Embed environmental, social, and governance rigor into strategic decisions and operations.</p>
-                </div>
-                <div class="card">
-                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-microchip"></i></span><span class="pill"><i class="fa-solid fa-code-branch"></i> Transformation</span></div>
-                    <h4>Digital Transformation</h4>
-                    <p>Lead technology-enabled change with roadmaps across data, platforms, and customer journeys.</p>
-                </div>
-                <div class="card">
-                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-lightbulb"></i></span><span class="pill"><i class="fa-solid fa-people-group"></i> Leadership</span></div>
-                    <h4>Leadership and Innovation</h4>
-                    <p>Combine strategic leadership with innovation practice to mobilize teams and ship new value.</p>
+                    <div class="card-meta"><span class="icon-chip"><i class="fa-solid fa-microchip"></i></span></div>
+                    <h4>AI and Leadership</h4>
+                    <p>Lead confidently in the AI-driven world by combining technology, strategy, ethics, and human-centered leadership.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="section-shell" id="offerings">
-        <div class="container duo-grid">
-            <div class="accent-block">
-                <h2 class="section-title" style="margin-bottom:8px;">We offer</h2>
-                <p class="section-copy">Exclusive short-term onsite and outbound training programs (3/5/7 days) designed to refine leadership, teamwork, and decision-making skills.</p>
-                <div class="pill-row" style="margin-top:10px;">
-                    <span class="pill"><i class="fa-solid fa-users"></i> Cohort-based</span>
-                    <span class="pill"><i class="fa-solid fa-route"></i> Onsite & outbound</span>
-                    <span class="pill"><i class="fa-solid fa-laptop-code"></i> Hybrid-ready</span>
+        <div class="container">
+            <div style="max-width: 1000px; margin-bottom: 48px;">
+                <h2 class="section-title" style="margin-bottom: 16px;">What powers PACE</h2>
+                <p class="section-copy" style="margin: 0;">We offer Exclusive short-term onsite and outbound training programs (3/5/7 days) designed to refine leadership, teamwork, and decision-making skills.</p>
+            </div>
+            <div style="display: grid; gap: 24px; margin-bottom: 48px;">
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+                    <div class="card" style="text-align: left;">
+                        <h4 style="margin-bottom: 12px;">Expert Faculty</h4>
+                        <p>Guided by leaders with deep industry and academic experience. (Faculty photos to follow)</p>
+                    </div>
+                    <div class="card" style="text-align: left;">
+                        <h4 style="margin-bottom: 12px;">Innovative Curriculum</h4>
+                        <p>Studio-style sessions, simulations, and critiques to translate insight into action.</p>
+                    </div>
+                    <div class="card" style="text-align: left;">
+                        <h4 style="margin-bottom: 12px;">Personalized Development</h4>
+                        <p>Individual pathways with feedback loops, reflection, and tailored assignments.</p>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 66.66%; margin: 0 auto;">
+                    <div class="card" style="text-align: left;">
+                        <h4 style="margin-bottom: 12px;">Experiential Learning</h4>
+                        <p>Outbound immersions, role plays, and real-world projects for tangible outcomes.</p>
+                    </div>
+                    <div class="card" style="text-align: left;">
+                        <h4 style="margin-bottom: 12px;">Industry Partnerships</h4>
+                        <p>Live cases, guest critics, and co-created modules with partner organizations.</p>
+                    </div>
                 </div>
             </div>
             <div class="accent-block">
-                <h2 class="section-title" style="margin-bottom:8px;">Program Outcomes</h2>
+                <h2 class="section-title" style="margin-bottom: 20px; font-size: 2rem;">Program Outcomes</h2>
                 <ul class="list" id="outcomes">
-                    <li><i class="fa-solid fa-bolt"></i><span>Intensive & practical: focused modules that build core leadership skills fast.</span></li>
-                    <li><i class="fa-solid fa-briefcase"></i><span>Real-world learning: cases, simulations, and hands-on projects led by practitioners.</span></li>
-                    <li><i class="fa-solid fa-user-tie"></i><span>Personalized coaching: one-on-one mentoring to refine leadership styles.</span></li>
-                    <li><i class="fa-solid fa-people-group"></i><span>Collaborative network: peers, entrepreneurs, and professionals across sectors.</span></li>
-                    <li><i class="fa-solid fa-rocket"></i><span>Immediate impact: tools to lead teams, drive change, and decide confidently.</span></li>
+                    <li><i class="fa-solid fa-bolt"></i><span><strong>Intensive & practical:</strong> focused modules that build core leadership skills fast.</span></li>
+                    <li><i class="fa-solid fa-briefcase"></i><span><strong>Real-world learning:</strong> cases, simulations, and hands-on projects led by practitioners.</span></li>
+                    <li><i class="fa-solid fa-user-tie"></i><span><strong>Personalized coaching:</strong> one-on-one mentoring to refine leadership styles.</span></li>
+                    <li><i class="fa-solid fa-people-group"></i><span><strong>Collaborative network:</strong> peers, entrepreneurs, and professionals across sectors.</span></li>
+                    <li><i class="fa-solid fa-rocket"></i><span><strong>Immediate impact:</strong> tools to lead teams, drive change, and decide confidently.</span></li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section class="section-shell" id="pillars">
-        <div class="container">
-            <div class="section-header">
-                <div>
-                    <h2 class="section-title">What powers PACE</h2>
-                    <p class="section-copy">World-class faculty, innovative curriculum, personalized development, industry partnerships, and experiential learning.</p>
-                </div>
-            </div>
-            <div class="card-grid">
-                <div class="card">
-                    <h4>Expert Faculty</h4>
-                    <p>Guided by leaders with deep industry and academic experience. (Faculty photos to follow)</p>
-                </div>
-                <div class="card">
-                    <h4>Innovative Curriculum</h4>
-                    <p>Studio-style sessions, simulations, and critiques to translate insight into action.</p>
-                </div>
-                <div class="card">
-                    <h4>Personalized Development</h4>
-                    <p>Individual pathways with feedback loops, reflection, and tailored assignments.</p>
-                </div>
-                <div class="card">
-                    <h4>Industry Partnerships</h4>
-                    <p>Live cases, guest critics, and co-created modules with partner organizations.</p>
-                </div>
-                <div class="card">
-                    <h4>Experiential Learning</h4>
-                    <p>Outbound immersions, role plays, and real-world projects for tangible outcomes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-shell" id="why">
+    <section class="section-shell" id="why" style="background: linear-gradient(to bottom, #f8fafb 0%, #f0fdf4 100%); padding: 96px 0;">
         <div class="container">
             <div class="cta-banner">
-                <h2 style="margin:0; color:#ffffff;">Why choose us?</h2>
-                <p style="margin:0; color: rgba(232,244,239,0.92);">We are a community dedicated to nurturing the leaders of tomorrow—blending rigor, practice, and purpose.</p>
+                <div style="max-width: 700px; margin: 0 auto;">
+                    <h2 style="margin: 0 0 16px 0; color:#ffffff; font-size: 2.5rem; font-weight: 800; letter-spacing: -0.02em;">Why choose us?</h2>
+                    <p style="margin:0 0 32px 0; color: rgba(240,253,250,0.95); font-size: 1.125rem; line-height: 1.75;">We are a community dedicated to nurturing the leaders of tomorrow—blending rigor, practice, and purpose.</p>
+                </div>
                 <div class="cta-actions">
-                    <a class="btn-primary" href="#certifications">View Programs <i class="fa-solid fa-arrow-right"></i></a>
-                    <a class="btn-ghost" href="mailto:pace@kiit.ac.in">Talk to us <i class="fa-solid fa-envelope"></i></a>
+                    <a class="btn-primary" href="#certifications" style="font-size: 1rem; padding: 16px 28px;">View Programs <i class="fa-solid fa-arrow-right"></i></a>
+                    <a class="btn-ghost" href="mailto:pace@kiit.ac.in" style="font-size: 1rem; padding: 16px 28px;">Talk to Us</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <div id="footer-placeholder"></div>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
