@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us · Founder's Message | KIIT School of Leadership</title>
+    <meta name="description" content="Message from Prof. (Dr.) Achyuta Samanta, Founder of KIIT, KISS and KIMS." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/design-system.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />    <!-- Header/Footer Loader -->
+    <script src="assets/js/load-header-footer.js?v=2"></script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes shimmerGlow {
+            0%, 100% {
+                box-shadow: 0 16px 48px rgba(6, 78, 59, 0.2), 0 8px 24px rgba(0, 0, 0, 0.1);
+            }
+            50% {
+                box-shadow: 0 20px 60px rgba(6, 78, 59, 0.3), 0 12px 32px rgba(16, 185, 129, 0.2);
+            }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        .hero {
+            padding: 64px 0 48px 0;
+            background: 
+                radial-gradient(circle at 15% 20%, rgba(6, 78, 59, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 10%, rgba(14, 165, 233, 0.08) 0%, transparent 45%),
+                linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+            border-bottom: 1px solid rgba(6, 78, 59, 0.1);
+            min-height: auto;
+            display: block;
+            margin-top: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 3s infinite;
+        }
+        @keyframes shimmer {
+            to { left: 100%; }
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(6, 78, 59, 0.2), transparent);
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 3vw, 2.75rem);
+            margin: 12px 0 8px 0;
+            color: #0f172a;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            animation: fadeInUp 0.8s ease-out;
+            position: relative;
+        }
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #065f46;
+            margin-top: 12px;
+            font-weight: 600;
+            animation: fadeInUp 1s ease-out;
+            position: relative;
+            display: inline-block;
+            padding: 8px 0;
+        }
+        .hero-subtitle::before {
+            content: '\201C';
+            position: absolute;
+            left: -20px;
+            top: -4px;
+            font-size: 2rem;
+            color: rgba(6, 78, 59, 0.3);
+            font-family: Georgia, serif;
+        }
+        .hero-subtitle::after {
+            content: '\201D';
+            position: absolute;
+            right: -20px;
+            bottom: -4px;
+            font-size: 2rem;
+            color: rgba(6, 78, 59, 0.3);
+            font-family: Georgia, serif;
+        }
+        .breadcrumb {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        .breadcrumb {
+            color: #64748b;
+            font-size: 0.9375rem;
+            margin-top: 0;
+            letter-spacing: 0.03em;
+            font-weight: 600;
+        }
+        .vc-section {
+            padding: 48px 0 80px 0;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafb 100%);
+        }
+        .vc-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fafcfb 100%);
+            border: 1px solid rgba(6, 78, 59, 0.1);
+            border-radius: 24px;
+            padding: 0;
+            box-shadow: 0 20px 60px rgba(6, 78, 59, 0.08),
+                        0 8px 24px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 0;
+            align-items: stretch;
+        }
+        .vc-photo-section {
+            background: linear-gradient(165deg, #f0fdf4 0%, #dcfce7 100%);
+            padding: 48px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            border-right: 1px solid rgba(6, 78, 59, 0.1);
+            position: relative;
+        }
+        .vc-photo-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 30%, rgba(16, 185, 129, 0.1), transparent 60%);
+            pointer-events: none;
+        }
+        .vc-photo-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .vc-photo {
+            width: 280px;
+            height: 320px;
+            border-radius: 20px;
+            object-fit: cover;
+            object-position: center top;
+            box-shadow: 0 16px 48px rgba(6, 78, 59, 0.2),
+                        0 8px 24px rgba(0, 0, 0, 0.1);
+            border: 4px solid #ffffff;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: shimmerGlow 4s ease-in-out infinite;
+        }
+        .vc-photo:hover {
+            transform: scale(1.03) translateY(-4px);
+            box-shadow: 0 24px 64px rgba(6, 78, 59, 0.3),
+                        0 16px 40px rgba(16, 185, 129, 0.2);
+        }
+        .vc-info {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .vc-info .name {
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: #065f46;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+        .vc-info .role {
+            color: #475569;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+        .vc-content-section {
+            padding: 48px 56px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .back-link-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #065f46;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            text-decoration: none;
+            margin-bottom: 20px;
+            padding: 8px 16px;
+            border-radius: 12px;
+            background: rgba(6, 78, 59, 0.06);
+            border: 1px solid rgba(6, 78, 59, 0.12);
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+        .back-link-top:hover {
+            background: rgba(6, 78, 59, 0.12);
+            transform: translateX(-4px);
+        }
+        .vc-content {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: #334155;
+        }
+        .vc-content p {
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+        .vc-content p:nth-child(1) { animation-delay: 0.2s; }
+        .vc-content p:nth-child(2) { animation-delay: 0.3s; }
+        .vc-content p:nth-child(3) { animation-delay: 0.4s; }
+        .vc-content p:nth-child(4) { animation-delay: 0.5s; }
+        .vc-content p:nth-child(5) { animation-delay: 0.6s; }
+        .vc-content p:first-letter {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #065f46;
+            float: left;
+            line-height: 1;
+            margin: 0 8px 0 0;
+        }
+        .vc-content p:last-child {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 2px solid rgba(6, 78, 59, 0.1);
+            background: linear-gradient(90deg, rgba(6, 78, 59, 0.03), transparent);
+            padding: 24px;
+            border-radius: 12px;
+        }
+        .vc-content strong {
+            color: #065f46;
+            font-weight: 700;
+        }
+        @media (max-width: 992px) {
+            .vc-card {
+                grid-template-columns: 1fr;
+            }
+            .vc-photo-section {
+                border-right: none;
+                border-bottom: 1px solid rgba(6, 78, 59, 0.1);
+                padding: 40px 32px;
+            }
+            .vc-content-section {
+                padding: 40px 32px;
+            }
+        }
+        @media (max-width: 768px) {
+            .hero { padding: 48px 0 36px 0; }
+            .hero h1 { font-size: 1.95rem; }
+            .vc-section { padding: 32px 0 64px 0; }
+            .vc-photo {
+                width: 240px;
+                height: 280px;
+            }
+            .vc-content-section {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero page-hero">
+        <div class="container">
+            <div class="breadcrumb">About · Leadership · Founder</div>
+            <h1>Message from the Founder</h1>
+            <div class="hero-subtitle">"Education is the Third Eye of a Child"</div>
+        </div>
+    </section>
+
+    <section class="vc-section">
+        <div class="container">
+            <div class="vc-card">
+                <div class="vc-photo-section">
+                    <div class="vc-photo-wrapper">
+                        <img src="assets/images/people/Dr._Achyuta_Samanta.jpg" alt="Prof. (Dr.) Achyuta Samanta" class="vc-photo">
+                    </div>
+                    <div class="vc-info">
+                        <div class="name">Prof. (Dr.) Achyuta Samanta</div>
+                        <div class="role">Founder KIIT, KISS and KIMS</div>
+                    </div>
+                </div>
+                <div class="vc-content-section">
+                    <a href="about.html" class="back-link-top"><i class="fa-solid fa-arrow-left"></i> Back to About</a>
+                    <div class="vc-content">
+                    <p>It is with great pride and immense pleasure that I welcome you to the School of Leadership at KIIT Deemed to be University. As the founder of this institution, I have always believed that education is not merely about the accumulation of knowledge, but the development of character, vision, and the ability to inspire and lead in an ever-changing world. Leadership, in its truest sense, is the ability to bring about positive transformation.</p>
+                    <p>At KIIT, we have long been committed to empowering young minds with the tools to lead with integrity, innovation, and compassion. The School of Leadership represents the culmination of our vision to create a center of excellence where students are nurtured into leaders capable of addressing the complex challenges of the future. In a rapidly evolving global landscape, where traditional ways of thinking and acting are constantly being challenged, true leadership demands more than just academic credentials. It requires creativity, critical thinking, empathy, and the ability to collaborate across cultures and disciplines. That is why at KIIT, we offer more than just academic programs rather a transformative experience that combines intellectual rigor with hands-on leadership development. We believe that leadership is a skill that is learned through action, reflection, and continual improvement. In our programs, students engage with global leaders, participate in cutting-edge research, collaborate with industry experts, and immerse themselves in the world beyond the classroom.</p>
+                    <p>Moreover, we strongly believe in the development of the heart, mind and soul. The pursuit of excellence in leadership requires not only intellectual and professional growth but also emotional intelligence, self-awareness, and the ability to inspire others with humility and empathy. Over the years, KIIT has earned a reputation for producing leaders who excel in various fields—whether in business, government, academia, or social entrepreneurship. Our alumni, who are making remarkable contributions across the globe, are a testament to the power of education that goes beyond conventional teaching. They are living proof that when students are given the right opportunities, resources, and guidance, they can achieve remarkable things.</p>
+                    <p>As you embark on your own journey at the School of Leadership, I encourage you to embrace the challenges that lie ahead with courage, resilience, and a commitment to excellence. Your time at KIIT will not only shape your career but also define the kind of leader you become—one who leads with vision, compassion, a deep sense of purpose and, most importantly, to serve those who you will lead.</p>
+                    <p><strong>Prof. (Dr.) Achyuta Samanta</strong><br/>Founder KIIT, KISS and KIMS</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

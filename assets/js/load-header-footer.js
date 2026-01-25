@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             const isHome = normalized === 'index.html' || normalized === 'home.html';
-            const isAbout = ['about.html', 'about-vice-chancellor.html', 'about-pinaki-nandan.html'].includes(normalized);
+            const isAbout = ['about.html', 'about-founder.html', 'about-vice-chancellor.html', 'about-pinaki-nandan.html', 'about-ceo-kiit-tbi.html'].includes(normalized);
             const isPeople = ['people-board-of-studies.html', 'people-regular-faculty.html', 'people-professors-of-practice.html'].includes(normalized);
 
             if (isHome) markActiveForHref(['index.html']);
