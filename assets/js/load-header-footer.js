@@ -1,5 +1,68 @@
 // Load header and footer from separate files
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu initialization function
+    function initMobileMenu() {
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        if (!mobileMenuToggle || !mobileMenu) {
+            console.warn('Mobile menu elements not found');
+            return;
+        }
+        
+        console.log('Initializing mobile menu...');
+        
+        const syncMenuState = (isOpen) => {
+            mobileMenu.classList.toggle('active', isOpen);
+            mobileMenuToggle.classList.toggle('active', isOpen);
+            mobileMenuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            document.body.classList.toggle('menu-open', isOpen);
+            
+            const icon = mobileMenuToggle.querySelector('i');
+            if (icon) {
+                if (isOpen) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        };
+        
+        // Click handler for toggle button
+        mobileMenuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const isOpen = !mobileMenu.classList.contains('active');
+            console.log('Menu toggle clicked, opening:', isOpen);
+            syncMenuState(isOpen);
+        });
+        
+        // Close when clicking outside
+        document.addEventListener('click', function(e) {
+            if (mobileMenu.classList.contains('active') && 
+                !mobileMenu.contains(e.target) && 
+                !mobileMenuToggle.contains(e.target)) {
+                syncMenuState(false);
+            }
+        });
+        
+        // Close on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                syncMenuState(false);
+            }
+        });
+        
+        // Close when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => syncMenuState(false));
+        });
+        
+        console.log('Mobile menu initialized successfully');
+    }
+
     // Remove any pre-existing hardcoded header/footer to avoid duplicates
     try {
         const selectorsToRemove = [
@@ -82,6 +145,12 @@ document.addEventListener('DOMContentLoaded', function() {
             headerContainer.innerHTML = html;
             document.body.insertBefore(headerContainer, document.body.firstChild);
             setActiveNav();
+            
+            // Initialize mobile menu after header is loaded
+            initMobileMenu();
+            
+            // Dispatch event for other scripts
+            document.dispatchEvent(new CustomEvent('headerLoaded'));
         })
         .catch(err => console.error('Error loading header:', err));
     
