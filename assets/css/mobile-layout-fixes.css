@@ -1328,3 +1328,898 @@
         display: none !important;
     }
 }
+
+/* ================================================================
+   PAGE-SPECIFIC MOBILE OPTIMIZATIONS
+   ================================================================ */
+
+/* ================================================================
+   MBA-IEV ADMISSIONS PAGE
+   ================================================================ */
+
+@media (max-width: 768px) {
+    /* Admissions hero grid fix */
+    .hero-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+    }
+    
+    .hero-copy {
+        text-align: center;
+    }
+    
+    .hero-copy h1 {
+        font-size: clamp(1.6rem, 5vw, 2rem) !important;
+    }
+    
+    .hero-actions {
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .hero-actions .btn-primary,
+    .hero-actions .btn-ghost {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .hero-media {
+        order: -1;
+        min-height: 220px !important;
+    }
+    
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+    }
+    
+    .hero-stat-card {
+        padding: 10px !important;
+    }
+    
+    .stat-value {
+        font-size: 1.1rem !important;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem !important;
+    }
+    
+    /* Section shells */
+    .section-shell {
+        padding: 40px 0 !important;
+    }
+    
+    .section-header {
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .section-title {
+        font-size: clamp(1.3rem, 4.5vw, 1.6rem) !important;
+        text-align: center;
+    }
+    
+    .section-copy {
+        text-align: center;
+        font-size: 0.9rem !important;
+    }
+    
+    /* Card grids */
+    .card-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+    }
+    
+    /* Roadmap/timeline */
+    .roadmap {
+        padding-left: 0 !important;
+    }
+    
+    .roadmap::before {
+        left: 14px !important;
+    }
+    
+    .mile {
+        padding-left: 50px !important;
+    }
+    
+    .mile::before {
+        left: 0 !important;
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .mile h4 {
+        font-size: 1rem !important;
+    }
+    
+    /* Stepper grid */
+    .stepper {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+    
+    .step {
+        padding: 14px !important;
+    }
+    
+    .step-num {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    /* Story grid */
+    .story-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+    }
+    
+    .story-card {
+        padding: 16px !important;
+    }
+    
+    .story-meta img {
+        width: 48px !important;
+        height: 48px !important;
+    }
+    
+    /* Pills and chips */
+    .pill-row,
+    .chip-row,
+    .tag-row {
+        justify-content: center;
+        gap: 6px !important;
+    }
+    
+    .pill, .chip, .tag {
+        font-size: 0.75rem !important;
+        padding: 6px 10px !important;
+    }
+    
+    /* CTA banner */
+    .cta-banner {
+        padding: 20px !important;
+        text-align: center;
+    }
+    
+    .cta-actions {
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .cta-actions .btn-primary,
+    .cta-actions .btn-ghost {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Support bar */
+    .support-bar {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+    
+    .support-card {
+        padding: 14px !important;
+        text-align: center;
+    }
+    
+    /* Campus cards */
+    .campus-wrap {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .campus-card {
+        padding: 14px !important;
+    }
+    
+    .campus-photo {
+        min-height: 200px !important;
+    }
+    
+    /* Rank grid */
+    .rank-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    
+    .rank-card {
+        padding: 12px !important;
+        text-align: center;
+    }
+    
+    .rank-value {
+        font-size: 1.4rem !important;
+    }
+    
+    /* Grid duo */
+    .grid-duo {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Session stats */
+    .session-stats {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+    }
+    
+    .session-chip {
+        padding: 10px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    /* Checklist */
+    .checklist {
+        padding: 14px !important;
+    }
+    
+    .checklist h4 {
+        font-size: 1rem !important;
+    }
+    
+    /* List items */
+    .list li {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Blockquote */
+    blockquote {
+        padding: 16px !important;
+        font-size: 0.95rem !important;
+    }
+    
+    blockquote footer {
+        font-size: 0.8rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-stats {
+        grid-template-columns: 1fr 1fr !important;
+    }
+    
+    .rank-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+    
+    .session-stats {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ================================================================
+   MBA-IEV PROGRAM PAGE (TBI Section)
+   ================================================================ */
+
+@media (max-width: 768px) {
+    .tbi-section {
+        padding: 48px 0 !important;
+    }
+    
+    .tbi-header {
+        text-align: center !important;
+        margin-bottom: 24px !important;
+    }
+    
+    .tbi-header h2 {
+        font-size: clamp(1.4rem, 4.5vw, 1.75rem) !important;
+    }
+    
+    .tbi-header-top {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important;
+    }
+    
+    .tbi-badge {
+        font-size: 0.75rem !important;
+    }
+    
+    .tbi-subtitle {
+        font-size: 1rem !important;
+    }
+    
+    .tbi-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    
+    .tbi-grid > div[style*="grid-column"] {
+        grid-column: span 12 !important;
+    }
+    
+    .tbi-stat-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    
+    .tbi-stat-card {
+        padding: 12px !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        font-size: 0.85rem !important;
+    }
+    
+    .tbi-stat-icon {
+        font-size: 1.25rem !important;
+    }
+    
+    .tbi-card {
+        padding: 18px !important;
+    }
+    
+    .tbi-card h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    .tbi-card p {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Impact section */
+    .impact-visual {
+        padding: 48px 0 !important;
+    }
+    
+    .impact-heading {
+        text-align: center !important;
+    }
+    
+    .impact-heading h2 {
+        font-size: clamp(1.4rem, 4.5vw, 1.75rem) !important;
+    }
+    
+    .impact-stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    
+    .impact-card {
+        padding: 16px !important;
+    }
+    
+    .impact-metric {
+        font-size: 1.75rem !important;
+    }
+    
+    .impact-label {
+        font-size: 0.8rem !important;
+    }
+    
+    /* Journey outcomes */
+    .journey-outcomes {
+        flex-direction: column !important;
+        gap: 8px !important;
+        align-items: center !important;
+    }
+    
+    .stat-chip {
+        font-size: 0.8rem !important;
+        padding: 8px 12px !important;
+    }
+    
+    /* Scarcity stack */
+    .scarcity-stack {
+        text-align: center !important;
+        font-size: 0.85rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .tbi-stat-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .impact-stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ================================================================
+   ECOSYSTEM PARTNERS PAGE
+   ================================================================ */
+
+@media (max-width: 768px) {
+    .partner-hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+    
+    .hero.page-hero h1 {
+        font-size: clamp(1.6rem, 5vw, 2rem) !important;
+        text-align: center !important;
+    }
+    
+    .hero.page-hero p {
+        text-align: center !important;
+        font-size: 0.95rem !important;
+    }
+    
+    .breadcrumb {
+        text-align: center !important;
+        display: block !important;
+    }
+    
+    .hero-badge {
+        display: flex !important;
+        justify-content: center !important;
+        margin: 0 auto 12px !important;
+        width: fit-content !important;
+    }
+    
+    .hero-chips {
+        justify-content: center !important;
+    }
+    
+    .hero-chip {
+        font-size: 0.8rem !important;
+        padding: 8px 12px !important;
+    }
+    
+    .hero-summary-card {
+        padding: 20px !important;
+    }
+    
+    .stat-stack {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    
+    .stat-pill {
+        padding: 12px !important;
+    }
+    
+    .stat-pill strong {
+        font-size: 1.4rem !important;
+    }
+    
+    .stat-pill span {
+        font-size: 0.8rem !important;
+    }
+    
+    .meta-grid {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+    }
+    
+    /* Tabs section */
+    .tabs-section {
+        padding: 40px 0 !important;
+    }
+    
+    .tab-pills {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+    }
+    
+    .tab-pill {
+        font-size: 0.8rem !important;
+        padding: 10px 14px !important;
+    }
+    
+    /* Logo grids */
+    .partner-grid,
+    .logo-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    
+    .logo-card {
+        padding: 14px 10px !important;
+        min-height: 70px !important;
+    }
+    
+    .logo-card img {
+        max-height: 36px !important;
+    }
+    
+    /* Scrolling rail */
+    .scroll-rail {
+        padding: 16px 0 !important;
+    }
+    
+    .rail-track img {
+        height: 32px !important;
+        margin: 0 20px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-stack {
+        grid-template-columns: 1fr 1fr !important;
+    }
+    
+    .partner-grid,
+    .logo-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .logo-card img {
+        max-height: 30px !important;
+    }
+}
+
+/* ================================================================
+   KITES PAGE
+   ================================================================ */
+
+@media (max-width: 768px) {
+    .kites-hero {
+        padding: 60px 0 !important;
+        min-height: auto !important;
+    }
+    
+    .kites-hero .grid-12 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+    }
+    
+    .kites-hero .grid-12 > div[style*="grid-column"] {
+        grid-column: span 12 !important;
+        width: 100% !important;
+    }
+    
+    .kites-hero h1 {
+        font-size: clamp(1.6rem, 5vw, 2rem) !important;
+        text-align: center !important;
+    }
+    
+    .kites-hero .lead {
+        text-align: center !important;
+        font-size: 0.95rem !important;
+    }
+    
+    .kites-hero-image {
+        order: -1 !important;
+        max-height: 200px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+    
+    .hero-badge {
+        display: flex !important;
+        justify-content: center !important;
+        margin: 0 auto 12px !important;
+    }
+    
+    .hero-chips {
+        justify-content: center !important;
+    }
+    
+    .cta-buttons {
+        justify-content: center !important;
+        flex-direction: column !important;
+    }
+    
+    .cta-buttons .btn {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+    
+    /* Info grid */
+    .info-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+    }
+    
+    .info-card {
+        padding: 20px !important;
+    }
+    
+    .info-card h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    .info-card p {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Pill grid */
+    .pill-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+    }
+    
+    .pill-card {
+        padding: 20px !important;
+    }
+    
+    .pill-card h3 {
+        font-size: 1rem !important;
+    }
+    
+    .pill-card ul {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Price card */
+    .price-card {
+        grid-template-columns: 1fr !important;
+        padding: 24px !important;
+        text-align: center !important;
+    }
+    
+    .price-card h3 {
+        font-size: 1.25rem !important;
+    }
+    
+    /* Contact card */
+    .contact-card {
+        padding: 20px !important;
+        text-align: center !important;
+    }
+}
+
+/* ================================================================
+   SRI PAGE
+   ================================================================ */
+
+@media (max-width: 768px) {
+    .sri-hero {
+        padding: 60px 0 !important;
+    }
+    
+    .sri-hero .grid-12 {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+    
+    .sri-hero-content {
+        text-align: center !important;
+        max-width: 100% !important;
+    }
+    
+    .sri-hero-content h1 {
+        font-size: clamp(1.6rem, 5vw, 2.2rem) !important;
+    }
+    
+    .sri-lead {
+        font-size: 0.95rem !important;
+        text-align: center !important;
+    }
+    
+    .sri-badge {
+        margin: 0 auto !important;
+    }
+    
+    .sri-cta-row {
+        justify-content: center !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .sri-cta {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+    
+    .hero-chip-row {
+        justify-content: center !important;
+    }
+    
+    .sri-hero-image {
+        min-height: 220px !important;
+        order: -1 !important;
+    }
+    
+    /* Split cards */
+    .split-cards {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+    }
+    
+    .sri-card {
+        padding: 20px !important;
+    }
+    
+    /* Pill grid */
+    .pill-item {
+        font-size: 0.9rem !important;
+        padding: 10px 12px !important;
+    }
+    
+    /* Section lede */
+    .section-lede {
+        text-align: center !important;
+        font-size: 0.95rem !important;
+    }
+}
+
+/* ================================================================
+   ABOUT PAGE
+   ================================================================ */
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 80px 0 !important;
+    }
+    
+    .about-hero__content {
+        text-align: center !important;
+    }
+    
+    .about-hero__title {
+        font-size: clamp(1.6rem, 5vw, 2.2rem) !important;
+    }
+    
+    .about-hero__lede {
+        font-size: 0.95rem !important;
+        text-align: center !important;
+    }
+    
+    .about-hero__eyebrow {
+        display: block !important;
+        text-align: center !important;
+    }
+    
+    .about-hero__eyebrow::after {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 200px !important;
+    }
+    
+    .about-hero__actions {
+        justify-content: center !important;
+        flex-direction: column !important;
+    }
+    
+    .about-hero__actions .btn {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+    
+    .about-hero__quicklink {
+        justify-content: center !important;
+    }
+    
+    /* About KSLD grid */
+    .about-ksld-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    
+    .about-ksld-grid > div[style*="grid-column"] {
+        grid-column: span 12 !important;
+    }
+    
+    /* Section kicker */
+    .section-kicker {
+        text-align: center !important;
+        display: block !important;
+    }
+    
+    /* Accent line */
+    .accent-line {
+        margin: 0 auto 16px !important;
+    }
+}
+
+/* ================================================================
+   PEOPLE PAGES (Faculty, Board of Studies, Professors)
+   ================================================================ */
+
+@media (max-width: 768px) {
+    .people-shell {
+        padding: 48px 0 !important;
+    }
+    
+    .people-section {
+        padding: 20px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .section-heading {
+        text-align: center !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .section-title {
+        font-size: clamp(1.4rem, 4.5vw, 1.75rem) !important;
+    }
+    
+    .section-copy {
+        text-align: center !important;
+    }
+    
+    /* Override inline grid column styles */
+    [style*="grid-column: span 6"],
+    [style*="grid-column:span 6"] {
+        grid-column: span 12 !important;
+        width: 100% !important;
+    }
+    
+    [style*="grid-column: span 4"],
+    [style*="grid-column:span 4"] {
+        grid-column: span 12 !important;
+        width: 100% !important;
+    }
+}
+
+/* ================================================================
+   PACE PAGE
+   ================================================================ */
+
+@media (max-width: 768px) {
+    /* Reuse hero grid fixes */
+    .stat-stack {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+    
+    .meta-rail {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+    }
+    
+    .rail-pill {
+        font-size: 0.8rem !important;
+        padding: 6px 10px !important;
+    }
+}
+
+/* ================================================================
+   GENERAL INLINE STYLE OVERRIDES
+   Many pages use inline styles for grids - override on mobile
+   ================================================================ */
+
+@media (max-width: 768px) {
+    /* Override all inline grid-column styles */
+    [style*="grid-column"] {
+        grid-column: span 12 !important;
+    }
+    
+    /* Force flex column on any grid-12 with inline children */
+    .grid-12 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    
+    /* Any div with inline flex row, make it column on mobile */
+    [style*="display: flex"][style*="gap"] {
+        flex-direction: column !important;
+    }
+    
+    /* But preserve horizontal for pill/chip/tag rows */
+    .pill-row,
+    .chip-row,
+    .tag-row,
+    .hero-chips,
+    .hero-chip-row,
+    .micro-tags,
+    .journey-meta,
+    .footer-socials {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+    }
+}
+
+/* ================================================================
+   CONTAINER PADDING ON MOBILE
+   ================================================================ */
+
+@media (max-width: 768px) {
+    .container,
+    .content-rail {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .container,
+    .content-rail {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+}
