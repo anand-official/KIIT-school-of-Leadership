@@ -778,6 +778,19 @@ button.btn {
     text-decoration: none;
 }
 
+/* Mobile navigation - hidden by default */
+.mobile-nav {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.mobile-menu-toggle {
+    display: none;
+}
+
 .bottom-nav {
     background-color: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);

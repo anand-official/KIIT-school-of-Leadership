@@ -37,299 +37,6 @@
     }
 }
 
-/* ================================================================
-   MOBILE FLUID TYPE & OVERFLOW GUARDS
-   ================================================================ */
-
-@media (max-width: 768px) {
-    /* Fluid base size that never exceeds desktop root */
-    html { font-size: clamp(15px, 2vw + 13px, 16px); }
-
-    /* Keep containers fluid to avoid side scroll caused by fixed widths */
-    .container { max-width: 100%; }
-
-    /* Prevent long labels from forcing horizontal scroll */
-    .top-bar a,
-    .nav-item,
-    .dropdown-item,
-    p,
-    li,
-    figcaption { word-break: break-word; }
-
-    /* Hide horizontal scrollbar on nav rail while keeping scrollable behavior */
-    .bottom-nav .container { scrollbar-width: none; overscroll-behavior-x: contain; }
-    .bottom-nav .container::-webkit-scrollbar { display: none; }
-
-    /* Make key images fluid without hard pixel locks */
-    .kiit-gear-logo { height: clamp(44px, 14vw, 52px); }
-    .founder-img { width: clamp(48px, 16vw, 64px); height: clamp(48px, 16vw, 64px); }
-
-    /* Contain large media and tables to viewport width */
-    img, video, iframe, table { max-width: 100%; height: auto; }
-    table { display: block; overflow-x: auto; }
-
-    /* Reduce paint/reflow cost for repeated cards on mobile */
-    .card,
-    .person-card,
-    .story-card,
-    .news-card {
-        content-visibility: auto;
-        contain-intrinsic-size: 320px 400px;
-    }
-}
-
-/* ================================================================
-   MOBILE HEADER & NAVIGATION REFINEMENTS
-   ================================================================ */
-
-@media (max-width: 768px) {
-    /* Top bar wraps cleanly without overflow on narrow widths */
-    .top-bar {
-        padding: 8px 0;
-        font-size: 0.72rem;
-    }
-
-    .top-bar .container {
-        flex-wrap: wrap;
-        gap: 8px 12px;
-    }
-
-    .top-bar-socials a {
-        padding: 8px;
-        min-height: 44px;
-        min-width: 44px;
-    }
-
-    /* Stack header items to avoid logo/profile collisions */
-    .main-header {
-        padding: 16px 0;
-    }
-
-    .main-header .container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-
-    .header-logo-group {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .kiit-gear-logo {
-        height: 48px;
-    }
-
-    .founder-profile {
-        width: 100%;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .founder-img {
-        width: 56px;
-        height: 56px;
-    }
-
-    .founder-info h4 {
-        font-size: 0.95rem;
-    }
-
-    .founder-info p,
-    .founder-info a {
-        font-size: 0.8rem;
-        line-height: 1.4;
-    }
-
-    /* Make nav scrollable instead of wrapping into multiple rows */
-    .bottom-nav .container {
-        justify-content: flex-start;
-        padding: 0 12px;
-        gap: 12px;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .bottom-nav .nav-item,
-    .nav-item-dropdown > .nav-item {
-        flex: 0 0 auto;
-        padding: 12px 10px;
-        border-radius: 999px;
-        scroll-snap-align: start;
-        min-width: max-content;
-        letter-spacing: 0.02em;
-        font-size: 0.78rem;
-    }
-
-    .nav-item-dropdown {
-        position: static;
-    }
-
-    .nav-dropdown {
-        position: fixed;
-        inset: auto 12px 12px 12px;
-        max-height: 60vh;
-        overflow-y: auto;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-        border-radius: 12px;
-        padding: 8px 0;
-    }
-
-    .nav-item-dropdown:focus-within .nav-dropdown,
-    .nav-item-dropdown:active .nav-dropdown {
-        display: block;
-    }
-
-    .dropdown-item {
-        padding: 12px 16px;
-        line-height: 1.4;
-        white-space: normal;
-    }
-
-    /* Mobile-first navigation: hamburger + slide-down menu */
-    .bottom-nav { display: none; }
-
-    .mobile-nav {
-        display: block;
-        background: #022c22;
-        color: #ffffff;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .mobile-nav .container {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        padding: 12px 16px;
-    }
-
-    .mobile-menu-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-        border: none;
-        background: none;
-        color: #ffffff;
-        font-size: 26px;
-        cursor: pointer;
-    }
-
-    .mobile-menu {
-        display: none;
-        flex-direction: column;
-        gap: 12px;
-        padding: 16px;
-        background: #03372e;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .mobile-menu.active { display: flex; }
-
-    .mobile-link {
-        color: #e8f5e9;
-        font-size: 16px;
-        padding: 10px;
-        border-radius: 10px;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .mobile-link:hover { background: rgba(255, 255, 255, 0.08); }
-
-    .mobile-link-label {
-        font-size: 13px;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        color: #b2dfdb;
-        padding: 6px 10px 0;
-        background: none;
-        border: none;
-    }
-
-    .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
-    }
-
-    /* Mobile slider controls: bigger tap targets + tidy dots */
-    .mini-slider { min-height: auto; }
-
-    .mini-slide {
-        min-height: auto;
-        padding: 18px 14px 52px;
-    }
-
-    .slider-nav {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 12px;
-        display: flex;
-        justify-content: space-between;
-        padding: 0 14px;
-        gap: 10px;
-    }
-
-    .slider-prev,
-    .slider-next {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        font-size: 18px;
-        border: 1px solid rgba(0, 0, 0, 0.08);
-        background: rgba(255, 255, 255, 0.92);
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-    }
-
-    .slider-progress-container {
-        gap: 6px;
-        padding: 0 16px 12px;
-    }
-
-    .slider-progress-dot {
-        width: 8px;
-        height: 8px;
-    }
-
-    /* Smooth scrolling containers with reduced paint cost */
-    .scrollable,
-    [class*="scroll"],
-    .carousel,
-    [role="region"][aria-label*="carousel"] {
-        scroll-behavior: smooth;
-        scroll-snap-type: x proximity;
-        overscroll-behavior-x: contain;
-        background-attachment: scroll;
-    }
-}
-
-@media (max-width: 480px) {
-    .bottom-nav .container {
-        gap: 10px;
-        padding: 0 10px;
-    }
-
-    .bottom-nav .nav-item,
-    .nav-item-dropdown > .nav-item {
-        padding: 10px 9px;
-        font-size: 0.75rem;
-    }
-
-    .top-bar a {
-        font-size: 0.7rem;
-    }
-}
-
 @media (max-width: 480px) {
     :root {
         --container-width: calc(100vw - 24px);
@@ -412,15 +119,16 @@
     button,
     a[role="button"],
     .btn,
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline,
     .cta-button,
     input[type="button"],
     input[type="submit"],
     input[type="reset"],
-    .profile-link,
-    [role="link"] {
+    .profile-link {
         /* Ensure 44x44px minimum touch target (WCAG AAA) */
         min-height: 44px;
-        min-width: 44px;
         padding: 12px 20px;
         display: inline-flex;
         align-items: center;
@@ -845,49 +553,24 @@
    ================================================================ */
 
 @media (max-width: 768px) {
-    /* Reduce animation complexity on mobile */
-    * {
-        animation-duration: 0.2s !important;
-    }
-
     /* Disable parallax/fixed backgrounds */
-    [style*="background-attachment: fixed"] {
+    [style*="background-attachment: fixed"],
+    .parallax {
         background-attachment: scroll !important;
     }
 
     /* Disable complex hover animations on touch devices */
     @media (hover: none) {
-        button:hover,
-        a:hover,
         .card:hover,
         .person-card:hover {
             transform: none !important;
-        }
-
-        button:hover::before,
-        button:hover::after,
-        .card:hover::before,
-        .card:hover::after {
-            opacity: 0 !important;
         }
     }
 
     /* Optimize floating animations */
     @keyframes float {
         0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-    }
-
-    /* Remove 3D transforms on mobile (performance) */
-    * {
-        will-change: auto;
-        transform: translateZ(0);
-    }
-
-    /* Reduce shadow complexity */
-    .shadow,
-    [class*="shadow"] {
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08) !important;
+        50% { transform: translateY(-8px); }
     }
 }
 
@@ -901,10 +584,26 @@
         color: #111827; /* Darker text */
     }
 
-    /* Improve link visibility */
-    a, [role="button"] {
+    /* Improve link visibility - exclude navigation links */
+    main a:not(.btn):not(.cta-button):not(.profile-link),
+    article a,
+    .content a,
+    p a {
         text-decoration: underline;
         text-underline-offset: 4px;
+    }
+    
+    /* Explicitly remove underlines from navigation */
+    nav a,
+    .mobile-link,
+    .nav-item,
+    .dropdown-item,
+    .top-bar a,
+    .footer a,
+    .btn,
+    .cta-button,
+    header a {
+        text-decoration: none !important;
     }
 
     a:focus-visible,
@@ -1078,11 +777,11 @@
         line-height: 1.6;
     }
 
-    /* Stack all grids */
-    [class*="grid"],
-    [class*="flex-row"],
-    .flex-between,
-    .flex-center {
+    /* Stack main content grids only */
+    .grid-12,
+    .hero-grid,
+    .feature-grid,
+    .programs-grid {
         display: flex;
         flex-direction: column !important;
         gap: 12px !important;
@@ -1096,40 +795,18 @@
         padding: 10px;
     }
 
-    /* Full-width buttons */
-    button,
-    .btn,
-    [role="button"] {
+    /* Full-width CTA buttons only */
+    .btn-primary,
+    .btn-cta,
+    .apply-btn,
+    form button,
+    form .btn {
         width: 100%;
     }
 
     /* Simplify forms */
     form {
         gap: 10px;
-    }
-
-    /* Ensure touchability */
-    a, button, [role="button"] {
-        min-height: 48px;
-        min-width: 100%;
-    }
-}
-
-/* ================================================================
-   MOBILE LINK WIDTH CORRECTION (PREVENT OVERFLOW)
-   ================================================================ */
-
-@media (max-width: 480px) {
-    a:not(.btn):not(.cta-button):not(.apply-btn):not(.nav-item):not(.dropdown-item) {
-        min-width: auto !important;
-        width: auto !important;
-        display: inline-flex;
-        align-items: center;
-    }
-
-    .bottom-nav .nav-item,
-    .nav-item-dropdown > .nav-item {
-        min-width: max-content;
     }
 }
 
@@ -1143,33 +820,23 @@
         background-color: #f0f0f0;
     }
 
-    /* Reduce blur effects on mobile */
-    [style*="blur("] {
-        backdrop-filter: blur(4px) !important;
-        -webkit-backdrop-filter: blur(4px) !important;
+    /* Reduce blur effects on mobile for better performance */
+    .backdrop-blur {
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
     }
 
     /* Disable GPU-intensive effects */
     .shimmer,
     .glow,
-    [class*="particle"],
-    [class*="float"] {
+    [class*="particle"] {
         animation: none !important;
     }
 
-    /* Simplify gradients */
-    [style*="gradient"] {
+    /* Disable parallax on mobile */
+    [style*="background-attachment: fixed"],
+    .parallax {
         background-attachment: scroll !important;
-    }
-
-    /* Reduce filter effects */
-    [style*="filter: grayscale"] {
-        filter: grayscale(0%) !important;
-    }
-
-    /* Optimize transition timing */
-    * {
-        transition-duration: 0.15s !important;
     }
 }
 

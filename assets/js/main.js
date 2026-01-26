@@ -104,6 +104,7 @@ function initNavigation() {
     const navbar = document.getElementById('navbar');
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileNav = document.querySelector('.mobile-nav');
     
     // Mobile menu toggle
     if (mobileMenuToggle && mobileMenu) {
@@ -111,6 +112,10 @@ function initNavigation() {
             mobileMenu.classList.toggle('active', isOpen);
             mobileMenuToggle.classList.toggle('active', isOpen);
             mobileMenuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            
+            // Toggle body scroll lock
+            document.body.classList.toggle('menu-open', isOpen);
+            
             const icon = mobileMenuToggle.querySelector('i');
             if (icon) {
                 icon.classList.toggle('fa-xmark', isOpen);
@@ -123,6 +128,23 @@ function initNavigation() {
             syncMenuState(isOpen);
         });
         
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (mobileMenu.classList.contains('active') && 
+                !mobileMenu.contains(e.target) && 
+                !mobileMenuToggle.contains(e.target)) {
+                syncMenuState(false);
+            }
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                syncMenuState(false);
+                mobileMenuToggle.focus();
+            }
+        });
+        
         // Close menu when clicking a link
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
@@ -130,6 +152,19 @@ function initNavigation() {
                 syncMenuState(false);
             });
         });
+    }
+    
+    // Mobile nav scroll effect
+    if (mobileNav) {
+        const updateMobileNav = () => {
+            if (window.scrollY > 30) {
+                mobileNav.classList.add('scrolled');
+            } else {
+                mobileNav.classList.remove('scrolled');
+            }
+        };
+        window.addEventListener('scroll', throttle(updateMobileNav, 100), { passive: true });
+        updateMobileNav(); // Initial check
     }
     
     // Navbar scroll effect (guard when navbar is not present on a page)
