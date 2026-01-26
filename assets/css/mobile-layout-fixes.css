@@ -1398,82 +1398,234 @@
    MOBILE FOOTER OPTIMIZATION
    ================================================================ */
 
+/* Tablet view - 2 columns */
+@media (max-width: 1024px) {
+    .footer-grid-5 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 30px 24px !important;
+    }
+    
+    .footer-contact-col {
+        grid-column: span 2 !important;
+    }
+    
+    .footer-col h4 {
+        font-size: 0.8rem !important;
+    }
+    
+    .footer-links-list a {
+        font-size: 0.8rem !important;
+    }
+}
+
+/* Mobile view */
 @media (max-width: 768px) {
     .footer-dark {
-        padding: 48px 0 0;
+        padding: 32px 0 0 !important;
     }
     
-    .footer-grid-4 {
+    .footer-grid-4,
+    .footer-grid-5 {
         display: flex !important;
         flex-direction: column !important;
-        gap: 32px !important;
+        gap: 0 !important;
     }
     
+    /* Collapsible footer sections */
     .footer-col {
-        text-align: center;
-        padding-bottom: 24px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        text-align: left !important;
+        padding: 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     
     .footer-col:last-child {
         border-bottom: none;
-        padding-bottom: 0;
     }
     
+    /* Footer section headers - clickable style */
     .footer-col h4 {
-        font-size: 1rem;
-        margin-bottom: 16px;
+        font-size: 0.75rem !important;
+        margin-bottom: 0 !important;
+        padding: 14px 0 !important;
+        color: var(--color-accent, #d97706) !important;
+        cursor: pointer;
+        position: relative;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
     }
     
-    .footer-links-list {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+    /* Arrow indicator for expandable sections */
+    .footer-col h4::after {
+        content: '+';
+        font-size: 1rem;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.5);
+        transition: transform 0.3s ease;
+    }
+    
+    .footer-col h4.expanded::after {
+        content: '−';
+    }
+    
+    /* Hide lists by default on mobile - will be toggled by JS */
+    .footer-col .footer-links-list {
+        display: none !important;
+        padding-bottom: 16px !important;
+    }
+    
+    .footer-col .footer-links-list.show {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 4px 12px !important;
+    }
+    
+    /* Style for inline h4 (not first in column) */
+    .footer-col h4[style*="margin-top"] {
+        margin-top: 0 !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    
+    .footer-links-list li {
+        margin-bottom: 0 !important;
     }
     
     .footer-links-list a {
-        padding: 8px 0;
-        font-size: 0.9rem;
+        padding: 5px 0 !important;
+        font-size: 0.72rem !important;
+        display: block !important;
+        line-height: 1.35 !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
+    
+    .footer-links-list a:hover {
+        color: white !important;
+    }
+    
+    /* Contact column - always visible */
+    .footer-contact-col {
+        grid-column: span 1 !important;
+        text-align: center !important;
+        padding: 24px 16px !important;
+        margin-top: 16px !important;
+        background: rgba(255, 255, 255, 0.04) !important;
+        border-radius: 16px !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+    
+    .footer-contact-col h4 {
+        cursor: default !important;
+        justify-content: center !important;
+    }
+    
+    .footer-contact-col h4::after {
+        display: none !important;
+    }
+    
+    .footer-contact-info {
+        text-align: center !important;
     }
     
     .footer-contact-info p {
-        font-size: 0.9rem;
-        margin-bottom: 6px;
+        font-size: 0.82rem !important;
+        margin-bottom: 3px !important;
+    }
+    
+    .footer-contact-links {
+        align-items: center !important;
+        gap: 8px !important;
+    }
+    
+    .footer-contact-item {
+        font-size: 0.75rem !important;
+        justify-content: center !important;
+        gap: 8px !important;
+    }
+    
+    .footer-contact-item i {
+        width: 26px !important;
+        height: 26px !important;
+        font-size: 0.7rem !important;
+    }
+    
+    .footer-cta-buttons {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        margin-top: 16px !important;
     }
     
     .btn-footer-apply,
+    .btn-footer-contact,
     .btn-footer-call {
-        width: 100%;
-        padding: 14px 20px;
-        font-size: 0.9rem;
-        justify-content: center;
-        text-align: center;
+        flex: 1 !important;
+        min-width: 130px !important;
+        padding: 10px 14px !important;
+        font-size: 0.78rem !important;
+        justify-content: center !important;
+        text-align: center !important;
+        margin-top: 0 !important;
+        border-radius: 8px !important;
     }
     
+    .footer-socials-box {
+        justify-content: center !important;
+        margin-top: 16px !important;
+        gap: 8px !important;
+    }
+    
+    .footer-socials-box a {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 0.85rem !important;
+    }
+    
+    .footer-logo-box {
+        text-align: center !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .footer-kiit-logo {
+        height: 36px !important;
+    }
+    
+    /* Copyright bar */
     .footer-copyright-bar {
-        padding: 20px 0;
-        margin-top: 32px;
+        padding: 14px 0 !important;
+        margin-top: 20px !important;
     }
     
     .footer-copyright-bar .container {
-        flex-direction: column;
-        gap: 16px;
-        text-align: center;
+        flex-direction: column !important;
+        gap: 10px !important;
+        text-align: center !important;
     }
     
     .copyright-text {
-        font-size: 0.8rem;
+        font-size: 0.7rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    .footer-legal-links {
+        justify-content: center !important;
+        gap: 12px !important;
+    }
+    
+    .footer-legal-links a {
+        font-size: 0.7rem !important;
     }
     
     .footer-socials {
         justify-content: center;
-        gap: 20px;
+        gap: 16px;
     }
     
     .footer-socials a {
-        font-size: 1.1rem;
-        width: 40px;
-        height: 40px;
+        font-size: 1rem;
+        width: 36px;
+        height: 36px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1483,6 +1635,59 @@
     
     .footer-socials a:hover {
         background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .footer-dark {
+        padding: 24px 0 0 !important;
+    }
+    
+    .footer-col .footer-links-list.show {
+        grid-template-columns: 1fr !important;
+        gap: 2px !important;
+    }
+    
+    .footer-links-list a {
+        font-size: 0.75rem !important;
+        padding: 6px 0 !important;
+    }
+    
+    .footer-contact-col {
+        padding: 20px 14px !important;
+    }
+    
+    .footer-contact-item {
+        font-size: 0.72rem !important;
+    }
+    
+    .footer-cta-buttons {
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+    
+    .btn-footer-apply,
+    .btn-footer-contact {
+        width: 100% !important;
+        min-width: unset !important;
+    }
+    
+    .footer-socials-box a {
+        width: 34px !important;
+        height: 34px !important;
+    }
+    
+    .copyright-text {
+        font-size: 0.65rem !important;
+    }
+    
+    .footer-legal-links {
+        gap: 10px !important;
+    }
+    
+    .footer-legal-links a {
+        font-size: 0.65rem !important;
     }
 }
 

@@ -632,3 +632,86 @@ function initCounterAnimations() {
 
     counterElements.forEach(el => counterObserver.observe(el));
 }
+
+// ================================================================
+// Mobile Footer Accordion
+// ================================================================
+
+function initMobileFooterAccordion() {
+    // Only initialize on mobile
+    if (window.innerWidth > 768) return;
+    
+    const footerCols = document.querySelectorAll('.footer-col:not(.footer-contact-col)');
+    
+    footerCols.forEach(col => {
+        const headers = col.querySelectorAll('h4');
+        
+        headers.forEach((header, index) => {
+            // Get the next sibling ul (footer-links-list)
+            let linksList = header.nextElementSibling;
+            while (linksList && !linksList.classList.contains('footer-links-list')) {
+                linksList = linksList.nextElementSibling;
+            }
+            
+            if (linksList) {
+                // First section expanded by default
+                if (index === 0) {
+                    header.classList.add('expanded');
+                    linksList.classList.add('show');
+                }
+                
+                header.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const isExpanded = this.classList.contains('expanded');
+                    
+                    // Close all other sections in this column
+                    headers.forEach(h => {
+                        h.classList.remove('expanded');
+                        let list = h.nextElementSibling;
+                        while (list && !list.classList.contains('footer-links-list')) {
+                            list = list.nextElementSibling;
+                        }
+                        if (list) list.classList.remove('show');
+                    });
+                    
+                    // Toggle current section
+                    if (!isExpanded) {
+                        this.classList.add('expanded');
+                        linksList.classList.add('show');
+                    }
+                });
+            }
+        });
+    });
+}
+
+// Initialize footer accordion after DOM and footer are loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Delay to ensure footer is loaded via include
+    setTimeout(initMobileFooterAccordion, 500);
+});
+
+// Re-initialize on resize
+let footerResizeTimer;
+window.addEventListener('resize', function() {
+    clearTimeout(footerResizeTimer);
+    footerResizeTimer = setTimeout(function() {
+        // Remove existing event listeners by cloning
+        const footerCols = document.querySelectorAll('.footer-col:not(.footer-contact-col)');
+        footerCols.forEach(col => {
+            const headers = col.querySelectorAll('h4');
+            headers.forEach(header => {
+                const newHeader = header.cloneNode(true);
+                header.parentNode.replaceChild(newHeader, header);
+            });
+        });
+        
+        // Reset all classes
+        document.querySelectorAll('.footer-col h4').forEach(h => h.classList.remove('expanded'));
+        document.querySelectorAll('.footer-links-list').forEach(l => l.classList.remove('show'));
+        
+        // Re-initialize if mobile
+        initMobileFooterAccordion();
+    }, 250);
+});
