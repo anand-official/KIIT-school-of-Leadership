@@ -504,142 +504,465 @@
 }
 
 /* ================================================================
-   MOBILE HERO SECTION OPTIMIZATION
+   MOBILE HERO/BANNER SECTION - COMPREHENSIVE OPTIMIZATION
    ================================================================ */
 
 @media (max-width: 768px) {
+    /* ---- Base Hero Styles ---- */
     .hero {
-        padding: 48px 0 60px;
+        padding: 32px 0 40px !important;
+        min-height: auto !important;
     }
     
-    .hero-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
+    .hero-grid,
+    .hero .grid-12 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
     }
     
-    .hero-content {
-        text-align: center;
+    .hero-content,
+    .hero-copy {
+        text-align: center !important;
+        order: 2 !important;
     }
     
-    .hero-content h1 {
-        font-size: clamp(1.75rem, 6vw, 2.25rem);
-        line-height: 1.15;
-        margin-bottom: 16px;
+    .hero-content h1,
+    .hero-copy h1,
+    .hero h1 {
+        font-size: clamp(1.5rem, 5.5vw, 1.9rem) !important;
+        line-height: 1.2 !important;
+        margin-bottom: 12px !important;
+        letter-spacing: -0.02em !important;
     }
     
-    .hero-eyebrow {
-        font-size: 0.7rem;
-        padding: 8px 14px;
-        margin-bottom: 16px;
+    .hero-eyebrow,
+    .eyebrow,
+    .hero-badge {
+        font-size: 0.65rem !important;
+        padding: 6px 12px !important;
+        margin-bottom: 12px !important;
+        display: inline-flex !important;
+        justify-content: center !important;
     }
     
     .hero-content .lead,
-    .hero-content p {
-        font-size: 0.95rem;
-        line-height: 1.6;
-        margin-bottom: 20px;
+    .hero-content p,
+    .hero-copy p,
+    .hero p.lead {
+        font-size: 0.9rem !important;
+        line-height: 1.55 !important;
+        margin-bottom: 16px !important;
     }
     
-    /* Hero buttons */
+    /* ---- Hero Image/Media ---- */
+    .hero-media,
+    .hero-image,
+    .hero-image-card,
+    .hero .grid-12 > div:last-child img,
+    [class*="hero-image"] {
+        order: 1 !important;
+        border-radius: 14px !important;
+        max-height: 200px !important;
+        overflow: hidden !important;
+    }
+    
+    .hero-media img,
+    .hero-image img,
+    .hero-image-card img {
+        width: 100% !important;
+        height: 180px !important;
+        object-fit: cover !important;
+        border-radius: 14px !important;
+    }
+    
+    /* ---- Hero Buttons ---- */
     .hero-content .btn,
-    .hero .btn {
-        width: 100%;
-        justify-content: center;
-        padding: 14px 24px;
-        font-size: 0.9rem;
+    .hero .btn,
+    .hero-actions .btn,
+    .hero-actions a,
+    .cta-buttons .btn,
+    .cta-buttons a {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 12px 20px !important;
+        font-size: 0.85rem !important;
+        border-radius: 10px !important;
     }
     
-    /* Hero slider */
+    .hero-actions,
+    .cta-buttons {
+        flex-direction: column !important;
+        gap: 10px !important;
+        width: 100% !important;
+    }
+    
+    /* ---- Hero Chips/Badges ---- */
+    .hero-chips,
+    .chip-row,
+    .hero-chip-row {
+        justify-content: center !important;
+        gap: 6px !important;
+        flex-wrap: wrap !important;
+    }
+    
+    .hero-chip,
+    .chip {
+        font-size: 0.7rem !important;
+        padding: 5px 10px !important;
+    }
+    
+    /* ---- Hero Stats Overlay ---- */
+    .hero-stats {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 6px !important;
+        margin-top: 12px !important;
+    }
+    
+    .hero-stat-card {
+        padding: 8px 6px !important;
+        border-radius: 10px !important;
+    }
+    
+    .hero-stat-card .stat-value {
+        font-size: 0.9rem !important;
+        font-weight: 700 !important;
+    }
+    
+    .hero-stat-card .stat-label {
+        font-size: 0.6rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .hero-media-note {
+        font-size: 0.7rem !important;
+        padding: 6px 10px !important;
+        top: 10px !important;
+        left: 10px !important;
+    }
+    
+    /* ---- Hero Slider/Carousel ---- */
     .mini-slider {
-        height: clamp(280px, 45vh, 380px);
-        border-radius: 16px;
-        overflow: hidden;
+        height: clamp(220px, 35vh, 280px) !important;
+        border-radius: 14px !important;
+        overflow: hidden !important;
     }
     
     .slide-quote {
-        font-size: clamp(1.25rem, 4vw, 1.75rem);
-        padding: 20px;
-        line-height: 1.3;
+        font-size: clamp(1rem, 3.5vw, 1.35rem) !important;
+        padding: 16px !important;
+        line-height: 1.35 !important;
     }
     
     .slider-nav {
-        width: 40px;
-        height: 40px;
-        font-size: 0.9rem;
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 0.8rem !important;
     }
     
-    .slider-prev { left: 12px; }
-    .slider-next { right: 12px; }
+    .slider-prev { left: 8px !important; }
+    .slider-next { right: 8px !important; }
     
-    /* Hero rail */
+    /* ---- Hero Rail ---- */
     .hero-rail {
-        padding: 20px;
-        border-radius: 16px;
+        padding: 16px !important;
+        border-radius: 14px !important;
+    }
+    
+    /* ---- Journey Outcomes ---- */
+    .journey-outcomes {
+        flex-direction: column !important;
+        gap: 6px !important;
+        align-items: center !important;
+        margin-top: 16px !important;
+    }
+    
+    .journey-outcomes .stat-chip {
+        font-size: 0.75rem !important;
+        padding: 6px 12px !important;
+    }
+    
+    /* ---- Scarcity Stack ---- */
+    .scarcity-stack {
+        text-align: center !important;
+        font-size: 0.8rem !important;
+        margin-top: 12px !important;
+        padding: 10px !important;
+        border-radius: 10px !important;
     }
 }
 
 @media (max-width: 480px) {
     .hero {
-        padding: 36px 0 48px;
+        padding: 24px 0 32px !important;
     }
     
-    .hero-content h1 {
-        font-size: clamp(1.5rem, 5.5vw, 1.85rem);
+    .hero-content h1,
+    .hero-copy h1,
+    .hero h1 {
+        font-size: clamp(1.3rem, 5vw, 1.6rem) !important;
+    }
+    
+    .hero-content .lead,
+    .hero-content p,
+    .hero-copy p {
+        font-size: 0.85rem !important;
     }
     
     .mini-slider {
-        height: clamp(220px, 40vh, 300px);
+        height: clamp(180px, 30vh, 220px) !important;
     }
     
     .slide-quote {
-        font-size: clamp(1rem, 3.5vw, 1.35rem);
+        font-size: clamp(0.9rem, 3vw, 1.1rem) !important;
+    }
+    
+    .hero-stats {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+    
+    .hero-stat-card .stat-value {
+        font-size: 0.8rem !important;
+    }
+    
+    .hero-stat-card .stat-label {
+        font-size: 0.55rem !important;
+    }
+    
+    .hero-media img,
+    .hero-image img,
+    .hero-image-card img {
+        height: 150px !important;
     }
 }
 
 /* ================================================================
-   MOBILE PAGE HERO (INTERNAL PAGES)
+   MOBILE PAGE HERO (INTERNAL PAGES) - ALL VARIANTS
    ================================================================ */
 
 @media (max-width: 768px) {
+    /* ---- Page Hero Base ---- */
     .page-hero,
     .about-hero,
+    .kites-hero,
+    .sri-hero,
     [class*="-hero"] {
-        padding: 60px 0;
-        min-height: auto;
+        padding: 40px 0 !important;
+        min-height: auto !important;
     }
     
     .page-hero h1,
     .about-hero__title,
+    .kites-hero h1,
+    .sri-hero h1,
+    .sri-hero-content h1,
     [class*="-hero"] h1 {
-        font-size: clamp(1.6rem, 5.5vw, 2rem);
-        line-height: 1.2;
-        margin-bottom: 12px;
+        font-size: clamp(1.4rem, 5vw, 1.8rem) !important;
+        line-height: 1.2 !important;
+        margin-bottom: 10px !important;
+        text-align: center !important;
     }
     
     .page-hero p,
     .about-hero__lede,
+    .kites-hero p,
+    .kites-hero .lead,
+    .sri-hero p,
+    .sri-lead,
     [class*="-hero"] p {
-        font-size: 0.9rem;
-        line-height: 1.6;
+        font-size: 0.85rem !important;
+        line-height: 1.55 !important;
+        text-align: center !important;
     }
     
-    .about-hero__eyebrow {
-        font-size: 0.7rem;
-        margin-bottom: 12px;
+    .about-hero__eyebrow,
+    .breadcrumb {
+        font-size: 0.65rem !important;
+        margin-bottom: 10px !important;
+        text-align: center !important;
+        display: block !important;
+    }
+    
+    /* ---- About Hero Specific ---- */
+    .about-hero {
+        padding: 60px 0 !important;
+    }
+    
+    .about-hero__content {
+        text-align: center !important;
+    }
+    
+    .about-hero__eyebrow::after {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 150px !important;
+        max-width: 60vw !important;
+    }
+    
+    .about-hero__actions {
+        justify-content: center !important;
+        flex-direction: column !important;
+    }
+    
+    .about-hero__actions .btn {
+        width: 100% !important;
+    }
+    
+    .about-hero__quicklink {
+        justify-content: center !important;
+        font-size: 0.85rem !important;
+    }
+    
+    /* ---- KITES Hero Specific ---- */
+    .kites-hero {
+        padding: 40px 0 !important;
+    }
+    
+    .kites-hero .grid-12 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    
+    .kites-hero .grid-12 > div[style*="grid-column"] {
+        grid-column: span 12 !important;
+        width: 100% !important;
+    }
+    
+    .kites-hero-image {
+        order: -1 !important;
+        max-height: 180px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+        border-radius: 14px !important;
+        margin-top: 0 !important;
+    }
+    
+    /* ---- SRI Hero Specific ---- */
+    .sri-hero {
+        padding: 40px 0 !important;
+    }
+    
+    .sri-hero .grid-12 {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .sri-hero-content {
+        text-align: center !important;
+        max-width: 100% !important;
+    }
+    
+    .sri-badge {
+        margin: 0 auto 12px !important;
+        font-size: 0.7rem !important;
+    }
+    
+    .sri-cta-row {
+        justify-content: center !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .sri-cta {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 12px 20px !important;
+        font-size: 0.85rem !important;
+    }
+    
+    .sri-hero-image {
+        min-height: 180px !important;
+        max-height: 200px !important;
+        order: -1 !important;
+        border-radius: 14px !important;
+    }
+    
+    .sri-hero-image img {
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    
+    /* ---- People/Faculty Page Hero ---- */
+    .people-shell .page-hero,
+    .people-shell [class*="-hero"] {
+        padding: 40px 0 !important;
+    }
+    
+    .hero-badges,
+    .hero-pills {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+    }
+    
+    .hero-pill,
+    .hero-badge {
+        font-size: 0.7rem !important;
+        padding: 6px 10px !important;
+    }
+    
+    /* ---- Hero Aside Stats ---- */
+    .hero-aside,
+    .stat-stack {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+    
+    .stat-card {
+        padding: 16px !important;
+        text-align: center !important;
+    }
+    
+    .stat-card .stat-value,
+    .stat-value {
+        font-size: 1.5rem !important;
+    }
+    
+    .stat-card .stat-label,
+    .stat-label {
+        font-size: 0.75rem !important;
     }
 }
 
 @media (max-width: 480px) {
     .page-hero,
     .about-hero,
+    .kites-hero,
+    .sri-hero,
     [class*="-hero"] {
-        padding: 48px 0;
+        padding: 32px 0 !important;
     }
     
     .page-hero h1,
-    .about-hero__title {
-        font-size: clamp(1.4rem, 5vw, 1.75rem);
+    .about-hero__title,
+    .kites-hero h1,
+    .sri-hero-content h1,
+    [class*="-hero"] h1 {
+        font-size: clamp(1.2rem, 4.5vw, 1.5rem) !important;
+    }
+    
+    .page-hero p,
+    .about-hero__lede,
+    .kites-hero .lead,
+    .sri-lead,
+    [class*="-hero"] p {
+        font-size: 0.8rem !important;
+    }
+    
+    .kites-hero-image,
+    .sri-hero-image {
+        max-height: 160px !important;
+    }
+    
+    .stat-card .stat-value,
+    .stat-value {
+        font-size: 1.3rem !important;
     }
 }
 
@@ -1334,61 +1657,123 @@
    ================================================================ */
 
 /* ================================================================
-   MBA-IEV ADMISSIONS PAGE
+   MBA-IEV ADMISSIONS PAGE - BANNER/HERO
    ================================================================ */
 
 @media (max-width: 768px) {
-    /* Admissions hero grid fix */
-    .hero-grid {
+    /* Admissions page hero */
+    .page-hero .hero-grid {
         display: flex !important;
         flex-direction: column !important;
-        gap: 24px !important;
+        gap: 16px !important;
     }
     
-    .hero-copy {
-        text-align: center;
+    .page-hero .hero-copy {
+        text-align: center !important;
+        order: 2 !important;
     }
     
-    .hero-copy h1 {
-        font-size: clamp(1.6rem, 5vw, 2rem) !important;
+    .page-hero .hero-copy h1 {
+        font-size: clamp(1.4rem, 5vw, 1.8rem) !important;
+        line-height: 1.2 !important;
     }
     
-    .hero-actions {
-        justify-content: center;
-        flex-direction: column;
+    .page-hero .hero-copy p {
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
     }
     
-    .hero-actions .btn-primary,
-    .hero-actions .btn-ghost {
-        width: 100%;
-        justify-content: center;
+    .page-hero .eyebrow {
+        font-size: 0.65rem !important;
+        padding: 6px 10px !important;
+        margin-bottom: 8px !important;
+        display: inline-flex !important;
     }
     
-    .hero-media {
-        order: -1;
-        min-height: 220px !important;
+    .page-hero .breadcrumb {
+        font-size: 0.65rem !important;
+        margin-bottom: 6px !important;
     }
     
-    .hero-stats {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 8px !important;
+    .page-hero .hero-actions {
+        justify-content: center !important;
+        flex-direction: column !important;
+        gap: 10px !important;
     }
     
-    .hero-stat-card {
-        padding: 10px !important;
+    .page-hero .hero-actions .btn-primary,
+    .page-hero .hero-actions .btn-ghost {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 12px 20px !important;
+        font-size: 0.85rem !important;
     }
     
-    .stat-value {
-        font-size: 1.1rem !important;
+    .page-hero .hero-media {
+        order: 1 !important;
+        min-height: 160px !important;
+        max-height: 200px !important;
+        border-radius: 14px !important;
     }
     
-    .stat-label {
-        font-size: 0.7rem !important;
+    .page-hero .hero-media img,
+    .page-hero .hero-photo {
+        height: 100% !important;
+        max-height: 200px !important;
+        object-fit: cover !important;
+    }
+    
+    .page-hero .hero-media-overlay {
+        border-radius: 14px !important;
+    }
+    
+    .page-hero .hero-media-note {
+        font-size: 0.65rem !important;
+        padding: 5px 8px !important;
+        top: 8px !important;
+        left: 8px !important;
+    }
+    
+    .page-hero .hero-stats {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 4px !important;
+        padding: 0 !important;
+        margin: 8px 0 0 !important;
+    }
+    
+    .page-hero .hero-stat-card {
+        padding: 8px 4px !important;
+        border-radius: 8px !important;
+    }
+    
+    .page-hero .hero-stat-card .stat-value {
+        font-size: 0.8rem !important;
+        font-weight: 700 !important;
+    }
+    
+    .page-hero .hero-stat-card .stat-label {
+        font-size: 0.55rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .page-hero .chip-row {
+        justify-content: center !important;
+        gap: 4px !important;
+        margin-top: 8px !important;
+    }
+    
+    .page-hero .chip {
+        font-size: 0.6rem !important;
+        padding: 4px 8px !important;
     }
     
     /* Section shells */
     .section-shell {
-        padding: 40px 0 !important;
+        padding: 36px 0 !important;
     }
     
     .section-header {
@@ -1398,19 +1783,19 @@
     }
     
     .section-title {
-        font-size: clamp(1.3rem, 4.5vw, 1.6rem) !important;
+        font-size: clamp(1.2rem, 4.5vw, 1.5rem) !important;
         text-align: center;
     }
     
     .section-copy {
         text-align: center;
-        font-size: 0.9rem !important;
+        font-size: 0.85rem !important;
     }
     
     /* Card grids */
     .card-grid {
         grid-template-columns: 1fr !important;
-        gap: 14px !important;
+        gap: 12px !important;
     }
     
     /* Roadmap/timeline */
@@ -1722,86 +2107,98 @@
 }
 
 /* ================================================================
-   ECOSYSTEM PARTNERS PAGE
+   ECOSYSTEM PARTNERS PAGE - BANNER/HERO
    ================================================================ */
 
 @media (max-width: 768px) {
+    .hero.page-hero {
+        padding: 40px 0 32px !important;
+    }
+    
     .partner-hero-grid {
         grid-template-columns: 1fr !important;
-        gap: 24px !important;
+        gap: 20px !important;
     }
     
     .hero.page-hero h1 {
-        font-size: clamp(1.6rem, 5vw, 2rem) !important;
+        font-size: clamp(1.4rem, 5vw, 1.8rem) !important;
         text-align: center !important;
+        line-height: 1.2 !important;
     }
     
     .hero.page-hero p {
         text-align: center !important;
-        font-size: 0.95rem !important;
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
     }
     
-    .breadcrumb {
+    .hero.page-hero .breadcrumb {
         text-align: center !important;
         display: block !important;
+        font-size: 0.65rem !important;
     }
     
-    .hero-badge {
+    .hero.page-hero .hero-badge {
         display: flex !important;
         justify-content: center !important;
-        margin: 0 auto 12px !important;
+        margin: 0 auto 10px !important;
         width: fit-content !important;
+        font-size: 0.7rem !important;
+        padding: 6px 12px !important;
     }
     
-    .hero-chips {
+    .hero.page-hero .hero-chips {
         justify-content: center !important;
+        gap: 6px !important;
     }
     
-    .hero-chip {
-        font-size: 0.8rem !important;
-        padding: 8px 12px !important;
+    .hero.page-hero .hero-chip {
+        font-size: 0.7rem !important;
+        padding: 6px 10px !important;
     }
     
     .hero-summary-card {
-        padding: 20px !important;
+        padding: 16px !important;
+        border-radius: 16px !important;
     }
     
     .stat-stack {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 10px !important;
+        gap: 8px !important;
     }
     
     .stat-pill {
-        padding: 12px !important;
+        padding: 10px 8px !important;
+        border-radius: 12px !important;
     }
     
     .stat-pill strong {
-        font-size: 1.4rem !important;
+        font-size: 1.2rem !important;
     }
     
     .stat-pill span {
-        font-size: 0.8rem !important;
+        font-size: 0.7rem !important;
     }
     
     .meta-grid {
         grid-template-columns: 1fr !important;
-        gap: 8px !important;
+        gap: 6px !important;
     }
     
     /* Tabs section */
     .tabs-section {
-        padding: 40px 0 !important;
+        padding: 36px 0 !important;
     }
     
     .tab-pills {
         flex-wrap: wrap !important;
         justify-content: center !important;
-        gap: 8px !important;
+        gap: 6px !important;
     }
     
     .tab-pill {
-        font-size: 0.8rem !important;
-        padding: 10px 14px !important;
+        font-size: 0.75rem !important;
+        padding: 8px 12px !important;
     }
     
     /* Logo grids */
