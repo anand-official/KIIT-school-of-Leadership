@@ -146,17 +146,17 @@
 @media (max-width: 768px) {
     /* Show mobile nav, hide desktop nav */
     .mobile-nav {
-        display: block;
+        display: block !important;
         background-color: #ffffff;
         border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        position: sticky;
+        position: sticky !important;
         top: 0;
         z-index: 1000;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     }
     
     .mobile-nav .container {
-        display: flex;
+        display: flex !important;
         justify-content: space-between;
         align-items: center;
         padding: 10px 16px;
@@ -275,7 +275,7 @@
 
 @media (max-width: 768px) {
     .mobile-menu {
-        display: block;
+        display: block !important;
         position: absolute;
         top: 100%;
         left: 0;
@@ -285,17 +285,17 @@
         box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
         max-height: 0;
         overflow: hidden;
-        z-index: 999;
+        z-index: 9999;
         opacity: 0;
         visibility: hidden;
-        transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
-                    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                    visibility 0.3s;
+        transition: max-height 0.35s ease-out, 
+                    opacity 0.35s ease-out,
+                    visibility 0.35s;
         -webkit-overflow-scrolling: touch;
     }
     
     .mobile-menu.active {
-        max-height: calc(100vh - 120px);
+        max-height: 80vh;
         overflow-y: auto;
         opacity: 1;
         visibility: visible;
@@ -954,34 +954,11 @@
     }
     
     .leader-nav {
-        display: flex !important;
-        position: static !important;
-        transform: none !important;
-        margin-top: 16px !important;
-        justify-content: center !important;
-        gap: 16px !important;
+        display: none !important;
     }
     
     .leader-btn {
-        width: 44px !important;
-        height: 44px !important;
-        min-width: 44px !important;
-        min-height: 44px !important;
-        font-size: 0.9rem !important;
-        pointer-events: auto !important;
-        cursor: pointer !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        background: var(--color-primary, #064e3b) !important;
-        color: #fff !important;
-        border: none !important;
-        border-radius: 50% !important;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-    }
-    
-    .leader-btn:active {
-        transform: scale(0.95);
+        display: none !important;
     }
     
     .leader-dots {

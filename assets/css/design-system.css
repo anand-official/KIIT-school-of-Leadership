@@ -778,7 +778,7 @@ button.btn {
     text-decoration: none;
 }
 
-/* Mobile navigation - hidden by default */
+/* Mobile navigation - hidden by default on desktop */
 .mobile-nav {
     display: none;
 }
@@ -789,6 +789,22 @@ button.btn {
 
 .mobile-menu-toggle {
     display: none;
+}
+
+/* Mobile overrides - show on small screens */
+@media (max-width: 768px) {
+    .mobile-nav {
+        display: block !important;
+    }
+    .mobile-menu {
+        display: block !important;
+    }
+    .mobile-menu-toggle {
+        display: flex !important;
+    }
+    .bottom-nav {
+        display: none !important;
+    }
 }
 
 .bottom-nav {
