@@ -16,6 +16,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/design-system.css">
+    <link rel="stylesheet" href="assets/css/mobile-optimization.css">
     <!-- Header/Footer Loader -->
     <script src="assets/js/load-header-footer.js?v=2"></script>
 </head>
@@ -33,7 +34,7 @@
                     </p>
                     <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px;">
                         <a href="#apply" class="btn btn-primary">Apply Now</a>
-                        <a href="#journey" class="btn btn-outline"><i class="fa-solid fa-download"></i> Curriculum</a>
+                        <a href="assets/MBA IEV 2026 Brochure.pdf" download class="btn btn-outline"><i class="fa-solid fa-download"></i> Curriculum</a>
                     </div>
                     <div class="scarcity-stack">
                         <span>Curated for builders ready to move now—weekly reviews until seats are gone.</span>
@@ -41,7 +42,7 @@
                 </div>
                 <div style="grid-column: span 6;">
                     <div class="hero-image-card">
-                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Startup Team">
+                        <img src="assets/images/mbaiev_banner.png" alt="MBA IEV Students">
                     </div>
                 </div>
             </div>
@@ -55,56 +56,145 @@
         </div>
     </section>
 
-    <section class="section bg-white">
+    <section class="section bg-white tbi-section">
         <div class="container">
-            <div style="display: grid; gap: 14px; margin-bottom: 12px;">
-                <h2 style="margin: 0;">MBA IEV Programme</h2>
-                <p style="margin: 0; color: var(--color-text-muted);">Programme leadership guiding curriculum, delivery, and student experience.</p>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px;">
-                <div class="card" style="padding: 18px;">
-                    <h3 style="margin: 0 0 6px 0;">Dr. Swagatika Mishra</h3>
-                    <p style="margin: 0; color: var(--color-text-muted);">Programme Director</p>
+            <div class="tbi-header">
+                <div class="tbi-header-top">
+                    <h2>MBA IEV Programme</h2>
+                    <span class="tbi-badge">MBA IEV · Powered by KIIT-TBI</span>
                 </div>
-                <div class="card" style="padding: 18px;">
-                    <h3 style="margin: 0 0 6px 0;">Prof. (Dr.) Binay Bhusan Padhi</h3>
-                    <p style="margin: 0; color: var(--color-text-muted);">Programme Coordinator</p>
+                <p>Programme leadership guiding curriculum, delivery, and student experience.</p>
+                <h3 class="tbi-subtitle">India's award-winning incubation engine behind your venture.</h3>
+            </div>
+            <div class="grid-12 tbi-grid">
+                <div style="grid-column: span 6; display: flex; flex-direction: column; gap: 16px;">
+                    <p class="lead" style="margin-bottom: 6px;">KIIT-Technology Business Incubator (KIIT-TBI) has backed 423+ startups, created 10,000+ jobs, and enabled over ₹13B in funding since 2009.</p>
+                    <p style="color: var(--color-text-muted);">Recognized as a Centre of Excellence by DST with national and international awards, KIIT-TBI surrounds you with labs, mentors, grants, and investor access so you can ship faster and scale smarter.</p>
+                    <div class="tbi-stat-grid">
+                        <div class="tbi-stat-card">
+                            <div class="tbi-stat-icon"><i class="fa-solid fa-circle-dot"></i></div>
+                            <div>423+ startups supported</div>
+                        </div>
+                        <div class="tbi-stat-card">
+                            <div class="tbi-stat-icon"><i class="fa-solid fa-people-group"></i></div>
+                            <div>10,000+ jobs created</div>
+                        </div>
+                        <div class="tbi-stat-card">
+                            <div class="tbi-stat-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                            <div>₹13B+ funding enabled</div>
+                        </div>
+                        <div class="tbi-stat-card">
+                            <div class="tbi-stat-icon"><i class="fa-solid fa-handshake"></i></div>
+                            <div>40+ investor interactions each year</div>
+                        </div>
+                    </div>
+                    <a href="https://kiitincubator.in" class="text-link" target="_blank" rel="noopener">Visit kiitincubator.in <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+
+                <div style="grid-column: span 6; display: grid; gap: 16px;">
+                    <div class="tbi-card">
+                        <h3 style="margin: 0;">Mission</h3>
+                        <p style="margin: 0;">Equip ambitious founders with the skills, networks, and conviction to turn ideas into ventures—through a rigorous build-while-you-learn curriculum, hands-on venture labs, and strategic partnerships with operators, investors, and industry leaders.</p>
+                    </div>
+                    <div class="tbi-card">
+                        <h3 style="margin: 0;">Vision</h3>
+                        <p style="margin: 0;">Be the premier global launchpad for visionary entrepreneurs—shaping builders who drive transformative innovation with ventures that are viable, sustainable, and ready to scale.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- KIIT-TBI Integration -->
-    <section class="section bg-white tbi-section">
-        <div class="container">
-            <div class="grid-12" style="align-items: start; row-gap: 24px;">
-                <div style="grid-column: span 6; display: flex; flex-direction: column; gap: 16px;">
-                    <div class="eyebrow" style="width: fit-content;">MBA IEV · Powered by KIIT-TBI</div>
-                    <h2>India's award-winning incubation engine behind your venture.</h2>
-                    <p class="lead" style="margin-bottom: 4px;">KIIT-Technology Business Incubator (KIIT-TBI) has backed 423+ startups, created 10,000+ jobs, and enabled over ₹13B in funding since 2009.</p>
-                    <p style="color: var(--color-text-muted);">Recognized as a Centre of Excellence by DST with national and international awards, KIIT-TBI surrounds you with labs, mentors, grants, and investor access so you can ship faster and scale smarter.</p>
-                    <div class="tbi-chips">
-                        <span class="stat-chip"><i class="fa-solid fa-circle-dot" style="color: var(--color-primary);"></i> 423+ startups supported</span>
-                        <span class="stat-chip"><i class="fa-solid fa-people-group" style="color: var(--color-primary);"></i> 10,000+ jobs created</span>
-                        <span class="stat-chip"><i class="fa-solid fa-indian-rupee-sign" style="color: var(--color-primary);"></i> ₹13B+ funding enabled</span>
+    <!-- Impact Visual (CSS-built) -->
+    <section class="section impact-visual">
+        <div class="container impact-shell">
+            <div class="impact-heading">
+                <p class="impact-kicker">KIIT-TBI Outcomes</p>
+                <h2>Impact So Far</h2>
+                <p class="impact-copy">A decade of builders, operators, and investors compounding real results across startups, jobs, and capital.</p>
+            </div>
+            <div class="impact-stats-grid">
+                <div class="impact-card impact-card-featured impact-delay-1">
+                    <div class="impact-card-accent"></div>
+                    <div class="impact-icon impact-icon-lg"><i class="fa-solid fa-rocket"></i></div>
+                    <div class="impact-content">
+                        <div class="impact-metric">489+</div>
+                        <div class="impact-label">Startups Incubated</div>
                     </div>
-                    <a href="https://kiitincubator.in" class="text-link" target="_blank" rel="noopener">Visit kiitincubator.in <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <div class="impact-glow"></div>
                 </div>
-
-                <div style="grid-column: span 6; display: grid; gap: 12px;">
-                    <div class="tbi-card">
-                        <div class="tbi-card-icon"><i class="fa-solid fa-bullseye"></i></div>
-                        <div>
-                            <h3 style="margin-bottom: 6px;">Mission</h3>
-                            <p style="margin: 0; color: var(--color-text-muted);">Equip ambitious founders with the skills, networks, and conviction to turn ideas into ventures—through a rigorous build-while-you-learn curriculum, hands-on venture labs, and strategic partnerships with operators, investors, and industry leaders.</p>
-                        </div>
+                <div class="impact-card impact-card-featured impact-delay-2">
+                    <div class="impact-card-accent"></div>
+                    <div class="impact-icon impact-icon-lg"><i class="fa-solid fa-people-group"></i></div>
+                    <div class="impact-content">
+                        <div class="impact-metric">10,000+</div>
+                        <div class="impact-label">Jobs Created</div>
                     </div>
-                    <div class="tbi-card">
-                        <div class="tbi-card-icon"><i class="fa-solid fa-eye"></i></div>
-                        <div>
-                            <h3 style="margin-bottom: 6px;">Vision</h3>
-                            <p style="margin: 0; color: var(--color-text-muted);">Be the premier global launchpad for visionary entrepreneurs—shaping builders who drive transformative innovation with ventures that are viable, sustainable, and ready to scale.</p>
-                        </div>
+                    <div class="impact-glow"></div>
+                </div>
+                <div class="impact-card impact-delay-3">
+                    <div class="impact-card-accent"></div>
+                    <div class="impact-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="impact-content">
+                        <div class="impact-metric">190+</div>
+                        <div class="impact-label">Graduated</div>
+                    </div>
+                </div>
+                <div class="impact-card impact-delay-4">
+                    <div class="impact-card-accent"></div>
+                    <div class="impact-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                    <div class="impact-content">
+                        <div class="impact-metric">210+</div>
+                        <div class="impact-label">Patents</div>
+                    </div>
+                </div>
+                <div class="impact-card impact-delay-5">
+                    <div class="impact-card-accent"></div>
+                    <div class="impact-icon"><i class="fa-solid fa-building"></i></div>
+                    <div class="impact-content">
+                        <div class="impact-metric">₹1,800 Cr+</div>
+                        <div class="impact-label">Investment Raised</div>
+                    </div>
+                </div>
+                <div class="impact-card impact-delay-6">
+                    <div class="impact-card-accent"></div>
+                    <div class="impact-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <div class="impact-content">
+                        <div class="impact-metric">8+</div>
+                        <div class="impact-label">CSR Projects</div>
+                    </div>
+                </div>
+                <div class="impact-card impact-card-alt impact-delay-7">
+                    <div class="impact-card-accent impact-accent-alt"></div>
+                    <div class="impact-icon impact-icon-alt"><i class="fa-solid fa-person-dress"></i></div>
+                    <div class="impact-content">
+                        <div class="impact-metric">180+</div>
+                        <div class="impact-label">Women Leaders</div>
+                    </div>
+                </div>
+                <div class="impact-card impact-card-alt impact-delay-8">
+                    <div class="impact-card-accent impact-accent-alt"></div>
+                    <div class="impact-icon impact-icon-alt"><i class="fa-solid fa-box"></i></div>
+                    <div class="impact-content">
+                        <div class="impact-metric">155+</div>
+                        <div class="impact-label">Commercialised</div>
+                    </div>
+                </div>
+                <div class="impact-card impact-card-featured impact-delay-9">
+                    <div class="impact-card-accent"></div>
+                    <div class="impact-icon impact-icon-lg"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                    <div class="impact-content">
+                        <div class="impact-metric">₹20,000 Cr+</div>
+                        <div class="impact-label">Total Valuation</div>
+                    </div>
+                    <div class="impact-glow"></div>
+                </div>
+                <div class="impact-card impact-delay-10">
+                    <div class="impact-card-accent"></div>
+                    <div class="impact-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <div class="impact-content">
+                        <div class="impact-metric">20+</div>
+                        <div class="impact-label">Clusters</div>
                     </div>
                 </div>
             </div>
@@ -167,22 +257,22 @@
                 <div style="grid-column: span 12;">
                     <div class="feature-grid" style="margin-top: 8px;">
                         <div class="card" style="text-align: left;">
-                            <div class="feature-icon" style="margin-bottom: 16px;"><i class="fa-solid fa-lightbulb"></i></div>
+                            <img src="assets/images/mbaiev/ideation.png" alt="Ideation → Exit" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 16px;">
                             <h3>Ideation → Exit</h3>
                             <p>Frame the problem, validate, launch, build governance, and prep exits with mentor juries every sprint.</p>
                         </div>
                         <div class="card" style="text-align: left;">
-                            <div class="feature-icon" style="margin-bottom: 16px;"><i class="fa-solid fa-handshake"></i></div>
+                            <img src="assets/images/mbaiev/Capital & Counsel.png" alt="Capital & Counsel" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 16px;">
                             <h3>Capital & Counsel</h3>
                             <p>Warm access to seed grants, angels, and VC partners via KIIT-TBI—plus legal/IP clinics and data rooms.</p>
                         </div>
                         <div class="card" style="text-align: left;">
-                            <div class="feature-icon" style="margin-bottom: 16px;"><i class="fa-solid fa-flask"></i></div>
+                            <img src="assets/images/mbaiev/Incubation Labs.png" alt="Incubation Labs" style="width: 100%; height: 200px; object-fit: contain; background: #ffffff; border-radius: 8px; margin-bottom: 16px; padding: 12px;">
                             <h3>Incubation Labs</h3>
                             <p>Co-working, prototyping labs, GTM war rooms, and weekly operator reviews where you defend your roadmap.</p>
                         </div>
                         <div class="card" style="text-align: left;">
-                            <div class="feature-icon" style="margin-bottom: 16px;"><i class="fa-solid fa-chart-line"></i></div>
+                            <img src="assets/images/mbaiev/Traction Playbooks.png" alt="Traction Playbooks" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 16px;">
                             <h3>Traction Playbooks</h3>
                             <p>Sector-specific growth, pricing, sales, and fundraising playbooks with KPIs and accountability cadences.</p>
                         </div>
@@ -196,19 +286,32 @@
     <section class="section bg-white journey-section" id="journey">
         <div class="container journey-shell">
             <div class="grid-12" style="row-gap: 32px; align-items: start;">
-                <div style="grid-column: span 4; display: flex; flex-direction: column; gap: 16px;">
-                    <h2>The 4-Semester Journey</h2>
-                    <p class="lead" style="margin-bottom: 8px;">A sequenced founder path with non-negotiable accountability. Every term ends with a jury, investor-grade checkpoints, and a clear go/no-go on your venture.</p>
-                    <div style="display: grid; gap: 10px;">
-                        <div class="stat-chip"><i class="fa-solid fa-user-check" style="color: var(--color-primary);"></i> Studio juries every semester</div>
-                        <div class="stat-chip"><i class="fa-solid fa-hand-holding-dollar" style="color: var(--color-primary);"></i> Funding-ready by Semester 3</div>
-                        <div class="stat-chip"><i class="fa-solid fa-trophy" style="color: var(--color-primary);"></i> Demo Day + investor rooms</div>
+                <div style="grid-column: span 5; display: flex; flex-direction: column; gap: 24px;">
+                    <div>
+                        <h2 style="margin-bottom: 8px; font-size: 3rem; line-height: 1.05; letter-spacing: -0.02em; font-weight: 700; color: #000;">The 4-Semester Journey</h2>
+                        <div style="width: 120px; height: 4px; background: linear-gradient(90deg, #0ea5e9 0%, #ec4899 100%); border-radius: 2px; margin-bottom: 20px;"></div>
+                        <p style="font-size: 1rem; color: #6b7280; line-height: 1.7; max-width: 480px;">A sequenced founder path with non-negotiable accountability. Every term ends with a jury, investor-grade checkpoints, and a clear go/no-go on your venture.</p>
                     </div>
-                    <a href="mailto:kiit@kiit.ac.in?subject=MBA%20IEV%20Curriculum%20PDF%20Request&body=Hi%20team,%20please%20share%20the%20MBA%20IEV%20curriculum%20PDF.%20Name:%20%0APhone:%20" class="btn btn-primary" style="margin-top: 8px; max-width: 260px;">Get the curriculum PDF</a>
-                    <a href="tel:+916742725113" class="text-link" style="margin-top: 8px; display: inline-flex;">Talk to an admissions advisor <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+
+                    <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;">
+                        <div style="display: flex; align-items: center; padding: 16px 20px; border-radius: 12px; border: 1.5px solid rgba(6, 78, 59, 0.15); background: white;">
+                            <span style="font-weight: 600; font-size: 0.95rem; color: #064e3b;">Studio juries every semester</span>
+                        </div>
+                        <div style="display: flex; align-items: center; padding: 16px 20px; border-radius: 12px; border: 1.5px solid rgba(6, 78, 59, 0.15); background: white;">
+                            <span style="font-weight: 600; font-size: 0.95rem; color: #064e3b;">Funding-ready by Semester 3</span>
+                        </div>
+                        <div style="display: flex; align-items: center; padding: 16px 20px; border-radius: 12px; border: 1.5px solid rgba(6, 78, 59, 0.15); background: white;">
+                            <span style="font-weight: 600; font-size: 0.95rem; color: #064e3b;">Demo Day + investor rooms</span>
+                        </div>
+                    </div>
+
+                    <div class="journey-hero-image" style="margin-top: auto;">
+                        <img src="assets/images/mbaiev/The%204-Semester%20Journey.png" alt="The 4-Semester Journey">
+                    </div>
                 </div>
 
-                <div style="grid-column: span 8;">
+                <div style="grid-column: span 7; position: relative; display: flex; flex-direction: column; gap: 32px;">
+                    <div style="position: absolute; right: -24px; top: 0; writing-mode: vertical-rl; transform: rotate(180deg); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; color: rgba(6, 78, 59, 0.4); text-transform: uppercase;">Founder Path</div>
                     <div class="journey-timeline">
                         <div class="journey-step">
                             <div class="step-dot">1</div>
@@ -301,6 +404,27 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Journey CTA Card -->
+                    <div style="margin-top: auto;">
+                        <div style="background: linear-gradient(135deg, #064e3b 0%, #0f7a4d 100%); border-radius: 20px; padding: 36px 32px; color: white; text-align: center; position: relative; overflow: hidden; box-shadow: 0 20px 50px rgba(6, 78, 59, 0.25), 0 0 0 1px rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);">
+                            <div style="position: absolute; inset: 0; opacity: 0.08; background-image: radial-gradient(circle at 20% 50%, white 0.5px, transparent 0.5px); background-size: 20px 20px; pointer-events: none;"></div>
+                            <div style="position: absolute; top: -40%; right: -10%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.1), transparent); border-radius: 50%; pointer-events: none;"></div>
+                            
+                            <div style="position: relative; z-index: 1;">
+                                <div style="font-size: 3rem; margin-bottom: 12px; animation: float 3s ease-in-out infinite;"><i class="fa-solid fa-rocket"></i></div>
+                                
+                                <h3 style="margin-bottom: 10px; font-size: 1.85rem; line-height: 1.2; font-weight: 800; letter-spacing: -0.01em;">Ready to Launch?</h3>
+                                
+                                <p style="margin-bottom: 28px; opacity: 1; font-size: 1.05rem; line-height: 1.6; color: rgba(255,255,255,0.95); max-width: 480px; margin-left: auto; margin-right: auto;">Join 60+ founders building transformative ventures. Go from idea to funding-ready in 4 semesters with mentorship from operators and access to capital.</p>
+                                
+                                <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+                                    <a href="mba-iev-admissions.html" class="btn" style="background: white; color: #064e3b; font-weight: 700; padding: 14px 32px; border-radius: 999px; box-shadow: 0 8px 16px rgba(0,0,0,0.15); border: none; transition: transform 0.3s ease, box-shadow 0.3s ease;">Start Your Application</a>
+                                    <a href="tel:+91674272511" class="btn" style="background: transparent; color: white; border: 2px solid rgba(255,255,255,0.8); font-weight: 700; padding: 12px 30px; border-radius: 999px; transition: all 0.3s ease;">Talk to us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -364,5 +488,45 @@
     </section>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        // Impact Counter Animation - Count up numbers on load
+        function animateCounters() {
+            const cards = document.querySelectorAll('.impact-metric');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                        entry.target.classList.add('counted');
+                        const text = entry.target.textContent.trim();
+                        const metric = entry.target;
+                        
+                        // Extract number from text
+                        let numMatch = text.match(/[\d,]+/);
+                        if (numMatch) {
+                            const finalNumber = parseInt(numMatch[0].replace(/,/g, ''));
+                            const suffix = text.replace(/[\d,]+/, '').trim();
+                            
+                            // Animate count
+                            let currentNum = 0;
+                            const increment = Math.max(1, Math.floor(finalNumber / 30)); // 30 frames
+                            const interval = 50; // ms between updates
+                            
+                            const countInterval = setInterval(() => {
+                                currentNum += increment;
+                                if (currentNum >= finalNumber) {
+                                    currentNum = finalNumber;
+                                    clearInterval(countInterval);
+                                }
+                                metric.textContent = currentNum.toLocaleString() + suffix;
+                            }, interval);
+                        }
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            cards.forEach(card => observer.observe(card));
+        }
+        
+        document.addEventListener('DOMContentLoaded', animateCounters);
+    </script>
 </body>
 </html>
