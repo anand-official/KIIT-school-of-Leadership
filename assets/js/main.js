@@ -123,10 +123,15 @@ function initNavigation() {
             }
         };
 
-        mobileMenuToggle.addEventListener('click', function() {
+        // Handle both click and touch events
+        const handleToggle = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             const isOpen = !mobileMenu.classList.contains('active');
             syncMenuState(isOpen);
-        });
+        };
+
+        mobileMenuToggle.addEventListener('click', handleToggle);
         
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
@@ -152,6 +157,11 @@ function initNavigation() {
                 syncMenuState(false);
             });
         });
+        
+        // Debug: Log when menu toggle is initialized
+        console.log('Mobile menu initialized:', { toggle: mobileMenuToggle, menu: mobileMenu });
+    } else {
+        console.warn('Mobile menu elements not found:', { toggle: mobileMenuToggle, menu: mobileMenu });
     }
     
     // Mobile nav scroll effect
