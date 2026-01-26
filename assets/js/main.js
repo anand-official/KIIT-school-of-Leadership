@@ -107,26 +107,27 @@ function initNavigation() {
     
     // Mobile menu toggle
     if (mobileMenuToggle && mobileMenu) {
-        mobileMenuToggle.addEventListener('click', function() {
-            mobileMenu.classList.toggle('active');
-            const icon = this.querySelector('i');
-            if (mobileMenu.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
+        const syncMenuState = (isOpen) => {
+            mobileMenu.classList.toggle('active', isOpen);
+            mobileMenuToggle.classList.toggle('active', isOpen);
+            mobileMenuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            const icon = mobileMenuToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-xmark', isOpen);
+                icon.classList.toggle('fa-bars', !isOpen);
             }
+        };
+
+        mobileMenuToggle.addEventListener('click', function() {
+            const isOpen = !mobileMenu.classList.contains('active');
+            syncMenuState(isOpen);
         });
         
         // Close menu when clicking a link
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                const icon = mobileMenuToggle.querySelector('i');
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
+                syncMenuState(false);
             });
         });
     }
