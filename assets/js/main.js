@@ -2,6 +2,38 @@
 // KIIT School of Leadership - Main JavaScript (Enhanced Premium)
 // ================================================================
 
+// Throttle utility for performance
+function throttle(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Debounce utility for expensive operations
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func(...args), wait);
+    };
+}
+
+// Check if desktop viewport
+function isDesktop() {
+    return window.matchMedia('(min-width: 1024px)').matches;
+}
+
+// Request animation frame utility
+function raf(callback) {
+    return window.requestAnimationFrame(callback);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     'use strict';
     
@@ -18,15 +50,32 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('loaded');
     }, 2000);
     
+    // Critical features - load immediately
     initNavigation();
     initSmoothScroll();
     initScrollProgress();
     initHeroSlider();
     initHomeHeroSlides();
     initLeaderCarousel(); // Leadership messages auto-carousel
-    initAnimationsOnScroll(); // Scroll animations with Intersection Observer
-    initParallaxEffects(); // Parallax backgrounds
-    initCounterAnimations(); // Animated counters
+    
+    // Desktop-only heavy features - lazy load during idle time
+    if (isDesktop() && 'requestIdleCallback' in window) {
+        requestIdleCallback(() => {
+            initAnimationsOnScroll(); // Scroll animations with Intersection Observer
+            initParallaxEffects(); // Parallax backgrounds
+            initCounterAnimations(); // Animated counters
+        }, { timeout: 2000 });
+    } else if (isDesktop()) {
+        // Fallback for browsers without requestIdleCallback
+        setTimeout(() => {
+            initAnimationsOnScroll();
+            initParallaxEffects();
+            initCounterAnimations();
+        }, 100);
+    } else {
+        // Mobile: Load immediately but animations are disabled via CSS
+        initAnimationsOnScroll();
+    }
 });
 
 // ================================================================
@@ -36,12 +85,14 @@ document.addEventListener('DOMContentLoaded', function() {
 function initScrollProgress() {
     const progressBar = document.getElementById('scroll-progress');
     if (progressBar) {
-        window.addEventListener('scroll', () => {
+        const updateProgress = () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (winScroll / height) * 100;
             progressBar.style.width = scrolled + "%";
-        });
+        };
+        // Throttle to 100ms for better performance
+        window.addEventListener('scroll', throttle(updateProgress, 100), { passive: true });
     }
 }
 
@@ -82,13 +133,14 @@ function initNavigation() {
     
     // Navbar scroll effect (guard when navbar is not present on a page)
     if (navbar) {
-        window.addEventListener('scroll', function() {
+        const updateNavbar = () => {
             if (window.scrollY > 50) {
                 navbar.style.boxShadow = 'var(--shadow-md)';
             } else {
                 navbar.style.boxShadow = 'none';
             }
-        });
+        };
+        window.addEventListener('scroll', throttle(updateNavbar, 100), { passive: true });
     }
 }
 
@@ -157,11 +209,22 @@ function initHeroSlider() {
     };
 
     const show = (index) => {
-        slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
-        });
-        updateDots();
-        resetProgressBar();
+        // Use requestAnimationFrame for smoother animations on desktop
+        if (isDesktop()) {
+            raf(() => {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+                updateDots();
+                resetProgressBar();
+            });
+        } else {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            updateDots();
+            resetProgressBar();
+        }
     };
 
     const goTo = (index, userInitiated = false) => {

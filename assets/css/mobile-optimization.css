@@ -37,6 +37,185 @@
     }
 }
 
+/* ================================================================
+   MOBILE FLUID TYPE & OVERFLOW GUARDS
+   ================================================================ */
+
+@media (max-width: 768px) {
+    /* Fluid base size that never exceeds desktop root */
+    html { font-size: clamp(15px, 2vw + 13px, 16px); }
+
+    /* Keep containers fluid to avoid side scroll caused by fixed widths */
+    .container { max-width: 100%; }
+
+    /* Prevent long labels from forcing horizontal scroll */
+    .top-bar a,
+    .nav-item,
+    .dropdown-item,
+    p,
+    li,
+    figcaption { word-break: break-word; }
+
+    /* Hide horizontal scrollbar on nav rail while keeping scrollable behavior */
+    .bottom-nav .container { scrollbar-width: none; overscroll-behavior-x: contain; }
+    .bottom-nav .container::-webkit-scrollbar { display: none; }
+
+    /* Make key images fluid without hard pixel locks */
+    .kiit-gear-logo { height: clamp(44px, 14vw, 52px); }
+    .founder-img { width: clamp(48px, 16vw, 64px); height: clamp(48px, 16vw, 64px); }
+
+    /* Contain large media and tables to viewport width */
+    img, video, iframe, table { max-width: 100%; height: auto; }
+    table { display: block; overflow-x: auto; }
+
+    /* Reduce paint/reflow cost for repeated cards on mobile */
+    .card,
+    .person-card,
+    .story-card,
+    .news-card {
+        content-visibility: auto;
+        contain-intrinsic-size: 320px 400px;
+    }
+}
+
+/* ================================================================
+   MOBILE HEADER & NAVIGATION REFINEMENTS
+   ================================================================ */
+
+@media (max-width: 768px) {
+    /* Top bar wraps cleanly without overflow on narrow widths */
+    .top-bar {
+        padding: 8px 0;
+        font-size: 0.72rem;
+    }
+
+    .top-bar .container {
+        flex-wrap: wrap;
+        gap: 8px 12px;
+    }
+
+    .top-bar-socials a {
+        padding: 8px;
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Stack header items to avoid logo/profile collisions */
+    .main-header {
+        padding: 16px 0;
+    }
+
+    .main-header .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .header-logo-group {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .kiit-gear-logo {
+        height: 48px;
+    }
+
+    .founder-profile {
+        width: 100%;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .founder-img {
+        width: 56px;
+        height: 56px;
+    }
+
+    .founder-info h4 {
+        font-size: 0.95rem;
+    }
+
+    .founder-info p,
+    .founder-info a {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    /* Make nav scrollable instead of wrapping into multiple rows */
+    .bottom-nav .container {
+        justify-content: flex-start;
+        padding: 0 12px;
+        gap: 12px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .bottom-nav .nav-item,
+    .nav-item-dropdown > .nav-item {
+        flex: 0 0 auto;
+        padding: 12px 10px;
+        border-radius: 999px;
+        scroll-snap-align: start;
+        min-width: max-content;
+        letter-spacing: 0.02em;
+        font-size: 0.78rem;
+    }
+
+    .nav-item-dropdown {
+        position: static;
+    }
+
+    .nav-dropdown {
+        position: fixed;
+        inset: auto 12px 12px 12px;
+        max-height: 60vh;
+        overflow-y: auto;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        border-radius: 12px;
+        padding: 8px 0;
+    }
+
+    .nav-item-dropdown:focus-within .nav-dropdown,
+    .nav-item-dropdown:active .nav-dropdown {
+        display: block;
+    }
+
+    .dropdown-item {
+        padding: 12px 16px;
+        line-height: 1.4;
+        white-space: normal;
+    }
+
+    /* Smooth scrolling containers with reduced paint cost */
+    .scrollable,
+    [class*="scroll"],
+    .carousel,
+    [role="region"][aria-label*="carousel"] {
+        scroll-behavior: smooth;
+        scroll-snap-type: x proximity;
+        overscroll-behavior-x: contain;
+        background-attachment: scroll;
+    }
+}
+
+@media (max-width: 480px) {
+    .bottom-nav .container {
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .bottom-nav .nav-item,
+    .nav-item-dropdown > .nav-item {
+        padding: 10px 9px;
+        font-size: 0.75rem;
+    }
+
+    .top-bar a {
+        font-size: 0.7rem;
+    }
+}
+
 @media (max-width: 480px) {
     :root {
         --container-width: calc(100vw - 24px);
@@ -819,6 +998,24 @@
     a, button, [role="button"] {
         min-height: 48px;
         min-width: 100%;
+    }
+}
+
+/* ================================================================
+   MOBILE LINK WIDTH CORRECTION (PREVENT OVERFLOW)
+   ================================================================ */
+
+@media (max-width: 480px) {
+    a:not(.btn):not(.cta-button):not(.apply-btn):not(.nav-item):not(.dropdown-item) {
+        min-width: auto !important;
+        width: auto !important;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .bottom-nav .nav-item,
+    .nav-item-dropdown > .nav-item {
+        min-width: max-content;
     }
 }
 

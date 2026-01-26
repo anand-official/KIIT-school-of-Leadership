@@ -6,17 +6,24 @@
     <title>KIIT School of Leadership</title>
     <meta name="description" content="Building leaders who build the future. A practice-first School of Leadership within KIIT Deemed to be University.">
     
-    <!-- Fonts -->
+    <!-- Resource Hints -->\n    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://ui-avatars.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- CSS -->
+    <link rel="preload" href="assets/css/design-system.css" as="style">
     <link rel="stylesheet" href="assets/css/design-system.css">
-    <link rel="stylesheet" href="assets/css/mobile-optimization.css">
+    <link rel="stylesheet" href="assets/css/mobile-optimization.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="assets/css/mobile-optimization.css"></noscript>
+    <link rel="stylesheet" href="assets/css/desktop-performance.css" media="(min-width: 1024px)">
     <!-- Header/Footer Loader -->
     <script src="assets/js/load-header-footer.js?v=2"></script>
     <style>
@@ -38,6 +45,7 @@
             transform: translateX(30px);
             transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
             grid-template-columns: minmax(200px, 240px) 1fr;
+            min-height: 280px;
         }
         
         .leader-slide.active { 
@@ -67,6 +75,7 @@
             border: 4px solid #ffffff;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             flex-shrink: 0;
+            aspect-ratio: 1 / 1;
         }
         
         .leader-slide:hover .leader-photo {
@@ -825,17 +834,17 @@
                 
                 <div class="mini-slide active">
                     <div class="slide-overlay"></div>
-                    <img src="assets/images/banner_Homepage/banner_1_scroller.jpeg" alt="KIIT School of Leadership banner: students collaborating" width="1526" height="764">
+                    <img src="assets/images/banner_Homepage/banner_1_scroller.jpeg" alt="KIIT School of Leadership banner: students collaborating" width="1526" height="764" fetchpriority="high" loading="eager">
                 </div>
                 
                 <div class="mini-slide">
                     <div class="slide-overlay"></div>
-                    <img src="assets/images/banner_Homepage/banner_2_scroller.webp" alt="KIIT School of Leadership banner: campus and community" width="1893" height="736">
+                    <img src="assets/images/banner_Homepage/banner_2_scroller.webp" alt="KIIT School of Leadership banner: campus and community" width="1893" height="736" loading="lazy">
                 </div>
                 
                 <div class="mini-slide">
                     <div class="slide-overlay"></div>
-                    <img src="assets/images/banner_Homepage/banner_3_scroller.png" alt="KIIT School of Leadership banner: innovation and teamwork" width="1901" height="729">
+                    <img src="assets/images/banner_Homepage/banner_3_scroller.png" alt="KIIT School of Leadership banner: innovation and teamwork" width="1901" height="729" loading="lazy">
                 </div>
                 
                 <!-- Progress dots -->
@@ -1983,6 +1992,6 @@
         })();
     </script>
     
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>

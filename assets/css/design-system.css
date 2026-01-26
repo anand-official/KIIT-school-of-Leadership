@@ -1528,6 +1528,15 @@ button.btn {
 }
 
 @media (min-width: 1024px) {
+    /* Desktop Performance Optimizations */
+    .impact-stats-grid,
+    .hero-grid,
+    .grid-12,
+    .feature-grid {
+        contain: layout style;
+        will-change: auto;
+    }
+    
     .impact-stats-grid {
         grid-template-columns: repeat(5, 1fr);
     }
@@ -1545,6 +1554,22 @@ button.btn {
     .impact-card-featured:nth-child(9) {
         grid-column: 4 / 6;
         grid-row: 2 / 4;
+    }
+    
+    /* Desktop GPU Acceleration for Smooth Animations */
+    .card:hover,
+    .person-card:hover,
+    .impact-card:hover,
+    .btn:hover {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
+    
+    /* Optimize desktop hero slider rendering */
+    .mini-slider,
+    .mini-slide {
+        contain: layout paint;
     }
 }
 
