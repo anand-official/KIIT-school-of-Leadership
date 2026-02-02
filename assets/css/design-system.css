@@ -808,11 +808,11 @@ button.btn {
 }
 
 .bottom-nav {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    box-shadow: var(--shadow-sm);
+    border-bottom: 5px solid #064e3b;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -1102,7 +1102,7 @@ button.btn {
     overflow: hidden;
     width: 100%;
     border-radius: 0;
-    height: clamp(520px, 65vh, 820px);
+    height: 700px !important;
     background: #1a1a1a;
 }
 
@@ -2988,7 +2988,7 @@ button.btn {
     }
 
     .mini-slider {
-        height: 200px;
+        height: 700px !important;
     }
     
     .nav-links {
