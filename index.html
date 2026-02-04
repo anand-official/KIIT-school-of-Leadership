@@ -1686,7 +1686,7 @@
                 </div>
 
                 <!-- LinkedIn Feed Card -->
-                <div style="background: #ffffff; border-radius: 20px; padding: 0; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 25px 70px rgba(0,0,0,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.3)';">
+                <div style="background: #ffffff; border-radius: 20px; padding: 0; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 25px 70px rgba(0,0,0,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.3)';">
                     <!-- Header -->
                     <div style="background: linear-gradient(135deg, #0077b5 0%, #00a0dc 100%); padding: 24px; display: flex; align-items: center; justify-content: space-between;">
                         <div style="display: flex; align-items: center; gap: 16px;">
@@ -1695,31 +1695,46 @@
                             </div>
                             <div>
                                 <h3 style="margin: 0; color: #ffffff; font-size: 1.4rem; font-weight: 700; letter-spacing: -0.5px;">LinkedIn</h3>
-                                <a href="https://www.linkedin.com/company/ksldkiit/posts/?feedView=all" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.95); font-size: 0.9rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.3px;">
+                                <a href="https://www.linkedin.com/company/ksldkiit" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.95); font-size: 0.9rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.3px;">
                                     company/ksldkiit <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
                                 </a>
                             </div>
                         </div>
-                        <a href="https://www.linkedin.com/company/ksldkiit/posts/?feedView=all" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); color: white; border: 1px solid rgba(255,255,255,0.3); padding: 8px 16px; font-size: 0.9rem; font-weight: 600; border-radius: 8px; text-decoration: none; cursor: pointer;">Follow</a>
+                        <a href="https://www.linkedin.com/company/ksldkiit" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); color: white; border: 1px solid rgba(255,255,255,0.3); padding: 8px 16px; font-size: 0.9rem; font-weight: 600; border-radius: 8px; text-decoration: none; cursor: pointer;">Follow</a>
                     </div>
-                    <!-- Feed -->
-                    <div style="height: 450px; overflow: hidden; padding: 20px; position: relative;">
-                        <!-- Loader State -->
-                        <div id="linkedin-loader" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f8fafc; z-index: 1;">
-                            <div style="width: 50px; height: 50px; border: 4px solid #f3f3f3; border-top: 4px solid #0077b5; border-radius: 50%; animation: spin 1s linear infinite;"></div>
-                            <p style="margin-top: 16px; color: #666; font-size: 0.9rem;">Loading LinkedIn feed...</p>
+                    <!-- LinkedIn Featured Post Preview -->
+                    <a href="https://www.linkedin.com/posts/ksldkiit_chaipecharcha-brainstrom-kiit-activity-7414612886003621888-Yt9X" target="_blank" rel="noopener" style="text-decoration: none; display: block; height: 450px; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); padding: 28px; overflow: hidden;">
+                        <!-- Post Header -->
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #0077b5, #00a0dc); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                <span style="color: white; font-weight: 800; font-size: 1.1rem;">KS</span>
+                            </div>
+                            <div>
+                                <div style="font-weight: 700; color: #1e293b; font-size: 0.95rem;">KIIT School of Leadership</div>
+                                <div style="color: #64748b; font-size: 0.8rem;">Featured Post</div>
+                            </div>
+                            <div style="margin-left: auto; background: #e8f4f8; padding: 4px 10px; border-radius: 4px;">
+                                <i class="fa-solid fa-thumbtack" style="color: #0077b5; font-size: 0.75rem;"></i>
+                                <span style="color: #0077b5; font-size: 0.75rem; font-weight: 600; margin-left: 4px;">Pinned</span>
+                            </div>
                         </div>
-                        <!-- Fallback -->
-                        <div id="linkedin-fallback" style="display: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); padding: 40px; text-align: center;">
-                            <i class="fa-brands fa-linkedin-in" style="font-size: 4rem; color: #0077b5; margin-bottom: 20px;"></i>
-                            <h4 style="color: #1f2937; margin-bottom: 12px;">LinkedIn Feed Unavailable</h4>
-                            <p style="color: #6b7280; margin-bottom: 20px; line-height: 1.6;">Visit our LinkedIn page to see company updates and connect with us.</p>
-                            <a href="https://www.linkedin.com/company/ksldkiit/posts/?feedView=all" target="_blank" rel="noopener" style="background: linear-gradient(135deg, #0077b5, #00a0dc); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Visit LinkedIn Page</a>
+                        <!-- Post Content -->
+                        <div style="color: #334155; font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px;">
+                            <p style="margin: 0 0 12px 0;"><strong style="color: #1e293b;">☕ Chai Pe Charcha</strong></p>
+                            <p style="margin: 0 0 12px 0;">Join us for insightful brainstorming sessions where ideas brew over chai! Our leadership community comes together to discuss innovation, entrepreneurship, and the future of business.</p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;">
+                                <span style="background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 500;">#chaipecharcha</span>
+                                <span style="background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 500;">#brainstorm</span>
+                                <span style="background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 500;">#kiit</span>
+                            </div>
                         </div>
-                        <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
-                        <script type="IN/CompanyProfile" data-id="ksldkiit" data-format="inline" data-related="false"></script>
-                        <script>setTimeout(function() { document.getElementById('linkedin-loader').style.display='none'; }, 3000);</script>
-                    </div>
+                        <!-- View Post CTA -->
+                        <div style="display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0077b5 0%, #00a0dc 100%); color: white; padding: 14px 24px; border-radius: 10px; font-weight: 600; font-size: 0.95rem; gap: 10px; margin-top: auto; box-shadow: 0 4px 15px rgba(0, 119, 181, 0.3);">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                            View Post on LinkedIn
+                            <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
+                        </div>
+                    </a>
                 </div>
 
                 <!-- YouTube Feed Card -->
@@ -1732,22 +1747,24 @@
                             </div>
                             <div>
                                 <h3 style="margin: 0; color: #ffffff; font-size: 1.4rem; font-weight: 700; letter-spacing: -0.5px;">YouTube</h3>
-                                <p style="margin: 0; color: rgba(255,255,255,0.9); font-size: 0.95rem; font-weight: 500;">Coming Soon</p>
+                                <a href="https://www.youtube.com/channel/UCTd1J_SuDdqwshDOa-S54rg" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.95); font-size: 0.9rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.3px;">
+                                    @ksldkiit <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+                                </a>
                             </div>
                         </div>
-                        <button disabled style="display: inline-flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.2); padding: 8px 16px; font-size: 0.9rem; font-weight: 600; cursor: not-allowed; border-radius: 8px;">Subscribe</button>
+                        <a href="https://www.youtube.com/channel/UCTd1J_SuDdqwshDOa-S54rg" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3); padding: 8px 16px; font-size: 0.9rem; font-weight: 600; cursor: pointer; border-radius: 8px; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.3)';" onmouseout="this.style.background='rgba(255,255,255,0.2)';">Subscribe</a>
                     </div>
-                    <!-- Placeholder -->
-                    <div style="height: 450px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);">
-                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; box-shadow: 0 10px 30px rgba(255,0,0,0.2);">
+                    <!-- YouTube Content -->
+                    <div style="height: 450px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; background: linear-gradient(180deg, #fef2f2 0%, #ffffff 100%); text-align: center;">
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 28px; box-shadow: 0 10px 30px rgba(255, 0, 0, 0.25);">
                             <i class="fa-brands fa-youtube" style="font-size: 3rem; color: white;"></i>
                         </div>
-                        <h4 style="font-size: 1.25rem; font-weight: 700; color: #2d3748; margin-bottom: 12px; text-align: center;">Video Content Coming Soon</h4>
-                        <p style="color: #718096; text-align: center; line-height: 1.7; margin-bottom: 24px; font-weight: 400;">We're working on creating amazing video content for you. Stay tuned!</p>
-                        <div style="display: flex; gap: 8px; align-items: center; color: #a0aec0; font-size: 0.9rem; font-weight: 500;">
-                            <i class="fa-solid fa-clock"></i>
-                            <span>Updates coming in 2026</span>
-                        </div>
+                        <h4 style="font-size: 1.35rem; font-weight: 700; color: #1e293b; margin-bottom: 12px;">Watch Our Videos</h4>
+                        <p style="color: #64748b; line-height: 1.7; margin-bottom: 28px; font-weight: 400; max-width: 280px;">Subscribe to our YouTube channel for inspiring talks, event highlights, and leadership content.</p>
+                        <a href="https://www.youtube.com/channel/UCTd1J_SuDdqwshDOa-S54rg" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%); color: white; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.95rem; box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 28px rgba(255, 0, 0, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 0, 0, 0.3)';">
+                            <i class="fa-brands fa-youtube"></i>
+                            Visit YouTube Channel
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1763,15 +1780,19 @@
             </div>
         </div>
 
-        <!-- Full-width News Embed (outside container) -->
+        <!-- News Embed with Hidden Header/Footer -->
         <div style="margin-bottom: 0; padding: 0 20px;">
-            <div id="news-embed" style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.12); background: #ffffff; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); max-width: 100%; margin: 0 auto;" 
-                 onmouseover="this.style.boxShadow='0 30px 80px rgba(0,0,0,0.18)'; this.style.transform='translateY(-4px)'" 
-                 onmouseout="this.style.boxShadow='0 20px 60px rgba(0,0,0,0.12)'; this.style.transform='translateY(0)'">
+            <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.12); background: #ffffff; max-width: 1400px; margin: 0 auto; height: 800px;">
                 <!-- Gradient Accent Top Bar -->
                 <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #10b981 0%, #059669 50%, #047857 100%); z-index: 10;"></div>
-                <!-- Embedded News -->
-                <iframe src="https://news.kiit.ac.in/" style="width: 100%; height: 700px; border: none; display: block; background: #f9fafb; margin-top: 0; min-height: 700px;" scrolling="auto" loading="lazy" title="KIIT News"></iframe>
+                <!-- Top overlay to cover any header remnants -->
+                <div style="position: absolute; top: 5px; left: 0; right: 0; height: 20px; background: #ffffff; z-index: 8;"></div>
+                <!-- Iframe container - clips the header and footer -->
+                <div style="position: relative; width: 100%; height: 100%; overflow: hidden; padding-top: 20px;">
+                    <iframe src="https://news.kiit.ac.in/kiitnews/" style="position: absolute; top: -420px; left: 0; width: 100%; height: calc(100% + 700px); border: none; background: #ffffff;" scrolling="yes" loading="lazy" title="KIIT News"></iframe>
+                </div>
+                <!-- Bottom fade overlay to hide footer cutoff -->
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to top, #ffffff 20%, transparent 100%); z-index: 5; pointer-events: none;"></div>
             </div>
         </div>
 
@@ -1784,7 +1805,7 @@
                     <h4 style="margin: 0 0 12px 0; font-size: 1.25rem; color: #1f2937; font-weight: 700; letter-spacing: -0.5px;">Want to explore all stories?</h4>
                     <p style="margin: 0; color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6;">Discover comprehensive news, announcements, and achievements from KIIT across all initiatives</p>
                 </div>
-                <a href="https://news.kiit.ac.in/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.95rem; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3); width: fit-content;">
+                <a href="https://news.kiit.ac.in/kiitnews/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.95rem; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3); width: fit-content;">
                     Visit KIIT News Portal
                     <i class="fa-solid fa-arrow-right" style="font-size: 0.85rem;"></i>
                 </a>
@@ -1893,9 +1914,9 @@
             <div class="container">
                 <div class="copyright-text">© Copyright 2026 - All Rights Reserved</div>
                 <div class="footer-socials">
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.facebook.com/kiikiitsol" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ksldkiit" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/ksldkiit" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>

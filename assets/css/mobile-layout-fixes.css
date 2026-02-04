@@ -2825,3 +2825,1432 @@
         padding-right: 12px !important;
     }
 }
+/* ================================================================
+   COMPREHENSIVE MOBILE OPTIMIZATION - ALL PAGES
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   ABOUT PAGE - Hero & Content
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 80px 0 60px !important;
+        min-height: auto !important;
+    }
+    
+    .about-hero__content {
+        max-width: 100% !important;
+        text-align: center !important;
+    }
+    
+    .about-hero__eyebrow {
+        font-size: 0.75rem !important;
+    }
+    
+    .about-hero__title {
+        font-size: clamp(1.6rem, 5vw, 2rem) !important;
+        line-height: 1.2 !important;
+    }
+    
+    .about-hero__lede {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    .about-grid,
+    .about-ksld-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+    
+    .about-ksld-grid > div:first-child {
+        order: 2 !important;
+    }
+    
+    .about-ksld-grid > div:last-child {
+        order: 1 !important;
+    }
+    
+    .leader-carousel {
+        padding: 20px !important;
+    }
+    
+    .leader-slide {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 16px !important;
+    }
+    
+    .leader-slide img {
+        width: 80px !important;
+        height: 80px !important;
+        margin: 0 auto !important;
+    }
+    
+    .leader-btn {
+        width: 36px !important;
+        height: 36px !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   MBA IEV PAGE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .program-hero,
+    .mba-hero {
+        padding: 60px 0 40px !important;
+    }
+    
+    .program-hero .grid-12,
+    .mba-hero .grid-12 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+    }
+    
+    .program-hero [style*="grid-column: span 6"],
+    .mba-hero [style*="grid-column: span 6"] {
+        grid-column: span 12 !important;
+        width: 100% !important;
+    }
+    
+    .program-hero h1,
+    .mba-hero h1 {
+        font-size: clamp(1.5rem, 5vw, 2rem) !important;
+        text-align: center !important;
+    }
+    
+    .program-hero .lead,
+    .mba-hero .lead {
+        font-size: 0.95rem !important;
+        text-align: center !important;
+    }
+    
+    .program-hero .hero-image-card,
+    .mba-hero .hero-image-card {
+        max-height: 250px !important;
+        order: -1 !important;
+    }
+    
+    .journey-section {
+        padding: 40px 0 !important;
+    }
+    
+    .journey-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+    
+    .curriculum-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .year-card {
+        padding: 20px !important;
+    }
+    
+    .semester-list {
+        gap: 12px !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   ECOSYSTEM PARTNERS PAGE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .partner-hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+    
+    .partner-stats-mini {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    
+    .partner-section {
+        padding: 40px 0 !important;
+    }
+    
+    .partner-section h2 {
+        font-size: clamp(1.4rem, 4.5vw, 1.75rem) !important;
+        text-align: center !important;
+    }
+    
+    .partner-logos,
+    .logo-grid,
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+    }
+    
+    .partner-card,
+    .logo-card {
+        padding: 16px !important;
+    }
+    
+    .partner-card img,
+    .logo-card img {
+        max-height: 50px !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   SRI PAGE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .sri-hero,
+    .sri-hero-content {
+        padding: 60px 0 40px !important;
+        text-align: center !important;
+    }
+    
+    .sri-hero h1,
+    .sri-hero-content h1 {
+        font-size: clamp(1.5rem, 5vw, 2rem) !important;
+    }
+    
+    .sri-lead {
+        font-size: 0.95rem !important;
+    }
+    
+    .sri-grid,
+    .sri-features {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .sri-card {
+        padding: 20px !important;
+    }
+    
+    .sri-stats {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   KITES PAGE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .kites-hero {
+        padding: 60px 0 40px !important;
+    }
+    
+    .kites-hero h1 {
+        font-size: clamp(1.5rem, 5vw, 2rem) !important;
+        text-align: center !important;
+    }
+    
+    .kites-hero .lead {
+        text-align: center !important;
+    }
+    
+    .kites-section {
+        padding: 40px 0 !important;
+    }
+    
+    .kites-grid,
+    .tracks-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .kites-card,
+    .track-card {
+        padding: 20px !important;
+    }
+    
+    .startup-logos {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   CASE RESEARCH CENTRE PAGE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .case-hero {
+        padding: 60px 0 40px !important;
+    }
+    
+    .case-hero h1 {
+        font-size: clamp(1.4rem, 4.5vw, 1.8rem) !important;
+        text-align: center !important;
+    }
+    
+    .case-section {
+        padding: 40px 0 !important;
+    }
+    
+    .case-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .case-card {
+        padding: 20px !important;
+    }
+    
+    .case-meta {
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   ADMISSIONS PAGE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .admissions-hero {
+        padding: 60px 0 40px !important;
+    }
+    
+    .admissions-hero h1 {
+        font-size: clamp(1.5rem, 5vw, 2rem) !important;
+        text-align: center !important;
+    }
+    
+    .admissions-grid,
+    .eligibility-grid,
+    .process-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .process-step {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+    
+    .step-number {
+        margin: 0 auto 12px !important;
+    }
+    
+    .fee-table {
+        font-size: 0.85rem !important;
+        overflow-x: auto !important;
+    }
+    
+    .fee-table th,
+    .fee-table td {
+        padding: 10px 8px !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   PEOPLE PAGES (Faculty, Board, Professors of Practice)
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .people-hero {
+        padding: 60px 0 40px !important;
+    }
+    
+    .people-hero h1 {
+        font-size: clamp(1.5rem, 5vw, 2rem) !important;
+        text-align: center !important;
+    }
+    
+    .faculty-grid,
+    .people-grid,
+    .board-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .person-card,
+    .faculty-card,
+    .board-card {
+        padding: 20px !important;
+        text-align: center !important;
+    }
+    
+    .person-card img,
+    .faculty-card img,
+    .board-card img {
+        width: 100px !important;
+        height: 100px !important;
+        margin: 0 auto 16px !important;
+    }
+    
+    .person-card h4,
+    .faculty-card h4 {
+        font-size: 1.1rem !important;
+    }
+    
+    .person-card p,
+    .faculty-card p {
+        font-size: 0.85rem !important;
+    }
+    
+    .profile-link {
+        display: inline-flex !important;
+        justify-content: center !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   PACE PAGE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .pace-hero {
+        padding: 60px 0 40px !important;
+    }
+    
+    .pace-hero h1 {
+        font-size: clamp(1.5rem, 5vw, 2rem) !important;
+        text-align: center !important;
+    }
+    
+    .pace-grid,
+    .pace-features {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .pace-card {
+        padding: 20px !important;
+    }
+    
+    .pace-timeline {
+        padding-left: 20px !important;
+    }
+    
+    .timeline-item {
+        padding-left: 24px !important;
+    }
+    
+    .timeline-item::before {
+        left: -20px !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   GLOBAL BUTTON FIXES FOR MOBILE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .btn,
+    [class*="btn-"] {
+        min-height: 44px !important;
+        padding: 12px 20px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+    
+    /* Keep inline buttons for footer etc */
+    .footer-socials .btn,
+    .footer-socials-box a,
+    .top-bar-socials a {
+        width: auto !important;
+        min-width: auto !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   INLINE GRID STYLE OVERRIDE (for pages with inline styles)
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    /* Force single column for any 2-column grids */
+    [style*="grid-template-columns: 1fr 1fr"],
+    [style*="grid-template-columns:1fr 1fr"],
+    [style*="grid-template-columns: repeat(2"],
+    [style*="grid-template-columns:repeat(2"] {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Force 2 columns for 3+ column grids */
+    [style*="grid-template-columns: repeat(3"],
+    [style*="grid-template-columns:repeat(3"],
+    [style*="grid-template-columns: repeat(4"],
+    [style*="grid-template-columns:repeat(4"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    /* Gap adjustments */
+    [style*="gap: 32px"],
+    [style*="gap:32px"] {
+        gap: 20px !important;
+    }
+    
+    [style*="gap: 48px"],
+    [style*="gap:48px"],
+    [style*="gap: 60px"],
+    [style*="gap:60px"] {
+        gap: 24px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Single column for everything on small phones */
+    [style*="grid-template-columns: repeat(2"],
+    [style*="grid-template-columns:repeat(2"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   IMAGE OPTIMIZATION FOR MOBILE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    .hero-image-card,
+    .hero-media {
+        max-height: 300px !important;
+        overflow: hidden !important;
+    }
+    
+    .hero-image-card img,
+    .hero-media img {
+        object-fit: cover !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   FOOTER MOBILE FIXES
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .footer-grid,
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+        text-align: center !important;
+    }
+    
+    .footer-logo-section {
+        text-align: center !important;
+    }
+    
+    .footer-links {
+        text-align: center !important;
+    }
+    
+    .footer-socials-box {
+        justify-content: center !important;
+    }
+    
+    .footer-copyright-bar .container {
+        flex-direction: column !important;
+        gap: 12px !important;
+        text-align: center !important;
+    }
+    
+    .footer-socials {
+        justify-content: center !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   SECTION PADDING CONSISTENCY
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .section,
+    section[class*="section"] {
+        padding: 48px 0 !important;
+    }
+    
+    .section.bg-light,
+    .section.bg-primary {
+        padding: 48px 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .section,
+    section[class*="section"] {
+        padding: 36px 0 !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   MODAL & OVERLAY MOBILE FIXES
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .modal,
+    .person-modal,
+    .faculty-modal {
+        padding: 20px !important;
+    }
+    
+    .modal-content {
+        width: 95% !important;
+        max-width: 100% !important;
+        margin: 10px !important;
+        max-height: 90vh !important;
+        overflow-y: auto !important;
+    }
+    
+    .modal-close {
+        top: 10px !important;
+        right: 10px !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   SCROLL & TOUCH IMPROVEMENTS
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    /* Hide scrollbars on mobile for cleaner look */
+    ::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+    }
+    
+    /* Prevent text selection issues on mobile */
+    .btn,
+    button,
+    .nav-item,
+    .mobile-link {
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+    }
+}
+
+/* ----------------------------------------------------------------
+   HOMEPAGE SOCIAL CARDS MOBILE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    /* Social cards section header */
+    section[style*="Follow Our Journey"] h2,
+    .social-section h2 {
+        font-size: 1.75rem !important;
+    }
+    
+    /* Force single column for social cards grid */
+    div[style*="grid-template-columns: repeat(auto-fit, minmax(320px"] {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+        padding: 0 8px !important;
+    }
+    
+    /* Social card height */
+    div[style*="height: 450px"] {
+        height: 380px !important;
+    }
+    
+    /* Social card header padding */
+    div[style*="padding: 24px"][style*="display: flex"][style*="justify-content: space-between"] {
+        padding: 16px !important;
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+    }
+    
+    /* Social card icon container */
+    div[style*="width: 50px"][style*="height: 50px"][style*="background: white"][style*="border-radius: 12px"] {
+        width: 42px !important;
+        height: 42px !important;
+    }
+    
+    /* Social card title */
+    h3[style*="font-size: 1.4rem"] {
+        font-size: 1.15rem !important;
+    }
+    
+    /* LinkedIn post content */
+    a[style*="height: 450px"][style*="padding: 28px"] {
+        height: auto !important;
+        min-height: 350px !important;
+        padding: 20px !important;
+    }
+    
+    /* YouTube CTA area */
+    div[style*="height: 450px"][style*="flex-direction: column"][style*="align-items: center"] {
+        height: auto !important;
+        min-height: 350px !important;
+        padding: 32px 20px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Even smaller social cards on small phones */
+    div[style*="height: 450px"],
+    div[style*="min-height: 350px"] {
+        height: 320px !important;
+        min-height: 320px !important;
+    }
+    
+    /* Reduce padding on social card headers */
+    div[style*="padding: 24px"][style*="display: flex"][style*="justify-content: space-between"] {
+        padding: 12px !important;
+    }
+    
+    /* Hide follow button on very small screens */
+    div[style*="padding: 24px"][style*="display: flex"][style*="justify-content: space-between"] > a[style*="Follow"] {
+        display: none !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   HOMEPAGE NEWS SECTION MOBILE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    /* News iframe container */
+    div[style*="position: relative"][style*="overflow: hidden"][style*="height: 800px"] {
+        height: 500px !important;
+    }
+    
+    /* News iframe */
+    iframe[src*="news.kiit.ac.in"] {
+        height: 900px !important;
+        top: -380px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* News iframe container smaller */
+    div[style*="position: relative"][style*="overflow: hidden"][style*="height: 800px"],
+    div[style*="position: relative"][style*="overflow: hidden"][style*="height: 500px"] {
+        height: 400px !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   HOMEPAGE SECTION TITLES MOBILE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    /* Large decorative headings */
+    h2[style*="font-size: 3rem"],
+    h2[style*="font-size: 2.5rem"] {
+        font-size: 1.75rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    /* Section lead text */
+    p[style*="font-size: 1.125rem"],
+    p[style*="max-width: 650px"] {
+        font-size: 0.95rem !important;
+        max-width: 100% !important;
+        padding: 0 12px !important;
+    }
+    
+    /* Section margin reduction */
+    div[style*="margin-bottom: 70px"],
+    div[style*="margin-bottom: 60px"] {
+        margin-bottom: 40px !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   HOMEPAGE DECORATIVE ELEMENTS MOBILE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    /* Hide or reduce decorative blurs */
+    div[style*="filter: blur(60px)"],
+    div[style*="filter: blur(80px)"] {
+        opacity: 0.3 !important;
+        width: 150px !important;
+        height: 150px !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   ABOUT PAGES (CEO, Founder, VC, Pinaki) MOBILE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .leader-profile,
+    .profile-hero,
+    .bio-section {
+        padding: 60px 0 40px !important;
+    }
+    
+    .leader-profile .grid-12,
+    .profile-hero .grid-12,
+    .bio-section .grid-12 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+    }
+    
+    .leader-profile [style*="grid-column"],
+    .profile-hero [style*="grid-column"],
+    .bio-section [style*="grid-column"] {
+        grid-column: span 12 !important;
+    }
+    
+    .profile-image,
+    .leader-image {
+        max-width: 250px !important;
+        margin: 0 auto 24px !important;
+    }
+    
+    .profile-image img,
+    .leader-image img {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 16px !important;
+    }
+    
+    .profile-content h1,
+    .bio-content h1 {
+        font-size: clamp(1.5rem, 5vw, 2rem) !important;
+        text-align: center !important;
+    }
+    
+    .profile-content .designation,
+    .bio-content .designation {
+        text-align: center !important;
+        font-size: 0.95rem !important;
+    }
+    
+    .profile-content p,
+    .bio-content p {
+        font-size: 0.95rem !important;
+        line-height: 1.7 !important;
+    }
+    
+    .bio-stats,
+    .profile-stats {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+    }
+    
+    .social-links {
+        justify-content: center !important;
+    }
+}
+/* ================================================================
+   PEOPLE PAGES - COMPREHENSIVE MOBILE OPTIMIZATION
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   PEOPLE PAGE HERO SECTION
+   ---------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+    
+    .page-hero {
+        padding: 70px 0 50px 0 !important;
+    }
+    
+    .hero-copy h1 {
+        font-size: 1.85rem !important;
+        text-align: center !important;
+        line-height: 1.2 !important;
+    }
+    
+    .hero-copy p {
+        font-size: 0.95rem !important;
+        text-align: center !important;
+        line-height: 1.6 !important;
+    }
+    
+    .hero-copy .breadcrumb {
+        text-align: center !important;
+        display: block !important;
+        font-size: 0.85rem !important;
+    }
+    
+    .hero-copy .eyebrow {
+        margin: 0 auto 12px auto !important;
+        display: inline-flex !important;
+        font-size: 0.8rem !important;
+        padding: 8px 14px !important;
+    }
+    
+    .hero-badges {
+        justify-content: center !important;
+        gap: 8px !important;
+        margin-top: 16px !important;
+    }
+    
+    .hero-pill {
+        font-size: 0.75rem !important;
+        padding: 8px 12px !important;
+        gap: 6px !important;
+    }
+    
+    .hero-aside {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px !important;
+    }
+    
+    .stat-card {
+        padding: 16px 12px !important;
+        text-align: center !important;
+        border-radius: 14px !important;
+    }
+    
+    .stat-value {
+        font-size: 1.5rem !important;
+        line-height: 1.1 !important;
+    }
+    
+    .stat-label {
+        font-size: 0.75rem !important;
+        line-height: 1.3 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-hero {
+        padding: 60px 0 40px 0 !important;
+    }
+    
+    .hero-copy h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    .hero-aside {
+        grid-template-columns: 1fr 1fr 1fr !important;
+        gap: 8px !important;
+    }
+    
+    .stat-card {
+        padding: 12px 8px !important;
+    }
+    
+    .stat-value {
+        font-size: 1.25rem !important;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem !important;
+    }
+    
+    .hero-badges {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .hero-pill {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   PEOPLE SECTION & GRID
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .people-shell {
+        padding: 40px 0 60px 0 !important;
+    }
+    
+    .people-section {
+        padding: 20px !important;
+        border-radius: 16px !important;
+        margin-bottom: 24px !important;
+    }
+    
+    .section-heading {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 12px !important;
+        margin-bottom: 24px !important;
+    }
+    
+    .section-title {
+        font-size: 1.5rem !important;
+        text-align: center !important;
+    }
+    
+    .section-copy {
+        text-align: center !important;
+        font-size: 0.9rem !important;
+        margin: 8px 0 0 0 !important;
+    }
+    
+    .people-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .people-shell {
+        padding: 32px 0 48px 0 !important;
+    }
+    
+    .people-section {
+        padding: 16px !important;
+        border-radius: 12px !important;
+    }
+    
+    .section-title {
+        font-size: 1.3rem !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   PERSON CARDS - MOBILE OPTIMIZED
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .person-card {
+        padding: 16px !important;
+        border-radius: 16px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 16px !important;
+    }
+    
+    .person-card img,
+    .person-card .person-card-image-wrapper,
+    .person-card > img:first-child {
+        width: 90px !important;
+        min-width: 90px !important;
+        height: 90px !important;
+        border-radius: 12px !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .person-card-image-wrapper {
+        width: 90px !important;
+        min-width: 90px !important;
+        height: 90px !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .person-card-image-wrapper img {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    .person-card-content {
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        flex: 1 !important;
+        min-width: 0 !important;
+    }
+    
+    .person-name {
+        font-size: 1rem !important;
+        line-height: 1.3 !important;
+        margin: 0 !important;
+    }
+    
+    .person-role {
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
+        margin: 0 !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+    }
+    
+    .pill-row,
+    .person-card .pill-row {
+        display: none !important;
+    }
+    
+    .profile-link {
+        font-size: 0.8rem !important;
+        padding: 6px 0 !important;
+        margin: 4px 0 0 0 !important;
+    }
+    
+    .tag {
+        font-size: 0.75rem !important;
+        padding: 4px 8px !important;
+    }
+    
+    /* Disable hover effects on mobile for performance */
+    .person-card::before,
+    .person-card::after {
+        display: none !important;
+    }
+    
+    .person-card:hover {
+        transform: none !important;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.06) !important;
+    }
+    
+    .person-card:hover img {
+        transform: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .person-card {
+        padding: 14px !important;
+        gap: 12px !important;
+    }
+    
+    .person-card img,
+    .person-card .person-card-image-wrapper,
+    .person-card > img:first-child {
+        width: 75px !important;
+        min-width: 75px !important;
+        height: 75px !important;
+        border-radius: 10px !important;
+    }
+    
+    .person-card-image-wrapper {
+        width: 75px !important;
+        min-width: 75px !important;
+        height: 75px !important;
+    }
+    
+    .person-name {
+        font-size: 0.95rem !important;
+    }
+    
+    .person-role {
+        font-size: 0.75rem !important;
+        -webkit-line-clamp: 2 !important;
+    }
+    
+    .profile-link {
+        font-size: 0.75rem !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   FACULTY MODAL - MOBILE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .person-modal,
+    .faculty-modal,
+    [class*="modal"] {
+        padding: 16px !important;
+    }
+    
+    .person-modal .modal-content,
+    .faculty-modal .modal-content,
+    [class*="modal"] .modal-content {
+        width: 95% !important;
+        max-width: 100% !important;
+        max-height: 85vh !important;
+        margin: 20px auto !important;
+        padding: 20px !important;
+        border-radius: 16px !important;
+        overflow-y: auto !important;
+    }
+    
+    .modal-header {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 16px !important;
+    }
+    
+    .modal-header img {
+        width: 100px !important;
+        height: 100px !important;
+        margin: 0 auto !important;
+    }
+    
+    .modal-close {
+        top: 12px !important;
+        right: 12px !important;
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 1.25rem !important;
+    }
+    
+    .modal-body {
+        padding: 16px 0 0 0 !important;
+    }
+    
+    .modal-body p {
+        font-size: 0.9rem !important;
+        line-height: 1.6 !important;
+    }
+}
+
+/* ================================================================
+   FINAL FINISHING TOUCHES - ALL PAGES
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   TOUCH TARGETS & ACCESSIBILITY
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    /* Ensure all interactive elements have minimum 44px touch target */
+    a, button, .btn, input, select, textarea,
+    [role="button"], [onclick] {
+        min-height: 44px !important;
+        min-width: 44px !important;
+    }
+    
+    /* Exception for inline links */
+    p a, span a, li a,
+    .person-card a,
+    .profile-link {
+        min-height: auto !important;
+        min-width: auto !important;
+    }
+    
+    /* Improve tap feedback */
+    a:active, button:active, .btn:active {
+        opacity: 0.8 !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   TEXT READABILITY ON MOBILE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px !important;
+        -webkit-text-size-adjust: 100% !important;
+    }
+    
+    p {
+        font-size: 0.95rem !important;
+        line-height: 1.65 !important;
+    }
+    
+    h1 {
+        font-size: clamp(1.5rem, 6vw, 2rem) !important;
+        line-height: 1.2 !important;
+    }
+    
+    h2 {
+        font-size: clamp(1.3rem, 5vw, 1.75rem) !important;
+        line-height: 1.25 !important;
+    }
+    
+    h3 {
+        font-size: clamp(1.1rem, 4vw, 1.4rem) !important;
+        line-height: 1.3 !important;
+    }
+    
+    h4 {
+        font-size: clamp(1rem, 3.5vw, 1.2rem) !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   PREVENT HORIZONTAL SCROLL
+   ---------------------------------------------------------------- */
+
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+}
+
+@media (max-width: 768px) {
+    * {
+        max-width: 100% !important;
+    }
+    
+    img, video, iframe {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    /* Exception for fixed height iframes */
+    iframe[height] {
+        height: inherit !important;
+    }
+    
+    /* Tables should scroll horizontally */
+    table {
+        display: block !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    
+    /* Pre/code blocks should scroll */
+    pre, code {
+        overflow-x: auto !important;
+        white-space: pre-wrap !important;
+        word-break: break-word !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   FORM ELEMENTS MOBILE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password"],
+    input[type="number"],
+    input[type="search"],
+    textarea,
+    select {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+        padding: 12px 14px !important;
+        border-radius: 8px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    label {
+        font-size: 0.9rem !important;
+        margin-bottom: 6px !important;
+        display: block !important;
+    }
+    
+    .form-group {
+        margin-bottom: 16px !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   SAFE AREA PADDING (iPhone X and newer)
+   ---------------------------------------------------------------- */
+
+@supports (padding: max(0px)) {
+    @media (max-width: 768px) {
+        body {
+            padding-left: max(0px, env(safe-area-inset-left)) !important;
+            padding-right: max(0px, env(safe-area-inset-right)) !important;
+        }
+        
+        .footer-copyright-bar,
+        .mobile-nav-menu {
+            padding-bottom: max(16px, env(safe-area-inset-bottom)) !important;
+        }
+    }
+}
+
+/* ----------------------------------------------------------------
+   PERFORMANCE OPTIMIZATIONS MOBILE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    /* Reduce animation complexity */
+    @keyframes pulse { 
+        0%, 100% { opacity: 1; } 
+    }
+    
+    @keyframes glow-pulse {
+        0%, 100% { opacity: 0.6; }
+    }
+    
+    /* Disable expensive effects */
+    .parallax-bg {
+        background-attachment: scroll !important;
+    }
+    
+    /* Reduce blur effects */
+    [style*="backdrop-filter: blur"] {
+        backdrop-filter: blur(8px) !important;
+    }
+    
+    /* Reduce box-shadow complexity */
+    .person-card,
+    .stat-card,
+    .people-section {
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+    }
+    
+    /* Disable transform animations on cards */
+    .person-card,
+    .stat-card {
+        transition: none !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   LOADING STATES MOBILE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .loading,
+    .skeleton,
+    [class*="loader"] {
+        min-height: 60px !important;
+    }
+    
+    .spinner {
+        width: 32px !important;
+        height: 32px !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   FIXED/STICKY ELEMENTS MOBILE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .floating-btn,
+    #floating-apply-btn,
+    #scroll-to-top {
+        bottom: 80px !important;
+        right: 16px !important;
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 1rem !important;
+        z-index: 999 !important;
+    }
+    
+    /* Stagger multiple floating buttons */
+    #scroll-to-top {
+        bottom: 140px !important;
+    }
+}
+
+/* ----------------------------------------------------------------
+   COOKIE BANNER / ALERTS MOBILE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .cookie-banner,
+    .alert-banner,
+    [class*="cookie"],
+    [class*="banner"] {
+        padding: 16px !important;
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .cookie-banner .btn,
+    .alert-banner .btn {
+        width: 100% !important;
+        margin-top: 12px !important;
+    }
+}
