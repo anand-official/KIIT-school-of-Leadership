@@ -1,23 +1,23 @@
 // Load header and footer from separate files (Clean URL Version)
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Mobile menu initialization function
     function initMobileMenu() {
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const mobileMenu = document.querySelector('.mobile-menu');
-        
+
         if (!mobileMenuToggle || !mobileMenu) {
             console.warn('Mobile menu elements not found');
             return;
         }
-        
+
         console.log('Initializing mobile menu...');
-        
+
         const syncMenuState = (isOpen) => {
             mobileMenu.classList.toggle('active', isOpen);
             mobileMenuToggle.classList.toggle('active', isOpen);
             mobileMenuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
             document.body.classList.toggle('menu-open', isOpen);
-            
+
             const icon = mobileMenuToggle.querySelector('i');
             if (icon) {
                 if (isOpen) {
@@ -29,37 +29,37 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         };
-        
+
         // Click handler for toggle button
-        mobileMenuToggle.addEventListener('click', function(e) {
+        mobileMenuToggle.addEventListener('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
             const isOpen = !mobileMenu.classList.contains('active');
             console.log('Menu toggle clicked, opening:', isOpen);
             syncMenuState(isOpen);
         });
-        
+
         // Close when clicking outside
-        document.addEventListener('click', function(e) {
-            if (mobileMenu.classList.contains('active') && 
-                !mobileMenu.contains(e.target) && 
+        document.addEventListener('click', function (e) {
+            if (mobileMenu.classList.contains('active') &&
+                !mobileMenu.contains(e.target) &&
                 !mobileMenuToggle.contains(e.target)) {
                 syncMenuState(false);
             }
         });
-        
+
         // Close on escape key
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
                 syncMenuState(false);
             }
         });
-        
+
         // Close when clicking a link
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => syncMenuState(false));
         });
-        
+
         console.log('Mobile menu initialized successfully');
     }
 
@@ -87,12 +87,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 currentPath += '/';
             }
             if (currentPath === '/index.html') currentPath = '/';
-            
+
             console.log('Current page path:', currentPath);
 
             const allLinks = document.querySelectorAll('nav.bottom-nav a, nav.mobile-nav a');
             const dropdownToggles = document.querySelectorAll('nav.bottom-nav .nav-item-dropdown > span.nav-item');
-            
+
             // Mark direct links as active
             allLinks.forEach(link => {
                 const href = link.getAttribute('href').toLowerCase();
@@ -103,18 +103,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Handle Dropdown Parents (About & People)
             // Logic: Is the current path part of the 'About' group or 'People' group?
-            
+
             const aboutPaths = [
-                '/about/', 
-                '/about-founder/', 
-                '/about-vice-chancellor/', 
-                '/about-ceo-kiit-tbi/', 
+                '/about/',
+                '/about-founder/',
+                '/about-vice-chancellor/',
+                '/about-ceo-kiit-tbi/',
                 '/about-pinaki-nandan/'
             ];
-            
+
             const peoplePaths = [
-                '/people-board-of-studies/', 
-                '/people-regular-faculty/', 
+                '/people-board-of-studies/',
+                '/people-regular-faculty/',
                 '/people-professors-of-practice/'
             ];
 
@@ -136,25 +136,36 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Load header (with cache busting) - Absolute path /includes/header.html
-    fetch('/includes/header.html?v=' + Date.now())
+    // Determine the base path dynamically
+    // This works both locally and on GitHub Pages (even with custom domains)
+    function getBasePath() {
+        const path = window.location.pathname;
+        // If we're in a subdirectory (e.g., /about/), go up the appropriate number of levels
+        const depth = (path.match(/\//g) || []).length - 1;
+        return depth > 0 ? '../'.repeat(depth) : './';
+    }
+
+    const basePath = getBasePath();
+
+    // Load header (with cache busting) - Dynamic path resolution
+    fetch(basePath + 'includes/header.html?v=' + Date.now())
         .then(response => response.text())
         .then(html => {
             const headerContainer = document.createElement('div');
             headerContainer.innerHTML = html;
             document.body.insertBefore(headerContainer, document.body.firstChild);
             setActiveNav();
-            
+
             // Initialize mobile menu after header is loaded
             initMobileMenu();
-            
+
             // Dispatch event for other scripts
             document.dispatchEvent(new CustomEvent('headerLoaded'));
         })
         .catch(err => console.error('Error loading header:', err));
-    
-    // Load footer (with cache busting) - Absolute path /includes/footer.html
-    fetch('/includes/footer.html?v=' + Date.now())
+
+    // Load footer (with cache busting) - Dynamic path resolution
+    fetch(basePath + 'includes/footer.html?v=' + Date.now())
         .then(response => response.text())
         .then(html => {
             const footerContainer = document.createElement('div');
