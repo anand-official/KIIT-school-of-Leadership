@@ -68,6 +68,22 @@
     <!-- Header/Footer Loader -->
     <script src="/assets/js/load-header-footer.js?v=2"></script>
 
+    <!-- PWA Manifest & Service Worker -->
+    <link rel="manifest" href="/manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -200,6 +216,8 @@
                 <div class="mini-slide active">
                     <div class="slide-overlay"></div>
                     <img src="/assets/images/banner_Homepage/banner-1-scroller.webp"
+                        srcset="/assets/images/banner_Homepage/banner-1-scroller-mobile.webp 600w, /assets/images/banner_Homepage/banner-1-scroller.webp 1526w"
+                        sizes="(max-width: 600px) 100vw, 100vw"
                         alt="KIIT School of Leadership banner: students collaborating" width="1526" height="764"
                         fetchpriority="high" loading="eager">
                 </div>
@@ -207,6 +225,8 @@
                 <div class="mini-slide">
                     <div class="slide-overlay"></div>
                     <img src="/assets/images/banner_Homepage/banner-2-scroller.webp"
+                        srcset="/assets/images/banner_Homepage/banner-2-scroller-mobile.webp 600w, /assets/images/banner_Homepage/banner-2-scroller.webp 1893w"
+                        sizes="(max-width: 600px) 100vw, 100vw"
                         alt="KIIT School of Leadership banner: campus and community" width="1893" height="736"
                         loading="lazy">
                 </div>
@@ -214,6 +234,8 @@
                 <div class="mini-slide">
                     <div class="slide-overlay"></div>
                     <img src="/assets/images/banner_Homepage/banner-3-scroller.webp"
+                        srcset="/assets/images/banner_Homepage/banner-3-scroller-mobile.webp 600w, /assets/images/banner_Homepage/banner-3-scroller.webp 1901w"
+                        sizes="(max-width: 600px) 100vw, 100vw"
                         alt="KIIT School of Leadership banner: innovation and teamwork" width="1901" height="729"
                         loading="lazy">
                 </div>

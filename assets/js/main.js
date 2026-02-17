@@ -34,22 +34,22 @@ function raf(callback) {
     return window.requestAnimationFrame(callback);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     'use strict';
-    
+
     // Remove loading class to enable transitions
     document.body.classList.remove('loading');
-    
+
     // Handle Preloader
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
         document.body.classList.add('loaded');
     });
-    
+
     // Fallback for preloader
     setTimeout(() => {
         document.body.classList.add('loaded');
     }, 2000);
-    
+
     // Critical features - load immediately
     initNavigation();
     initSmoothScroll();
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initHeroSlider();
     initHomeHeroSlides();
     initLeaderCarousel(); // Leadership messages auto-carousel
-    
+
     // Desktop-only heavy features - lazy load during idle time
     if (isDesktop() && 'requestIdleCallback' in window) {
         requestIdleCallback(() => {
@@ -105,17 +105,17 @@ function initNavigation() {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
     const mobileNav = document.querySelector('.mobile-nav');
-    
+
     // Mobile menu toggle
     if (mobileMenuToggle && mobileMenu) {
         const syncMenuState = (isOpen) => {
             mobileMenu.classList.toggle('active', isOpen);
             mobileMenuToggle.classList.toggle('active', isOpen);
             mobileMenuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            
+
             // Toggle body scroll lock
             document.body.classList.toggle('menu-open', isOpen);
-            
+
             const icon = mobileMenuToggle.querySelector('i');
             if (icon) {
                 icon.classList.toggle('fa-xmark', isOpen);
@@ -124,7 +124,7 @@ function initNavigation() {
         };
 
         // Handle both click and touch events
-        const handleToggle = function(e) {
+        const handleToggle = function (e) {
             e.preventDefault();
             e.stopPropagation();
             const isOpen = !mobileMenu.classList.contains('active');
@@ -132,24 +132,24 @@ function initNavigation() {
         };
 
         mobileMenuToggle.addEventListener('click', handleToggle);
-        
+
         // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (mobileMenu.classList.contains('active') && 
-                !mobileMenu.contains(e.target) && 
+        document.addEventListener('click', function (e) {
+            if (mobileMenu.classList.contains('active') &&
+                !mobileMenu.contains(e.target) &&
                 !mobileMenuToggle.contains(e.target)) {
                 syncMenuState(false);
             }
         });
-        
+
         // Close menu on escape key
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
                 syncMenuState(false);
                 mobileMenuToggle.focus();
             }
         });
-        
+
         // Close menu when clicking a link
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
@@ -157,13 +157,37 @@ function initNavigation() {
                 syncMenuState(false);
             });
         });
-        
+
+        // Swipe to close functionality
+        let menuTouchStartX = 0;
+        let menuTouchStartY = 0;
+
+        mobileMenu.addEventListener('touchstart', (e) => {
+            menuTouchStartX = e.changedTouches[0].screenX;
+            menuTouchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        mobileMenu.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].screenX;
+            const touchEndY = e.changedTouches[0].screenY;
+
+            const deltaX = touchEndX - menuTouchStartX;
+            const deltaY = touchEndY - menuTouchStartY;
+
+            // If horizontal swipe is dominant and likely a "close" swipe (swipe left/right depending on menu position)
+            // Assuming menu is full screen or comes from right? mobile-optimization.css usually defines this.
+            // If strictly horizontal swipe (vertical movement is small)
+            if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+                syncMenuState(false);
+            }
+        }, { passive: true });
+
         // Debug: Log when menu toggle is initialized
         console.log('Mobile menu initialized:', { toggle: mobileMenuToggle, menu: mobileMenu });
     } else {
         console.warn('Mobile menu elements not found:', { toggle: mobileMenuToggle, menu: mobileMenu });
     }
-    
+
     // Mobile nav scroll effect
     if (mobileNav) {
         const updateMobileNav = () => {
@@ -176,7 +200,7 @@ function initNavigation() {
         window.addEventListener('scroll', throttle(updateMobileNav, 100), { passive: true });
         updateMobileNav(); // Initial check
     }
-    
+
     // Navbar scroll effect (guard when navbar is not present on a page)
     if (navbar) {
         const updateNavbar = () => {
@@ -197,9 +221,9 @@ function initNavigation() {
 function initSmoothScroll() {
     const navbar = document.getElementById('navbar');
     const links = document.querySelectorAll('a[href^="#"]');
-    
+
     links.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (href !== '#' && href !== '#apply' && href !== '#brochure' && href !== '#visit') {
                 const target = document.querySelector(href);
@@ -230,7 +254,7 @@ function initHeroSlider() {
     const next = slider.querySelector('.slider-next');
     const progressDots = slider.querySelectorAll('.slider-progress-dot');
     const progressBar = slider.querySelector('.slider-progress-bar');
-    
+
     if (!slides.length) return;
 
     let current = slides.findIndex(slide => slide.classList.contains('active'));
@@ -371,7 +395,7 @@ function initLeaderCarousel() {
     const prevBtn = carousel.querySelector('.leader-btn[data-dir="prev"]');
     const nextBtn = carousel.querySelector('.leader-btn[data-dir="next"]');
     const dotsContainer = document.querySelector('.leader-dots');
-    
+
     if (!slides.length) return;
 
     let current = slides.findIndex(slide => slide.classList.contains('active'));
@@ -492,7 +516,7 @@ function initAnimationsOnScroll() {
     if (window.innerWidth <= 480) {
         return;
     }
-    
+
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -30px 0px'
@@ -543,9 +567,9 @@ function initParallaxEffects() {
     if (window.innerWidth <= 768) {
         return;
     }
-    
+
     const parallaxElements = document.querySelectorAll('.campus-strip, .home-hero');
-    
+
     if (!parallaxElements.length) return;
 
     let ticking = false;
@@ -554,7 +578,7 @@ function initParallaxEffects() {
         parallaxElements.forEach(el => {
             const rect = el.getBoundingClientRect();
             const rate = 0.3;
-            
+
             if (rect.top < window.innerHeight && rect.bottom > 0) {
                 const yPos = (rect.top - window.innerHeight) * rate;
                 el.style.backgroundPositionY = `${yPos}px`;
@@ -580,9 +604,9 @@ function initCounterAnimations() {
     if (window.innerWidth <= 480) {
         return;
     }
-    
+
     const counterElements = document.querySelectorAll('.campus-stat-card .stat-number');
-    
+
     if (!counterElements.length) return;
 
     const observerOptions = {
@@ -593,31 +617,31 @@ function initCounterAnimations() {
     const animateCounter = (element) => {
         const text = element.textContent || '';
         const match = text.match(/^([\d,]+)(\+?)$/);
-        
+
         if (!match) return;
-        
+
         const target = parseInt(match[1].replace(/,/g, ''), 10);
         const suffix = match[2] || '';
         const duration = 2000;
         const startTime = performance.now();
-        
+
         const update = (currentTime) => {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            
+
             // Easing function (ease-out-cubic)
             const eased = 1 - Math.pow(1 - progress, 3);
             const current = Math.floor(eased * target);
-            
+
             element.textContent = current.toLocaleString() + suffix;
-            
+
             if (progress < 1) {
                 requestAnimationFrame(update);
             } else {
                 element.textContent = target.toLocaleString() + suffix;
             }
         };
-        
+
         requestAnimationFrame(update);
     };
 
@@ -640,31 +664,31 @@ function initCounterAnimations() {
 function initMobileFooterAccordion() {
     // Only initialize on mobile
     if (window.innerWidth > 768) return;
-    
+
     const footerCols = document.querySelectorAll('.footer-col:not(.footer-contact-col)');
-    
+
     footerCols.forEach(col => {
         const headers = col.querySelectorAll('h4');
-        
+
         headers.forEach((header, index) => {
             // Get the next sibling ul (footer-links-list)
             let linksList = header.nextElementSibling;
             while (linksList && !linksList.classList.contains('footer-links-list')) {
                 linksList = linksList.nextElementSibling;
             }
-            
+
             if (linksList) {
                 // First section expanded by default
                 if (index === 0) {
                     header.classList.add('expanded');
                     linksList.classList.add('show');
                 }
-                
-                header.addEventListener('click', function(e) {
+
+                header.addEventListener('click', function (e) {
                     e.preventDefault();
-                    
+
                     const isExpanded = this.classList.contains('expanded');
-                    
+
                     // Close all other sections in this column
                     headers.forEach(h => {
                         h.classList.remove('expanded');
@@ -674,7 +698,7 @@ function initMobileFooterAccordion() {
                         }
                         if (list) list.classList.remove('show');
                     });
-                    
+
                     // Toggle current section
                     if (!isExpanded) {
                         this.classList.add('expanded');
@@ -687,16 +711,16 @@ function initMobileFooterAccordion() {
 }
 
 // Initialize footer accordion after DOM and footer are loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Delay to ensure footer is loaded via include
     setTimeout(initMobileFooterAccordion, 500);
 });
 
 // Re-initialize on resize
 let footerResizeTimer;
-window.addEventListener('resize', function() {
+window.addEventListener('resize', function () {
     clearTimeout(footerResizeTimer);
-    footerResizeTimer = setTimeout(function() {
+    footerResizeTimer = setTimeout(function () {
         // Remove existing event listeners by cloning
         const footerCols = document.querySelectorAll('.footer-col:not(.footer-contact-col)');
         footerCols.forEach(col => {
@@ -706,11 +730,11 @@ window.addEventListener('resize', function() {
                 header.parentNode.replaceChild(newHeader, header);
             });
         });
-        
+
         // Reset all classes
         document.querySelectorAll('.footer-col h4').forEach(h => h.classList.remove('expanded'));
         document.querySelectorAll('.footer-links-list').forEach(l => l.classList.remove('show'));
-        
+
         // Re-initialize if mobile
         initMobileFooterAccordion();
     }, 250);
