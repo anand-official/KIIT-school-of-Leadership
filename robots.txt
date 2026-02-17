@@ -1,5 +1,5 @@
 # Robots.txt for KIIT School of Leadership
-# https://ksol.kiit.ac.in
+# https://sld.kiit.ac.in
 
 User-agent: *
 Allow: /
@@ -8,7 +8,7 @@ Allow: /assets/js/
 Allow: /assets/images/
 
 # Sitemap location
-Sitemap: https://ksol.kiit.ac.in/sitemap.xml
+Sitemap: https://sld.kiit.ac.in/sitemap.xml
 
 # Disallow admin/system directories if any
 Disallow: /docs/archive/

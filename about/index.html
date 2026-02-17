@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | KIIT School of Leadership - Vision, Mission & Values</title>
-    <meta name="description" content="Learn about KIIT School of Leadership - India's first practice-first business school. Our vision, mission, and commitment to innovation-led leadership education at KIIT University, Bhubaneswar.">
-    <meta name="keywords" content="About KIIT School of Leadership, KIIT Business School, Leadership Education India, KIIT University Bhubaneswar, Innovation Education">
+    <meta name="description"
+        content="Learn about KIIT School of Leadership - India's first practice-first business school. Our vision, mission, and commitment to innovation-led leadership education at KIIT University, Bhubaneswar.">
+    <meta name="keywords"
+        content="About KIIT School of Leadership, KIIT Business School, Leadership Education India, KIIT University Bhubaneswar, Innovation Education">
     <meta name="author" content="KIIT School of Leadership">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://ksol.kiit.ac.in/about.html">
-    
+    <link rel="canonical" href="https://sld.kiit.ac.in/about/">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ksol.kiit.ac.in/about.html">
+    <meta property="og:url" content="https://sld.kiit.ac.in/about/">
     <meta property="og:title" content="About Us | KIIT School of Leadership">
-    <meta property="og:description" content="India's first practice-first business school. Learn about our vision, mission, and commitment to innovation-led leadership education.">
-    <meta property="og:image" content="https://ksol.kiit.ac.in/assets/images/about_banner.png">
+    <meta property="og:description"
+        content="India's first practice-first business school. Learn about our vision, mission, and commitment to innovation-led leadership education.">
+    <meta property="og:image" property="og:image" content="https://sld.kiit.ac.in/assets/images/about-banner.webp">
     <meta property="og:site_name" content="KIIT School of Leadership">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/design-system.css">
-    <link rel="stylesheet" href="/assets/css/mobile-optimization.css">
-        <link rel="stylesheet" href="/assets/css/mobile-layout-fixes.css">
-    
+    <link rel="stylesheet" href="/assets/css/design-system-min.css">
+    <link rel="stylesheet" href="/assets/css/mobile-optimization-min.css">
+    <link rel="stylesheet" href="/assets/css/mobile-layout-fixes-min.css">
+
     <!-- JSON-LD Breadcrumb Schema -->
     <script type="application/ld+json">
     {
@@ -40,22 +45,22 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://ksol.kiit.ac.in/"
+            "item": "https://sld.kiit.ac.in/"
         },{
             "@type": "ListItem",
             "position": 2,
             "name": "About",
-            "item": "https://ksol.kiit.ac.in/about.html"
+            "item": "https://sld.kiit.ac.in/about/"
         }]
     }
     </script>
-    
+
     <style>
         /* About page layout */
         .about-hero {
             position: relative;
             overflow: hidden;
-            background: url('assets/images/about_banner.png') center/cover no-repeat;
+            background: url('/assets/images/about-banner.webp') center/cover no-repeat;
             color: white;
             padding: clamp(120px, 16vh, 160px) 0 clamp(120px, 16vh, 160px);
             isolation: isolate;
@@ -73,22 +78,32 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: 
+            background:
                 radial-gradient(ellipse at 20% 80%, rgba(251, 191, 36, 0.1), transparent 45%),
                 radial-gradient(ellipse at 85% 20%, rgba(16, 185, 129, 0.08), transparent 40%);
             z-index: 0;
         }
 
-        .about-hero .container { position: relative; z-index: 1; }
+        .about-hero .container {
+            position: relative;
+            z-index: 1;
+        }
 
-        .about-hero__content { 
+        .about-hero__content {
             max-width: 820px;
             animation: fadeInUp 0.8s ease-out;
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .about-hero__eyebrow {
@@ -117,8 +132,8 @@
             box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
         }
 
-        .about-hero__title { 
-            margin: 24px 0 20px; 
+        .about-hero__title {
+            margin: 24px 0 20px;
             font-size: clamp(2.6rem, 5.5vw, 4rem);
             line-height: 1.12;
             font-weight: 700;
@@ -143,7 +158,9 @@
             margin-top: 32px;
         }
 
-        .about-hero__actions--center { justify-content: center; }
+        .about-hero__actions--center {
+            justify-content: center;
+        }
 
         .about-hero__actions .btn {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -164,7 +181,9 @@
             font-weight: 600;
         }
 
-        .about-hero__quicklink:hover { color: #fef08a; }
+        .about-hero__quicklink:hover {
+            color: #fef08a;
+        }
 
         .section-kicker {
             font-weight: 600;
@@ -176,7 +195,9 @@
             display: inline-block;
         }
 
-        .section-kicker--light { color: #a7f3d0; }
+        .section-kicker--light {
+            color: #a7f3d0;
+        }
 
         .accent-line {
             width: 80px;
@@ -188,10 +209,18 @@
             transition: width 0.4s ease;
         }
 
-        .section-header--center:hover .accent-line { width: 100px; }
+        .section-header--center:hover .accent-line {
+            width: 100px;
+        }
 
-        .accent-line--center { margin-left: auto; margin-right: auto; }
-        .accent-line--light { box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1); }
+        .accent-line--center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .accent-line--light {
+            box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
+        }
 
         .about-purpose__grid {
             display: grid;
@@ -205,7 +234,7 @@
             border: 1px solid rgba(6, 78, 59, 0.08);
             border-radius: 24px;
             padding: clamp(28px, 3.5vw, 42px);
-            box-shadow: 
+            box-shadow:
                 0 1px 2px rgba(0, 0, 0, 0.04),
                 0 8px 24px rgba(0, 0, 0, 0.06),
                 0 24px 48px rgba(6, 78, 59, 0.08);
@@ -214,14 +243,14 @@
 
         .about-purpose__text:hover {
             transform: translateY(-4px);
-            box-shadow: 
+            box-shadow:
                 0 1px 2px rgba(0, 0, 0, 0.04),
                 0 12px 32px rgba(0, 0, 0, 0.08),
                 0 32px 64px rgba(6, 78, 59, 0.1);
         }
 
-        .about-purpose__text p { 
-            color: var(--color-text-muted); 
+        .about-purpose__text p {
+            color: var(--color-text-muted);
             line-height: 1.75;
         }
 
@@ -247,7 +276,7 @@
         .about-purpose__image img {
             width: 100%;
             border-radius: 20px;
-            box-shadow: 
+            box-shadow:
                 0 4px 12px rgba(0, 0, 0, 0.08),
                 0 20px 50px rgba(0, 0, 0, 0.14);
             transition: transform 0.5s ease, box-shadow 0.5s ease;
@@ -255,7 +284,7 @@
 
         .about-purpose__image:hover img {
             transform: scale(1.02) translateY(-4px);
-            box-shadow: 
+            box-shadow:
                 0 6px 20px rgba(0, 0, 0, 0.1),
                 0 28px 60px rgba(0, 0, 0, 0.18);
         }
@@ -267,16 +296,6 @@
         }
 
         .section-header--center h2 {
-                    }
-
-                    /* Make 'Leadership Messages' heading larger */
-                    .section-header--center .section-kicker {
-                        font-size: clamp(1.5rem, 4vw, 2.3rem);
-                        font-weight: 800;
-                        color: var(--color-primary);
-                        letter-spacing: 0.01em;
-                        margin-bottom: 10px;
-                    }
             font-size: 20pt;
             font-weight: 500;
             color: var(--color-primary);
@@ -285,7 +304,17 @@
             text-transform: none;
         }
 
-        .section-header--center p { margin-bottom: 0; }
+        .section-header--center .section-kicker {
+            font-size: clamp(1.5rem, 4vw, 2.3rem);
+            font-weight: 800;
+            color: var(--color-primary);
+            letter-spacing: 0.01em;
+            margin-bottom: 10px;
+        }
+
+        .section-header--center p {
+            margin-bottom: 0;
+        }
 
         .value-grid {
             display: grid;
@@ -298,7 +327,7 @@
             border: 1px solid rgba(6, 78, 59, 0.06);
             border-radius: 24px;
             padding: 28px;
-            box-shadow: 
+            box-shadow:
                 0 1px 3px rgba(0, 0, 0, 0.03),
                 0 12px 32px rgba(0, 0, 0, 0.07);
             display: flex;
@@ -324,12 +353,14 @@
 
         .value-card:hover {
             transform: translateY(-8px);
-            box-shadow: 
+            box-shadow:
                 0 2px 4px rgba(0, 0, 0, 0.04),
                 0 20px 50px rgba(6, 78, 59, 0.12);
         }
 
-        .value-card:hover::before { transform: scaleX(1); }
+        .value-card:hover::before {
+            transform: scaleX(1);
+        }
 
         .value-card__icon {
             width: 60px;
@@ -392,38 +423,46 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: 
+            background:
                 radial-gradient(ellipse at 15% 25%, rgba(125, 211, 252, 0.15), transparent 40%),
                 radial-gradient(ellipse at 85% 75%, rgba(251, 191, 36, 0.1), transparent 35%);
             z-index: 0;
         }
 
-        .cta-band .container { position: relative; z-index: 1; }
-        .cta-band h2 { 
-            color: white; 
+        .cta-band .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-band h2 {
+            color: white;
             margin-bottom: 16px;
             font-size: clamp(2rem, 4vw, 2.8rem);
             text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
         }
-        .cta-band p { 
-            color: rgba(255, 255, 255, 0.88); 
+
+        .cta-band p {
+            color: rgba(255, 255, 255, 0.88);
             margin-bottom: 28px;
             font-size: 1.1rem;
         }
 
-        .cta-band .btn-white { 
-            color: var(--color-primary); 
+        .cta-band .btn-white {
+            color: var(--color-primary);
             font-weight: 700;
             box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
         }
+
         .cta-band .btn-white:hover {
             box-shadow: 0 12px 40px rgba(255, 255, 255, 0.3);
         }
-        .cta-band .btn-white-outline { 
-            color: white; 
+
+        .cta-band .btn-white-outline {
+            color: white;
             border-color: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(4px);
         }
+
         .cta-band .btn-white-outline:hover {
             background: rgba(255, 255, 255, 0.1);
             border-color: rgba(255, 255, 255, 0.7);
@@ -449,18 +488,49 @@
             font-weight: 600;
         }
 
-        .hero-chip i { color: #bbf7d0; }
+        .hero-chip i {
+            color: #bbf7d0;
+        }
 
         @media (max-width: 768px) {
-            .about-hero { padding: 100px 0 110px; }
-            .about-hero__title { font-size: clamp(2rem, 7vw, 3rem); }
-            .about-hero__eyebrow::after { width: 100%; max-width: 320px; }
-            .about-hero__lede { font-size: 1rem; }
-            .about-hero__actions { gap: 12px; margin-top: 24px; }
-            .about-hero__actions .btn { width: 100%; justify-content: center; }
-            .leader-carousel { padding: 32px 24px 44px; }
-            .value-card { padding: 24px; }
-            .cta-band { padding: 80px 0; }
+            .about-hero {
+                padding: 100px 0 110px;
+            }
+
+            .about-hero__title {
+                font-size: clamp(2rem, 7vw, 3rem);
+            }
+
+            .about-hero__eyebrow::after {
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .about-hero__lede {
+                font-size: 1rem;
+            }
+
+            .about-hero__actions {
+                gap: 12px;
+                margin-top: 24px;
+            }
+
+            .about-hero__actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .leader-carousel {
+                padding: 32px 24px 44px;
+            }
+
+            .value-card {
+                padding: 24px;
+            }
+
+            .cta-band {
+                padding: 80px 0;
+            }
         }
 
         .about-pillars {
@@ -486,8 +556,8 @@
             transform: translateX(4px);
         }
 
-        .about-pillar i { 
-            color: var(--color-primary); 
+        .about-pillar i {
+            color: var(--color-primary);
             margin-top: 3px;
             font-size: 1rem;
         }
@@ -504,12 +574,13 @@
             overflow: visible;
             border-radius: 28px;
             background: linear-gradient(160deg, #ffffff 0%, #fafbfc 50%, #f0f4ff 100%);
-            box-shadow: 
+            box-shadow:
                 0 1px 2px rgba(0, 0, 0, 0.03),
                 0 8px 24px rgba(0, 0, 0, 0.06),
                 0 32px 80px rgba(0, 0, 0, 0.1);
             padding: 60px 72px 72px;
         }
+
         .leader-slide {
             display: none;
             gap: 48px;
@@ -519,58 +590,77 @@
             transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
             grid-template-columns: minmax(180px, 220px) 1fr;
         }
+
         .leader-slide.active {
             display: grid;
             opacity: 1;
             transform: translateX(0);
             animation: slideIn 0.7s cubic-bezier(0.23, 1, 0.32, 1);
         }
+
         @keyframes slideIn {
-            from { opacity: 0; transform: translateX(24px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
+
         .leader-photo {
             width: 180px;
             height: 180px;
             border-radius: 22px;
             object-fit: cover;
-            box-shadow: 
+            box-shadow:
                 0 4px 12px rgba(0, 0, 0, 0.08),
                 0 16px 48px rgba(0, 0, 0, 0.12);
             border: 4px solid #ffffff;
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
             flex-shrink: 0;
         }
+
         .leader-slide:hover .leader-photo {
             transform: scale(1.04) rotate(-1deg);
-            box-shadow: 
+            box-shadow:
                 0 6px 16px rgba(0, 0, 0, 0.1),
                 0 24px 56px rgba(0, 0, 0, 0.16);
         }
-        .leader-meta { flex: 1; max-width: 100%; }
-        .leader-meta h3 { 
-            margin: 0 0 10px; 
-            font-size: 1.65rem; 
-            font-weight: 700; 
+
+        .leader-meta {
+            flex: 1;
+            max-width: 100%;
+        }
+
+        .leader-meta h3 {
+            margin: 0 0 10px;
+            font-size: 1.65rem;
+            font-weight: 700;
             color: var(--color-text);
             letter-spacing: -0.01em;
         }
-        .leader-meta .role { 
-            color: var(--color-primary); 
-            margin-bottom: 18px; 
-            font-size: 0.9rem; 
-            font-weight: 600; 
-            text-transform: uppercase; 
+
+        .leader-meta .role {
+            color: var(--color-primary);
+            margin-bottom: 18px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
             letter-spacing: 0.08em;
             display: inline-block;
             padding: 4px 0;
             border-bottom: 2px solid rgba(6, 78, 59, 0.15);
         }
-        .leader-meta p { 
-            text-align: justify; 
+
+        .leader-meta p {
+            text-align: justify;
             color: var(--color-text-muted);
             line-height: 1.8;
         }
+
         .leader-nav {
             position: absolute;
             top: 50%;
@@ -583,6 +673,7 @@
             transform: translateY(-50%);
             pointer-events: none;
         }
+
         .leader-btn {
             width: 46px;
             height: 46px;
@@ -594,48 +685,87 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 
+            box-shadow:
                 0 4px 12px rgba(6, 78, 59, 0.2),
                 0 12px 32px rgba(6, 78, 59, 0.15);
             transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             font-size: 0.95rem;
             pointer-events: auto;
         }
-        .leader-btn:hover { 
-            transform: translateY(-2px) scale(1.08); 
-            box-shadow: 
+
+        .leader-btn:hover {
+            transform: translateY(-2px) scale(1.08);
+            box-shadow:
                 0 6px 16px rgba(6, 78, 59, 0.25),
-                0 16px 40px rgba(6, 78, 59, 0.2); 
+                0 16px 40px rgba(6, 78, 59, 0.2);
             background: linear-gradient(145deg, #10b981 0%, #064E3B 100%);
         }
-        .leader-btn:active { transform: translateY(0) scale(0.96); }
-        .leader-dots { display: flex; gap: 12px; justify-content: center; margin-top: 40px; }
-        .leader-dot { 
-            width: 10px; 
-            height: 10px; 
-            border-radius: 50%; 
-            background: #d1d5db; 
-            cursor: pointer; 
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); 
-            position: relative; 
+
+        .leader-btn:active {
+            transform: translateY(0) scale(0.96);
         }
-        .leader-dot:hover { background: #9ca3af; transform: scale(1.25); }
-        .leader-dot.active { 
-            background: var(--color-primary); 
-            transform: scale(1.35); 
+
+        .leader-dots {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .leader-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #d1d5db;
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .leader-dot:hover {
+            background: #9ca3af;
+            transform: scale(1.25);
+        }
+
+        .leader-dot.active {
+            background: var(--color-primary);
+            transform: scale(1.35);
             box-shadow: 0 0 0 4px rgba(6, 78, 59, 0.15);
         }
+
         @media (max-width: 768px) {
-            .leader-slide { display: flex; flex-direction: column; text-align: center; gap: 24px; }
-            .leader-carousel { padding: 24px; }
-            .leader-nav { position: static; justify-content: space-between; margin-top: 12px; transform: none; }
-            .leader-photo { width: 160px; height: 160px; }
-            .leader-meta h3 { font-size: 1.5rem; }
+            .leader-slide {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                gap: 24px;
+            }
+
+            .leader-carousel {
+                padding: 24px;
+            }
+
+            .leader-nav {
+                position: static;
+                justify-content: space-between;
+                margin-top: 12px;
+                transform: none;
+            }
+
+            .leader-photo {
+                width: 160px;
+                height: 160px;
+            }
+
+            .leader-meta h3 {
+                font-size: 1.5rem;
+            }
         }
     </style>
     <!-- Header/Footer Loader -->
     <script src="/assets/js/load-header-footer.js?v=2"></script>
 </head>
+
 <body>
     <!-- Scroll Progress Bar -->
     <div id="scroll-progress"></div>
@@ -646,7 +776,8 @@
             <div class="about-hero__content">
                 <p class="about-hero__eyebrow">About KIIT School of Leadership</p>
                 <h1 class="about-hero__title">Where future leaders and founders are built.</h1>
-                <p class="about-hero__lede">A practice-first school that bridges management education, venture building, and social impact—powered by KIIT &amp; KIIT-TBI.</p>
+                <p class="about-hero__lede">A practice-first school that bridges management education, venture building,
+                    and social impact—powered by KIIT &amp; KIIT-TBI.</p>
                 <div class="about-hero__actions">
                     <a href="/mba-iev/" class="btn btn-primary btn-large">Explore MBA–IEV</a>
                     <a href="/#programs" class="btn btn-white-outline btn-large">View Programs</a>
@@ -661,17 +792,28 @@
             <div class="about-purpose__text">
                 <p class="section-kicker">Our Purpose</p>
                 <h2>KIIT School of Leadership (KSLd)</h2>
-                <p>The KIIT School of Leadership (KSLd) aims to nurture future leaders by developing the qualities, skills, and knowledge needed to drive positive change. With Viksit Bharat in mind, we cultivate leaders with technical expertise, initiative, and visionary foresight to build sustainable, ethical change across sectors.</p>
-                <p>By leveraging KIIT DU's multidisciplinary strengths, KSLd integrates insights from business, technology, social sciences, and the humanities. We develop leaders who demonstrate commitment, expertise, and passion for their work.</p>
-                <p>We believe ordinary individuals can deliver extraordinary societal change through inspired social leadership. KSLd equips learners to navigate business complexities while making decisions that benefit society and the environment—instilling responsibility to act ethically and sustainably for a more just and prosperous global community.</p>
+                <p>The KIIT School of Leadership (KSLd) aims to nurture future leaders by developing the qualities,
+                    skills, and knowledge needed to drive positive change. With Viksit Bharat in mind, we cultivate
+                    leaders with technical expertise, initiative, and visionary foresight to build sustainable, ethical
+                    change across sectors.</p>
+                <p>By leveraging KIIT DU's multidisciplinary strengths, KSLd integrates insights from business,
+                    technology, social sciences, and the humanities. We develop leaders who demonstrate commitment,
+                    expertise, and passion for their work.</p>
+                <p>We believe ordinary individuals can deliver extraordinary societal change through inspired social
+                    leadership. KSLd equips learners to navigate business complexities while making decisions that
+                    benefit society and the environment—instilling responsibility to act ethically and sustainably for a
+                    more just and prosperous global community.</p>
                 <div class="about-pillars">
-                    <div class="about-pillar"><i class="fa-solid fa-flask"></i><span>Studio-first, practice-led learning with live venture builds.</span></div>
-                    <div class="about-pillar"><i class="fa-solid fa-diagram-project"></i><span>Ecosystem access via KIIT-TBI labs, mentors, and investor rooms.</span></div>
-                    <div class="about-pillar"><i class="fa-solid fa-leaf"></i><span>Impact lens: ethics, sustainability, and community outcomes.</span></div>
+                    <div class="about-pillar"><i class="fa-solid fa-flask"></i><span>Studio-first, practice-led learning
+                            with live venture builds.</span></div>
+                    <div class="about-pillar"><i class="fa-solid fa-diagram-project"></i><span>Ecosystem access via
+                            KIIT-TBI labs, mentors, and investor rooms.</span></div>
+                    <div class="about-pillar"><i class="fa-solid fa-leaf"></i><span>Impact lens: ethics, sustainability,
+                            and community outcomes.</span></div>
                 </div>
             </div>
             <div class="about-purpose__image">
-                <img src="/assets/images/campus/kiit-campus.png.jpeg" alt="KIIT Campus">
+                <img src="/assets/images/campus/kiit-campus.webp" alt="KIIT Campus" loading="lazy">
             </div>
         </div>
     </section>
@@ -682,23 +824,28 @@
             <div class="section-header--center">
                 <p class="section-kicker">What is KSLD?</p>
                 <div class="accent-line accent-line--center"></div>
-                <h2 style="font-size:20pt; font-weight:700; color:var(--color-primary); letter-spacing:0.01em; margin-bottom:10px; text-transform:none;">Practice-first, venture-led, impact-driven</h2>
+                <h2
+                    style="font-size:20pt; font-weight:700; color:var(--color-primary); letter-spacing:0.01em; margin-bottom:10px; text-transform:none;">
+                    Practice-first, venture-led, impact-driven</h2>
             </div>
             <div class="value-grid">
                 <div class="value-card">
                     <div class="value-card__icon"><i class="fa-solid fa-graduation-cap"></i></div>
                     <h3>For Future Leaders</h3>
-                    <p>Develop the qualities, skills, and knowledge to drive positive change. Master business complexities while making decisions that benefit society and the environment.</p>
+                    <p>Develop the qualities, skills, and knowledge to drive positive change. Master business
+                        complexities while making decisions that benefit society and the environment.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-card__icon"><i class="fa-solid fa-rocket"></i></div>
                     <h3>For Builders &amp; Founders</h3>
-                    <p>Ship real products, work directly with operators, and gain access to KIIT-TBI's ecosystem of 423+ startups, ₹13B+ in funding, and 300+ industry mentors.</p>
+                    <p>Ship real products, work directly with operators, and gain access to KIIT-TBI's ecosystem of 423+
+                        startups, ₹13B+ in funding, and 300+ industry mentors.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-card__icon"><i class="fa-solid fa-globe"></i></div>
                     <h3>For Social Impact</h3>
-                    <p>Cultivate leaders with visionary foresight. Contribute to India's "Viksit Bharat" vision through technical expertise, initiative, and commitment to ethical, sustainable change.</p>
+                    <p>Cultivate leaders with visionary foresight. Contribute to India's "Viksit Bharat" vision through
+                        technical expertise, initiative, and commitment to ethical, sustainable change.</p>
                 </div>
             </div>
         </div>
@@ -716,53 +863,112 @@
             <div class="leader-shell">
                 <div class="leader-carousel">
                     <div class="leader-slide active">
-                        <img class="leader-photo" src="/assets/images/people/Dr._Achyuta_Samanta.jpg" alt="Prof. Achyuta Samanta" onerror="this.src='https://ui-avatars.com/api/?name=Achyuta+Samanta&background=2563eb&color=fff&size=200'">
+                        <img class="leader-photo" src="/assets/images/people/dr-achyuta-samanta.webp"
+                            alt="Prof. Achyuta Samanta"
+                            onerror="this.src='https://ui-avatars.com/api/?name=Achyuta+Samanta&background=2563eb&color=fff&size=200'"
+                            loading="lazy">
                         <div class="leader-meta">
                             <h3>Prof. Achyuta Samanta</h3>
                             <div class="role">Founder &amp; Mentor, KIIT</div>
-                            <p style="font-size: 1rem; line-height: 1.8;">It is with great pride and immense pleasure that I welcome you to the MBA Program in “Innovation, Entrepreneurship, and Venture Development” at KIIT Deemed to be University, Bhubaneswar! Our MBA Program empowers young minds to become visionary leaders equipped to drive innovation and growth with integrity, creativity, and compassion. This program nurtures entrepreneurs-in-the-making into leaders capable of tackling complex business challenges. Our immersive experience combines rigorous academic frameworks with hands-on entrepreneurial development, connecting students with global innovators, industry experts, and cutting-edge research. We cultivate essential skills like adaptability, resilience, and strategic thinking, preparing our graduates to excel in the fast-paced world of innovation and entrepreneurship.</p>
+                            <p style="font-size: 1rem; line-height: 1.8;">It is with great pride and immense pleasure
+                                that I welcome you to the MBA Program in “Innovation, Entrepreneurship, and Venture
+                                Development” at KIIT Deemed to be University, Bhubaneswar! Our MBA Program empowers
+                                young minds to become visionary leaders equipped to drive innovation and growth with
+                                integrity, creativity, and compassion. This program nurtures entrepreneurs-in-the-making
+                                into leaders capable of tackling complex business challenges. Our immersive experience
+                                combines rigorous academic frameworks with hands-on entrepreneurial development,
+                                connecting students with global innovators, industry experts, and cutting-edge research.
+                                We cultivate essential skills like adaptability, resilience, and strategic thinking,
+                                preparing our graduates to excel in the fast-paced world of innovation and
+                                entrepreneurship.</p>
                         </div>
                     </div>
 
                     <div class="leader-slide">
-                        <img class="leader-photo" src="/assets/images/people/dr. saranjit_singh.jpeg" alt="Prof. (Dr.) Saranjit Singh" onerror="this.src='https://ui-avatars.com/api/?name=Saranjit+Singh&background=2563eb&color=fff&size=200'">
+                        <img class="leader-photo" src="/assets/images/people/dr-saranjit-singh.webp"
+                            alt="Prof. (Dr.) Saranjit Singh"
+                            onerror="this.src='https://ui-avatars.com/api/?name=Saranjit+Singh&background=2563eb&color=fff&size=200'"
+                            loading="lazy">
                         <div class="leader-meta">
                             <h3>Prof. (Dr.) Saranjit Singh</h3>
                             <div class="role">Vice Chancellor</div>
-                            <p style="font-size: 1rem; line-height: 1.8;">It is my pleasure to extend a warm invitation to all aspiring visionaries and changemakers. Join our community of leaders shaping the future of business. Our program equips you with the knowledge, skills, and mindset to launch successful ventures, drive innovation, and create sustainable impact. Develop essential skills like agility, resilience, and adaptability, along with critical thinking, creativity, and collaboration. Gain hands-on experience with world-class faculty, industry experts, and global innovators. Join us on this transformative journey and discover your potential to become a successful entrepreneur, innovator, and changemaker.</p>
+                            <p style="font-size: 1rem; line-height: 1.8;">It is my pleasure to extend a warm invitation
+                                to all aspiring visionaries and changemakers. Join our community of leaders shaping the
+                                future of business. Our program equips you with the knowledge, skills, and mindset to
+                                launch successful ventures, drive innovation, and create sustainable impact. Develop
+                                essential skills like agility, resilience, and adaptability, along with critical
+                                thinking, creativity, and collaboration. Gain hands-on experience with world-class
+                                faculty, industry experts, and global innovators. Join us on this transformative journey
+                                and discover your potential to become a successful entrepreneur, innovator, and
+                                changemaker.</p>
                         </div>
                     </div>
 
                     <div class="leader-slide">
-                        <img class="leader-photo" src="/assets/images/people/kd_raju.jpeg" alt="Prof. (Dr.) Raju K.D." onerror="this.src='https://ui-avatars.com/api/?name=Raju+KD&background=2563eb&color=fff&size=200'">
+                        <img class="leader-photo" src="/assets/images/people/kd-raju.webp" alt="Prof. (Dr.) Raju K.D."
+                            onerror="this.src='https://ui-avatars.com/api/?name=Raju+KD&background=2563eb&color=fff&size=200'"
+                            loading="lazy">
                         <div class="leader-meta">
                             <h3>Prof. (Dr.) Raju K.D.</h3>
                             <div class="role">Pro-Vice Chancellor</div>
-                            <p style="font-size: 1rem; line-height: 1.8;">The MBA in Innovation, Entrepreneurship, and Venture Development program is designed to equip students with the skills and mindset to thrive in today’s fast-evolving business landscape. At KIIT Deemed to be University, by blending creativity with practical insights, we aim to foster leaders who can drive innovation, launch successful ventures, and create lasting impact. Our dynamic curriculum, combined with industry engagement and hands-on experiences, will help you become a visionary entrepreneur capable of navigating challenges and seizing opportunities. We are excited to pave your journey by unlocking the full potential in you.</p>
+                            <p style="font-size: 1rem; line-height: 1.8;">The MBA in Innovation, Entrepreneurship, and
+                                Venture Development program is designed to equip students with the skills and mindset to
+                                thrive in today’s fast-evolving business landscape. At KIIT Deemed to be University, by
+                                blending creativity with practical insights, we aim to foster leaders who can drive
+                                innovation, launch successful ventures, and create lasting impact. Our dynamic
+                                curriculum, combined with industry engagement and hands-on experiences, will help you
+                                become a visionary entrepreneur capable of navigating challenges and seizing
+                                opportunities. We are excited to pave your journey by unlocking the full potential in
+                                you.</p>
                         </div>
                     </div>
 
                     <div class="leader-slide">
-                        <img class="leader-photo" src="/assets/images/people/prof-mrutyunjay-suar.png" alt="Dr. (Prof) Mrutyunjay Suar" onerror="this.src='https://ui-avatars.com/api/?name=Mrutyunjay+Suar&background=2563eb&color=fff&size=200'">
+                        <img class="leader-photo" src="/assets/images/people/prof-mrutyunjay-suar.webp"
+                            alt="Dr. (Prof) Mrutyunjay Suar"
+                            onerror="this.src='https://ui-avatars.com/api/?name=Mrutyunjay+Suar&background=2563eb&color=fff&size=200'"
+                            loading="lazy">
                         <div class="leader-meta">
                             <h3>Dr. (Prof) Mrutyunjay Suar</h3>
                             <div class="role">CEO, KIIT TBI</div>
-                            <p style="font-size: 1rem; line-height: 1.8;">In today’s rapidly evolving global landscape, innovation and entrepreneurship are crucial. At KIIT, we nurture future leaders with management knowledge, creative thinking, and problem-solving skills. Our MBA program blends theory with practical application, focusing on product development, business strategy, and venture financing. With world-class faculty, research ecosystem, and industry connections, we offer a transformative journey for aspiring entrepreneurs. Join us to turn your entrepreneurial aspirations into reality and become a catalyst for innovation in the global business landscape. We look forward to being a part of your entrepreneurial journey!</p>
+                            <p style="font-size: 1rem; line-height: 1.8;">In today’s rapidly evolving global landscape,
+                                innovation and entrepreneurship are crucial. At KIIT, we nurture future leaders with
+                                management knowledge, creative thinking, and problem-solving skills. Our MBA program
+                                blends theory with practical application, focusing on product development, business
+                                strategy, and venture financing. With world-class faculty, research ecosystem, and
+                                industry connections, we offer a transformative journey for aspiring entrepreneurs. Join
+                                us to turn your entrepreneurial aspirations into reality and become a catalyst for
+                                innovation in the global business landscape. We look forward to being a part of your
+                                entrepreneurial journey!</p>
                         </div>
                     </div>
 
                     <div class="leader-slide">
-                        <img class="leader-photo" src="/assets/images/people/dr-pinaki-nandan-pattnaik.png" alt="Dr. Pinaki Nandan Pattnaik" onerror="this.src='https://ui-avatars.com/api/?name=Pinaki+Nandan+Pattnaik&background=2563eb&color=fff&size=200'">
+                        <img class="leader-photo" src="/assets/images/people/dr-pinaki-nandan-pattnaik.webp"
+                            alt="Dr. Pinaki Nandan Pattnaik"
+                            onerror="this.src='https://ui-avatars.com/api/?name=Pinaki+Nandan+Pattnaik&background=2563eb&color=fff&size=200'"
+                            loading="lazy">
                         <div class="leader-meta">
                             <h3>Dr. Pinaki Nandan Pattnaik</h3>
                             <div class="role">Dean, School of Leadership</div>
-                            <p style="font-size: 1rem; line-height: 1.8;">At KIIT, we are committed to developing business leaders, innovators and changemakers who can lead with purpose and drive social and economic impact. The MBA-lEV program is not just about understanding business principles but about cultivating a mindset that thrives on innovation, resilience, and entrepreneurial thinking. It is meticulously designed to equip innovators and future entrepreneurs with knowledge, skills, and strategies to navigate the complexities of building and scaling successful ventures. From ideation to execution, with mentorship from industry leaders, practical learning opportunities, and cutting-edge research resources, learners will be empowered to transform their entrepreneurial vision into reality.</p>
+                            <p style="font-size: 1rem; line-height: 1.8;">At KIIT, we are committed to developing
+                                business leaders, innovators and changemakers who can lead with purpose and drive social
+                                and economic impact. The MBA-lEV program is not just about understanding business
+                                principles but about cultivating a mindset that thrives on innovation, resilience, and
+                                entrepreneurial thinking. It is meticulously designed to equip innovators and future
+                                entrepreneurs with knowledge, skills, and strategies to navigate the complexities of
+                                building and scaling successful ventures. From ideation to execution, with mentorship
+                                from industry leaders, practical learning opportunities, and cutting-edge research
+                                resources, learners will be empowered to transform their entrepreneurial vision into
+                                reality.</p>
                         </div>
                     </div>
 
                     <div class="leader-nav">
-                        <button class="leader-btn" aria-label="Previous leader" data-dir="prev"><i class="fa-solid fa-chevron-left"></i></button>
-                        <button class="leader-btn" aria-label="Next leader" data-dir="next"><i class="fa-solid fa-chevron-right"></i></button>
+                        <button class="leader-btn" aria-label="Previous leader" data-dir="prev"><i
+                                class="fa-solid fa-chevron-left"></i></button>
+                        <button class="leader-btn" aria-label="Next leader" data-dir="next"><i
+                                class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
                 <div class="leader-dots" aria-label="Carousel dots"></div>
@@ -776,17 +982,21 @@
             <p class="section-kicker section-kicker--light">Apply &amp; Connect</p>
             <div class="accent-line accent-line--center accent-line--light"></div>
             <h2>Build with KIIT School of Leadership</h2>
-            <p class="section-description" style="color: rgba(255, 255, 255, 0.9);">Join a community of founders, operators, and social innovators. Explore our programs and step into a network that backs bold builders.</p>
+            <p class="section-description" style="color: rgba(255, 255, 255, 0.9);">Join a community of founders,
+                operators, and social innovators. Explore our programs and step into a network that backs bold builders.
+            </p>
             <div class="about-hero__actions about-hero__actions--center">
-                <a href="https://letsaog.me/sld-apply/" class="btn btn-white btn-large" target="_blank" rel="noopener">Apply for MBA–IEV</a>
-                <a href="mailto:info.sld@kiit.ac.in?subject=Send%20MBA%20IEV%20Brochure&body=Hi%20team,%20please%20share%20the%20MBA%20IEV%20brochure.%20Name:%20%0APhone:%20" class="btn btn-white-outline btn-large">Request Brochure</a>
+                <a href="https://letsaog.me/sld-apply/" class="btn btn-white btn-large" target="_blank"
+                    rel="noopener">Apply for MBA–IEV</a>
+                <a href="mailto:info.sld@kiit.ac.in?subject=Send%20MBA%20IEV%20Brochure&body=Hi%20team,%20please%20share%20the%20MBA%20IEV%20brochure.%20Name:%20%0APhone:%20"
+                    class="btn btn-white-outline btn-large">Request Brochure</a>
             </div>
         </div>
     </section>
 
     <script src="/assets/js/main.js"></script>
     <script>
-        (function() {
+        (function () {
             const slides = Array.from(document.querySelectorAll('.leader-slide'));
             const dotsContainer = document.querySelector('.leader-dots');
             const prevBtn = document.querySelector('.leader-btn[data-dir="prev"]');
@@ -857,6 +1067,5 @@
         })();
     </script>
 </body>
+
 </html>
-
-

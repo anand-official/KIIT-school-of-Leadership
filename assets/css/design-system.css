@@ -2446,7 +2446,7 @@ button.btn {
 /* --- Campus Strip --- */
 .campus-strip {
     position: relative;
-    background: linear-gradient(135deg, rgba(6, 78, 59, 0.65) 0%, rgba(2, 44, 34, 0.55) 50%, rgba(6, 78, 59, 0.70) 100%), url('../images/vibrant_campus.png');
+    background: linear-gradient(135deg, rgba(6, 78, 59, 0.65) 0%, rgba(2, 44, 34, 0.55) 50%, rgba(6, 78, 59, 0.70) 100%), url('../images/vibrant_campus.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

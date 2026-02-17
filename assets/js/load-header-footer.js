@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const basePath = getBasePath();
 
     // Load header (with cache busting) - Dynamic path resolution
-    fetch(basePath + 'includes/header.html?v=' + Date.now())
+    fetch(basePath + 'includes/header.html?v=2.1')
         .then(response => response.text())
         .then(html => {
             const headerContainer = document.createElement('div');
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(err => console.error('Error loading header:', err));
 
     // Load footer (with cache busting) - Dynamic path resolution
-    fetch(basePath + 'includes/footer.html?v=' + Date.now())
+    fetch(basePath + 'includes/footer.html?v=2.1')
         .then(response => response.text())
         .then(html => {
             const footerContainer = document.createElement('div');
