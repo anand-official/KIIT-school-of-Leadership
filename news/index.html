@@ -1,1 +1,269 @@
-replace https://sld.kiit.ac.in/people-board-of-studies/  with in all the links https://sld.kiit.ac.in/board-of-studies/
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Updates | KIIT School of Leadership</title>
+    <meta name="description"
+        content="Stay updated with the latest news, announcements, and achievements from KIIT School of Leadership. Read about our students, faculty, and institutional developments.">
+    <meta name="keywords"
+        content="KIIT School of Leadership News, KIIT University Updates, Business School News India, Leadership Education Updates">
+    <meta name="author" content="KIIT School of Leadership">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sld.kiit.ac.in/news/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sld.kiit.ac.in/news/">
+    <meta property="og:title" content="News & Updates | KIIT School of Leadership">
+    <meta property="og:description"
+        content="Stay updated with the latest news, announcements, and achievements from KIIT School of Leadership.">
+    <meta property="og:image" content="https://sld.kiit.ac.in/assets/images/logo/ksld-logo.webp">
+    <meta property="og:site_name" content="KIIT School of Leadership">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/design-system-min.css">
+    <link rel="stylesheet" href="/assets/css/mobile-optimization-min.css">
+    <link rel="stylesheet" href="/assets/css/mobile-layout-fixes-min.css">
+
+    <!-- JSON-LD Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://sld.kiit.ac.in/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "News",
+            "item": "https://sld.kiit.ac.in/news/"
+        }]
+    }
+    </script>
+
+    <style>
+        .news-hero {
+            background: linear-gradient(135deg, var(--emerald-900) 0%, var(--emerald-800) 100%);
+            color: white;
+            padding: clamp(120px, 16vh, 160px) 0 clamp(80px, 12vh, 120px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .news-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(251, 191, 36, 0.1), transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(16, 185, 129, 0.08), transparent 50%);
+            pointer-events: none;
+        }
+
+        .news-hero__content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .news-hero__title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .news-hero__subtitle {
+            font-size: clamp(1.125rem, 2vw, 1.25rem);
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .news-section {
+            padding: clamp(3rem, 8vh, 5rem) 0;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .news-card__image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: var(--gray-100);
+        }
+
+        .news-card__content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card__date {
+            color: var(--emerald-600);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-card__title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .news-card__excerpt {
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .news-card__link {
+            color: var(--emerald-600);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+
+        .news-card__link:hover {
+            gap: 0.75rem;
+        }
+
+        .coming-soon {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--gray-50);
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .coming-soon__icon {
+            font-size: 4rem;
+            color: var(--emerald-600);
+            margin-bottom: 1.5rem;
+        }
+
+        .coming-soon__title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .coming-soon__text {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="news-hero">
+        <div class="container">
+            <div class="news-hero__content">
+                <h1 class="news-hero__title">News & Updates</h1>
+                <p class="news-hero__subtitle">
+                    Stay informed about the latest developments, achievements, and announcements from KIIT School of Leadership
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="container">
+            <!-- Coming Soon Placeholder -->
+            <div class="coming-soon">
+                <div class="coming-soon__icon">
+                    <i class="fas fa-newspaper"></i>
+                </div>
+                <h2 class="coming-soon__title">News Section Coming Soon</h2>
+                <p class="coming-soon__text">
+                    We're currently preparing exciting updates and news stories. Check back soon to stay informed about our latest achievements, events, and announcements.
+                </p>
+            </div>
+
+            <!-- Example News Grid (uncomment when ready to add news) -->
+            <!-- 
+            <div class="news-grid">
+                <article class="news-card">
+                    <img src="/assets/images/news/placeholder.jpg" alt="News title" class="news-card__image">
+                    <div class="news-card__content">
+                        <time class="news-card__date">February 18, 2026</time>
+                        <h3 class="news-card__title">Example News Title</h3>
+                        <p class="news-card__excerpt">
+                            Brief description of the news article goes here. This should be a compelling summary that encourages readers to learn more.
+                        </p>
+                        <a href="#" class="news-card__link">
+                            Read more <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/load-header-footer.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
