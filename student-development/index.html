@@ -57,23 +57,23 @@
     </noscript>
 
     <!-- CSS -->
-    <link rel="preload" href="/assets/css/design-system-min.css" as="style">
-    <link rel="stylesheet" href="/assets/css/design-system-min.css">
-    <link rel="stylesheet" href="/assets/css/mobile-optimization-min.css" media="print" onload="this.media='all'">
+    <link rel="preload" href="../assets/css/design-system-min.css" as="style">
+    <link rel="stylesheet" href="../assets/css/design-system-min.css">
+    <link rel="stylesheet" href="../assets/css/mobile-optimization-min.css" media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet" href="/assets/css/mobile-optimization-min.css">
+        <link rel="stylesheet" href="../assets/css/mobile-optimization-min.css">
     </noscript>
-    <link rel="stylesheet" href="/assets/css/mobile-layout-fixes-min.css">
+    <link rel="stylesheet" href="../assets/css/mobile-layout-fixes-min.css">
 
     <!-- Header/Footer Loader -->
-    <script src="/assets/js/load-header-footer.js?v=2"></script>
+    <script src="../assets/js/load-header-footer.js?v=2"></script>
 
     <!-- PWA Manifest & Service Worker -->
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="../manifest.json">
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js')
+                navigator.serviceWorker.register('../service-worker.js')
                     .then(registration => {
                         console.log('ServiceWorker registration successful with scope: ', registration.scope);
                     })
@@ -92,7 +92,7 @@
         "name": "KIIT School of Leadership",
         "alternateName": "KSOL",
         "url": "https://sld.kiit.ac.in",
-        "logo": "assets/images/logo/ksld-logo.webp",
+        "logo": "../assets/images/logo/ksld-logo.webp",
         "description": "KIIT School of Leadership - Building leaders who build the future. A practice-first School of Leadership offering MBA in Innovation, Entrepreneurship & Venture Development.",
         "address": {
             "@type": "PostalAddress",
@@ -150,7 +150,7 @@
     }
     </script>
 
-    <link rel="stylesheet" href="/assets/css/home-styles-min.css">
+    <link rel="stylesheet" href="../assets/css/home-styles-min.css">
 </head>
 
 <body>
@@ -215,8 +215,8 @@
 
                 <div class="mini-slide active">
                     <div class="slide-overlay"></div>
-                    <img src="/assets/images/banner_Homepage/banner-1-scroller.webp"
-                        srcset="/assets/images/banner_Homepage/banner-1-scroller-mobile.webp 600w, /assets/images/banner_Homepage/banner-1-scroller.webp 1526w"
+                    <img src="../assets/images/banner_Homepage/banner-1-scroller.webp"
+                        srcset="../assets/images/banner_Homepage/banner-1-scroller-mobile.webp 600w, ../assets/images/banner_Homepage/banner-1-scroller.webp 1526w"
                         sizes="(max-width: 600px) 100vw, 100vw"
                         alt="KIIT School of Leadership banner: students collaborating" width="1526" height="764"
                         fetchpriority="high" loading="eager">
@@ -224,8 +224,8 @@
 
                 <div class="mini-slide">
                     <div class="slide-overlay"></div>
-                    <img src="/assets/images/banner_Homepage/banner-2-scroller.webp"
-                        srcset="/assets/images/banner_Homepage/banner-2-scroller-mobile.webp 600w, /assets/images/banner_Homepage/banner-2-scroller.webp 1893w"
+                    <img src="../assets/images/banner_Homepage/banner-2-scroller.webp"
+                        srcset="../assets/images/banner_Homepage/banner-2-scroller-mobile.webp 600w, ../assets/images/banner_Homepage/banner-2-scroller.webp 1893w"
                         sizes="(max-width: 600px) 100vw, 100vw"
                         alt="KIIT School of Leadership banner: campus and community" width="1893" height="736"
                         loading="lazy">
@@ -233,8 +233,8 @@
 
                 <div class="mini-slide">
                     <div class="slide-overlay"></div>
-                    <img src="/assets/images/banner_Homepage/banner-3-scroller.webp"
-                        srcset="/assets/images/banner_Homepage/banner-3-scroller-mobile.webp 600w, /assets/images/banner_Homepage/banner-3-scroller.webp 1901w"
+                    <img src="../assets/images/banner_Homepage/banner-3-scroller.webp"
+                        srcset="../assets/images/banner_Homepage/banner-3-scroller-mobile.webp 600w, ../assets/images/banner_Homepage/banner-3-scroller.webp 1901w"
                         sizes="(max-width: 600px) 100vw, 100vw"
                         alt="KIIT School of Leadership banner: innovation and teamwork" width="1901" height="729"
                         loading="lazy">
@@ -334,7 +334,7 @@
                         </div>
                     </div>
                     <div>
-                        <img src="/assets/images/campus/kiit-campus.webp" alt="KIIT Campus"
+                        <img src="../assets/images/campus/kiit-campus.webp" alt="KIIT Campus"
                             style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: block;"
                             loading="lazy">
                     </div>
@@ -377,7 +377,7 @@
 
             <div class="leader-carousel">
                 <div class="leader-slide active">
-                    <img class="leader-photo" src="/assets/images/people/dr-achyuta-samanta.webp"
+                    <img class="leader-photo" src="../assets/images/people/dr-achyuta-samanta.webp"
                         alt="Prof. Achyuta Samanta"
                         onerror="this.src='https://ui-avatars.com/api/?name=Achyuta+Samanta&background=2563eb&color=fff&size=200'"
                         loading="lazy">
@@ -398,7 +398,7 @@
                 </div>
 
                 <div class="leader-slide">
-                    <img class="leader-photo" src="/assets/images/people/dr-saranjit-singh.webp"
+                    <img class="leader-photo" src="../assets/images/people/dr-saranjit-singh.webp"
                         alt="Prof. (Dr.) Saranjit Singh"
                         onerror="this.src='https://ui-avatars.com/api/?name=Saranjit+Singh&background=2563eb&color=fff&size=200'"
                         loading="lazy">
@@ -417,7 +417,7 @@
                 </div>
 
                 <div class="leader-slide">
-                    <img class="leader-photo" src="/assets/images/people/kd-raju.webp" alt="Prof. (Dr.) Raju K.D."
+                    <img class="leader-photo" src="../assets/images/people/kd-raju.webp" alt="Prof. (Dr.) Raju K.D."
                         onerror="this.src='https://ui-avatars.com/api/?name=Raju+KD&background=2563eb&color=fff&size=200'"
                         loading="lazy">
                     <div class="leader-meta">
@@ -435,7 +435,7 @@
                 </div>
 
                 <div class="leader-slide">
-                    <img class="leader-photo" src="/assets/images/people/prof-mrutyunjay-suar.webp"
+                    <img class="leader-photo" src="../assets/images/people/prof-mrutyunjay-suar.webp"
                         alt="Dr. (Prof) Mrutyunjay Suar"
                         onerror="this.src='https://ui-avatars.com/api/?name=Mrutyunjay+Suar&background=2563eb&color=fff&size=200'"
                         loading="lazy">
@@ -454,7 +454,7 @@
                 </div>
 
                 <div class="leader-slide">
-                    <img class="leader-photo" src="/assets/images/people/dr-pinaki-nandan-pattnaik.webp"
+                    <img class="leader-photo" src="../assets/images/people/dr-pinaki-nandan-pattnaik.webp"
                         alt="Dr. Pinaki Nandan Pattnaik"
                         onerror="this.src='https://ui-avatars.com/api/?name=Pinaki+Nandan+Pattnaik&background=2563eb&color=fff&size=200'"
                         loading="lazy">
@@ -618,7 +618,7 @@
                     </div>
                     <div class="program-meta">
                         <span>Duration: 2 years · Full-time</span>
-                        <a href="/mba-iev/" class="text-link">View MBA–IEV program <i
+                        <a href="../mba-iev/" class="text-link">View MBA–IEV program <i
                                 class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -655,7 +655,7 @@
                     </div>
                     <div class="program-meta">
                         <span>3–5 day programs · Blended</span>
-                        <a href="/pace/" class="text-link">Explore certification programs <i
+                        <a href="../pace/" class="text-link">Explore certification programs <i
                                 class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -683,7 +683,7 @@
                     <!-- Hover Stats -->
                     <div class="program-meta">
                         <span>Labs · Projects · Fellowships</span>
-                        <a href="/sri/" class="text-link">Discover social impact <i
+                        <a href="../sri/" class="text-link">Discover social impact <i
                                 class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -724,7 +724,7 @@
                             <td>Labs · Projects</td>
                             <td>Field + Studio</td>
                             <td>Impact portfolio, policy & community leadership</td>
-                            <td><a href="/sri/" class="text-link">Learn</a></td>
+                            <td><a href="../sri/" class="text-link">Learn</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -752,14 +752,14 @@
                                 style="color: var(--color-primary); margin-right: 8px;"></i> Small cohorts &
                             personalised mentoring</li>
                     </ul>
-                    <a href="/people-regular-faculty/" class="btn btn-outline" style="width: auto;">Meet our faculty &
+                    <a href="../people-regular-faculty/" class="btn btn-outline" style="width: auto;">Meet our faculty &
                         mentors</a>
                 </div>
                 <div style="grid-column: span 7;">
                     <div class="faculty-grid">
                         <!-- Mentor 1: Pinaki Nandan Pattnaik - Faculty -->
                         <div class="mini-person-card">
-                            <img src="/assets/images/people/dr-pinaki-nandan-pattnaik.webp"
+                            <img src="../assets/images/people/dr-pinaki-nandan-pattnaik.webp"
                                 alt="Dr. Pinaki Nandan Pattnaik" class="mini-person-img"
                                 onerror="this.src='https://ui-avatars.com/api/?name=Pinaki+Nandan+Pattnaik&background=2563eb&color=fff&size=80'"
                                 loading="lazy">
@@ -767,14 +767,14 @@
                                 <h4 style="margin-bottom: 4px;">Dr. Pinaki Nandan Pattnaik</h4>
                                 <div style="font-size: 0.875rem; color: var(--color-text-muted);">Leadership & Vision ·
                                     Dean & Core Faculty</div>
-                                <a href="/about-pinaki-nandan/"
+                                <a href="../about-pinaki-nandan/"
                                     style="font-size: 0.75rem; color: var(--color-primary); margin-top: 4px; display: inline-block;">View
                                     profile →</a>
                             </div>
                         </div>
                         <!-- Mentor 2: Sweta Leena Hota - Faculty -->
                         <div class="mini-person-card">
-                            <img src="/assets/images/people/dr-sweta-leena-hota.webp" alt="Dr. Sweta Leena Hota"
+                            <img src="../assets/images/people/dr-sweta-leena-hota.webp" alt="Dr. Sweta Leena Hota"
                                 class="mini-person-img"
                                 onerror="this.src='https://ui-avatars.com/api/?name=Sweta+Leena+Hota&background=2563eb&color=fff&size=80'"
                                 loading="lazy">
@@ -782,14 +782,14 @@
                                 <h4 style="margin-bottom: 4px;">Dr. Sweta Leena Hota</h4>
                                 <div style="font-size: 0.875rem; color: var(--color-text-muted);">Co-ordinator · Core
                                     Faculty</div>
-                                <a href="/people-regular-faculty/"
+                                <a href="../people-regular-faculty/"
                                     style="font-size: 0.75rem; color: var(--color-primary); margin-top: 4px; display: inline-block;">View
                                     profile →</a>
                             </div>
                         </div>
                         <!-- Mentor 3: Bodhisattwa Sanghapriya - Professor of Practice -->
                         <div class="mini-person-card">
-                            <img src="/assets/images/people/bodhisattwa-sanghapriya.webp" alt="Bodhisattwa Sanghapriya"
+                            <img src="../assets/images/people/bodhisattwa-sanghapriya.webp" alt="Bodhisattwa Sanghapriya"
                                 class="mini-person-img"
                                 onerror="this.src='https://ui-avatars.com/api/?name=Bodhisattwa+Sanghapriya&background=2563eb&color=fff&size=80'"
                                 loading="lazy">
@@ -797,14 +797,14 @@
                                 <h4 style="margin-bottom: 4px;">Bodhisattwa Sanghapriya</h4>
                                 <div style="font-size: 0.875rem; color: var(--color-text-muted);">Founder & CEO, IG
                                     Drones · Professor of Practice</div>
-                                <a href="/people-professors-of-practice/"
+                                <a href="../people-professors-of-practice/"
                                     style="font-size: 0.75rem; color: var(--color-primary); margin-top: 4px; display: inline-block;">View
                                     profile →</a>
                             </div>
                         </div>
                         <!-- Mentor 4: Samidha Mahapatra - Professor of Practice -->
                         <div class="mini-person-card">
-                            <img src="/assets/images/people/samidha-mahapatra.webp" alt="Samidha Mahapatra"
+                            <img src="../assets/images/people/samidha-mahapatra.webp" alt="Samidha Mahapatra"
                                 class="mini-person-img"
                                 onerror="this.src='https://ui-avatars.com/api/?name=Samidha+Mahapatra&background=2563eb&color=fff&size=80'"
                                 loading="lazy">
@@ -812,13 +812,13 @@
                                 <h4 style="margin-bottom: 4px;">Samidha Mahapatra</h4>
                                 <div style="font-size: 0.875rem; color: var(--color-text-muted);">Industry Strategy,
                                     Ericsson · Professor of Practice</div>
-                                <a href="/people-professors-of-practice/"
+                                <a href="../people-professors-of-practice/"
                                     style="font-size: 0.75rem; color: var(--color-primary); margin-top: 4px; display: inline-block;">View
                                     profile →</a>
                             </div>
                         </div>
                     </div>
-                    <div style="margin-top: 12px;"><a href="/people-professors-of-practice/" class="text-link">See the
+                    <div style="margin-top: 12px;"><a href="../people-professors-of-practice/" class="text-link">See the
                             full leadership network <i class="fa-solid fa-arrow-right"></i></a></div>
                 </div>
             </div>
@@ -894,7 +894,7 @@
                     </div>
 
                     <!-- CTA Button -->
-                    <a href="/sri/"
+                    <a href="../sri/"
                         style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.95rem; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3); width: fit-content; max-width: fit-content;">
                         Explore SRI Initiatives
                         <i class="fa-solid fa-arrow-right"></i>
@@ -906,7 +906,7 @@
                     <div style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.15); transition: transform 0.3s ease, box-shadow 0.3s ease;"
                         onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 32px 70px rgba(0,0,0,0.2)'"
                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 24px 60px rgba(0,0,0,0.15)'">
-                        <img src="/assets/images/sri-homepage.webp"
+                        <img src="../assets/images/sri-homepage.webp"
                             alt="Centre for Social Research & Innovation - Community engagement"
                             style="width: 100%; height: auto; display: block;" loading="lazy">
                         <!-- Optional gradient overlay for depth -->
@@ -952,7 +952,7 @@
                     style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;"
                     onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
-                    <img src="/assets/images/logos/tata.webp" alt="Tata"
+                    <img src="../assets/images/logos/tata.webp" alt="Tata"
                         style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;"
                         onmouseover="this.style.filter='grayscale(0%)';"
                         onmouseout="this.style.filter='grayscale(100%)';" loading="lazy">
@@ -961,7 +961,7 @@
                     style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;"
                     onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
-                    <img src="/assets/images/logos/indigo.webp" alt="IndiGo"
+                    <img src="../assets/images/logos/indigo.webp" alt="IndiGo"
                         style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;"
                         onmouseover="this.style.filter='grayscale(0%)';"
                         onmouseout="this.style.filter='grayscale(100%)';" loading="lazy">
@@ -970,7 +970,7 @@
                     style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;"
                     onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
-                    <img src="/assets/images/logos/hal.webp" alt="HAL"
+                    <img src="../assets/images/logos/hal.webp" alt="HAL"
                         style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;"
                         onmouseover="this.style.filter='grayscale(0%)';"
                         onmouseout="this.style.filter='grayscale(100%)';" loading="lazy">
@@ -979,7 +979,7 @@
                     style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;"
                     onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
-                    <img src="/assets/images/logos/corperates/ashok-leyland.webp" alt="Ashok Leyland"
+                    <img src="../assets/images/logos/corperates/ashok-leyland.webp" alt="Ashok Leyland"
                         style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;"
                         onmouseover="this.style.filter='grayscale(0%)';"
                         onmouseout="this.style.filter='grayscale(100%)';" loading="lazy">
@@ -988,7 +988,7 @@
                     style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;"
                     onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
-                    <img src="/assets/images/logos/corperates/bayer.webp" alt="Bayer"
+                    <img src="../assets/images/logos/corperates/bayer.webp" alt="Bayer"
                         style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;"
                         onmouseover="this.style.filter='grayscale(0%)';"
                         onmouseout="this.style.filter='grayscale(100%)';" loading="lazy">
@@ -997,7 +997,7 @@
                     style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;"
                     onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
-                    <img src="/assets/images/logos/corperates/bharat-petroleum.webp" alt="Bharat Petroleum"
+                    <img src="../assets/images/logos/corperates/bharat-petroleum.webp" alt="Bharat Petroleum"
                         style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;"
                         onmouseover="this.style.filter='grayscale(0%)';"
                         onmouseout="this.style.filter='grayscale(100%)';" loading="lazy">
@@ -1007,7 +1007,7 @@
                     style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;"
                     onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
-                    <img src="/assets/images/logos/corperates/hdfc-bank.webp" alt="HDFC Bank"
+                    <img src="../assets/images/logos/corperates/hdfc-bank.webp" alt="HDFC Bank"
                         style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;"
                         onmouseover="this.style.filter='grayscale(0%)';"
                         onmouseout="this.style.filter='grayscale(100%)';" loading="lazy">
@@ -1016,7 +1016,7 @@
                     style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;"
                     onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
-                    <img src="/assets/images/logos/corperates/kotak-mahindra-bank.webp" alt="Kotak"
+                    <img src="../assets/images/logos/corperates/kotak-mahindra-bank.webp" alt="Kotak"
                         style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;"
                         onmouseover="this.style.filter='grayscale(0%)';"
                         onmouseout="this.style.filter='grayscale(100%)';" loading="lazy">
@@ -1025,7 +1025,7 @@
                     style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;"
                     onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
-                    <img src="/assets/images/logos/corperates/indian-oil.webp" alt="Indian Oil"
+                    <img src="../assets/images/logos/corperates/indian-oil.webp" alt="Indian Oil"
                         style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;"
                         onmouseover="this.style.filter='grayscale(0%)';"
                         onmouseout="this.style.filter='grayscale(100%)';" loading="lazy">
@@ -1034,7 +1034,7 @@
                     style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;"
                     onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
-                    <img src="/assets/images/logos/nasscom.webp" alt="NASSCOM"
+                    <img src="../assets/images/logos/nasscom.webp" alt="NASSCOM"
                         style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;"
                         onmouseover="this.style.filter='grayscale(0%)';"
                         onmouseout="this.style.filter='grayscale(100%)';" loading="lazy">
@@ -1043,7 +1043,7 @@
                     style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;"
                     onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
-                    <img src="/assets/images/logos/ficci.webp" alt="FICCI"
+                    <img src="../assets/images/logos/ficci.webp" alt="FICCI"
                         style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;"
                         onmouseover="this.style.filter='grayscale(0%)';"
                         onmouseout="this.style.filter='grayscale(100%)';" loading="lazy">
@@ -1053,7 +1053,7 @@
                     style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;"
                     onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
-                    <img src="/assets/images/logos/blume-funds.webp" alt="Blume Ventures"
+                    <img src="../assets/images/logos/blume-funds.webp" alt="Blume Ventures"
                         style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;"
                         onmouseover="this.style.filter='grayscale(0%)';"
                         onmouseout="this.style.filter='grayscale(100%)';" loading="lazy">
@@ -1062,7 +1062,7 @@
                     style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;"
                     onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
-                    <img src="/assets/images/logos/ankur-capital.webp" alt="Ankur Capital"
+                    <img src="../assets/images/logos/ankur-capital.webp" alt="Ankur Capital"
                         style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;"
                         onmouseover="this.style.filter='grayscale(0%)';"
                         onmouseout="this.style.filter='grayscale(100%)';" loading="lazy">
@@ -1071,7 +1071,7 @@
                     style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;"
                     onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
-                    <img src="/assets/images/logos/mumbai-angels.webp" alt="Mumbai Angels"
+                    <img src="../assets/images/logos/mumbai-angels.webp" alt="Mumbai Angels"
                         style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;"
                         onmouseover="this.style.filter='grayscale(0%)';"
                         onmouseout="this.style.filter='grayscale(100%)';" loading="lazy">
@@ -1080,7 +1080,7 @@
                     style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;"
                     onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
-                    <img src="/assets/images/logos/lead-angels.webp" alt="Lead Angels"
+                    <img src="../assets/images/logos/lead-angels.webp" alt="Lead Angels"
                         style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;"
                         onmouseover="this.style.filter='grayscale(0%)';"
                         onmouseout="this.style.filter='grayscale(100%)';" loading="lazy">
@@ -1089,7 +1089,7 @@
                     style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;"
                     onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
-                    <img src="/assets/images/logos/wadhwani.webp" alt="Wadhwani Foundation"
+                    <img src="../assets/images/logos/wadhwani.webp" alt="Wadhwani Foundation"
                         style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;"
                         onmouseover="this.style.filter='grayscale(0%)';"
                         onmouseout="this.style.filter='grayscale(100%)';" loading="lazy">
@@ -1098,14 +1098,14 @@
                     style="background: #fff; border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; height: 100px;"
                     onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
-                    <img src="/assets/images/logos/highradius.webp" alt="HighRadius"
+                    <img src="../assets/images/logos/highradius.webp" alt="HighRadius"
                         style="max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease;"
                         onmouseover="this.style.filter='grayscale(0%)';"
                         onmouseout="this.style.filter='grayscale(100%)';" loading="lazy">
                 </div>
             </div>
             <div style="text-align: center; margin-top: 32px;">
-                <a href="/ecosystem-partners/" class="text-link">See all ecosystem partners <i
+                <a href="../ecosystem-partners/" class="text-link">See all ecosystem partners <i
                         class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
@@ -1255,7 +1255,7 @@
                     style="background: linear-gradient(145deg, #e8f5e9 0%, #f1f8f2 100%); border: 1px solid #c8e6c9; transition: all 0.3s ease;"
                     onmouseover="this.style.boxShadow='0 0 30px rgba(72, 187, 120, 0.5)'; this.style.transform='translateY(-5px)';"
                     onmouseout="this.style.boxShadow=''; this.style.transform='';">
-                    <img src="/assets/images/students/sangita.webp" alt="Sangita" class="story-img" loading="lazy">
+                    <img src="../assets/images/students/sangita.webp" alt="Sangita" class="story-img" loading="lazy">
                     <p
                         style="font-style: italic; color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7;">
                         "Every journey is different. Here's how learners from the School of Leadership are using what
@@ -1273,7 +1273,7 @@
                     style="background: linear-gradient(145deg, #e8f5e9 0%, #f1f8f2 100%); border: 1px solid #c8e6c9; transition: all 0.3s ease;"
                     onmouseover="this.style.boxShadow='0 0 30px rgba(72, 187, 120, 0.5)'; this.style.transform='translateY(-5px)';"
                     onmouseout="this.style.boxShadow=''; this.style.transform='';">
-                    <img src="/assets/images/students/soumya.webp" alt="Soumya" class="story-img" loading="lazy">
+                    <img src="../assets/images/students/soumya.webp" alt="Soumya" class="story-img" loading="lazy">
                     <p
                         style="font-style: italic; color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7;">
                         "Working with professors of practice shifted how I think about problems. We weren't just solving
@@ -1291,7 +1291,7 @@
                     style="background: linear-gradient(145deg, #e8f5e9 0%, #f1f8f2 100%); border: 1px solid #c8e6c9; transition: all 0.3s ease;"
                     onmouseover="this.style.boxShadow='0 0 30px rgba(72, 187, 120, 0.5)'; this.style.transform='translateY(-5px)';"
                     onmouseout="this.style.boxShadow=''; this.style.transform='';">
-                    <img src="/assets/images/students/pratidwandi.webp" alt="Pratidwandi" class="story-img"
+                    <img src="../assets/images/students/pratidwandi.webp" alt="Pratidwandi" class="story-img"
                         loading="lazy">
                     <p
                         style="font-style: italic; color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7;">
@@ -1664,7 +1664,7 @@
         })();
     </script>
 
-    <script src="/assets/js/main.js" defer></script>
+    <script src="../assets/js/main.js" defer></script>
 </body>
 
 </html>
