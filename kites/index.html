@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KITES - Winter & Summer Schools | KIIT School of Leadership</title>
-    <meta name="description" content="KITES Winter and Summer Schools at KIIT School of Leadership. Leadership, communication, ethics, inclusion, and sustainability programs for young minds.">
-    <meta name="keywords" content="KITES KIIT, Summer School Bhubaneswar, Winter School Leadership, Youth Leadership Program, Student Leadership KIIT">
+    <meta name="description"
+        content="KITES Winter and Summer Schools at KIIT School of Leadership. Leadership, communication, ethics, inclusion, and sustainability programs for young minds.">
+    <meta name="keywords"
+        content="KITES KIIT, Summer School Bhubaneswar, Winter School Leadership, Youth Leadership Program, Student Leadership KIIT">
     <meta name="author" content="KIIT School of Leadership">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://sld.kiit.ac.in/kites/">
-    
+
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sld.kiit.ac.in/kites/">
     <meta property="og:title" content="KITES - Never Too Young to Lead | KIIT School of Leadership">
-    <meta property="og:description" content="Leadership, communication, ethics, inclusion, and sustainability programs for young minds.">
+    <meta property="og:description"
+        content="Leadership, communication, ethics, inclusion, and sustainability programs for young minds.">
     <meta property="og:site_name" content="KIIT School of Leadership">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/design-system-min.css">    <!-- Header/Footer Loader -->
+    <link rel="stylesheet" href="/assets/css/design-system-min.css"> <!-- Header/Footer Loader -->
     <link rel="stylesheet" href="/assets/css/mobile-optimization-min.css">
-        <link rel="stylesheet" href="/assets/css/mobile-layout-fixes-min.css">
+    <link rel="stylesheet" href="/assets/css/mobile-layout-fixes-min.css">
     <script src="/assets/js/load-header-footer.js?v=2"></script>
-    
+
     <!-- JSON-LD Event Schema for KITES Programs -->
     <script type="application/ld+json">
     {
@@ -60,10 +65,13 @@
         "teaches": ["Leadership", "Communication", "Ethics", "Inclusion", "Sustainability"]
     }
     </script>
-    
+
     <style>
-        body { background: #f7f9fb; color: var(--color-text-main); }
-        
+        body {
+            background: #f7f9fb;
+            color: var(--color-text-main);
+        }
+
         /* Hero Section */
         .kites-hero {
             position: relative;
@@ -72,16 +80,19 @@
             padding: 80px 0;
             min-height: 500px;
         }
-        .kites-hero .grid-12 { 
-            align-items: center; 
+
+        .kites-hero .grid-12 {
+            align-items: center;
             gap: 40px;
         }
+
         .kites-hero-image {
             width: 100%;
             height: auto;
             border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
+
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -94,13 +105,18 @@
             font-size: 0.875rem;
             margin-bottom: 16px;
         }
-        .hero-badge i { color: #fbbf24; }
-        .hero-chips { 
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 12px; 
-            margin-top: 16px; 
+
+        .hero-badge i {
+            color: #fbbf24;
         }
+
+        .hero-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
         .hero-chip {
             padding: 10px 18px;
             border-radius: 8px;
@@ -110,78 +126,91 @@
             font-size: 0.875rem;
             backdrop-filter: blur(10px);
         }
-        .kites-hero h1 { 
-            color: #ffffff; 
+
+        .kites-hero h1 {
+            color: #ffffff;
             font-size: 3rem;
             line-height: 1.2;
             margin-bottom: 16px;
         }
-        .kites-hero .lead { 
-            color: rgba(255, 255, 255, 0.95); 
+
+        .kites-hero .lead {
+            color: rgba(255, 255, 255, 0.95);
             font-size: 1.125rem;
             line-height: 1.6;
         }
-        .kites-hero .hero-chip { color: #ffffff; }
-        
-        /* Info Grid - Why KITES cards */
-        .info-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 20px; 
+
+        .kites-hero .hero-chip {
+            color: #ffffff;
         }
+
+        /* Info Grid - Why KITES cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
         .info-card {
             background: white;
             border: 1px solid var(--color-border);
             border-radius: 12px;
             padding: 24px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .info-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         }
-        .info-card h3 { 
-            margin-bottom: 12px; 
+
+        .info-card h3 {
+            margin-bottom: 12px;
             color: #0f172a;
             font-size: 1.25rem;
             font-weight: 700;
         }
-        .info-card p { 
+
+        .info-card p {
             color: var(--color-text-muted);
             line-height: 1.6;
             margin: 0;
         }
-        
+
         /* UDAAN Section - Pill Cards */
-        .pill-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 20px; 
+        .pill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
+
         .pill-card {
             background: white;
             border: 1px solid var(--color-border);
             border-radius: 12px;
             padding: 24px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
         }
-        .pill-card h3 { 
-            margin-bottom: 16px; 
+
+        .pill-card h3 {
+            margin-bottom: 16px;
             color: #0f172a;
             font-size: 1.125rem;
             font-weight: 700;
         }
-        .pill-card ul { 
-            padding-left: 20px; 
-            color: var(--color-text-muted); 
+
+        .pill-card ul {
+            padding-left: 20px;
+            color: var(--color-text-muted);
             line-height: 1.8;
             margin: 0;
         }
+
         .pill-card ul li {
             margin-bottom: 8px;
         }
-        
+
         /* Price/Fee Card */
         .price-card {
             background: linear-gradient(135deg, #064e3b, #0f172a);
@@ -192,23 +221,26 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
             align-items: center;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
-        .price-card h3 { 
+
+        .price-card h3 {
             color: #ffffff;
             font-size: 1.5rem;
             margin: 0;
         }
-        .price-card .meta { 
-            color: rgba(255,255,255,0.9);
+
+        .price-card .meta {
+            color: rgba(255, 255, 255, 0.9);
             line-height: 1.6;
         }
+
         .price-card .hero-eyebrow {
             font-size: 0.875rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
-        
+
         /* Contact Card */
         .contact-card {
             border-radius: 14px;
@@ -216,38 +248,43 @@
             padding: 24px;
             background: linear-gradient(135deg, #ecfdf5, #d1fae5);
         }
+
         .contact-card h3 {
             color: #064e3b;
             font-size: 1.25rem;
             font-weight: 700;
         }
-        
+
         /* CTA Buttons */
-        .cta-buttons { 
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 12px; 
-            margin-top: 24px; 
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
         }
-        
+
         /* Responsive */
-        @media (max-width: 768px) { 
-            .kites-hero { 
-                padding: 60px 0; 
+        @media (max-width: 768px) {
+            .kites-hero {
+                padding: 60px 0;
                 min-height: 400px;
             }
+
             .kites-hero h1 {
                 font-size: 2rem;
             }
-            .kites-hero .grid-12 > div {
+
+            .kites-hero .grid-12>div {
                 grid-column: span 12 !important;
             }
+
             .kites-hero-image {
                 margin-top: 30px;
             }
         }
     </style>
 </head>
+
 <body>
     <div id="scroll-progress"></div>
 
@@ -258,7 +295,10 @@
                 <div style="grid-column: span 6;">
                     <div class="hero-badge"><i class="fa-solid fa-paper-plane"></i> Never Too Young to Lead</div>
                     <h1>KITES: A hub for young changemakers.</h1>
-                    <p class="lead" style="max-width: 600px;">KITES nurtures future leaders to think critically, act responsibly, and create impact. UDAAN (Winter School) and UTKARSH (Summer School) blend real-world problem-solving, interactive workshops, sports, and cultural immersion—designed for young minds.</p>
+                    <p class="lead" style="max-width: 600px;">KITES nurtures future leaders to think critically, act
+                        responsibly, and create impact. UDAAN (Winter School) and UTKARSH (Summer School) blend
+                        real-world problem-solving, interactive workshops, sports, and cultural immersion—designed for
+                        young minds.</p>
                     <div class="hero-chips">
                         <div class="hero-chip">Leadership & communication</div>
                         <div class="hero-chip">Ethical decision-making</div>
@@ -266,12 +306,17 @@
                         <div class="hero-chip">Inclusive thinking</div>
                     </div>
                     <div class="cta-buttons">
-                        <a class="btn btn-primary" href="#register" style="background: #064e3b; color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block;">Register Now</a>
-                        <a class="btn btn-outline" href="#brochure" style="color:#fff; border: 2px solid rgba(255,255,255,0.9); padding: 10px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; background: transparent;">Download Brochure</a>
+                        <a class="btn btn-primary" href="#register"
+                            style="background: #064e3b; color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block;">Register
+                            Now</a>
+                        <a class="btn btn-outline" href="/assets/mba-iev-2026-brochure.pdf" target="_blank" download
+                            style="color:#fff; border: 2px solid rgba(255,255,255,0.9); padding: 10px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; background: transparent;">Download
+                            Brochure</a>
                     </div>
                 </div>
                 <div style="grid-column: span 6;">
-                    <img src="/assets/images/udaan.webp" alt="KITES UDAAN Program" class="kites-hero-image" loading="lazy">
+                    <img src="/assets/images/udaan.webp" alt="KITES UDAAN Program" class="kites-hero-image"
+                        loading="lazy">
                 </div>
             </div>
         </div>
@@ -282,20 +327,26 @@
         <div class="container">
             <div class="section-header" style="margin-bottom: 32px;">
                 <h2 style="font-size: 2.5rem; color: #0f172a; margin-bottom: 12px;">Why KITES</h2>
-                <p class="section-description" style="font-size: 1.125rem; color: var(--color-text-muted); max-width: 800px;">A genial platform to fuel curiosity, navigate unfamiliar territory, embark on self-discovery, and forge meaningful connections.</p>
+                <p class="section-description"
+                    style="font-size: 1.125rem; color: var(--color-text-muted); max-width: 800px;">A genial platform to
+                    fuel curiosity, navigate unfamiliar territory, embark on self-discovery, and forge meaningful
+                    connections.</p>
             </div>
             <div class="info-grid">
                 <div class="info-card">
                     <h3>Hands-on learning</h3>
-                    <p>Thought-provoking scenarios, real-world problem-solving, group projects, and mentorship from seasoned professionals.</p>
+                    <p>Thought-provoking scenarios, real-world problem-solving, group projects, and mentorship from
+                        seasoned professionals.</p>
                 </div>
                 <div class="info-card">
                     <h3>Holistic growth</h3>
-                    <p>Leadership fundamentals, group communication, ethics, inclusion, and sustainability in a fun, engaging environment.</p>
+                    <p>Leadership fundamentals, group communication, ethics, inclusion, and sustainability in a fun,
+                        engaging environment.</p>
                 </div>
                 <div class="info-card">
                     <h3>Community & culture</h3>
-                    <p>Sports fiesta, cultural immersion, and cohort-based activities that build confidence and collaboration.</p>
+                    <p>Sports fiesta, cultural immersion, and cohort-based activities that build confidence and
+                        collaboration.</p>
                 </div>
             </div>
         </div>
@@ -306,7 +357,9 @@
         <div class="container">
             <div class="section-header" style="margin-bottom: 32px;">
                 <h2 style="font-size: 2.5rem; color: #0f172a; margin-bottom: 12px;">UDAAN · The Winter School</h2>
-                <p class="section-description" style="font-size: 1.125rem; color: var(--color-text-muted); max-width: 800px;">A melting pot of ideas and activities that give real-life experience in leading and leadership.</p>
+                <p class="section-description"
+                    style="font-size: 1.125rem; color: var(--color-text-muted); max-width: 800px;">A melting pot of
+                    ideas and activities that give real-life experience in leading and leadership.</p>
             </div>
             <div class="pill-grid">
                 <div class="pill-card">
@@ -337,7 +390,8 @@
                 </div>
             </div>
             <div class="info-card" style="margin-top: 24px; background: #f0fdf4; border-color: #bbf7d0;">
-                <p style="margin: 0; color: var(--color-text-muted); font-size: 0.95rem;">UTKARSH (Summer School) details coming soon—built on the same ethos of discovery, responsibility, and impact.</p>
+                <p style="margin: 0; color: var(--color-text-muted); font-size: 0.95rem;">UTKARSH (Summer School)
+                    details coming soon—built on the same ethos of discovery, responsibility, and impact.</p>
             </div>
         </div>
     </section>
@@ -347,13 +401,18 @@
         <div class="container">
             <div class="price-card">
                 <div>
-                    <p class="hero-eyebrow" style="color: #fde68a; font-weight: 800; margin-bottom: 8px; font-size: 0.875rem;">FEE</p>
+                    <p class="hero-eyebrow"
+                        style="color: #fde68a; font-weight: 800; margin-bottom: 8px; font-size: 0.875rem;">FEE</p>
                     <h3 style="margin-bottom: 12px; font-size: 1.75rem;">INR 15,000 per participant</h3>
-                    <p class="meta" style="font-size: 0.95rem; line-height: 1.6;">Inclusive of registration docket, snacks, lunch, goodies. Certificates of Participation provided to all participants.</p>
+                    <p class="meta" style="font-size: 0.95rem; line-height: 1.6;">Inclusive of registration docket,
+                        snacks, lunch, goodies. Certificates of Participation provided to all participants.</p>
                 </div>
                 <div>
-                    <p class="hero-eyebrow" style="color: #fde68a; font-weight: 800; margin-bottom: 12px; font-size: 0.875rem;">PAYMENT DETAILS</p>
-                    <ul style="list-style: none; padding: 0; margin: 0; color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 0.95rem;">
+                    <p class="hero-eyebrow"
+                        style="color: #fde68a; font-weight: 800; margin-bottom: 12px; font-size: 0.875rem;">PAYMENT
+                        DETAILS</p>
+                    <ul
+                        style="list-style: none; padding: 0; margin: 0; color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 0.95rem;">
                         <li style="margin-bottom: 6px;"><strong>Account No:</strong> 50029573273</li>
                         <li style="margin-bottom: 6px;"><strong>Bank:</strong> Indian Bank</li>
                         <li style="margin-bottom: 6px;"><strong>IFSC:</strong> IDIB000K717</li>
@@ -361,7 +420,10 @@
                     </ul>
                 </div>
                 <div style="text-align: right;">
-                    <a class="btn btn-white" href="mailto:info.sld@kiit.ac.in?subject=Request%20KITES%20Brochure&body=Hi%20team,%20please%20share%20the%20KITES%20program%20brochure.%20Name:%20%0APhone:%20" style="margin-bottom: 12px; background: transparent; border: 2px solid rgba(255,255,255,0.9); color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block;">Request Brochure</a>
+                    <a class="btn btn-white"
+                        href="mailto:info.sld@kiit.ac.in?subject=Request%20KITES%20Brochure&body=Hi%20team,%20please%20share%20the%20KITES%20program%20brochure.%20Name:%20%0APhone:%20"
+                        style="margin-bottom: 12px; background: transparent; border: 2px solid rgba(255,255,255,0.9); color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block;">Request
+                        Brochure</a>
                     <div class="meta" style="font-size: 0.875rem;">Need an invoice? Write to info.sld@kiit.ac.in</div>
                 </div>
             </div>
@@ -373,20 +435,26 @@
         <div class="container">
             <div class="section-header" style="margin-bottom: 20px;">
                 <h2>Register & Contact</h2>
-                <p class="section-description">Secure your seat for UDAAN. Reach out for questions on schedules, travel, or group enrollments.</p>
+                <p class="section-description">Secure your seat for UDAAN. Reach out for questions on schedules, travel,
+                    or group enrollments.</p>
             </div>
             <div class="info-grid">
                 <div class="info-card">
                     <h3>Registration</h3>
-                    <p style="color: var(--color-text-muted);">Complete payment and share transaction details with the Program Office.</p>
-                    <a class="btn btn-primary" href="mailto:info.sld@kiit.ac.in?subject=KITES%20UDAAN%20Registration">Email proof of payment</a>
+                    <p style="color: var(--color-text-muted);">Complete payment and share transaction details with the
+                        Program Office.</p>
+                    <a class="btn btn-primary"
+                        href="mailto:info.sld@kiit.ac.in?subject=KITES%20UDAAN%20Registration">Email proof of
+                        payment</a>
                 </div>
                 <div class="contact-card">
                     <h3 style="margin-bottom: 8px;">Contact</h3>
-                    <p style="margin-bottom: 8px; color: var(--color-text);"><strong>Sweta Ma’am / Ananya Ma’am</strong></p>
+                    <p style="margin-bottom: 8px; color: var(--color-text);"><strong>Sweta Ma’am / Ananya Ma’am</strong>
+                    </p>
                     <p style="margin-bottom: 6px; color: var(--color-text);">9338120390 / 9938226743</p>
                     <p style="margin-bottom: 6px; color: var(--color-text);">info.sld@kiit.ac.in</p>
-                    <p style="margin: 0; color: var(--color-text-muted);">Program Office – School of Leadership, KIIT Deemed to be University, Campus 11, KIIT Road, Bhubaneswar, Odisha, India 751024</p>
+                    <p style="margin: 0; color: var(--color-text-muted);">Program Office – School of Leadership, KIIT
+                        Deemed to be University, Campus 11, KIIT Road, Bhubaneswar, Odisha, India 751024</p>
                 </div>
             </div>
         </div>
@@ -394,4 +462,5 @@
 
     <script src="/assets/js/main.js"></script>
 </body>
+
 </html>
