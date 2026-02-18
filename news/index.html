@@ -56,153 +56,19 @@
     </script>
 
     <style>
-        .news-hero {
-            background: linear-gradient(135deg, var(--emerald-900) 0%, var(--emerald-800) 100%);
-            color: white;
-            padding: clamp(120px, 16vh, 160px) 0 clamp(80px, 12vh, 120px);
-            position: relative;
-            overflow: hidden;
+        /* Light background color */
+        .bg-light {
+            background-color: #f9fafb;
         }
 
-        .news-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: 
-                radial-gradient(ellipse at 20% 50%, rgba(251, 191, 36, 0.1), transparent 50%),
-                radial-gradient(ellipse at 80% 50%, rgba(16, 185, 129, 0.08), transparent 50%);
-            pointer-events: none;
-        }
-
-        .news-hero__content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .news-hero__title {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
-
-        .news-hero__subtitle {
-            font-size: clamp(1.125rem, 2vw, 1.25rem);
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-
-        .news-section {
+        /* Section padding */
+        .section {
             padding: clamp(3rem, 8vh, 5rem) 0;
         }
 
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .news-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .news-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .news-card__image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background: var(--gray-100);
-        }
-
-        .news-card__content {
-            padding: 1.5rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .news-card__date {
-            color: var(--emerald-600);
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .news-card__title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 0.75rem;
-            line-height: 1.4;
-        }
-
-        .news-card__excerpt {
-            color: var(--gray-600);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            flex: 1;
-        }
-
-        .news-card__link {
-            color: var(--emerald-600);
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap 0.3s ease;
-        }
-
-        .news-card__link:hover {
-            gap: 0.75rem;
-        }
-
-        .coming-soon {
-            text-align: center;
-            padding: 4rem 2rem;
-            background: var(--gray-50);
-            border-radius: 12px;
-            margin-top: 2rem;
-        }
-
-        .coming-soon__icon {
-            font-size: 4rem;
-            color: var(--emerald-600);
-            margin-bottom: 1.5rem;
-        }
-
-        .coming-soon__title {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 1rem;
-        }
-
-        .coming-soon__text {
-            font-size: 1.125rem;
-            color: var(--gray-600);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 768px) {
-            .news-grid {
-                grid-template-columns: 1fr;
-            }
+        /* Text muted color */
+        :root {
+            --color-text-muted: #6b7280;
         }
     </style>
 </head>
@@ -211,50 +77,59 @@
     <!-- Header -->
     <div id="header-placeholder"></div>
 
-    <!-- Hero Section -->
-    <section class="news-hero">
+    <!-- News Section -->
+    <section class="section bg-light">
         <div class="container">
-            <div class="news-hero__content">
-                <h1 class="news-hero__title">News & Updates</h1>
-                <p class="news-hero__subtitle">
-                    Stay informed about the latest developments, achievements, and announcements from KIIT School of Leadership
-                </p>
+            <div style="margin-bottom: 40px;">
+                <h2 style="margin-bottom: 8px;">Latest News & Updates</h2>
+                <p style="font-size: 1.125rem; color: var(--color-text-muted); margin-top: 12px;">Stay updated with the
+                    latest developments at KIIT School of Leadership</p>
             </div>
         </div>
-    </section>
 
-    <!-- News Section -->
-    <section class="news-section">
-        <div class="container">
-            <!-- Coming Soon Placeholder -->
-            <div class="coming-soon">
-                <div class="coming-soon__icon">
-                    <i class="fas fa-newspaper"></i>
+        <!-- News Embed with Hidden Header/Footer -->
+        <div style="margin-bottom: 0; padding: 0 20px;">
+            <div
+                style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.12); background: #ffffff; max-width: 1400px; margin: 0 auto; height: 800px;">
+                <!-- Gradient Accent Top Bar -->
+                <div
+                    style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #10b981 0%, #059669 50%, #047857 100%); z-index: 10;">
                 </div>
-                <h2 class="coming-soon__title">News Section Coming Soon</h2>
-                <p class="coming-soon__text">
-                    We're currently preparing exciting updates and news stories. Check back soon to stay informed about our latest achievements, events, and announcements.
-                </p>
+                <!-- Top overlay to cover any header remnants -->
+                <div
+                    style="position: absolute; top: 5px; left: 0; right: 0; height: 20px; background: #ffffff; z-index: 8;">
+                </div>
+                <!-- Iframe container - clips the header and footer -->
+                <div style="position: relative; width: 100%; height: 100%; overflow: hidden; padding-top: 20px;">
+                    <iframe src="https://news.kiit.ac.in/kiitnews/"
+                        style="position: absolute; top: -420px; left: 0; width: 100%; height: calc(100% + 700px); border: none; background: #ffffff;"
+                        scrolling="yes" loading="lazy" title="KIIT News"></iframe>
+                </div>
+                <!-- Bottom fade overlay to hide footer cutoff -->
+                <div
+                    style="position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to top, #ffffff 20%, transparent 100%); z-index: 5; pointer-events: none;">
+                </div>
             </div>
+        </div>
 
-            <!-- Example News Grid (uncomment when ready to add news) -->
-            <!-- 
-            <div class="news-grid">
-                <article class="news-card">
-                    <img src="/assets/images/news/placeholder.jpg" alt="News title" class="news-card__image">
-                    <div class="news-card__content">
-                        <time class="news-card__date">February 18, 2026</time>
-                        <h3 class="news-card__title">Example News Title</h3>
-                        <p class="news-card__excerpt">
-                            Brief description of the news article goes here. This should be a compelling summary that encourages readers to learn more.
-                        </p>
-                        <a href="#" class="news-card__link">
-                            Read more <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
+        <div class="container">
+            <!-- Premium CTA Section -->
+            <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.04) 100%); border: 2px solid rgba(16, 185, 129, 0.15); border-radius: 16px; padding: 40px 32px; text-align: center; transition: all 0.3s ease; margin-top: 40px;"
+                onmouseover="this.style.borderColor='rgba(16, 185, 129, 0.4)'; this.style.backgroundColor='rgba(16, 185, 129, 0.12)'"
+                onmouseout="this.style.borderColor='rgba(16, 185, 129, 0.15)'; this.style.backgroundColor='rgba(16, 185, 129, 0.08)'">
+                <div style="margin-bottom: 20px;">
+                    <h4
+                        style="margin: 0 0 12px 0; font-size: 1.25rem; color: #1f2937; font-weight: 700; letter-spacing: -0.5px;">
+                        Want to explore all stories?</h4>
+                    <p style="margin: 0; color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6;">Discover
+                        comprehensive news, announcements, and achievements from KIIT across all initiatives</p>
+                </div>
+                <a href="https://news.kiit.ac.in/kiitnews/" target="_blank" rel="noopener"
+                    style="display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.95rem; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3); width: fit-content;">
+                    Visit KIIT News Portal
+                    <i class="fa-solid fa-arrow-right" style="font-size: 0.85rem;"></i>
+                </a>
             </div>
-            -->
         </div>
     </section>
 
